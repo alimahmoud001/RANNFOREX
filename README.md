@@ -2,7 +2,7 @@
 
 <html dir="rtl" lang="ar">
   <head>
-    <meta charset="UTF-8"></meta>
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
     <title>Rann Forex - الوساطة المالية الموثوقة</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"></link>
@@ -471,7 +471,7 @@
       <div class="container">
         <div class="logo">
           <i class="fas fa-chart-line"></i>
-          <h1>Rann Forex</h1>
+          <h1>RannForex</h1>
         </div>
         <p class="tagline">
           وسيطك المالي الموثوق لتداول الفوركس والمعادن والنفط والمؤشرات والعملات
