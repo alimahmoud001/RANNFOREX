@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Rann Forex - الوساطة المالية الموثوقة</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"></link>
+    <title>Rann Forex - الوساطة المالية الموثوقة
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet"></link>
     <style>
       :root {
@@ -478,7 +478,7 @@
           المشفرة بأفضل الشروط والأمان لقد قمت بتضمين روابط لكل ما تحتاجه في
           مجال التداول ضمن هذه الصفحة من تطبيقات وبرامج تحليل فني ومحفظة
           إلكترونية ومنصة ميتا تريدر ووسيط التداول الذي اعمل معه وقناتي على
-          تلجرام ❤️000
+          تلجرام ❤️
         </p>
         <a class="main-btn" href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1">
           <i class="fas fa-user-plus"></i> سجل حساب جديد الآن
@@ -742,7 +742,7 @@
         </div>
       </div>
       
-      <!DOCTYPE html>
+      
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -840,7 +840,7 @@
             <i class="fab fa-youtube"></i> تشغيل الفيديو
         </a>
         
-        </div>
+      
     </div>
 </body>
       </html>
@@ -850,7 +850,7 @@
         <div class="card-header">
           <i class="fas fa-headset"></i>
           <h2 class="card-title">تواصل معنا</h2>
-        </div>
+     
 
         <div class="contact-info">
           <div class="contact-item" onclick="window.open('https://t.me/ali0619000', '_blank')">
