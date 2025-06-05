@@ -3,740 +3,1168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راني فوريكس - خدمات التداول والوساطة المالية</title>
+    <title>Rannforex - شركة الوساطة المالية</title>
+    <!-- مكتبة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap">
+    <!-- خطوط Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* ===== تنسيقات عامة ===== */
+        :root {
+            /* الألوان الرئيسية */
+            --primary-color: #2e4057;    /* اللون الأساسي (أزرق داكن) */
+            --secondary-color: #048ba8;  /* اللون الثانوي (أزرق فاتح) */
+            --accent-color: #f18f01;     /* لون التمييز (برتقالي) */
+            --light-color: #f5f5f5;      /* لون فاتح */
+            --dark-color: #1a1a1a;       /* لون داكن */
+            --success-color: #4caf50;    /* لون النجاح (أخضر) */
+            --warning-color: #ff9800;    /* لون التحذير (برتقالي) */
+            --danger-color: #f44336;     /* لون الخطر (أحمر) */
+            
+            /* قيم التصميم */
+            --border-radius: 8px;        /* نصف قطر الحواف */
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل العناصر */
+            --transition: all 0.3s ease; /* تأثير الانتقال */
+        }
+
+        /* إعادة تعيين التنسيقات الافتراضية */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
         }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #1a237e;
-            --accent: #3498db;
-            --gold: #f1c40f;
-            --success: #2ecc71;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --gradient: linear-gradient(135deg, #1a2a6c, #2c3e50, #1a237e);
+
+        /* تنسيق التمرير السلس */
+        html {
+            scroll-behavior: smooth;
         }
-        
+
+        /* تنسيقات الجسم */
         body {
-            background: var(--gradient);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: var(--dark);
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
         }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
+
+        /* تنسيق الحاوية */
         .container {
-            max-width: 1200px;
             width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        header {
+
+        /* تنسيق الروابط */
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* تنسيق القوائم */
+        ul {
+            list-style: none;
+        }
+
+        /* تنسيق الصور */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== تنسيقات الأزرار ===== */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            animation: fadeInDown 1s ease;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            box-shadow: var(--box-shadow);
         }
-        
-        .logo-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .logo-icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-left: 15px;
-        }
-        
-        .logo-text {
-            font-size: 2.5rem;
-            font-weight: 700;
+
+        /* زر أساسي */
+        .btn-primary {
+            background-color: var(--primary-color);
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        
-        .section {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 25px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
-        
-        .section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent);
-        }
-        
-        .section-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-left: 15px;
-        }
-        
-        .section-header {
-            font-size: 1.8rem;
-            color: var(--secondary);
-            font-weight: 700;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .feature-card {
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            border-left: 4px solid var(--accent);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            background: rgba(52, 152, 219, 0.2);
+
+        .btn-primary:hover {
+            background-color: #1a2a3a;
             transform: translateY(-3px);
         }
-        
-        .feature-icon {
+
+        /* زر ثانوي */
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #036d85;
+            transform: translateY(-3px);
+        }
+
+        /* زر مخطط */
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* زر التطبيق */
+        .btn-app {
+            background-color: var(--accent-color);
+            color: white;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .btn-app:hover {
+            background-color: #d97e00;
+            transform: translateY(-3px);
+        }
+
+        /* زر تلجرام */
+        .btn-telegram {
+            background-color: #0088cc;
+            color: white;
+        }
+
+        .btn-telegram:hover {
+            background-color: #006699;
+            transform: translateY(-3px);
+        }
+
+        /* زر الكورس */
+        .btn-course {
+            background-color: #ff5722;
+            color: white;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .btn-course:hover {
+            background-color: #e64a19;
+            transform: translateY(-3px);
+        }
+
+        /* ===== تنسيقات الهيدر ===== */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* تنسيق الشعار */
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* تنسيق القائمة الرئيسية */
+        .main-nav ul {
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-right: 20px;
+        }
+
+        .main-nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .main-nav ul li a {
+            color: white;
+            font-weight: 600;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        /* تأثير تحت الروابط عند التحويم */
+        .main-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .main-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* زر القائمة للموبايل */
+        .mobile-menu-btn {
+            display: none;
             font-size: 1.5rem;
-            color: var(--accent);
+            cursor: pointer;
+        }
+
+        /* ===== تنسيقات الأقسام ===== */
+        .section {
+            padding: 80px 0;
+        }
+
+        /* تلوين الأقسام بالتناوب */
+        .section:nth-child(even) {
+            background-color: #f0f4f8;
+        }
+
+        /* عناوين الأقسام */
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        /* خط تحت عناوين الأقسام */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* ===== تنسيقات القسم الأول ===== */
+        /* بطاقة التسجيل */
+        .register-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 50px;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .register-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .register-card p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* قسم المميزات */
+        .features {
+            margin-bottom: 50px;
+        }
+
+        .features h3 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        /* شبكة بطاقات المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* بطاقة ميزة */
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
             margin-bottom: 15px;
         }
-        
-        .feature-title {
-            font-size: 1.2rem;
-            font-weight: 600;
+
+        .feature-card h4 {
+            font-size: 1.3rem;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: var(--primary-color);
         }
-        
-        .feature-desc {
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .link-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 20px;
+
+        /* معلومات الاسبريد */
+        .spread-info {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
             text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(52, 152, 219, 0.2);
-            cursor: pointer;
+            box-shadow: var(--box-shadow);
+        }
+
+        .spread-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        /* ===== تنسيقات القسم الثاني ===== */
+        /* شبكة بطاقات التقييمات */
+        .ratings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* بطاقة تقييم */
+        .rating-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 120px;
+            justify-content: space-between;
+            min-height: 200px;
         }
-        
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent);
+
+        .rating-card:hover {
+            transform: translateY(-10px);
         }
-        
-        .link-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
+
+        .rating-card img {
+            max-height: 60px;
+            margin-bottom: 20px;
+            object-fit: contain;
         }
-        
-        .link-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--secondary);
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        .social-card {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--card-bg);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+
+        .rating-logo {
             font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
-        
-        .social-card:before {
-            content: '';
+
+        /* ===== تنسيقات القسم الثالث ===== */
+        /* شبكة بطاقات التطبيقات */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* بطاقة تطبيق */
+        .app-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .app-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .app-card p {
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        /* ===== تنسيقات القسم الرابع ===== */
+        /* بطاقة الدروس التعليمية */
+        .tutorial-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .tutorial-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* حاوية الفيديو بنسبة 16:9 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* نسبة 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
         }
-        
-        .social-card:hover {
-            transform: translateY(-8px) rotate(5deg);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+        /* ===== تنسيقات القسم الخامس ===== */
+        /* قنوات تلجرام */
+        .telegram-channels {
+            text-align: center;
         }
-        
-        .social-card:hover:before {
-            transform: translateX(100%);
-        }
-        
-        .social-card.facebook { color: #1877F2; }
-        .social-card.instagram { color: #E1306C; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-        .social-card.twitter { color: #1DA1F2; }
-        .social-card.whatsapp { color: #25D366; }
-        .social-card.telegram { color: #0088CC; }
-        .social-card.mobile { color: #34B7F1; }
-        .social-card.email { color: #EA4335; }
-        
-        .deposit-steps {
-            padding: 20px;
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 15px;
-            margin-top: 20px;
-            border-left: 4px solid var(--success);
-        }
-        
-        .step {
-            display: flex;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #ccc;
-        }
-        
-        .step-number {
-            width: 35px;
-            height: 35px;
-            background: var(--accent);
+
+        /* القناة الرئيسية */
+        .main-channel {
+            background-color: #0088cc;
             color: white;
-            border-radius: 50%;
+            margin-bottom: 40px;
+        }
+
+        .main-channel i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .main-channel h3 {
+            color: white;
+        }
+
+        /* عنوان قنوات الإشارات */
+        .signals-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        /* شبكة قنوات الإشارات */
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* بطاقة قناة */
+        .channel-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            background-color: #f5f5f5;
+        }
+
+        .channel-card a {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin-left: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-content {
-            flex-grow: 1;
-        }
-        
-        .step-title {
+            color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--secondary);
         }
-        
-        .step-desc {
-            color: #555;
-            line-height: 1.6;
+
+        .channel-card a i {
+            color: #0088cc;
+            margin-left: 10px;
+            font-size: 1.2rem;
         }
-        
-        footer {
+
+        /* ===== تنسيقات القسم السادس ===== */
+        /* شبكة الكورسات */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* بطاقة كورس */
+        .course-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
             text-align: center;
-            margin-top: 40px;
-            color: white;
-            padding: 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            width: 100%;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
         }
-        
-        .footer-links {
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        .course-icon .fa-instagram {
+            color: #e1306c;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .course-card p {
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        /* ===== تنسيقات القسم السابع ===== */
+        /* معلومات الاتصال */
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-phone, .contact-email {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* أيقونات وسائل التواصل الاجتماعي */
+        .social-icons {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 10px;
-            flex-wrap: wrap;
+            margin-top: 30px;
         }
-        
-        .footer-link {
-            color: var(--gold);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .footer-link:hover {
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
             color: white;
-            text-decoration: underline;
+            font-size: 1.5rem;
+            transition: var(--transition);
         }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* ألوان مخصصة لكل منصة اجتماعية */
+        .social-icon:nth-child(1) {
+            background-color: #1877f2; /* فيسبوك */
+        }
+
+        .social-icon:nth-child(2) {
+            background-color: #e1306c; /* انستغرام */
+        }
+
+        .social-icon:nth-child(3) {
+            background-color: #000000; /* تويتر (اكس) */
+        }
+
+        .social-icon:nth-child(4) {
+            background-color: #25d366; /* واتساب */
+        }
+
+        .social-icon:nth-child(5) {
+            background-color: #0088cc; /* تلجرام */
+        }
+
+        /* ===== تنسيقات الفوتر ===== */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* ===== تنسيقات التجاوب مع الشاشات المختلفة ===== */
+        /* الشاشات المتوسطة (أقل من 992 بكسل) */
+        @media (max-width: 992px) {
+            .main-nav {
+                display: none;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
-        
+
+        /* الشاشات الصغيرة (أقل من 768 بكسل) */
+        @media (max-width: 768px) {
+            .features-grid, .ratings-grid, .apps-grid, .signals-grid, .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .register-card h3, .features h3, .spread-info h3, .signals-title {
+                font-size: 1.5rem;
+            }
+
+            .feature-card, .rating-card, .app-card, .channel-card, .course-card {
+                padding: 20px;
+            }
+        }
+
+        /* الشاشات الصغيرة جداً (أقل من 576 بكسل) */
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .social-icons {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ===== تأثيرات إضافية ===== */
+        /* تأثير الظهور التدريجي */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* تأثير النبض */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        
-        @media (max-width: 768px) {
-            .links-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-            
-            .section-header {
-                font-size: 1.5rem;
-            }
-            
-            .logo-text {
-                font-size: 2rem;
-            }
-            
-            .social-card {
-                width: 60px;
-                height: 60px;
-                font-size: 1.6rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .section {
-                padding: 20px;
-            }
-            
-            .links-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-header {
-                font-size: 1.3rem;
-            }
-            
-            .logo-text {
-                font-size: 1.7rem;
-            }
-            
-            .logo-icon {
-                font-size: 2.5rem;
-            }
-            
-            .social-links {
-                gap: 15px;
-            }
-            
-            .social-card {
-                width: 55px;
-                height: 55px;
-                font-size: 1.5rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-header">
-                <i class="fas fa-chart-line logo-icon"></i>
-                <h1 class="logo-text">راني فوريكس</h1>
+    <!-- القسم العلوي (الهيدر) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Rannforex</h1>
+                <p>شركة الوساطة المالية الموثوقة</p>
             </div>
-            <p style="color: white; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-                خدمات الوساطة المالية المتكاملة لتداول الفوركس والمعادن والنفط والمؤشرات والعملات المشفرة
-            </p>
-        </header>
-        
-        <!-- القسم الأول: شركة الوساطة المالية -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-building section-icon"></i>
-                <h2 class="section-header">شركة الوساطة المالية</h2>
-            </div>
-            
-            <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="link-card" target="_blank" style="animation: pulse 2s infinite; background: linear-gradient(135deg, #2ecc71, #3498db); color: white;">
-                <i class="fas fa-user-plus link-icon"></i>
-                <h3 class="link-title">التسجيل في راني فوريكس</h3>
-                <p>انضم الآن واستفد من المزايا الحصرية</p>
-            </a>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 class="feature-title">شروط تداول مميزة</h3>
-                    <p class="feature-desc">
-                        ★ اقل إيداع 10$ خلال 30 ثانية<br>
-                        ★ أقل سحب 10$ خلال 30 ثانية<br>
-                        ★ عمولة قليلة جداً<br>
-                        ★ اسبريد 0.3~1.2<br>
-                        ★ رافعة مالية 1:500
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="feature-title">الأمان والموثوقية</h3>
-                    <p class="feature-desc">
-                        ★ تداول آمن على جميع الأصول<br>
-                        ★ تقييم ممتاز على مواقع عالمية<br>
-                        ★ الأمان العالي باستخدام 2FA<br>
-                        ★ توثيق من سورية وأي دولة أخرى
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <h3 class="feature-title">أنواع الحسابات</h3>
-                    <p class="feature-desc">
-                        ★ أربع أنواع من الحسابات<br>
-                        ★ ميتا تريدر 5 حقيقي<br>
-                        ★ بدون عمولة<br>
-                        ★ كريبتو<br>
-                        ★ حساب IB<br>
-                        ★ يدعم الحسابات المدارة PAMM
-                    </p>
-                </div>
-            </div>
-            
-            <div class="links-grid">
-                <a href="https://rannforex.com/en/trading/quotesonline/" class="link-card" target="_blank">
-                    <i class="fas fa-chart-bar link-icon" style="color: #3498db;"></i>
-                    <h3 class="link-title">متوسط الأسبريد اليومي</h3>
-                    <p>تابع الأسبريد المتوسط لراني فوريكس</p>
-                </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#section1">الرئيسية</a></li>
+                    <li><a href="#section2">التقييمات</a></li>
+                    <li><a href="#section3">التطبيقات</a></li>
+                    <li><a href="#section4">التعليم</a></li>
+                    <li><a href="#section5">قنوات تلجرام</a></li>
+                    <li><a href="#section6">الكورسات</a></li>
+                    <li><a href="#section7">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-        
-        <!-- القسم الثاني: تقييمات الشركة -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-star section-icon"></i>
-                <h2 class="section-header">تقييمات الشركة</h2>
-            </div>
-            
-            <div class="links-grid">
-                <a href="https://fr.trustpilot.com/review/rannforex.com" class="link-card" target="_blank">
-                    <i class="fab fa-trustpilot link-icon" style="color: #00b67a;"></i>
-                    <h3 class="link-title">Trust Pilot</h3>
-                    <p>شهادات المستخدمين</p>
-                </a>
-                
-                <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="link-card" target="_blank">
-                    <i class="fas fa-star-half-alt link-icon" style="color: #3498db;"></i>
-                    <h3 class="link-title">WikiFX</h3>
-                    <p>تقييمات الخبراء</p>
-                </a>
-                
-                <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="link-card" target="_blank">
-                    <i class="fas fa-chart-pie link-icon" style="color: #f39c12;"></i>
-                    <h3 class="link-title">MyFxBook</h3>
-                    <p>مراجعات المتداولين</p>
-                </a>
-                
-                <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="link-card" target="_blank">
-                    <i class="fas fa-shield-alt link-icon" style="color: #27ae60;"></i>
-                    <h3 class="link-title">Forex Peace Army</h3>
-                    <p>تقييمات موثوقة</p>
-                </a>
-            </div>
-        </div>
-        
-        <!-- القسم الثالث: التطبيقات المطلوبة -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-mobile-alt section-icon"></i>
-                <h2 class="section-header">التطبيقات المطلوبة للبدء بالتداول</h2>
-            </div>
-            
-            <div class="links-grid">
-                <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="link-card" target="_blank">
-                    <i class="fas fa-chart-line link-icon" style="color: #3498db;"></i>
-                    <h3 class="link-title">منصة ميتا تريدر 5</h3>
-                    <p>المنصة الأفضل للتداول</p>
-                </a>
-                
-                <a href="https://cwallet.com/referral/DvY6dZtS" class="link-card" target="_blank">
-                    <i class="fas fa-wallet link-icon" style="color: #9b59b6;"></i>
-                    <h3 class="link-title">المحفظة الإلكترونية</h3>
-                    <p>CWallet - محفظة آمنة</p>
-                </a>
-                
-                <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="link-card" target="_blank">
-                    <i class="fas fa-lock link-icon" style="color: #2c3e50;"></i>
-                    <h3 class="link-title">تطبيق المصادقة الثنائية</h3>
-                    <p>لتعزيز أمان حسابك</p>
-                </a>
-            </div>
-        </div>
-        
-        <!-- القسم الرابع: قسم تعليمي -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-graduation-cap section-icon"></i>
-                <h2 class="section-header">فيديو تعليمي</h2>
-            </div>
-            
-            <div class="links-grid">
-                <a href="https://youtube.com/shorts/SlQc3Q6L3HQ?si=Q5sdG7_lxANoykBs" class="link-card" target="_blank">
-                    <i class="fab fa-youtube link-icon" style="color: #e74c3c;"></i>
-                    <h3 class="link-title">فيديو تعليمي للمصادقة</h3>
-                    <p>كيفية استخدام تطبيق Google Authenticator</p>
-                </a>
-            </div>
-        </div>
-        
-        <!-- القسم الخامس: قنوات تلجرام -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fab fa-telegram section-icon"></i>
-                <h2 class="section-header">قنوات تلجرام</h2>
-            </div>
-            
-            <div class="links-grid">
-                <a href="https://t.me/tradewithalimahmoud" class="link-card" target="_blank">
-                    <i class="fab fa-telegram link-icon" style="color: #0088cc;"></i>
-                    <h3 class="link-title">قناتنا الرئيسية</h3>
-                    <p>Trade With Ali Mahmoud</p>
-                </a>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fab fa-telegram"></i>
-                    </div>
-                    <h3 class="feature-title">قنوات الإشارات (للتعلم فقط)</h3>
-                    <p class="feature-desc">
-                        💯https://t.me/FX_IRI<br>
-                        💯https://t.me/prosignalsfxx<br>
-                        💯https://t.me/top_tradingsignals<br>
-                        💯https://t.me/signalsfc<br>
-                        💯https://t.me/elitetrading_signals<br>
-                        💯https://t.me/free_signals<br>
-                        💯https://t.me/greysuitcommunity
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- القسم السادس: القسم التعليمي -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-book section-icon"></i>
-                <h2 class="section-header">موارد تعليمية</h2>
-            </div>
-            
-            <div class="links-grid">
-                <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="link-card" target="_blank">
-                    <i class="fab fa-youtube link-icon" style="color: #e74c3c;"></i>
-                    <h3 class="link-title">كورس تعلم التداول</h3>
-                    <p>مع باتك - أشهر ملياردير في التداول</p>
-                </a>
-                
-                <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="link-card" target="_blank">
-                    <i class="fab fa-youtube link-icon" style="color: #e74c3c;"></i>
-                    <h3 class="link-title">قناة Smart Risk</h3>
-                    <p>محتوى تعليمي متقدم</p>
-                </a>
-                
-                <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="link-card" target="_blank">
-                    <i class="fab fa-instagram link-icon" style="color: #E1306C;"></i>
-                    <h3 class="link-title">كورس على انستغرام</h3>
-                    <p>محتوى تعليمي من كامل</p>
-                </a>
-            </div>
-        </div>
-        
-        <!-- القسم السابع: تعليمات الإيداع -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-money-bill-wave section-icon"></i>
-                <h2 class="section-header">طريقة الإيداع</h2>
-            </div>
-            
-            <div class="deposit-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3 class="step-title">الانتقال لقسم الإيداع</h3>
-                        <p class="step-desc">نضغط على الثلاث خطوط في موقع rannforex أعلى يمين الشاشة ثم Deposit</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3 class="step-title">اختيار طريقة الدفع</h3>
-                        <p class="step-desc">Select deposit method: crypto ثم اختر حساب التداول ثم Continue</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3 class="step-title">إدخال المبلغ</h3>
-                        <p class="step-desc">أدخل المبلغ في الفراغ الأول، اختر USD ثم Continue</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3 class="step-title">كود المصادقة</h3>
-                        <p class="step-desc">أدخل كود 2FA من تطبيق Google Authenticator ثم Continue</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3 class="step-title">إتمام العملية</h3>
-                        <p class="step-desc">نسخ العنوان الظاهر، ثم في CWallet نختار Send، نلصق العنوان ثم Send</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- روابط التواصل الاجتماعي -->
-        <div class="social-links">
-            <a href="https://www.facebook.com/alimahmoud001" class="social-card facebook" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            
-            <a href="https://www.instagram.com/alimahmoud001a?igsh=YzljYTk1ODg3Zg==" class="social-card instagram" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            
-            <a href="https://x.com/en_alimahmoud" class="social-card twitter" target="_blank">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-            
-            <a href="https://wa.me/qr/AFVVUP3Z46UYM1" class="social-card whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            
-            <a href="https://t.me/Alimahmoud001" class="social-card telegram" target="_blank">
-                <i class="fab fa-telegram"></i>
-            </a>
-            
-            <a href="tel:+963934598967" class="social-card mobile">
-                <i class="fas fa-mobile-alt"></i>
-            </a>
-            
-            <a href="mailto:alimahmoud001a@gmail.com" class="social-card email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        
-        <footer>
-            <p>© 2023 علي محمود - جميع الحقوق محفوظة</p>
-            <div class="footer-links">
-                <a href="tel:+963934598967" class="footer-link">+963 934 598 967</a>
-                <a href="mailto:alimahmoud001a@gmail.com" class="footer-link">alimahmoud001a@gmail.com</a>
-                <a href="https://t.me/tradewithalimahmoud" class="footer-link">قناة التلجرام</a>
-            </div>
-            <p style="margin-top: 15px;">صممت بحب ❤️ لتسهيل رحلتك في عالم التداول</p>
-        </footer>
-    </div>
+    </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.link-card, .social-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const link = this.getAttribute('href');
+    <!-- القسم الرئيسي -->
+    <main>
+        <!-- القسم الأول: معلومات شركة الوساطة المالية -->
+        <section id="section1" class="section">
+            <div class="container">
+                <h2 class="section-title">شركة الوساطة المالية</h2>
+                <div class="register-card">
+                    <h3>سجل الآن في Rannforex</h3>
+                    <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
+                    <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-user-plus"></i> سجل الآن
+                    </a>
+                </div>
+
+                <div class="features">
+                    <h3>مميزات الشركة</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <h4>أقل إيداع</h4>
+                            <p>10$ خلال 30 ثانية</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <h4>أقل سحب</h4>
+                            <p>10$ خلال 30 ثانية</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-percentage"></i>
+                            <h4>عمولة قليلة جداً</h4>
+                            <p>أفضل العمولات في السوق</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>اسبريد</h4>
+                            <p>0.3~1.2</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>رافعة مالية</h4>
+                            <p>1:500</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>تداول آمن</h4>
+                            <p>على جميع أزواج الفوريكس والمعادن والنفط والمؤشرات والعملات المشفرة</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h4>أنواع الحسابات</h4>
+                            <p>ميتا تريدر 5 حقيقي وبدون عمولة وكريبتو وحساب IB ويدعم الحسابات المدارة PAMM</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>انزلاق منخفض</h4>
+                            <p>تنفيذ فوري للصفقات</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-star"></i>
+                            <h4>تقييم ممتاز</h4>
+                            <p>على مواقع Trust Pilot & MyFXBook & WikiFX & Forex Peace Army</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-lock"></i>
+                            <h4>أمان عالي</h4>
+                            <p>بسبب المصادقة الثنائية 2FA</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-passport"></i>
+                            <h4>توثيق سهل</h4>
+                            <p>من سورية أو أي دولة أخرى</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-book"></i>
+                            <h4>نموذج A Book</h4>
+                            <p>من أفضل مزودي السيولة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spread-info">
+                    <h3>اطلع على الاسبريد المتوسط اليومي</h3>
+                    <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-chart-bar"></i> عرض الاسبريد
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الثاني: تقييمات الشركة -->
+        <section id="section2" class="section">
+            <div class="container">
+                <h2 class="section-title">تقييمات الشركة</h2>
+                <div class="ratings-grid">
+                    <div class="rating-card">
+                        <img src="https://cdn.trustpilot.net/brand-assets/1.0.0/logo-white-bg.svg" alt="Trust Pilot">
+                        <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+                        </a>
+                    </div>
+                    <div class="rating-card">
+                        <div class="rating-logo">WikiFX</div>
+                        <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+                        </a>
+                    </div>
+                    <div class="rating-card">
+                        <div class="rating-logo">MyFXBook</div>
+                        <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+                        </a>
+                    </div>
+                    <div class="rating-card">
+                        <div class="rating-logo">Forex Peace Army</div>
+                        <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
+        <section id="section3" class="section">
+            <div class="container">
+                <h2 class="section-title">تطبيقات يجب تحميلها للبدء بالتداول</h2>
+                <div class="apps-grid">
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>منصة ميتا تريدر 5</h3>
+                        <p>المنصة الموثوقة الأفضل في مجال التداول في جميع الأسواق</p>
+                        <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-app" target="_blank">
+                            <i class="fab fa-google-play"></i> تحميل التطبيق
+                        </a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>المحفظة الإلكترونية</h3>
+                        <p>محفظة إلكترونية آمنة لإدارة أموالك</p>
+                        <a href="https://cwallet.com/referral/DvY6dZtS" class="btn btn-app" target="_blank">
+                            <i class="fas fa-download"></i> تحميل التطبيق
+                        </a>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>تطبيق المصادقة الثنائية</h3>
+                        <p>يلزم من أجل توثيق الحساب وتوثيق عمليات السحب والإيداع</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn btn-app" target="_blank">
+                            <i class="fab fa-google-play"></i> تحميل التطبيق
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الرابع: القسم التعليمي -->
+        <section id="section4" class="section">
+            <div class="container">
+                <h2 class="section-title">القسم التعليمي</h2>
+                <div class="tutorial-card">
+                    <h3>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الخامس: قنوات مهمة على تلجرام -->
+        <section id="section5" class="section">
+            <div class="container">
+                <h2 class="section-title">قنوات مهمة على تلجرام</h2>
+                <div class="telegram-channels">
+                    <div class="channel-card main-channel">
+                        <i class="fab fa-telegram"></i>
+                        <h3>قناتنا</h3>
+                        <a href="https://t.me/tradewithalimahmoud" class="btn btn-telegram" target="_blank">
+                            الانضمام للقناة
+                        </a>
+                    </div>
                     
-                    // تأثير النقر
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                        if(link) window.open(link, '_blank');
-                    }, 200);
+                    <h3 class="signals-title">قنوات الإشارات (للتعلم وليس لنسخ الإشارات)</h3>
+                    <div class="signals-grid">
+                        <div class="channel-card">
+                            <a href="https://t.me/FX_IRI" target="_blank">
+                                <i class="fab fa-telegram"></i> FX_IRI
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/prosignalsfxx" target="_blank">
+                                <i class="fab fa-telegram"></i> Pro Signals FX
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/top_tradingsignals" target="_blank">
+                                <i class="fab fa-telegram"></i> Top Trading Signals
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/signalsfc" target="_blank">
+                                <i class="fab fa-telegram"></i> Signals FC
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/elitetrading_signals" target="_blank">
+                                <i class="fab fa-telegram"></i> Elite Trading Signals
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/free_signals" target="_blank">
+                                <i class="fab fa-telegram"></i> Free Signals
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/greysuitcommunity" target="_blank">
+                                <i class="fab fa-telegram"></i> Grey Suit Community
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم السادس: القسم التعليمي الإضافي -->
+        <section id="section6" class="section">
+            <div class="container">
+                <h2 class="section-title">القسم التعليمي الإضافي</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>كورس كامل لتعلم التداول</h3>
+                        <p>مع أشهر ملياردير عبقري التداول باتك</p>
+                        <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn btn-course" target="_blank">
+                            مشاهدة الكورس
+                        </a>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>قناة أخرى على يوتيوب</h3>
+                        <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-course" target="_blank">
+                            زيارة القناة
+                        </a>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>كورس آخر على انستغرام</h3>
+                        <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="btn btn-course" target="_blank">
+                            مشاهدة الكورس
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم السابع: وسائل التواصل -->
+        <section id="section7" class="section">
+            <div class="container">
+                <h2 class="section-title">تواصل معنا</h2>
+                <div class="contact-info">
+                    <p>للتواصل مع علي محمود:</p>
+                    <p class="contact-phone">
+                        <i class="fas fa-phone"></i> +963934598967
+                    </p>
+                    <p class="contact-email">
+                        <i class="fas fa-envelope"></i> alimahmoud001a@gmail.com
+                    </p>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/alimahmoud001" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/alimahmoud001a?igsh=YzljYTk1ODg3Zg==" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/en_alimahmoud" target="_blank" class="social-icon">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/Alimahmoud001" target="_blank" class="social-icon">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- القسم السفلي (الفوتر) -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- سكريبت جافاسكريبت -->
+    <script>
+        // تنفيذ الكود عند اكتمال تحميل المستند
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثير الظهور التدريجي للأقسام
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+
+            // إضافة تأثير النبض لزر التسجيل
+            const registerBtn = document.querySelector('.register-card .btn-primary');
+            if (registerBtn) {
+                registerBtn.classList.add('pulse');
+            }
+
+            // التعامل مع قائمة التنقل المتحركة
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+                });
+            }
+
+            // إضافة تأثير التمرير السلس للروابط
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // التمرير إلى العنصر المستهدف مع تعويض ارتفاع الهيدر
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
+                        if (window.innerWidth < 992) {
+                            mainNav.style.display = 'none';
+                        }
+                    }
                 });
             });
+
+            // تحسين تجربة المستخدم على الأجهزة المحمولة
+            function handleResponsiveLayout() {
+                if (window.innerWidth < 992) {
+                    mainNav.style.display = 'none';
+                } else {
+                    mainNav.style.display = 'block';
+                }
+            }
+
+            // تنفيذ عند تحميل الصفحة وتغيير حجم النافذة
+            handleResponsiveLayout();
+            window.addEventListener('resize', handleResponsiveLayout);
+
+            // إضافة تأثيرات حركية للبطاقات عند التمرير
+            const cards = document.querySelectorAll('.feature-card, .rating-card, .app-card, .channel-card, .course-card');
             
-            // تأثيرات الظهور التدريجي للبطاقات
-            const animateCards = () => {
-                const cards = document.querySelectorAll('.section, .social-card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                        
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    }, index * 150);
+            // التحقق مما إذا كان العنصر مرئياً في نافذة العرض
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // معالجة تأثيرات التمرير
+            function handleScroll() {
+                cards.forEach(card => {
+                    if (isElementInViewport(card)) {
+                        card.classList.add('fade-in');
+                    }
                 });
-            };
+            }
             
-            setTimeout(animateCards, 500);
+            // تنفيذ عند التمرير
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
+            
+            // إضافة تأثير تفاعلي لأيقونات وسائل التواصل الاجتماعي
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.1)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
         });
     </script>
 </body>
 </html>
+
