@@ -1776,4 +1776,462 @@
 </body>
 </html>
 
+<!-- انسخ هذا الكود وضعه قبل إغلاق </body> في صفحة موقعك -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
+    /* زر فتح الدردشة */
+    .chat-toggle-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(to right, #1E90FF, #00BFFF);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        transition: all 0.3s ease;
+    }
+
+    .chat-toggle-btn:hover {
+        transform: scale(1.1) rotate(10deg);
+    }
+
+    .chat-toggle-btn i {
+        font-size: 24px;
+    }
+
+    /* نافذة الدردشة */
+    .chat-container {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 350px;
+        max-height: 80vh;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .chat-container.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* رأس نافذة الدردشة */
+    .chat-header {
+        background: linear-gradient(to right, #1E90FF, #00BFFF);
+        color: white;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-header h2 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .close-btn:hover {
+        transform: rotate(90deg);
+    }
+
+    /* منطقة الرسائل */
+    .chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background: #F5F7FA;
+        max-height: 250px;
+        scroll-behavior: smooth;
+    }
+
+    .message {
+        max-width: 80%;
+        padding: 10px 12px;
+        border-radius: 12px;
+        line-height: 1.5;
+        font-size: 14px;
+        margin-bottom: 10px;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message.bot {
+        background: #E6F0FA;
+        color: #333;
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+    }
+
+    .message.user {
+        background: #1E90FF;
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+    }
+
+    .message-info {
+        font-size: 10px;
+        margin-top: 5px;
+        opacity: 0.7;
+    }
+
+    /* منطقة الإدخال */
+    .chat-input {
+        padding: 15px;
+        border-top: 1px solid #E0E0E0;
+        background: white;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #D0D7DE;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #1E90FF;
+        box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
+    }
+
+    button {
+        background: linear-gradient(to right, #1E90FF, #00BFFF);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+    }
+
+    /* مفتاح التواجد */
+    .toggle-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .toggle-label {
+        font-weight: 500;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .toggle {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+    }
+
+    .toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 24px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+    input:checked + .slider {
+        background: linear-gradient(to right, #1E90FF, #00BFFF);
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+    /* الإخطارات */
+    .notification {
+        position: fixed;
+        bottom: 170px;
+        right: 30px;
+        padding: 10px 15px;
+        background: #1E90FF;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: translateX(120%);
+        transition: transform 0.4s ease;
+        z-index: 1000;
+        max-width: 300px;
+        font-size: 14px;
+    }
+
+    .notification.show {
+        transform: translateX(0);
+    }
+
+    .notification.error {
+        background: #FF4D4D;
+    }
+
+    /* التصميم للشاشات الصغيرة */
+    @media (max-width: 500px) {
+        .chat-container {
+            width: 90%;
+            right: 5%;
+            bottom: 80px;
+        }
+
+        .chat-toggle-btn {
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .notification {
+            right: 5%;
+            bottom: 150px;
+        }
+    }
+</style>
+
+<!-- زر فتح الدردشة -->
+<div class="chat-toggle-btn" id="chatToggle">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<!-- نافذة الدردشة -->
+<div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+        <h2>دردشة العملاء</h2>
+        <button class="close-btn" id="closeBtn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+        <div class="message bot">
+            مرحبًا! يرجى إدخال اسمك وبريدك الإلكتروني للتواصل معنا.
+            <div class="message-info">النظام • الآن</div>
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <div class="input-group">
+            <input type="text" id="nameInput" placeholder="الاسم والكنية" required>
+            <input type="email" id="emailInput" placeholder="بريدك الإلكتروني" required>
+            <button id="sendButton">
+                <i class="fas fa-paper-plane"></i>
+                إرسال
+            </button>
+        </div>
+
+        <div class="toggle-container">
+            <span class="toggle-label">حالة المشرف:</span>
+            <label class="toggle">
+                <input type="checkbox" id="onlineToggle" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<!-- الإخطارات -->
+<div class="notification" id="notification">تم إرسال بياناتك بنجاح!</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatToggle = document.getElementById('chatToggle');
+        const chatContainer = document.getElementById('chatContainer');
+        const closeBtn = document.getElementById('closeBtn');
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatMessages = document.getElementById('chatMessages');
+        const onlineToggle = document.getElementById('onlineToggle');
+        const notification = document.getElementById('notification');
+
+        // فتح وإغلاق الدردشة
+        chatToggle.addEventListener('click', () => {
+            chatContainer.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+        });
+
+        // تحويل حالة التواجد
+        onlineToggle.addEventListener('change', () => {
+            if (onlineToggle.checked) {
+                showNotification('حالة المشرف: متواجد الآن');
+            } else {
+                showNotification('حالة المشرف: غير متواجد حالياً', 'error');
+            }
+        });
+
+        // إرسال البيانات
+        sendButton.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+
+            if (name === '') {
+                showNotification('يرجى إدخال الاسم والكنية', 'error');
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                showNotification('يرجى إدخال بريد إلكتروني صحيح', 'error');
+                return;
+            }
+
+            // محاكاة إرسال البيانات إلى بريد المشرف
+            sendToAdminEmail(name, email);
+
+            // إضافة رسالة المستخدم
+            addUserMessage(name, email);
+
+            // رد تلقائي بناءً على حالة التواجد
+            setTimeout(() => {
+                if (onlineToggle.checked) {
+                    addBotMessage('شكرًا لتواصلك! سأرد عليك الآن.');
+                } else {
+                    addBotMessage('عملاؤنا غير متوفرين هذه اللحظة، سيتم الرد خلال دقائق قليلة، نرجو الانتظار.');
+                }
+            }, 1000);
+
+            // مسح الحقول
+            nameInput.value = '';
+            emailInput.value = '';
+        });
+
+        // إرسال بالضغط على Enter
+        [nameInput, emailInput].forEach(input => {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendButton.click();
+                }
+            });
+        });
+
+        // وظائف مساعدة
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function addUserMessage(name, email) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', 'user');
+            messageDiv.innerHTML = `الاسم: ${name}<br>البريد: ${email}<div class="message-info">أنت • ${getCurrentTime()}</div>`;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function addBotMessage(text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', 'bot');
+            messageDiv.innerHTML = `${text}<div class="message-info">المشرف • ${getCurrentTime()}</div>`;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTo({
+                top: chatMessages.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            return `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+        }
+
+        function sendToAdminEmail(name, email) {
+            // محاكاة إرسال البريد الإلكتروني (يظهر في وحدة التحكم)
+            console.log('إرسال إخطار بالبريد الإلكتروني إلى المشرف:');
+            console.log(`الاسم: ${name}`);
+            console.log(`البريد الإلكتروني: ${email}`);
+            showNotification('تم إرسال بياناتك إلى المشرف!');
+        }
+
+        function showNotification(text, type = 'success') {
+            notification.textContent = text;
+            notification.className = `notification show ${type === 'error' ? 'error' : ''}`;
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    });
+</script>
