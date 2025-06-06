@@ -1165,7 +1165,6 @@
             <div class="container">
                 <h2 class="section-title">تواصل معنا</h2>
                 <div class="contact-info">
-                    </p>
                 </div>
                 <div class="social-icons">
                     <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
