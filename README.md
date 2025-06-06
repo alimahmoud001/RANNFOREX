@@ -1775,3 +1775,138 @@
     </script>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>دردشة العملاء</title>
+<style>
+/* زر الدردشة */
+#chat-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+#chat-btn:hover {
+  background-color: #0056b3;
+}
+
+/* نافذة الدردشة */
+#chat-window {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  width: 300px;
+  background-color: #ffffff;
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+#chat-header {
+  background-color: #007BFF;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  font-size: 18px;
+}
+
+#chat-body {
+  padding: 15px;
+}
+
+#chat-body input[type="text"],
+#chat-body input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#chat-body button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#chat-body button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<!-- زر فتح الدردشة -->
+<button id="chat-btn">💬 دردش معنا</button>
+
+<!-- نافذة الدردشة -->
+<div id="chat-window">
+  <div id="chat-header">الدردشة مع العملاء</div>
+  <div id="chat-body">
+    <input type="text" id="name" placeholder="الاسم والكنية" required>
+    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+    <button onclick="sendMessage()">إرسال</button>
+    <div id="response" style="margin-top:10px; color:#007BFF;"></div>
+  </div>
+</div>
+
+<script>
+  // فتح وإغلاق نافذة الدردشة
+  document.getElementById('chat-btn').onclick = function() {
+    let chatWindow = document.getElementById('chat-window');
+    chatWindow.style.display = (chatWindow.style.display === 'none' || chatWindow.style.display === '') ? 'block' : 'none';
+  };
+
+  // إرسال البيانات عبر AJAX إلى PHP
+  function sendMessage() {
+    let name = document.getElementById('name').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let responseDiv = document.getElementById('response');
+
+    if (name === '' || email === '') {
+      responseDiv.textContent = 'يرجى ملء جميع الحقول.';
+      return;
+    }
+
+    let formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+
+    fetch('chat_handler.php', { // اسم ملف PHP لمعالجة البيانات
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      responseDiv.textContent = data;
+    })
+    .catch(error => {
+      console.error(error);
+      responseDiv.textContent = 'حدث خطأ! يرجى المحاولة لاحقًا.';
+    });
+  }
+</script>
+
+</body>
+</html>
