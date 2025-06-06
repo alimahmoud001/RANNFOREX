@@ -1026,6 +1026,15 @@
                             مشاهدة الكورس
                         </a>
                     </div>
+                   <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>KAMEL M5</h3>
+                        <a href="https://youtube.com/@easytradingeasy?si=4boL9gNyUzfs1S8U" class="btn btn-course" target="_blank">
+                            مشاهدة الكورس
+                        </a>
+                    </div> 
                 </div>
             </div>
         </section>
