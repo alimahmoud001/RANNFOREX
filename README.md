@@ -1035,7 +1035,6 @@
             <div class="container">
                 <h2 class="section-title">تواصل معنا</h2>
                 <div class="contact-info">
-                    <p>للتواصل مع علي محمود:</p>
                     <p class="contact-phone">
                         <i class="fas fa-phone"></i> +963934598967
                     </p>
