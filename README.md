@@ -1291,6 +1291,492 @@
         });
     </script>
 </body>
-<script type="text/javascript">function add_chatinline(){var hccid=61422224;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
-add_chatinline();</script>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دردشة مباشرة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4776E6, #8E54E9);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            color: #fff;
+        }
+        
+        .logo h1 {
+            font-size: 26px;
+            font-weight: 700;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4CAF50;
+        }
+        
+        .status.offline .status-dot {
+            background: #f44336;
+        }
+        
+        .chat-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+        
+        .chat-header {
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .chat-header i {
+            font-size: 24px;
+            color: #4776E6;
+        }
+        
+        .chat-header h2 {
+            font-size: 22px;
+            color: #333;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px 30px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #f9fbff;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 15px;
+            border-radius: 15px;
+            position: relative;
+            line-height: 1.6;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.bot {
+            background: #e3eeff;
+            border-bottom-left-radius: 5px;
+            align-self: flex-start;
+            color: #333;
+        }
+        
+        .message.user {
+            background: #4776E6;
+            color: white;
+            border-bottom-right-radius: 5px;
+            align-self: flex-end;
+        }
+        
+        .message-info {
+            font-size: 12px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        
+        .chat-input {
+            padding: 20px 30px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            resize: none;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4776E6;
+            box-shadow: 0 0 0 2px rgba(71, 118, 230, 0.2);
+        }
+        
+        button {
+            background: linear-gradient(to right, #4776E6, #8E54E9);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(71, 118, 230, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .toggle-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background: linear-gradient(to right, #4776E6, #8E54E9);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f9fbff;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateX(120%);
+            transition: transform 0.4s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.error {
+            background: #f44336;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                height: 95vh;
+                max-width: 95%;
+            }
+            
+            header {
+                padding: 15px 20px;
+            }
+            
+            .chat-header, .chat-input {
+                padding: 15px 20px;
+            }
+            
+            .chat-messages {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-comment-dots"></i>
+                <h1>دردشة مباشرة</h1>
+            </div>
+            <div class="status" id="status">
+                <div class="status-dot"></div>
+                <span>متواجد الآن</span>
+            </div>
+        </header>
+        
+        <div class="chat-section">
+            <div class="chat-header">
+                <i class="fas fa-user-circle"></i>
+                <h2>محادثة مباشرة</h2>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    أهلاً! يرجى إدخال بريدك الإلكتروني ورسالتك.
+                    <div class="message-info">النظام • الآن</div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <div class="input-group">
+                    <input type="email" id="emailInput" placeholder="بريدك الإلكتروني" required>
+                    <textarea id="messageInput" placeholder="اكتب رسالتك هنا..." rows="3" required></textarea>
+                    <button id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                        إرسال الرسالة
+                    </button>
+                </div>
+                
+                <div class="toggle-container">
+                    <span class="toggle-label">حالة المشرف:</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="onlineToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>سيتم إرسال رسالة إلى بريدي الإلكتروني عند عدم التواجد</p>
+        </footer>
+    </div>
+    
+    <div class="notification" id="notification">تم إرسال رسالتك بنجاح!</div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('emailInput');
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const chatMessages = document.getElementById('chatMessages');
+            const onlineToggle = document.getElementById('onlineToggle');
+            const statusElement = document.getElementById('status');
+            const notification = document.getElementById('notification');
+            
+            // تحويل التواجد
+            onlineToggle.addEventListener('change', function() {
+                if(this.checked) {
+                    statusElement.classList.remove('offline');
+                    showNotification("أنت الآن متواجد للرد على الرسائل");
+                } else {
+                    statusElement.classList.add('offline');
+                    showNotification("أنت غير متواجد حالياً، سيتم إرسال الرسائل إلى بريدك", "error");
+                }
+            });
+            
+            // إرسال الرسالة
+            sendButton.addEventListener('click', function() {
+                const email = emailInput.value.trim();
+                const message = messageInput.value.trim();
+                
+                if(!validateEmail(email)) {
+                    showNotification("يرجى إدخال بريد إلكتروني صحيح", "error");
+                    return;
+                }
+                
+                if(message === '') {
+                    showNotification("يرجى إدخال رسالة", "error");
+                    return;
+                }
+                
+                // إضافة رسالة المستخدم
+                addUserMessage(message, email);
+                
+                // إضافة رد تلقائي
+                setTimeout(() => {
+                    if(onlineToggle.checked) {
+                        addBotMessage("شكراً على رسالتك! سأقوم بالرد عليك الآن.");
+                    } else {
+                        addBotMessage("شكراً على رسالتك! حالياً أنا غير متواجد، لكنني سأرد عليك على بريدك الإلكتروني بمجرد عودتي.");
+                        
+                        // محاكاة إرسال البريد الإلكتروني
+                        simulateEmailNotification(email, message);
+                    }
+                }, 1000);
+                
+                // مسح الحقول
+                emailInput.value = '';
+                messageInput.value = '';
+            });
+            
+            // إرسال بالضغط على Enter
+            messageInput.addEventListener('keypress', function(e) {
+                if(e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendButton.click();
+                }
+            });
+            
+            // وظائف مساعدة
+            function validateEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+            
+            function addUserMessage(text, email) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'user');
+                messageDiv.innerHTML = `${text}<div class="message-info">أنت • ${getCurrentTime()}</div>`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function addBotMessage(text) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'bot');
+                messageDiv.innerHTML = `${text}<div class="message-info">المشرف • ${getCurrentTime()}</div>`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function getCurrentTime() {
+                const now = new Date();
+                return `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+            }
+            
+            function simulateEmailNotification(email, message) {
+                // في تطبيق حقيقي، هنا سيتم إرسال طلب AJAX إلى الخادم
+                console.log("إرسال بريد إلكتروني إلى المشرف:");
+                console.log(`من: ${email}`);
+                console.log(`الرسالة: ${message}`);
+                
+                // عرض تنبيه للمستخدم
+                setTimeout(() => {
+                    showNotification(`تم إرسال إشعار إلى بريد المشرف`);
+                }, 1500);
+            }
+            
+            function showNotification(text, type = "success") {
+                notification.textContent = text;
+                notification.className = "notification show";
+                if (type === "error") {
+                    notification.classList.add("error");
+                } else {
+                    notification.classList.remove("error");
+                }
+                
+                setTimeout(() => {
+                    notification.classList.remove("show");
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
 </html>
