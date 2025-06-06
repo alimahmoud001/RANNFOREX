@@ -940,64 +940,6 @@
         </section>
 
 
-<!-- قسم خطوات الإيداع -->
-<section id="deposit-section" class="section">
-    <div class="container">
-        <h2 class="section-title">خطوات الإيداع</h2>
-        <div class="steps-container">
-            <!-- خطوة 1 -->
-            <div class="step">
-                <div class="step-number">1️⃣</div>
-                <div class="step-content">
-                    <h3>Deposit</h3>
-                    <p>نضغط على الثلاث خطوط في موقع rannforex أعلى يمين الشاشة</p>
-                    <p>Select deposit method: <strong>crypto</strong></p>
-                    <p>Select trading account: <strong>اختر حساب التداول</strong></p>
-                    <p>Continue</p>
-                </div>
-            </div>
-            <!-- خطوة 2 -->
-            <div class="step">
-                <div class="step-number">2️⃣</div>
-                <div class="step-content">
-                    <h3>Transfer details</h3>
-                    <p>أدخل المبلغ في الفراغ الأول</p>
-                    <p>اختر <strong>usd</strong></p>
-                    <p>Continue</p>
-                </div>
-            </div>
-            <!-- خطوة 3 -->
-            <div class="step">
-                <div class="step-number">3️⃣</div>
-                <div class="step-content">
-                    <h3>2FA code</h3>
-                    <p>نذهب إلى تطبيق <strong>Google authenticator</strong></p>
-                    <p>نقوم بأخذ الكود الذي ولده من أجل حساب rannforex وإدخاله في الفراغ الموجود</p>
-                    <p>Continue</p>
-                </div>
-            </div>
-            <!-- خطوة 4 -->
-            <div class="step">
-                <div class="step-number">4️⃣</div>
-                <div class="step-content">
-                    <h3>Tether (USDT)</h3>
-                    <p>نسخ العنوان: <strong>USDT (BEP20)</strong></p>
-                </div>
-            </div>
-            <!-- خطوة 5 -->
-            <div class="step">
-                <div class="step-number">5️⃣</div>
-                <div class="step-content">
-                    <h3>Crypto Wallet (CWallet)</h3>
-                    <p>Send USDT via BEP20 network</p>
-                    <p>لصق العنوان (من rannforex)</p>
-                    <p>Send</p>
-                    <p><strong>تم الأمر</strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
         <!-- القسم الخامس: قنوات مهمة على تلجرام -->
         <section id="section5" class="section">
             <div class="container">
