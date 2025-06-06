@@ -483,7 +483,7 @@
         }
 
         .main-channel h3 {
-            color: white;
+            color: blue;
         }
 
         /* عنوان قنوات الإشارات */
