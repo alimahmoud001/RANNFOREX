@@ -1039,7 +1039,6 @@
                               <div class="course-icon">
                     </div>
                 </div>
-            </div>
          </div>
         </section>
 
