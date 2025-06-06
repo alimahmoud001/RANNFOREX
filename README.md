@@ -1777,6 +1777,40 @@
 </html>
 
 
+const express = require('express');
+const nodemailer = require('nodemailer');
+const app = express();
+
+app.use(express.json());
+
+app.post('/send-email', (req, res) => {
+    const { name, email } = req.body;
+
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'alimahmoud001a@gmail.com',
+            pass: 'Venusurme001#'
+        }
+    });
+
+    let mailOptions = {
+        from: 'your-email@gmail.com',
+        to: 'admin-email@yourdomain.com',
+        subject: 'رسالة جديدة من عميل',
+        text: `الاسم: ${name}\nالبريد الإلكتروني: ${email}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).send('خطأ في إرسال البريد');
+        }
+        res.status(200).send('تم إرسال البريد بنجاح');
+    });
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
