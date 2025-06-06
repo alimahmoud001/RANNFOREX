@@ -1028,14 +1028,18 @@
                     </div>
                               <div class="course-icon">
                             <i class="fab fa-youtube"></i>
-                        
+                        </div>
                         <h3>Eazy Trading</h3>
                         <a href="https:/https://youtube.com/@easytradingeasy?si=4boL9gNyUzfs1S8U" class="btn btn-course" target="_blank">
                             مشاهدة الكورس
                         </a>
                     </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-youtube"></i>
                 </div>
             </div>
+        </  </div>
         </section>
 
         <!-- القسم السابع: وسائل التواصل -->
