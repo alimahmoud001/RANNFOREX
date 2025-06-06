@@ -910,6 +910,11 @@
                         <p>يلزم من أجل توثيق الحساب وتوثيق عمليات السحب والإيداع</p>
                         <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn btn-app" target="_blank">
                             <i class="fab fa-google-play"></i> تحميل التطبيق
+                       </div>
+                <h3>منصة TradingView</h3>
+                <p>منصة متقدمة للتحليل الفني ومتابعة الأسواق المالية العالمية</p>
+                <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn btn-app" target="_blank">
+                    <i class="fab fa-google-play"></i> تحميل التطبيق
                         </a>
                     </div>
                 </div>
