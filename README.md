@@ -1003,7 +1003,7 @@
                         <div class="course-icon">
                             <i class="fab fa-youtube"></i>
                         </div>
-                        <h3>كورس كامل لتعلم التداول</h3>
+                        <h3>TRADE WITH PATT</h3>
                         <p>مع أشهر ملياردير عبقري التداول باتك</p>
                         <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn btn-course" target="_blank">
                             مشاهدة الكورس
@@ -1013,7 +1013,7 @@
                         <div class="course-icon">
                             <i class="fab fa-youtube"></i>
                         </div>
-                        <h3>قناة أخرى على يوتيوب</h3>
+                        <h3>SMART RISK</h3>
                         <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-course" target="_blank">
                             زيارة القناة
                         </a>
@@ -1022,7 +1022,7 @@
                         <div class="course-icon">
                             <i class="fab fa-instagram"></i>
                         </div>
-                        <h3>كورس آخر على انستغرام</h3>
+                        <h3>KAMEL M5</h3>
                         <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="btn btn-course" target="_blank">
                             مشاهدة الكورس
                         </a>
