@@ -743,7 +743,7 @@
                     <li><a href="#section1">الرئيسية</a></li>
                     <li><a href="#section2">التقييمات</a></li>
                     <li><a href="#section3">التطبيقات</a></li>
-                    <li><a href="#section4">التعليم</a></li>
+                    <li><a href="#section4">المصادقة</a></li>
                     <li><a href="#section5">قنوات تلجرام</a></li>
                     <li><a href="#section6">الكورسات</a></li>
                     <li><a href="#section7">تواصل معنا</a></li>
