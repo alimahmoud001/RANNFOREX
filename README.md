@@ -746,7 +746,7 @@
                     <li><a href="#section4">المصادقة</a></li>
                     <li><a href="#section5">قنوات تلجرام</a></li>
                     <li><a href="#section6">الكورسات</a></li>
-                    <li><a href="#section7">تواصل معنا</a></li>
+                    <li><a href="#section7">تواصل</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
