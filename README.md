@@ -850,7 +850,7 @@
                 <h2 class="section-title">تقييمات الشركة</h2>
                 <div class="ratings-grid">
                     <div class="rating-card">
-                        <img src="https://cdn.trustpilot.net/brand-assets/1.0.0/logo-white-bg.svg" alt="Trust Pilot"></div>
+                        <div class="rating-logo">Trustpilot</div>
                         <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
                             <i class="fas fa-external-link-alt"></i> عرض التقييمات
                         </a>
