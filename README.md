@@ -937,7 +937,62 @@
                     </div>
                 </div>
             </div>
+
+
+/* تنسيقات قسم خطوات الإيداع */
+#deposit-section {
+    background-color: #f8f9fa; /* لون خلفية فاتح */
+    padding: 60px 0;
+}
+
+#deposit-section .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1a56db; /* لون أزرق جذاب */
+}
+
+.steps-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.step-number {
+    font-size: 24px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: #1a56db;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    margin: 5px 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.step-content strong {
+    color: #1a56db;
+}
+
+
+            
         </section>
+
+
 
         <!-- القسم الخامس: قنوات مهمة على تلجرام -->
         <section id="section5" class="section">
