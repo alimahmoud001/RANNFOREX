@@ -929,7 +929,7 @@
         <!-- القسم الرابع: 2FA -->
         <section id="section4" class="section">
             <div class="container">
-                <h2 class="section-title">القسم التعليمي</h2>
+                <h2 class="section-title">2FA المصادقة</h2>
                 <div class="tutorial-card">
                     <h3>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</h3>
                     <div class="video-container">
@@ -994,10 +994,10 @@
             </div>
         </section>
 
-        <!-- القسم السادس: القسم التعليمي الإضافي -->
+        <!-- القسم السادس: القسم التعليمي -->
         <section id="section6" class="section">
             <div class="container">
-                <h2 class="section-title">القسم التعليمي الإضافي</h2>
+                <h2 class="section-title">القسم التعليمي </h2>
                 <div class="courses-grid">
                     <div class="course-card">
                         <div class="course-icon">
@@ -1014,7 +1014,7 @@
                         </div>
                         <h3>SMART RISK</h3>
                         <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-course" target="_blank">
-                            زيارة القناة
+                            مشاهدة الكورس
                         </a>
                     </div>
                     <div class="course-card">
