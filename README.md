@@ -1008,6 +1008,16 @@
                             مشاهدة الكورس
                         </a>
                     </div>
+
+                    <div class="course-card">
+    <div class="course-icon">
+        <i class="fab fa-youtube"></i>
+    </div>
+    <h3>Easy Trade</h3>
+    <a href="https://youtube.com/@easytradingeasy?si=9sITj4F_D__TAfb5" class="btn btn-course" target="_blank">
+        مشاهدة الكورس
+    </a>
+</div>
                     <div class="course-card">
                         <div class="course-icon">
                             <i class="fab fa-youtube"></i>
