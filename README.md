@@ -760,7 +760,7 @@
         <!-- القسم الأول: معلومات شركة الوساطة المالية -->
         <section id="section1" class="section">
             <div class="container">
-                <h2 class="section-title">شركة الوساطة المالية</h2>
+                <h2 class="section-title" >لقد قمت بإضافة كل شيء تحتاجه في مجال التداول  إلى هذا الموقع لن تحتاج إلى شيء آخر </h2>
                 <div class="register-card">
                     <h3>سجل الآن في Rannforex</h3>
                     <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
