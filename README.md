@@ -926,7 +926,7 @@
             </div>
         </section>
 
-        <!-- القسم الرابع: القسم التعليمي -->
+        <!-- القسم الرابع: 2FA -->
         <section id="section4" class="section">
             <div class="container">
                 <h2 class="section-title">القسم التعليمي</h2>
@@ -1004,7 +1004,6 @@
                             <i class="fab fa-youtube"></i>
                         </div>
                         <h3>TRADE WITH PATT</h3>
-                        <p>مع أشهر ملياردير عبقري التداول باتك</p>
                         <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn btn-course" target="_blank">
                             مشاهدة الكورس
                         </a>
