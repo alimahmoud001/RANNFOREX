@@ -770,6 +770,9 @@
                 </div>
 
                 <div class="features">
+                    
+                    
+                    
                     <h3>مميزات الشركة</h3>
                     <div class="features-grid">
                         <div class="feature-card">
@@ -843,6 +846,117 @@
                 </div>
             </div>
         </section>
+        
+        <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطوات الإيداع</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .accordion {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: right;
+            outline: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .accordion:hover {
+            background-color: #0056b3;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .panel p, .panel ol {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .panel ol {
+            padding-right: 20px;
+        }
+        .panel li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="accordion">خطوات الإيداع</button>
+    <div class="panel">
+        <ol>
+            <li><strong>الإيداع:</strong>
+                <ul>
+                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة.</li>
+                    <li>اختر <strong>Deposit</strong>.</li>
+                    <li>اختر طريقة الإيداع: <strong>Crypto</strong>.</li>
+                    <li>اختر حساب التداول.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>تفاصيل التحويل:</strong>
+                <ul>
+                    <li>أدخل المبلغ في الفراغ الأول.</li>
+                    <li>اختر <strong>USD</strong>.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>رمز التحقق (2FA):</strong>
+                <ul>
+                    <li>افتح تطبيق <strong>Google Authenticator</strong>.</li>
+                    <li>انسخ الكود المولد لحساب RannForex.</li>
+                    <li>أدخل الكود في الفراغ المخصص.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong> اختر TetherUS - USDT:</strong>
+                <ul>
+                    <li>اختر <strong>BUSD-T-USD (USDT)</strong>.</li>
+                    <li>انسخ العنوان المقدم وهو عنوان bep20.</li>
+                </ul>
+            </li>
+            <li><strong>إرسال من Cwallet:</strong>
+                <ul>
+                    <li>اختر <strong>USDT</strong>.</li>
+                    <li>اختر شبكة <strong>BEP20</strong>.</li>
+                    <li>أدخل المبلغ بالدولار.</li>
+                    <li>الصق العنوان المنسوخ من RannForex.</li>
+                    <li>اضغط على <strong>Send</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>تم الإيداع بنجاح!</strong></li>
+        </ol>
+    </div>
+
+    <script>
+        const accordion = document.querySelector('.accordion');
+        const panel = document.querySelector('.panel');
+
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>
+        
 
         <!-- القسم الثاني: تقييمات الشركة -->
         <section id="section2" class="section">
@@ -1043,6 +1157,8 @@
          </div>
         </section>
 
+
+
         <!-- القسم السابع: وسائل التواصل -->
         <section id="section7" class="section">
             <div class="container">
@@ -1188,4 +1304,6 @@
     </script>
 </body>
 </html>
+
+
 
