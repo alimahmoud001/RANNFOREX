@@ -847,7 +847,6 @@
             </div>
         </section>
         
-        <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
