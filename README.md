@@ -736,7 +736,7 @@
         <div class="container">
             <div class="logo">
                 <h1>Rannforex</h1>
-                <p>ALI MAHMOUD</p>
+                <h1>ALI MAHMOUD</h1>
             </div>
             <nav class="main-nav">
                 <ul>
