@@ -473,7 +473,7 @@
         /* القناة الرئيسية */
         .main-channel {
             background-color: #0088cc;
-            color: white;
+            color: light blue;
             margin-bottom: 40px;
         }
 
