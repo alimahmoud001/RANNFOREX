@@ -736,6 +736,7 @@
         <div class="container">
             <div class="logo">
                 <h1>Rannforex</h1>
+                <p>ALI MAHMOUD</p>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -846,6 +847,7 @@
             </div>
         </section>
         
+        <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -1304,80 +1306,5 @@
         });
     </script>
 </body>
-</html>);
-            
-
-+++++++
-++++++++
-
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<title>نموذج دردشة بسيط</title>
-<style>
-  #chat-container {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 250px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    z-index: 9999;
-  }
-  #chat-container input[type="text"],
-  #chat-container input[type="email"] {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-  }
-  #chat-container button {
-    width: 100%;
-    padding: 5px;
-  }
-  #chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-</style>
-</head>
-<body>
-
-<!-- زر فتح الدردشة -->
-<button id="chat-button">دردشة</button>
-
-<!-- نافذة الدردشة -->
-<div id="chat-container">
-  <h4>أدخل معلوماتك:</h4>
-  <form id="chat-form" action="mailto:alimahmoud001a@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="الاسم" placeholder="اسمك" required>
-    <input type="email" name="البريد" placeholder="بريدك الإلكتروني" required>
-    <button type="submit">إرسال</button>
-  </form>
-</div>
-
-<script>
-  const chatButton = document.getElementById('chat-button');
-  const chatContainer = document.getElementById('chat-container');
-
-  chatButton.addEventListener('click', () => {
-    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-      chatContainer.style.display = 'block';
-    } else {
-      chatContainer.style.display = 'none';
-    }
-  });
-</script>
-
-</body>
 </html>
+
