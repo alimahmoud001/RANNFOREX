@@ -736,7 +736,7 @@
         <div class="container">
             <div class="logo">
                 <h1>Rannforex</h1>
-                <p>شركة الوساطة المالية الموثوقة</p>
+                <p>ALI MAHMOUD</p>
             </div>
             <nav class="main-nav">
                 <ul>
