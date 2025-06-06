@@ -1166,17 +1166,13 @@
                 <h2 class="section-title">تواصل معنا</h2>
                 <div class="contact-info">
                     <p class="contact-phone">
-                        <i class="fas fa-phone"></i> +963934598967
-                    </p>
-                    <p class="contact-email">
-                        <i class="fas fa-envelope"></i> alimahmoud001a@gmail.com
+                  
                     </p>
                 </div>
                 
                 <div class="social-icons">
               
-                   
-                    </a>
+                  
                     <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
                         <i class="fab fa-whatsapp"></i>
                     </a>
