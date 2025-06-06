@@ -936,64 +936,68 @@
                         <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-            </div>
-
-
-/* تنسيقات قسم خطوات الإيداع */
-#deposit-section {
-    background-color: #f8f9fa; /* لون خلفية فاتح */
-    padding: 60px 0;
-}
-
-#deposit-section .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #1a56db; /* لون أزرق جذاب */
-}
-
-.steps-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.step {
-    display: flex;
-    margin-bottom: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    align-items: flex-start;
-}
-
-.step-number {
-    font-size: 24px;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-
-.step-content h3 {
-    color: #1a56db;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.step-content p {
-    margin: 5px 0;
-    color: #333;
-    line-height: 1.6;
-}
-
-.step-content strong {
-    color: #1a56db;
-}
-
-
-            
+            </div>        
         </section>
 
 
-
+<!-- قسم خطوات الإيداع -->
+<section id="deposit-section" class="section">
+    <div class="container">
+        <h2 class="section-title">خطوات الإيداع</h2>
+        <div class="steps-container">
+            <!-- خطوة 1 -->
+            <div class="step">
+                <div class="step-number">1️⃣</div>
+                <div class="step-content">
+                    <h3>Deposit</h3>
+                    <p>نضغط على الثلاث خطوط في موقع rannforex أعلى يمين الشاشة</p>
+                    <p>Select deposit method: <strong>crypto</strong></p>
+                    <p>Select trading account: <strong>اختر حساب التداول</strong></p>
+                    <p>Continue</p>
+                </div>
+            </div>
+            <!-- خطوة 2 -->
+            <div class="step">
+                <div class="step-number">2️⃣</div>
+                <div class="step-content">
+                    <h3>Transfer details</h3>
+                    <p>أدخل المبلغ في الفراغ الأول</p>
+                    <p>اختر <strong>usd</strong></p>
+                    <p>Continue</p>
+                </div>
+            </div>
+            <!-- خطوة 3 -->
+            <div class="step">
+                <div class="step-number">3️⃣</div>
+                <div class="step-content">
+                    <h3>2FA code</h3>
+                    <p>نذهب إلى تطبيق <strong>Google authenticator</strong></p>
+                    <p>نقوم بأخذ الكود الذي ولده من أجل حساب rannforex وإدخاله في الفراغ الموجود</p>
+                    <p>Continue</p>
+                </div>
+            </div>
+            <!-- خطوة 4 -->
+            <div class="step">
+                <div class="step-number">4️⃣</div>
+                <div class="step-content">
+                    <h3>Tether (USDT)</h3>
+                    <p>نسخ العنوان: <strong>USDT (BEP20)</strong></p>
+                </div>
+            </div>
+            <!-- خطوة 5 -->
+            <div class="step">
+                <div class="step-number">5️⃣</div>
+                <div class="step-content">
+                    <h3>Crypto Wallet (CWallet)</h3>
+                    <p>Send USDT via BEP20 network</p>
+                    <p>لصق العنوان (من rannforex)</p>
+                    <p>Send</p>
+                    <p><strong>تم الأمر</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- القسم الخامس: قنوات مهمة على تلجرام -->
         <section id="section5" class="section">
             <div class="container">
