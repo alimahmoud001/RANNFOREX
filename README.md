@@ -1173,7 +1173,7 @@
                 </div>
             </div>
         </section>
-    </main>
+   
 
     <!-- القسم السفلي (الفوتر) -->
     <footer class="footer">
