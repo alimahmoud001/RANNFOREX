@@ -770,7 +770,13 @@
 
                 <div class="features">
                     
-                    
+                      <div class="channel-card main-channel">
+                        <i class="fab fa-telegram"></i>
+                        <h3>قناتنا</h3>
+                        <a href="https://t.me/tradewithalimahmoud" class="btn btn-telegram" target="_blank">
+                            الانضمام للقناة
+                        </a>
+                    </div>
                     
                     <h3>مميزات الشركة</h3>
                     <div class="features-grid">
@@ -1058,13 +1064,7 @@
             <div class="container">
                 <h2 class="section-title">قنوات مهمة على تلجرام</h2>
                 <div class="telegram-channels">
-                    <div class="channel-card main-channel">
-                        <i class="fab fa-telegram"></i>
-                        <h3>قناتنا</h3>
-                        <a href="https://t.me/tradewithalimahmoud" class="btn btn-telegram" target="_blank">
-                            الانضمام للقناة
-                        </a>
-                    </div>
+                  
                     
                     <h3 class="signals-title">قنوات الإشارات (للتعلم وليس لنسخ الإشارات)</h3>
                     <div class="signals-grid">
