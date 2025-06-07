@@ -1182,8 +1182,6 @@
             <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة</p>
         </div>
     </footer>
-    
-    
 
     <!-- سكريبت جافاسكريبت -->
     <script>
@@ -1300,5 +1298,4 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 <!--End of Tawk.to Script-->
-</html>
 
