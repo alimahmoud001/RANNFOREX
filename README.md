@@ -40,6 +40,7 @@
         html {
             scroll-behavior: smooth;
         }
+
         /* تنسيقات الجسم */
         body {
             font-family: 'Cairo', sans-serif;
@@ -48,7 +49,6 @@
             background-color: #f9f9f9;
             overflow-x: hidden;
         }
-        
 
         /* تنسيق الحاوية */
         .container {
@@ -731,7 +731,6 @@
     </style>
 </head>
 <body>
-   
     <!-- القسم العلوي (الهيدر) -->
     <header class="header">
         <div class="container">
@@ -1165,8 +1164,24 @@
             <div class="container">
                 <h2 class="section-title">تواصل معنا</h2>
                 <div class="contact-info">
+                    <p class="contact-phone">
+                        <i class="fas fa-phone"></i> +963934598967
+                    </p>
+                    <p class="contact-email">
+                        <i class="fas fa-envelope"></i> alimahmoud001a@gmail.com
+                    </p>
                 </div>
+                
                 <div class="social-icons">
+                    <a href="https://www.facebook.com/alimahmoud001" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/alimahmoud001a?igsh=YzljYTk1ODg3Zg==" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/en_alimahmoud" target="_blank" class="social-icon">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
                     <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
                         <i class="fab fa-whatsapp"></i>
                     </a>
@@ -1291,17 +1306,5 @@
         });
     </script>
 </body>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68435f9cfc9250190bba44a8/1it3iqvpl';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </html>
+
