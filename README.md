@@ -1168,8 +1168,7 @@
                     </p>
                 </div>
                 <div class="social-icons">
-                    </a>
-                    <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
+                                   <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                     <a href="https://t.me/Alimahmoud001" target="_blank" class="social-icon">
