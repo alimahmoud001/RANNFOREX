@@ -1,4 +1,3 @@
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -1305,7 +1304,8 @@
             });
         });
     </script>
-    
+<!--End of Tawk.to Script-->
+</body>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -1319,6 +1319,5 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-</body>
 </html>
 
