@@ -1163,23 +1163,11 @@
             <div class="container">
                 <h2 class="section-title">تواصل معنا</h2>
                 <div class="contact-info">
-                    <p class="contact-phone">
-                        <i class="fas fa-phone"></i> +963934598967
-                    </p>
                     <p class="contact-email">
                         <i class="fas fa-envelope"></i> alimahmoud001a@gmail.com
                     </p>
                 </div>
-                
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/alimahmoud001" target="_blank" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/alimahmoud001a?igsh=YzljYTk1ODg3Zg==" target="_blank" class="social-icon">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://x.com/en_alimahmoud" target="_blank" class="social-icon">
-                        <i class="fab fa-x-twitter"></i>
                     </a>
                     <a href="https://wa.me/qr/AFVVUP3Z46UYM1" target="_blank" class="social-icon">
                         <i class="fab fa-whatsapp"></i>
@@ -1188,7 +1176,6 @@
                         <i class="fab fa-telegram"></i>
                     </a>
                 </div>
-                
             </div>
         </section>
     </main>
