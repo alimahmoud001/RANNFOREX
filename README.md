@@ -1795,7 +1795,7 @@
 #telegram-float {
   position: fixed;
   right: 20px;
-  bottom: 100px;
+  bottom: 140px;
   background: linear-gradient(45deg, #0088cc, #00bfff);
   width: 55px;
   height: 55px;
