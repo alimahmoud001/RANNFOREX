@@ -1463,10 +1463,9 @@
         <header>
             <div class="logo">
                 <i class="fas fa-pen-nib"></i>
-                <h1>نظام إدارة المحتوى البسيط</h1>
+                <h1>أنشر تحليلا</h1>
             </div>
-            <p>أضف وحرر محتوى موقعك بسهولة بدون كتابة كود</p>
-        </header>
+           </header>
         
         <div class="content-manager">
             <div class="form-container">
