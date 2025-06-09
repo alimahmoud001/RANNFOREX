@@ -1781,269 +1781,6 @@
         });
     </script>
 
-    
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زر التواصل على Telegram</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 40px;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            color: #26a5e4;
-            margin: 30px 0 20px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
-        
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            color: #e0e0e0;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s, background 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(38, 165, 228, 0.15);
-        }
-        
-        .feature-card i {
-            font-size: 3.5rem;
-            color: #26a5e4;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-        
-        /* زر Telegram العائم */
-        .telegram-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #2aabee, #229ed9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            animation: pulse 2s infinite;
-            border: 2px solid white;
-        }
-        
-        .telegram-btn:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #229ed9, #1e8bc3);
-        }
-        
-        .telegram-btn i {
-            font-size: 36px;
-            color: white;
-        }
-        
-        /* إشعار عند النقر */
-        .notification {
-            position: fixed;
-            bottom: 120px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #229ed9;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            z-index: 1001;
-        }
-        
-        .notification.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* حركة النبض */
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(42, 171, 238, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(42, 171, 238, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(42, 171, 238, 0);
-            }
-        }
-        
-        /* تفاعل مع الأجهزة المحمولة */
-        @media (max-width: 768px) {
-            .container {
-                padding: 25px 20px;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .telegram-btn {
-                width: 60px;
-                height: 60px;
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .telegram-btn i {
-                font-size: 30px;
-            }
-        }
-        
-        .highlight {
-            color: #26a5e4;
-            font-weight: 700;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1><i class="fab fa-telegram"></i> تواصل معنا عبر Telegram</h1>
-        
-        <p>نحن هنا لمساعدتك! اضغط على زر Telegram الموجود في الزاوية اليمنى السفلية للدخول إلى دردشة مباشرة مع فريق الدعم الخاص بنا.</p>
-        
-        <h2>مزايا التواصل عبر Telegram</h2>
-        
-        <div class="features">
-            <div class="feature-card">
-                <i class="fas fa-bolt"></i>
-                <h3>سرعة الرد</h3>
-                <p>استقبال ردود فورية من فريق الدعم خلال ثوانٍ معدودة</p>
-            </div>
-            
-            <div class="feature-card">
-                <i class="fas fa-lock"></i>
-                <h3>أمان عالي</h3>
-                <p>محادثات مشفرة لحماية خصوصيتك وأمان بياناتك</p>
-            </div>
-            
-            <div class="feature-card">
-                <i class="fas fa-file-alt"></i>
-                <h3>دعم متعدد الوسائط</h3>
-                <p>إمكانية إرسال الصور، المستندات، والملفات بسهولة</p>
-            </div>
-        </div>
-        
-        <p class="highlight">"نحن متاحون على مدار الساعة طوال أيام الأسبوع لمساعدتك في أي استفسار أو مشكلة تواجهك."</p>
-    </div>
-    
-    <!-- زر Telegram العائم -->
-    <div class="telegram-btn" id="telegramBtn">
-        <i class="fab fa-telegram"></i>
-    </div>
-    
-    <!-- إشعار عند النقر -->
-    <div class="notification" id="notification">
-        جارٍ فتح دردشة Telegram...
-    </div>
-    
-    <script>
-        // الحصول على عناصر DOM
-        const telegramBtn = document.getElementById('telegramBtn');
-        const notification = document.getElementById('notification');
-        
-        // رابط Telegram الخاص بك
-        const telegramLink = 'https://t.me/ali0619000';
-        
-        // إضافة حدث النقر على الزر
-        telegramBtn.addEventListener('click', function() {
-            // إظهار الإشعار
-            notification.classList.add('show');
-            
-            // فتح رابط Telegram بعد تأخير بسيط
-            setTimeout(() => {
-                window.open(telegramLink, '_blank');
-            }, 800);
-            
-            // إخفاء الإشعار بعد 3 ثواني
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        });
-        
-        // إضافة حركة عشوائية طفيفة للزر لجذب الانتباه
-        setInterval(() => {
-            const randomX = Math.random() * 10 - 5;
-            const randomY = Math.random() * 10 - 5;
-            telegramBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
-        }, 3000);
-    </script>
 
     <!-- القسم السفلي (الفوتر) -->
     <footer class="footer">
@@ -2052,7 +1789,30 @@
         </div>
     </footer>
     
-    
+    <!-- ضع هذا الكود في المكان الذي تريد ظهور الزر فيه داخل صفحة HTML -->
+<a href="https://t.me/ali0619000" target="_blank" class="telegram-btn">
+  <img src="https://telegram.org/img/t_logo.png" alt="Telegram Logo">
+</a>
+
+<!-- أضف هذا الكود داخل وسم <style> في رأس الصفحة أو في ملف CSS منفصل -->
+<style>
+.telegram-btn {
+  display: inline-block; /* لجعل الزر يتناسب مع المحتوى */
+  width: 40px; /* حجم الشعار */
+  height: 40px;
+  transition: transform 0.3s ease; /* تأثير حركي خفيف */
+}
+
+.telegram-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* للحفاظ على نسب الشعار */
+}
+
+.telegram-btn:hover {
+  transform: scale(1.1); /* تكبير طفيف عند المرور بالماوس */
+}
+</style>
 
     <!-- سكريبت جافاسكريبت -->
     <script>
