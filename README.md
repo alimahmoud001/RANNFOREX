@@ -148,58 +148,7 @@
             transform: translateY(-3px);
         }
 
-<!-- ضع هذا الكود في المكان الذي تريد ظهور الزر فيه -->
-<a href="https://t.me/ali0619000" target="_blank" class="telegram-btn">
-  <svg class="telegram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.895 17.297c-.285.849-1.493 1.315-2.453.823l-3.714-2.76-2.294 1.765c-.274.21-.614.274-.93.176l.398-3.92 6.766-6.108c.404-.364-.224-.8-.633-.446l-8.375 5.27-3.62-1.134c-.847-.266-.868-1.503.127-1.784l14.497-5.592c.702-.27 1.46.176 1.664.855l2.384 11.297c.19.902-.224 1.818-1.01 2.058z" fill="currentColor"/>
-  </svg>
-</a>
 
-<!-- أضف هذا الكود داخل وسم <style> أو في ملف CSS منفصل -->
-<style>
-.telegram-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px; /* حجم الزر */
-  height: 50px;
-  background: linear-gradient(135deg, #0088cc, #33b5e5); /* تدرج لوني عصري */
-  border-radius: 50%; /* شكل دائري */
-  box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4); /* ظل ناعم */
-  transition: all 0.3s ease; /* تأثيرات سلسة */
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.telegram-btn:hover {
-  transform: translateY(-3px); /* ارتفاع طفيف عند التمرير */
-  box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6); /* ظل أقوى */
-  background: linear-gradient(135deg, #33b5e5, #0088cc); /* عكس التدرج */
-}
-
-.telegram-icon {
-  width: 30px; /* حجم الأيقونة */
-  height: 30px;
-  color: #fff; /* لون الأيقونة */
-  transition: transform 0.3s ease;
-}
-
-.telegram-btn:hover .telegram-icon {
-  transform: scale(1.15); /* تكبير الأيقونة عند التمرير */
-}
-
-/* تأثير وميض خفيف عند التحميل */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.telegram-btn {
-  animation: pulse 2s infinite; /* وميض خفيف مستمر */
-}
-</style>
         /* زر الكورس */
         .btn-course {
             background-color: #ff5722;
