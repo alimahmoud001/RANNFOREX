@@ -951,6 +951,9 @@
     </style>
 </head>
 <body>
+  <section id="section2" class="section">
+            <div class="container">
+                <h2 class="section-title">خطوات الإيداع</h2>
     <button class="accordion">خطوات الإيداع</button>
     <div class="panel">
         <ol>
@@ -1019,24 +1022,15 @@
                         <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Trustpilot
                         </a>
-                    </div>
-                    <div class="rating-card">
-                        <div class="rating-logo">WikiFX</div>
-                        <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+  <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> myfxbook
                         </a>
-                    </div>
-                    <div class="rating-card">
-                        <div class="rating-logo">MyFXBook</div>
-                        <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+ <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> forexpeacearmy
                         </a>
-                    </div>
-                    <div class="rating-card">
-                        <div class="rating-logo">Forex Peace Army</div>
-                        <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
-                        </a>
+  <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> wikifx
+                        </a>  
                     </div>
                 </div>
             </div>
