@@ -1018,7 +1018,7 @@
                     <div class="rating-card">
                         <div class="rating-logo">Trustpilot</div>
                         <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> عرض التقييمات
+                            <i class="fas fa-external-link-alt"></i> Trustpilot
                         </a>
                     </div>
                     <div class="rating-card">
