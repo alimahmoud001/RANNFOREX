@@ -357,7 +357,7 @@
         /* شبكة بطاقات التقييمات */
         .ratings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -746,7 +746,6 @@
                     <li><a href="#section4">المصادقة</a></li>
                     <li><a href="#section5">قنوات تلجرام</a></li>
                     <li><a href="#section6">الكورسات</a></li>
-                    <li><a href="#section7">تواصل</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -921,7 +920,7 @@
             padding: 15px;
             width: 100%;
             border: none;
-            text-align: right;
+            text-align: center;
             outline: none;
             font-size: 18px;
             transition: background-color 0.3s;
@@ -1150,670 +1149,6 @@
         </section>
 
 >
-
-   
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام إدارة المحتوى البسيط</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --success: #4cc9f0;
-            --dark: #2b2d42;
-            --light: #f8f9fa;
-            --danger: #e63946;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo i {
-            font-size: 2.5rem;
-        }
-        
-        .logo h1 {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        .content-manager {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .form-container {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        .form-container h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--success);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .form-group input, 
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus, 
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--primary);
-            outline: none;
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-        
-        .btn-danger {
-            background: var(--danger);
-            color: white;
-        }
-        
-        .btn-danger:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-        
-        .btn-success {
-            background: var(--success);
-            color: white;
-        }
-        
-        .content-display {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        .content-display h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--success);
-        }
-        
-        .content-list {
-            max-height: 600px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-        
-        .content-item {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        
-        .content-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .content-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        
-        .content-type {
-            background: var(--success);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        
-        .content-body {
-            margin-bottom: 15px;
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .content-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 15px 0;
-            display: block;
-        }
-        
-        .content-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: #777;
-        }
-        
-        .empty-state i {
-            font-size: 4rem;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-        
-        .empty-state h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .instructions {
-            background: #e7f5ff;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 30px;
-            border-left: 4px solid var(--success);
-        }
-        
-        .instructions h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .instructions ol {
-            padding-right: 20px;
-        }
-        
-        .instructions li {
-            margin-bottom: 10px;
-            line-height: 1.8;
-        }
-        
-        @media (max-width: 900px) {
-            .content-manager {
-                grid-template-columns: 1fr;
-            }
-            
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-pen-nib"></i>
-                <h1>أنشر تحليلا</h1>
-            </div>
-           </header>
-        
-        <div class="content-manager">
-            <div class="form-container">
-                <h2><i class="fas fa-plus-circle"></i> إضافة محتوى جديد</h2>
-                <form id="content-form">
-                    <div class="form-group">
-                        <label for="content-title">عنوان المحتوى</label>
-                        <input type="text" id="content-title" placeholder="أدخل عنوانًا جذابًا" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="content-type">نوع المحتوى</label>
-                        <select id="content-type" required>
-                            <option value="">اختر نوع المحتوى</option>
-                            <option value="text">مقال نصي</option>
-                            <option value="image">صورة مع وصف</option>
-                            <option value="both">نص وصورة</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="content-body">محتوى النص</label>
-                        <textarea id="content-body" placeholder="اكتب محتوى المقال هنا..."></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="content-image">صورة (اختياري)</label>
-                        <input type="file" id="content-image" accept="image/*">
-                        <small>الحد الأقصى لحجم الصورة: 2MB</small>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> حفظ المحتوى
-                    </button>
-                    <button type="reset" class="btn btn-danger">
-                        <i class="fas fa-times"></i> إلغاء
-                    </button>
-                </form>
-            </div>
-            
-            <div class="content-display">
-                <h2><i class="fas fa-file-alt"></i> محتوى موقعك</h2>
-                <div class="content-list" id="content-list">
-                    <div class="empty-state">
-                        <i class="fas fa-folder-open"></i>
-                        <h3>لا يوجد محتوى حتى الآن</h3>
-                        <p>ابدأ بإضافة محتوى جديد باستخدام النموذج على اليسار</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-
-    <script>
-        // تخزين المحتوى في localStorage
-        let contents = JSON.parse(localStorage.getItem('websiteContents')) || [];
-        
-        // عناصر DOM
-        const contentForm = document.getElementById('content-form');
-        const contentList = document.getElementById('content-list');
-        const contentTitle = document.getElementById('content-title');
-        const contentType = document.getElementById('content-type');
-        const contentBody = document.getElementById('content-body');
-        const contentImage = document.getElementById('content-image');
-        
-        // دالة لعرض المحتوى
-        function renderContents() {
-            if (contents.length === 0) {
-                contentList.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-folder-open"></i>
-                        <h3>لا يوجد محتوى حتى الآن</h3>
-                        <p>ابدأ بإضافة محتوى جديد باستخدام النموذج على اليسار</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            contentList.innerHTML = contents.map((content, index) => `
-                <div class="content-item" data-id="${index}">
-                    <div class="content-header">
-                        <div class="content-title">${content.title}</div>
-                        <div class="content-type">
-                            ${content.type === 'text' ? 'مقال نصي' : 
-                              content.type === 'image' ? 'صورة' : 'نص وصورة'}
-                        </div>
-                    </div>
-                    
-                    ${content.body ? `<div class="content-body">${content.body}</div>` : ''}
-                    
-                    ${content.image ? 
-                        `<img src="${content.image}" class="content-image" alt="${content.title}">` : 
-                        ''
-                    }
-                    
-                    <div class="content-actions">
-                        <button class="btn btn-primary edit-btn">
-                            <i class="fas fa-edit"></i> تعديل
-                        </button>
-                        <button class="btn btn-danger delete-btn">
-                            <i class="fas fa-trash"></i> حذف
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-            
-            // إضافة مستمعي الأحداث للأزرار
-            document.querySelectorAll('.edit-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const contentId = this.closest('.content-item').dataset.id;
-                    editContent(contentId);
-                });
-            });
-            
-            document.querySelectorAll('.delete-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const contentId = this.closest('.content-item').dataset.id;
-                    deleteContent(contentId);
-                });
-            });
-        }
-        
-        // دالة لإضافة محتوى جديد
-        function addContent(e) {
-            e.preventDefault();
-            
-            // التحقق من الحقول المطلوبة
-            if (!contentTitle.value || !contentType.value) {
-                alert('الرجاء إدخال عنوان ونوع المحتوى');
-                return;
-            }
-            
-            // إنشاء كائن المحتوى
-            const newContent = {
-                id: Date.now(),
-                title: contentTitle.value,
-                type: contentType.value,
-                body: contentBody.value,
-                image: null
-            };
-            
-            // معالجة الصورة
-            if (contentImage.files.length > 0) {
-                const file = contentImage.files[0];
-                if (file.size > 2 * 1024 * 1024) {
-                    alert('حجم الصورة يجب أن يكون أقل من 2MB');
-                    return;
-                }
-                
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    newContent.image = e.target.result;
-                    saveContent(newContent);
-                };
-                reader.readAsDataURL(file);
-            } else {
-                saveContent(newContent);
-            }
-        }
-        
-        // دالة لحفظ المحتوى
-        function saveContent(content) {
-            contents.push(content);
-            localStorage.setItem('websiteContents', JSON.stringify(contents));
-            renderContents();
-            contentForm.reset();
-            alert('تم حفظ المحتوى بنجاح!');
-        }
-        
-        // دالة لتعديل المحتوى
-        function editContent(contentId) {
-            const content = contents[contentId];
-            if (!content) return;
-            
-            // تعبئة النموذج بالمحتوى المحدد
-            contentTitle.value = content.title;
-            contentType.value = content.type;
-            contentBody.value = content.body || '';
-            
-            // تحديث النموذج لحالة التعديل
-            contentForm.innerHTML = `
-                <h2><i class="fas fa-edit"></i> تعديل المحتوى</h2>
-                <div class="form-group">
-                    <label for="content-title">عنوان المحتوى</label>
-                    <input type="text" id="content-title" value="${content.title}" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-type">نوع المحتوى</label>
-                    <select id="content-type" required>
-                        <option value="text" ${content.type === 'text' ? 'selected' : ''}>مقال نصي</option>
-                        <option value="image" ${content.type === 'image' ? 'selected' : ''}>صورة مع وصف</option>
-                        <option value="both" ${content.type === 'both' ? 'selected' : ''}>نص وصورة</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-body">محتوى النص</label>
-                    <textarea id="content-body">${content.body || ''}</textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-image">صورة جديدة (اختياري)</label>
-                    <input type="file" id="content-image" accept="image/*">
-                    <small>الحد الأقصى لحجم الصورة: 2MB</small>
-                    ${content.image ? 
-                        `<div style="margin-top: 10px;">
-                            <img src="${content.image}" style="max-width: 100px; border-radius: 5px;">
-                        </div>` : 
-                        ''
-                    }
-                </div>
-                
-                <button type="button" class="btn btn-success" id="update-btn">
-                    <i class="fas fa-sync-alt"></i> تحديث المحتوى
-                </button>
-                <button type="button" class="btn btn-danger" id="cancel-btn">
-                    <i class="fas fa-times"></i> إلغاء التعديل
-                </button>
-            `;
-            
-            // إضافة مستمعي الأحداث للأزرار الجديدة
-            document.getElementById('update-btn').addEventListener('click', function() {
-                updateContent(contentId);
-            });
-            
-            document.getElementById('cancel-btn').addEventListener('click', function() {
-                resetForm();
-            });
-        }
-        
-        // دالة لتحديث المحتوى
-        function updateContent(contentId) {
-            // التحقق من الحقول المطلوبة
-            if (!contentTitle.value || !contentType.value) {
-                alert('الرجاء إدخال عنوان ونوع المحتوى');
-                return;
-            }
-            
-            // تحديث المحتوى
-            contents[contentId].title = contentTitle.value;
-            contents[contentId].type = contentType.value;
-            contents[contentId].body = contentBody.value;
-            
-            // تحديث الصورة إذا تم تحميل صورة جديدة
-            const imageInput = document.getElementById('content-image');
-            if (imageInput.files.length > 0) {
-                const file = imageInput.files[0];
-                if (file.size > 2 * 1024 * 1024) {
-                    alert('حجم الصورة يجب أن يكون أقل من 2MB');
-                    return;
-                }
-                
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    contents[contentId].image = e.target.result;
-                    finishUpdate();
-                };
-                reader.readAsDataURL(file);
-            } else {
-                finishUpdate();
-            }
-            
-            function finishUpdate() {
-                localStorage.setItem('websiteContents', JSON.stringify(contents));
-                renderContents();
-                resetForm();
-                alert('تم تحديث المحتوى بنجاح!');
-            }
-        }
-        
-        // دالة لحذف المحتوى
-        function deleteContent(contentId) {
-            if (confirm('هل أنت متأكد من رغبتك في حذف هذا المحتوى؟')) {
-                contents.splice(contentId, 1);
-                localStorage.setItem('websiteContents', JSON.stringify(contents));
-                renderContents();
-                alert('تم حذف المحتوى بنجاح!');
-            }
-        }
-        
-        // دالة لإعادة تعيين النموذج
-        function resetForm() {
-            contentForm.innerHTML = `
-                <h2><i class="fas fa-plus-circle"></i> إضافة محتوى جديد</h2>
-                <div class="form-group">
-                    <label for="content-title">عنوان المحتوى</label>
-                    <input type="text" id="content-title" placeholder="أدخل عنوانًا جذابًا" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-type">نوع المحتوى</label>
-                    <select id="content-type" required>
-                        <option value="">اختر نوع المحتوى</option>
-                        <option value="text">مقال نصي</option>
-                        <option value="image">صورة مع وصف</option>
-                        <option value="both">نص وصورة</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-body">محتوى النص</label>
-                    <textarea id="content-body" placeholder="اكتب محتوى المقال هنا..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="content-image">صورة (اختياري)</label>
-                    <input type="file" id="content-image" accept="image/*">
-                    <small>الحد الأقصى لحجم الصورة: 2MB</small>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save"></i> حفظ المحتوى
-                </button>
-                <button type="reset" class="btn btn-danger">
-                    <i class="fas fa-times"></i> إلغاء
-                </button>
-            `;
-            
-            // إعادة ربط مستمع الأحداث للنموذج
-            document.getElementById('content-title').focus();
-            contentForm.addEventListener('submit', addContent);
-        }
-        
-        // تهيئة النظام
-        document.addEventListener('DOMContentLoaded', function() {
-            renderContents();
-            contentForm.addEventListener('submit', addContent);
-        });
-    </script>
-
-
-<!-- HTML: زر تلغرام -->
-<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="تواصل عبر تلغرام">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
-    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
-  </svg>
-</a>
-
-<!-- CSS: تصميم الزر العائم -->
-<style>
-#telegram-float {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  background: linear-gradient(45deg, #0088cc, #00bfff);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#telegram-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-#telegram-float svg {
-  width: 28px;
-  height: 28px;
-}
-</style>
-
-
     <!-- القسم السفلي (الفوتر) -->
     <footer class="footer">
         <div class="container">
@@ -1936,4 +1271,44 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 <!--End of Tawk.to Script-->
+
+
+<!-- HTML: ?? ?????? -->
+<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
+    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
+  </svg>
+</a>
+
+<!-- CSS: ????? ???? ?????? -->
+<style>
+#telegram-float {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: linear-gradient(45deg, #0088cc, #00bfff);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#telegram-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+#telegram-float svg {
+  width: 28px;
+  height: 28px;
+}
+</style>
+
+
 
