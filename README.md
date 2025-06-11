@@ -781,7 +781,6 @@
                     <a href=" https://t.me/tradewithalimahmoud  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> انضم الآن
                     </a>
- </div> </a>
                 </div>
                  
                     </div>
@@ -794,7 +793,6 @@
                         <div class="app-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <p>المنصة الموثوقة الأفضل في مجال التداول في جميع الأسواق</p>
                         <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-app" target="_blank">
                             <i class="fab fa-google-play"></i>  ميتا تريدر 5
                         </a>
@@ -1011,8 +1009,7 @@
             panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
         });
     </script>
-</body>
-</html>
+
         
 
         <!-- القسم الثاني: تقييمات الشركة -->
