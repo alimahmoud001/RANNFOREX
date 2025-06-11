@@ -770,9 +770,9 @@
 
 
                 <div class="register-card">
-                    <h3>سجل الآن في Rannforex</h3>
-                    <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
-                    <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn btn-primary" target="_blank">
+                    <h3>  استثمر معنا في حساب مدار pamm </h3>
+                    <p>  لعرض تفاصيل حساب المدير    </p>
+                    <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> سجل الآن
                     </a>
                 </div>
