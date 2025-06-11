@@ -1035,9 +1035,7 @@
             </div>
         </section>
 
-        </section>
-
-        <!-- القسم الرابع: 2FA -->
+           <!-- القسم الرابع: 2FA -->
         <section id="section4" class="section">
             <div class="container">
                 <h2 class="section-title">2FA المصادقة</h2>
@@ -1309,4 +1307,4 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
-</html>
+
