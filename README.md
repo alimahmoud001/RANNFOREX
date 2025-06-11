@@ -1309,15 +1309,4 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
-
-
-    <div class="container">
-        <h1>أداء حساب الاستثمار</h1>
-        <p>اضغط على الزر أدناه لعرض تفاصيل حساب الاستثمار الخاص بك على RannForex.</p>
-        <a href="https://my.rannforex.com/en/pamm/details/2490/" class="button">عرض التفاصيل</a>
-    </div>
-
-    <!-- تضمين خط Tajawal من Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-</body>
 </html>
