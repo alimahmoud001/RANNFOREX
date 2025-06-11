@@ -773,7 +773,7 @@
                     <h3>  استثمر معنا في حساب مدار pamm </h3>
                     <p>  لعرض تفاصيل حساب المدير    </p>
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
-                        <i class="fas fa-user-plus"></i> سجل الآن
+                        <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
                 </div>
                     <div class="channel-card main-channel">
