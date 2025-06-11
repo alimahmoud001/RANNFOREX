@@ -767,7 +767,15 @@
                     </a>
                 </div>
 
-
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفع صورة</title>
+</head>
+<body>
+    <h2>رفع صورة (لصاحب الموقع فقط
                 <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <p> لعرض تفاصيل حساب المدير </p>
