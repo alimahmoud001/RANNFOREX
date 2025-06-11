@@ -736,7 +736,6 @@
         <div class="container">
             <div class="logo">
                 <h1>Rannforex</h1>
-                <p>ALI MAHMOUD</p>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -770,8 +769,8 @@
 
 
                 <div class="register-card">
-                    <h3>  استثمر معنا في حساب مدار pamm </h3>
-                    <p>  لعرض تفاصيل حساب المدير    </p>
+                    <h3>استثمر معنا في حساب مدار pamm</h3>
+                    <p> لعرض تفاصيل حساب المدير </p>
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
@@ -795,7 +794,7 @@
                         <h3>منصة ميتا تريدر 5</h3>
                         <p>المنصة الموثوقة الأفضل في مجال التداول في جميع الأسواق</p>
                         <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-app" target="_blank">
-                            <i class="fab fa-google-play"></i> تحميل التطبيق
+                            <i class="fab fa-google-play"></i>  ميتا تريدر 5
                         </a>
                     </div>
                     <div class="app-card">
@@ -803,9 +802,8 @@
                             <i class="fas fa-wallet"></i>
                         </div>
                         <h3>المحفظة الإلكترونية</h3>
-                        <p>محفظة إلكترونية آمنة لإدارة أموالك</p>
                         <a href="https://cwallet.com/referral/DvY6dZtS" class="btn btn-app" target="_blank">
-                            <i class="fas fa-download"></i> تحميل التطبيق
+                            <i class="fas fa-download"></i> المحفظة الالكترونية 
                         </a>
                     </div>
                     <div class="app-card">
@@ -815,7 +813,7 @@
                         <h3>تطبيق المصادقة الثنائية</h3>
                         <p>يلزم من أجل توثيق الحساب وتوثيق عمليات السحب والإيداع</p>
                         <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn btn-app" target="_blank">
-                            <i class="fab fa-google-play"></i> تحميل التطبيق
+                            <i class="fab fa-google-play"></i> النصادقة الثنائية
                 </a>
                     </div>
                  <div class="app-card">
@@ -825,7 +823,7 @@
                 <h3>منصة TradingView</h3>
                 <p>منصة متقدمة للتحليل الفني ومتابعة الأسواق المالية العالمية</p>
                 <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn btn-app" target="_blank">
-                    <i class="fab fa-google-play"></i> تحميل التطبيق
+                    <i class="fab fa-google-play"></i> تريدنغ فيو 
                 </a>
             </div>
                 </div>
