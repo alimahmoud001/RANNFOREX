@@ -1146,7 +1146,7 @@
          </div>
         </section>
 
->
+
     <!-- القسم السفلي (الفوتر) -->
     <footer class="footer">
         <div class="container">
