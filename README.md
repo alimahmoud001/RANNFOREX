@@ -372,7 +372,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 200px;
+            min-height: 300px;
         }
 
         .rating-card:hover {
@@ -774,13 +774,16 @@
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
+ </div>
+      <div class="register-card">
+                    <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
+                    <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
+                    <a href=" https://t.me/tradewithalimahmoud  " class="btn btn-primary" target="_blank">
+                        <i class="fas fa-user-plus"></i> انضم الآن
+                    </a>
+ </div> </a>
                 </div>
-                    <div class="channel-card main-channel">
-                        <i class="fab fa-telegram"></i>
-                        <h3>قناتنا</h3>
-                        <a href="https://t.me/tradewithalimahmoud" class="btn btn-telegram" target="_blank">
-                            الانضمام للقناة
-                        </a>
+                 
                     </div>
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
@@ -791,7 +794,6 @@
                         <div class="app-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3>منصة ميتا تريدر 5</h3>
                         <p>المنصة الموثوقة الأفضل في مجال التداول في جميع الأسواق</p>
                         <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-app" target="_blank">
                             <i class="fab fa-google-play"></i>  ميتا تريدر 5
@@ -801,7 +803,6 @@
                         <div class="app-icon">
                             <i class="fas fa-wallet"></i>
                         </div>
-                        <h3>المحفظة الإلكترونية</h3>
                         <a href="https://cwallet.com/referral/DvY6dZtS" class="btn btn-app" target="_blank">
                             <i class="fas fa-download"></i> المحفظة الالكترونية 
                         </a>
@@ -810,8 +811,6 @@
                         <div class="app-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3>تطبيق المصادقة الثنائية</h3>
-                        <p>يلزم من أجل توثيق الحساب وتوثيق عمليات السحب والإيداع</p>
                         <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn btn-app" target="_blank">
                             <i class="fab fa-google-play"></i> النصادقة الثنائية
                 </a>
@@ -820,8 +819,6 @@
                 <div class="app-icon">
                     <i class="fas fa-chart-bar"></i>
                 </div>
-                <h3>منصة TradingView</h3>
-                <p>منصة متقدمة للتحليل الفني ومتابعة الأسواق المالية العالمية</p>
                 <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn btn-app" target="_blank">
                     <i class="fab fa-google-play"></i> تريدنغ فيو 
                 </a>
