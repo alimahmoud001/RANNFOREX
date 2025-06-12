@@ -310,33 +310,7 @@
             gap: 25px;
         }
 
-        /* بطاقة ميزة */
-        .feature-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .feature-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
+    
 
         /* معلومات الاسبريد */
         .spread-info {
