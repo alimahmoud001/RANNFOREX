@@ -33,6 +33,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            border-radius: 20px
         }
 
         /* تنسيق التمرير السلس */
@@ -1079,6 +1080,7 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
+            border-radius: 20px
         }
         .accordion {
             background-color: #007bff;
