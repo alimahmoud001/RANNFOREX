@@ -303,14 +303,7 @@
             color: var(--primary-color);
         }
 
-        /* شبكة بطاقات المميزات */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
 
-    
 
         /* معلومات الاسبريد */
         .spread-info {
@@ -318,7 +311,8 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .spread-info h3 {
@@ -341,7 +335,8 @@
             border-radius: var(--border-radius);
             padding: 25px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -380,7 +375,8 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
         }
 
@@ -480,7 +476,8 @@
             border-radius: var(--border-radius);
             padding: 20px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
         }
 
@@ -517,7 +514,8 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
         }
 
@@ -1068,7 +1066,7 @@
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
                 </div>
-          
+            </div>
                             
 <html lang="ar">
 <head>
