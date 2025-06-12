@@ -816,7 +816,7 @@
         .card {
             background: rgba(255, 255, 255, 0.95);
             width: 100%;
-            max-width: 900px;
+            max-width: 1200px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
