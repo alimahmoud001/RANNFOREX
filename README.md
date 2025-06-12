@@ -51,8 +51,8 @@
 
         /* تنسيق الحاوية */
         .container {
-            width: 105%;
-            max-width: 1400px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 00px;
         }
