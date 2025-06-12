@@ -1065,7 +1065,6 @@
                     <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
-                </div>
             </div>
                             
 <html lang="ar">
