@@ -821,75 +821,273 @@
             </div>
                 </div>
            
-                <div class="features">
-                    
-                    
-                    
-                    <h3>مميزات الشركة</h3>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <h4>أقل إيداع</h4>
-                            <p>10$ خلال 30 ثانية</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-hand-holding-usd"></i>
-                            <h4>أقل سحب</h4>
-                            <p>10$ خلال 30 ثانية</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-percentage"></i>
-                            <h4>عمولة قليلة جداً</h4>
-                            <p>أفضل العمولات في السوق</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h4>اسبريد</h4>
-                            <p>0.3~1.2</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-balance-scale"></i>
-                            <h4>رافعة مالية</h4>
-                            <p>1:500</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>تداول آمن</h4>
-                            <p>على جميع أزواج الفوريكس والمعادن والنفط والمؤشرات والعملات المشفرة</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-users"></i>
-                            <h4>أنواع الحسابات</h4>
-                            <p>ميتا تريدر 5 حقيقي وبدون عمولة وكريبتو وحساب IB ويدعم الحسابات المدارة PAMM</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <h4>انزلاق منخفض</h4>
-                            <p>تنفيذ فوري للصفقات</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-star"></i>
-                            <h4>تقييم ممتاز</h4>
-                            <p>على مواقع Trust Pilot & MyFXBook & WikiFX & Forex Peace Army</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-lock"></i>
-                            <h4>أمان عالي</h4>
-                            <p>بسبب المصادقة الثنائية 2FA</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-passport"></i>
-                            <h4>توثيق سهل</h4>
-                            <p>من سورية أو أي دولة أخرى</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-book"></i>
-                            <h4>نموذج A Book</h4>
-                            <p>من أفضل مزودي السيولة</p>
-                        </div>
+
+<section id="section2" class="section">
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة ميزات المتداول</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+      
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .card-header {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+        }
+        
+        .card-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .card-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .card-body {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .feature-icon {
+            background: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .feature-content p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .badge {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+        
+        .security-badge {
+            background: #27ae60;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-header h1 {
+                font-size: 2rem;
+            }
+            
+            .feature {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .feature-icon {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        .star {
+            color: #f1c40f;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>مزايا التداول معنا</h1>
+            <p>نقدم لك أفضل شروط التداول في السوق مع تنفيذ فوري وأعلى درجات الأمان</p>
+        </div>
+        
+        <div class="card-body">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>عمليات الإيداع والسحب</h3>
+                        <p>
+                            <span class="star">★</span> أقل إيداع 10$ خلال 30 ثانية فقط<br>
+                            <span class="star">★</span> أقل سحب 10$ خلال 30 ثانية
+                        </p>
                     </div>
                 </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>تكاليف تنافسية</h3>
+                        <p>
+                            <span class="star">★</span> عمولة قليلة جداً<br>
+                            <span class="star">★</span> اسبريد منخفض 0.3~1.2
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>شروط تداول ممتازة</h3>
+                        <p>
+                            <span class="star">★</span> رافعة مالية عالية 1:500<br>
+                            <span class="star">★</span> انزلاق منخفض وتنفيذ فوري للصفقات
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>أدوات تداول متنوعة</h3>
+                        <p>
+                            <span class="star">★</span> تداول أمن على جميع أزواج الفوركس والمعادن والنفط<br>
+                            <span class="star">★</span> المؤشرات والعملات المشفرة
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>أنواع الحسابات</h3>
+                        <p>
+                            <span class="star">★</span> أربع أنواع من الحسابات: ميتاتريدر 5 حقيقي<br>
+                            <span class="star">★</span> بدون عمولة، كريبتو، وحساب IB<br>
+                            <span class="star">★</span> يدعم الحسابات المدارة PAMM
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>الأمان والمصداقية</h3>
+                        <p>
+                            <span class="star">★</span> تقييم ممتاز على TrustPilot و MyFxBook<br>
+                            <span class="star">★</span> Wikifx و Forex Peace Army<br>
+                            <span class="star">★</span> الأمان عالي جداً بسبب 2FA<br>
+                            <span class="star">★</span> توثيق من سورية وأي دولة أخرى
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="badges">
+            <div class="badge">
+                <i class="fas fa-lock"></i> نموذج A-Book
+            </div>
+            <div class="badge security-badge">
+                <i class="fas fa-shield-alt"></i> أفضل مزودي السيولة
+            </div>
+        </div>
+    </div>
+</body>
 
+                    
+                    
+                  
+  
+               <section id="section2" class="section">
                 <div class="spread-info">
                     <h3>اطلع على الاسبريد المتوسط اليومي</h3>
                     <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
@@ -1305,3 +1503,4 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
+
