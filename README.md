@@ -33,6 +33,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box; 
+            border-radius: 20px;
         }
 
         /* تنسيق التمرير السلس */
@@ -1327,7 +1328,7 @@
     </footer>
 
     <!-- سكريبت جافاسكريبت -->
-    <script>
+   
         // تنفيذ الكود عند اكتمال تحميل المستند
         document.addEventListener('DOMContentLoaded', function() {
             // إضافة تأثير الظهور التدريجي للأقسام
@@ -1416,8 +1417,7 @@
             handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
              });
     </script>
-</body>
-</html>
+
      
     </script><!--Start of Tawk.to Script-->
 <script type="text/javascript">
