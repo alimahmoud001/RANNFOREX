@@ -816,7 +816,7 @@
         .card {
             background: rgba(255, 255, 255, 0.95);
             width: 100%;
-            max-width: 1200px;
+            max-width: 900px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
@@ -1085,12 +1085,8 @@
             color: white;
             cursor: pointer;
             padding: 15px;
-            border-radius: 50px;
             width: 100%;
             border: none;
-
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             text-align: center;
             outline: none;
             font-size: 18px;
@@ -1105,8 +1101,6 @@
             background-color: white;
             overflow: hidden;
             border: 1px solid #ddd;
-
-            border-radius: 50px;
             margin-bottom: 10px;
         }
         .panel p, .panel ol {
@@ -1325,9 +1319,9 @@
             <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة</p>
         </div>
     </footer>
- </script>
+
     <!-- سكريبت جافاسكريبت -->
-   
+    <script>
         // تنفيذ الكود عند اكتمال تحميل المستند
         document.addEventListener('DOMContentLoaded', function() {
             // إضافة تأثير الظهور التدريجي للأقسام
@@ -1369,7 +1363,7 @@
                         
                         // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
                         if (window.innerWidth < 992) {
-                            mainNav.style.display = 'no';
+                            mainNav.style.display = 'none';
                         }
                     }
                 });
@@ -1414,10 +1408,19 @@
             // تنفيذ عند التمرير
             window.addEventListener('scroll', handleScroll);
             handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
-             });
-    </script>
-
-     
+            
+            // إضافة تأثير تفاعلي لأيقونات وسائل التواصل الاجتماعي
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.1)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+        });
     </script><!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -1470,5 +1473,4 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
-
 
