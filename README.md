@@ -32,7 +32,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box; 
         }
 
         /* تنسيق التمرير السلس */
@@ -1414,19 +1414,11 @@
             // تنفيذ عند التمرير
             window.addEventListener('scroll', handleScroll);
             handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
-            
-            // إضافة تأثير تفاعلي لأيقونات وسائل التواصل الاجتماعي
-            const socialIcons = document.querySelectorAll('.social-icon');
-            socialIcons.forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.1)';
-                });
-                
-                icon.addEventListener('mouseleave', function() {
-                    this.style.transform = '';
-                });
-            });
-        });
+             });
+    </script>
+</body>
+</html>
+     
     </script><!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -1479,5 +1471,5 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
-========
+
 
