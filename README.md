@@ -52,9 +52,9 @@
         /* تنسيق الحاوية */
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 00px;
+            padding: 0 50px;
         }
 
         /* تنسيق الروابط */
