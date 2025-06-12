@@ -32,8 +32,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; 
-            border-radius: 20px;
+            box-sizing: border-box;
         }
 
         /* تنسيق التمرير السلس */
@@ -1326,7 +1325,7 @@
             <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة</p>
         </div>
     </footer>
-
+ </script>
     <!-- سكريبت جافاسكريبت -->
    
         // تنفيذ الكود عند اكتمال تحميل المستند
