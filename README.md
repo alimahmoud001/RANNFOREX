@@ -1448,3 +1448,130 @@ s0.parentNode.insertBefore(s1,s0);
 </style>
 
 =====
+
+<?php
+// === التعامل مع رفع الصورة عند إرسال النموذج ===
+$responseMessage = "";
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
+    $targetDir = "uploads/";
+    if (!file_exists($targetDir)) {
+        mkdir($targetDir, 0755, true);
+    }
+
+    $file = $_FILES["image"];
+    $filename = uniqid() . "_" . basename($file["name"]);
+    $targetFile = $targetDir . $filename;
+
+    if (move_uploaded_file($file["tmp_name"], $targetFile)) {
+        $responseMessage = "✅ تم حفظ الصورة بنجاح في: " . $targetFile;
+    } else {
+        $responseMessage = "❌ فشل في حفظ الصورة.";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بطاقة تحميل صورة</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .save-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .remove-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .message {
+      margin-top: 15px;
+      color: #007bff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h3>تحميل صورة من جهازك</h3>
+  <form method="POST" enctype="multipart/form-data" id="uploadForm">
+    <input type="file" name="image" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+    <img id="previewImage" alt="معاينة الصورة">
+    <div class="buttons">
+      <button type="submit" class="save-btn">حفظ الصورة</button>
+      <button type="button" class="remove-btn" onclick="removeImage()">إزالة الصورة</button>
+    </div>
+  </form>
+  <?php if ($responseMessage): ?>
+    <div class="message"><?= $responseMessage ?></div>
+  <?php endif; ?>
+</div>
+
+<script>
+  function previewImage(event) {
+    const preview = document.getElementById('previewImage');
+    const file = event.target.files[0];
+    if (file) {
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+    }
+  }
+
+  function removeImage() {
+    const input = document.getElementById('imageUpload');
+    const preview = document.getElementById('previewImage');
+    input.value = '';
+    preview.src = '';
+    preview.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
