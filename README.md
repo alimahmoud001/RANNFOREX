@@ -709,331 +709,539 @@ social-icon:hover {
                     </a>
  </div>
  ====<
- 
- !<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تنزيل الصور من الهاتف</title>
+    <title>رفع الصور - موقعي</title>
     <style>
         * {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .upload-section {
+            padding: 40px;
+        }
+
+        .upload-form {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            color: #fff;
+            gap: 25px;
         }
-        
-        .container {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-            margin-top: 30px;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
-        
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
         }
-        
-        .subtitle {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-        
-        .upload-area {
-            border: 2px dashed rgba(255, 255, 255, 0.5);
-            border-radius: 15px;
-            padding: 40px 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        
-        .upload-area:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .upload-icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-            opacity: 0.7;
-        }
-        
-        .upload-text {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .browse-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .browse-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        input[type="file"] {
-            display: none;
-        }
-        
-        .image-title {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
+
+        .form-group input,
+        .form-group textarea {
+            padding: 15px;
+            border: 2px solid #e1e5e9;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            font-size: 16px;
-            margin-bottom: 25px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
         }
-        
-        .image-title::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+
+        .file-upload-area {
+            border: 3px dashed #4a90e2;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            background: #f8f9ff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .preview-container {
+
+        .file-upload-area:hover {
+            border-color: #357abd;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .file-upload-area.dragover {
+            border-color: #357abd;
+            background: #e8f2ff;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: #4a90e2;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .upload-subtext {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        #file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .image-preview {
             display: none;
-            margin-bottom: 25px;
+            margin-top: 20px;
+            text-align: center;
         }
-        
-        #imagePreview {
+
+        .preview-image {
             max-width: 100%;
             max-height: 300px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        
-        .download-btn {
-            background: linear-gradient(to right, #00b09b, #96c93d);
-            border: none;
+
+        .upload-btn {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
             color: white;
-            padding: 15px 40px;
-            font-size: 18px;
-            border-radius: 30px;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: none;
-            margin: 0 auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
         }
-        
-        .download-btn:hover {
+
+        .upload-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.6);
         }
-        
-        .download-btn:active {
-            transform: translateY(1px);
+
+        .upload-btn:active {
+            transform: translateY(-1px);
         }
-        
-        .instructions {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 30px;
-            font-size: 14px;
+
+        .upload-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
-        
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 10px;
+
+        .gallery {
+            padding: 40px;
+            background: #f8f9fa;
         }
-        
-        .step-number {
-            background: rgba(255, 255, 255, 0.2);
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 10px;
-            flex-shrink: 0;
-        }
-        
-        .footer {
-            margin-top: 30px;
+
+        .gallery h2 {
             text-align: center;
-            font-size: 14px;
-            opacity: 0.8;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 2rem;
         }
-        
-        @media (max-width: 600px) {
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item-content {
+            padding: 20px;
+        }
+
+        .gallery-item h3 {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .gallery-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4a90e2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
             .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
                 padding: 20px;
             }
-            
-            h1 {
-                font-size: 24px;
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .upload-section {
+                padding: 20px;
+            }
+
+            .gallery {
+                padding: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>تنزيل الصور من هاتفك المحمول</h1>
-        <p class="subtitle">اختر صورة من معرض هاتفك وقم بتنزيلها مع عنوانها</p>
-        
-        <div class="upload-area" id="uploadArea">
-            <div class="upload-icon">📁</div>
-            <div class="upload-text">اسحب وأفلت الصورة هنا</div>
-            <p>أو</p>
-            <button class="browse-btn">تصفح معرض الصور</button>
-            <input type="file" id="imageInput" accept="image/*">
+        <div class="header">
+            <h1>🖼️ معرض الصور</h1>
+            <p>ارفع صورك المفضلة مع إضافة العنوان والوصف</p>
         </div>
-        
-        <div class="preview-container" id="previewContainer">
-            <img id="imagePreview" alt="معاينة الصورة">
+
+        <div class="upload-section">
+            <div class="success-message" id="success-message">
+                تم رفع الصورة بنجاح! ✅
+            </div>
+            
+            <div class="error-message" id="error-message">
+                حدث خطأ أثناء رفع الصورة. يرجى المحاولة مرة أخرى.
+            </div>
+
+            <form class="upload-form" id="upload-form">
+                <div class="form-group">
+                    <label for="image-title">عنوان الصورة</label>
+                    <input type="text" id="image-title" name="title" placeholder="أدخل عنوان الصورة" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="image-description">وصف الصورة</label>
+                    <textarea id="image-description" name="description" rows="4" placeholder="أدخل وصف الصورة" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>اختر الصورة</label>
+                    <div class="file-upload-area" id="file-upload-area">
+                        <div class="upload-icon">📷</div>
+                        <div class="upload-text">اضغط هنا لاختيار الصورة</div>
+                        <div class="upload-subtext">أو اسحب الصورة وأفلتها هنا</div>
+                        <input type="file" id="file-input" name="image" accept="image/*" required>
+                    </div>
+                    
+                    <div class="image-preview" id="image-preview">
+                        <img id="preview-image" class="preview-image" alt="معاينة الصورة">
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>جاري رفع الصورة...</p>
+                </div>
+
+                <button type="submit" class="upload-btn" id="upload-btn">
+                    رفع الصورة 🚀
+                </button>
+            </form>
         </div>
-        
-        <input type="text" class="image-title" id="imageTitle" placeholder="أدخل عنوان الصورة هنا">
-        
-        <button class="download-btn" id="downloadBtn">تنزيل الصورة</button>
-        
-        <div class="instructions">
-            <h3>كيفية الاستخدام:</h3>
-            <div class="step">
-                <div class="step-number">1</div>
-                <div>اضغط على زر "تصفح معرض الصور" واختر صورة من هاتفك</div>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <div>أدخل عنواناً للصورة في الحقل المخصص</div>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <div>اضغط على زر "تنزيل الصورة" لتنزيل الصورة مع عنوانها</div>
+
+        <div class="gallery">
+            <h2>معرض الصور المرفوعة</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- سيتم إضافة الصور هنا ديناميكياً -->
             </div>
         </div>
-    </div>
-    
-    <div class="footer">
-        تم التطوير خصيصاً للعمل على أجهزة الهاتف المحمول
     </div>
 
     <script>
         // عناصر DOM
-        const uploadArea = document.getElementById('uploadArea');
-        const imageInput = document.getElementById('imageInput');
-        const imagePreview = document.getElementById('imagePreview');
-        const previewContainer = document.getElementById('previewContainer');
-        const imageTitle = document.getElementById('imageTitle');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const browseBtn = uploadArea.querySelector('.browse-btn');
+        const fileInput = document.getElementById('file-input');
+        const fileUploadArea = document.getElementById('file-upload-area');
+        const imagePreview = document.getElementById('image-preview');
+        const previewImage = document.getElementById('preview-image');
+        const uploadForm = document.getElementById('upload-form');
+        const uploadBtn = document.getElementById('upload-btn');
+        const loading = document.getElementById('loading');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+        const galleryGrid = document.getElementById('gallery-grid');
 
-        // عند النقر على منطقة الرفع أو زر التصفح
-        uploadArea.addEventListener('click', () => imageInput.click());
-        browseBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            imageInput.click();
-        });
-
-        // سحب وإفلات الصورة
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.style.backgroundColor = '';
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.style.backgroundColor = '';
-            
-            if (e.dataTransfer.files.length) {
-                handleImageFile(e.dataTransfer.files[0]);
-            }
-        });
-
-        // عند اختيار صورة
-        imageInput.addEventListener('change', (e) => {
-            if (e.target.files.length) {
-                handleImageFile(e.target.files[0]);
-            }
-        });
-
-        // معالجة ملف الصورة
-        function handleImageFile(file) {
-            if (!file.type.match('image.*')) {
-                alert('الرجاء اختيار ملف صورة فقط');
-                return;
-            }
-
-            const reader = new FileReader();
-            
-            reader.onload = (e) => {
-                imagePreview.src = e.target.result;
-                previewContainer.style.display = 'block';
-                
-                // استخدام اسم الملف كعنوان افتراضي
-                const fileName = file.name.replace(/\.[^/.]+$/, "");
-                imageTitle.value = fileName;
-                
-                // إظهار زر التنزيل
-                downloadBtn.style.display = 'block';
-                
-                // التمرير لأسفل لرؤية المعاينة
-                previewContainer.scrollIntoView({ behavior: 'smooth' });
-            };
-            
-            reader.readAsDataURL(file);
+        // إخفاء الرسائل
+        function hideMessages() {
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
         }
 
-        // تنزيل الصورة
-        downloadBtn.addEventListener('click', () => {
-            if (!imagePreview.src || imagePreview.src.startsWith('data:')) {
-                alert('الرجاء اختيار صورة أولاً');
+        // عرض رسالة النجاح
+        function showSuccess(message) {
+            hideMessages();
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // عرض رسالة الخطأ
+        function showError(message) {
+            hideMessages();
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // معالجة اختيار الملف
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // التحقق من نوع الملف
+                if (!file.type.startsWith('image/')) {
+                    showError('يرجى اختيار ملف صورة صحيح');
+                    return;
+                }
+
+                // التحقق من حجم الملف (5MB كحد أقصى)
+                if (file.size > 5 * 1024 * 1024) {
+                    showError('حجم الصورة كبير جداً. يرجى اختيار صورة أصغر من 5 ميجابايت');
+                    return;
+                }
+
+                // عرض معاينة الصورة
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // معالجة السحب والإفلات
+        fileUploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            fileUploadArea.classList.add('dragover');
+        });
+
+        fileUploadArea.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            fileUploadArea.classList.remove('dragover');
+        });
+
+        fileUploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            fileUploadArea.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+
+        // معالجة إرسال النموذج
+        uploadForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const title = document.getElementById('image-title').value;
+            const description = document.getElementById('image-description').value;
+            const file = fileInput.files[0];
+
+            if (!file) {
+                showError('يرجى اختيار صورة');
                 return;
             }
-            
-            const title = imageTitle.value.trim() || 'صورة_بدون_عنوان';
-            
-            // إنشاء رابط تنزيل
-            const link = document.createElement('a');
-            link.href = imagePreview.src;
-            
-            // الحصول على امتداد الملف
-            const fileExtension = imagePreview.src.split(';')[0].split('/')[1];
-            
-            // استخدام عنوان الصورة كاسم الملف
-            link.download = `${title}.${fileExtension}`;
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+
+            formData.append('title', title);
+            formData.append('description', description);
+            formData.append('image', file);
+
+            // عرض حالة التحميل
+            loading.style.display = 'block';
+            uploadBtn.disabled = true;
+            hideMessages();
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showSuccess('تم رفع الصورة بنجاح! ✅');
+                    uploadForm.reset();
+                    imagePreview.style.display = 'none';
+                    loadGallery(); // تحديث المعرض
+                } else {
+                    showError(result.error || 'حدث خطأ أثناء رفع الصورة');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showError('حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى');
+            } finally {
+                loading.style.display = 'none';
+                uploadBtn.disabled = false;
+            }
         });
+
+        // تحميل المعرض
+        async function loadGallery() {
+            try {
+                const response = await fetch('/gallery');
+                const images = await response.json();
+
+                galleryGrid.innerHTML = '';
+
+                if (images.length === 0) {
+                    galleryGrid.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">لا توجد صور مرفوعة بعد</p>';
+                    return;
+                }
+
+                images.forEach(image => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.innerHTML = `
+                        <img src="/uploads/${image.filename}" alt="${image.title}">
+                        <div class="gallery-item-content">
+                            <h3>${image.title}</h3>
+                            <p>${image.description}</p>
+                        </div>
+                    `;
+                    galleryGrid.appendChild(galleryItem);
+                });
+            } catch (error) {
+                console.error('Error loading gallery:', error);
+            }
+        }
+
+        // تحميل المعرض عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', loadGallery);
     </script>
 </body>
 </html>
+
+
+
  ====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
