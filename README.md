@@ -1439,7 +1439,8 @@ s0.parentNode.insertBefore(s1,s0);
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
-
+=====
+    pages
 #telegram-float svg {
   width: 28px;
   height: 28px;
