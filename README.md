@@ -757,7 +757,7 @@ social-icon:hover {
     <!-- بطاقة تحتوي على صورة -->
     <div class="card">
         <!-- إرفاق الصورة -->
-        <img src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
+        <img src="https://www.fac.txt" alt="صورة البطاقة">
         <!-- محتوى البطاقة -->
         <div class="card-content">
             <h3>عنوان البطاقة</h3>
