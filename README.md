@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -56,8 +56,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* تنسيق الروابط */
@@ -89,7 +87,7 @@
             transition: var(--transition);
             border: none;
             outline: none;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
         }
 
         /* زر أساسي */
@@ -157,7 +155,6 @@
             color: white;
             width: 100%;
             margin-top: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .btn-course:hover {
@@ -169,7 +166,7 @@
         .header {
             background-color: var(--primary-color);
             color: white;
-            padding: 00px 0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -278,7 +275,7 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
             margin-bottom: 50px;
             border-top: 5px solid var(--accent-color);
         }
@@ -304,7 +301,6 @@
             text-align: center;
             margin-bottom: 30px;
             color: var(--primary-color);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* شبكة بطاقات المميزات */
@@ -320,7 +316,7 @@
             border-radius: var(--border-radius);
             padding: 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
             border-bottom: 3px solid transparent;
         }
@@ -348,7 +344,7 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
         }
 
         .spread-info h3 {
@@ -371,7 +367,7 @@
             border-radius: var(--border-radius);
             padding: 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -410,7 +406,7 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
 
@@ -422,7 +418,6 @@
             font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .app-card h3 {
@@ -467,7 +462,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* ===== تنسيقات القسم الخامس ===== */
@@ -481,7 +475,6 @@
             background-color: #0088cc;
             color: white;
             margin-bottom: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .main-channel i {
@@ -498,7 +491,6 @@
             font-size: 1.8rem;
             margin-bottom: 25px;
             color: var(--primary-color);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* شبكة قنوات الإشارات */
@@ -506,7 +498,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* بطاقة قناة */
@@ -515,7 +506,7 @@
             border-radius: var(--border-radius);
             padding: 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
 
@@ -740,30 +731,6 @@
     </style>
 </head>
 <body>
-    <!-- القسم العلوي (الهيدر) -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Rannforex</h1>
-                <p>شركة الوساطة المالية الموثوقة</p>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#section1">الرئيسية</a></li>
-                    <li><a href="#section2">التقييمات</a></li>
-                    <li><a href="#section3">التطبيقات</a></li>
-                    <li><a href="#section4">التعليم</a></li>
-                    <li><a href="#section5">قنوات تلجرام</a></li>
-                    <li><a href="#section6">الكورسات</a></li>
-                    <li><a href="#section7">تواصل معنا</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
     <!-- القسم الرئيسي -->
     <main>
         <!-- القسم الأول: معلومات شركة الوساطة المالية -->
