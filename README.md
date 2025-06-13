@@ -1029,7 +1029,7 @@ social-icon:hover {
                     </a>
                  </div>
                  
-   <section id="section2" class="section">         
+   <section>         
                             
 <html lang="ar">
 <head>
