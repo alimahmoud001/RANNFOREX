@@ -183,7 +183,7 @@
 
         /* تنسيق الشعار */
         .logo h1 {
-            font-size: 2.5rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--accent-color);
             margin-bottom: 5px;
@@ -209,7 +209,7 @@
 
         .main-nav ul li a {
             color: white;
-            font-weight: 600;
+            font-weight: 200;
             padding: 10px 0;
             position: relative;
         }
@@ -232,8 +232,8 @@
 
         /* زر القائمة للموبايل */
         .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
+            display: gird;
+            font-size: 1rem;
             cursor: pointer;
         }
 
