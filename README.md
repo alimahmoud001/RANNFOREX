@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -355,7 +354,7 @@
         .ratings-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 50px;
         }
 
         /* بطاقة تقييم */
@@ -1087,7 +1086,7 @@
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
                  </div>
-            </div>
+           
                             
 <html lang="ar">
 <head>
