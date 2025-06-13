@@ -757,11 +757,11 @@ social-icon:hover {
     <!-- بطاقة تحتوي على صورة -->
     <div class="card">
         <!-- إرفاق الصورة -->
-        <img src="https://www.fac.txt" alt="صورة البطاقة">
+        <img src="https://www.facebook.com/61558501536241/posts/122183414816283384/?mibextid=rS40aB7S9Ucbxw6v" alt="صورة البطاقة">
         <!-- محتوى البطاقة -->
         <div class="card-content">
-            <h3>عنوان البطاقة</h3>
-            <p>وصف مختصر لمحتوى البطاقة. يمكنك إضافة تفاصيل إضافية هنا.</p>
+            <h3>المخطط الاستثماري</h3>
+            <p>يمكنك ان تتداول معي عن طريق الحساب المدار pamm وهذه صورة توضيحية لنمو حسابي.</p>
         </div>
     </div>
 </body>
@@ -810,7 +810,7 @@ social-icon:hover {
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn btn-app" target="_blank">
-                    <i class="fab fa-google-play"></i> تريدنغ فيو 
+                    <i class="fab fa-google-play"></i> تريدنغ فيو
                 </a>
             </div>
                 </div>
