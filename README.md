@@ -708,6 +708,65 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
+ ====
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة مع صورة</title>
+    <style>
+        /* تنسيق البطاقة */
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* تنسيق الصورة */
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* تنسيق المحتوى */
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- بطاقة تحتوي على صورة -->
+    <div class="card">
+        <!-- إرفاق الصورة -->
+        <img src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
+        <!-- محتوى البطاقة -->
+        <div class="card-content">
+            <h3>عنوان البطاقة</h3>
+            <p>وصف مختصر لمحتوى البطاقة. يمكنك إضافة تفاصيل إضافية هنا.</p>
+        </div>
+    </div>
+</body>
+</html>
+ ====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
