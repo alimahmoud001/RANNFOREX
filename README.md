@@ -708,13 +708,12 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
- ====
-<!DOCTYPE html>
+ ====<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة مع زر تنزيل صورة</title>
+    <title>بطاقة مع تحميل صورة</title>
     <style>
         /* تنسيق البطاقة */
         .card {
@@ -731,7 +730,8 @@ social-icon:hover {
         /* تنسيق الصورة */
         .card img {
             width: 100%;
-            height: auto;
+            height: 200px;
+            object-fit: cover;
             display: block;
         }
 
@@ -752,8 +752,8 @@ social-icon:hover {
             margin: 10px 0;
         }
 
-        /* تنسيق زر التنزيل */
-        .download-btn {
+        /* تنسيق زر التحميل */
+        .upload-btn {
             display: inline-block;
             padding: 10px 20px;
             background-color: #4CAF50;
@@ -762,26 +762,50 @@ social-icon:hover {
             border-radius: 5px;
             font-size: 1em;
             margin-top: 10px;
+            cursor: pointer;
         }
 
-        .download-btn:hover {
+        .upload-btn:hover {
             background-color: #45a049;
+        }
+
+        /* إخفاء حقل الإدخال الافتراضي */
+        input[type="file"] {
+            display: none;
         }
     </style>
 </head>
 <body>
     <!-- بطاقة تحتوي على صورة -->
     <div class="card">
-        <!-- الصورة -->
-        <img src="[https://images.unsplash.com/photo-1600585154340-be6161a56a0c](https://images.app.goo.gl/ZVNS1)" alt="صورة البطاقة">
+        <!-- الصورة الافتراضية أو المحملة -->
+        <img id="cardImage" src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
         <!-- محتوى البطاقة -->
         <div class="card-content">
             <h3>عنوان البطاقة</h3>
             <p>وصف مختصر لمحتوى البطاقة. يمكنك إضافة تفاصيل إضافية هنا.</p>
-            <!-- زر التنزيل -->
-            <a href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" download class="download-btn">تنزيل الصورة</a>
+            <!-- زر لتحميل الصورة -->
+            <label for="imageUpload" class="upload-btn">تحميل صورة</label>
+            <input type="file" id="imageUpload" accept="image/*">
         </div>
     </div>
+
+    <script>
+        // JavaScript لتحميل الصورة وعرضها في البطاقة
+        const imageUpload = document.getElementById('imageUpload');
+        const cardImage = document.getElementById('cardImage');
+
+        imageUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0]; // الحصول على الملف المختار
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    cardImage.src = e.target.result; // تغيير مصدر الصورة إلى الصورة المحملة
+                };
+                reader.readAsDataURL(file); // قراءة الملف كـ Data URL
+            }
+        });
+    </script>
 </body>
 </html>
  ====
