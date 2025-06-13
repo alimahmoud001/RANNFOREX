@@ -563,58 +563,20 @@
             color: var(--primary-color);
         }
 
-        /* أيقونات وسائل التواصل الاجتماعي */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
+       
+        /* ===== تنسيقات الفوتر ===== */ 
 
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
+social-icon:hover {
             transform: translateY(-5px) scale(1.1);
         }
 
-        /* ألوان مخصصة لكل منصة اجتماعية */
-        .social-icon:nth-child(1) {
-            background-color: #1877f2; /* فيسبوك */
-        }
-
-        .social-icon:nth-child(2) {
-            background-color: #e1306c; /* انستغرام */
-        }
-
-        .social-icon:nth-child(3) {
-            background-color: #000000; /* تويتر (اكس) */
-        }
-
-        .social-icon:nth-child(4) {
-            background-color: #25d366; /* واتساب */
-        }
-
-        .social-icon:nth-child(5) {
-            background-color: #0088cc; /* تلجرام */
-        }
-
-        /* ===== تنسيقات الفوتر ===== */
         .footer {
             background-color: var(--primary-color);
             color: white;
             padding: 20px 0;
             text-align: center;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* ===== تنسيقات التجاوب مع الشاشات المختلفة ===== */
@@ -732,7 +694,7 @@
         <!-- القسم الأول: معلومات شركة الوساطة المالية -->
         <section id="section1" class="section">
             <div class="container">
-                <h2 class="section-title" >هذه فرصة عمل جيدة للجميع لتحقيق أرباح جيدة ابدأ التداول هنا نقبل السوريين أو اي بلد آخر لقد قمت بإضافة كل شيء تحتاجه إلى هذا الموقع من قنوات يوتيوب تعليمية وقنوات إشارات مجانية بالإضافة إلى قناتي على تلجرام</h2>
+                <h2 class="section-title" >هذه فرصة عمل جيدة للجميع تحقيق أرباح جيدة ابدأ التداول هنا نقبل السوريين أو اي بلد آخر لقد قمت بإضافة كل شيء تحتاجه إلى هذا الموقع من قنوات يوتيوب تعليمية وقنوات إشارات مجانية بالإضافة إلى قناتي على تلجرام</h2>
                 <div class="register-card">
                     <h3>سجل الآن في Rannforex</h3>
                     <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
@@ -1065,6 +1027,7 @@
                     <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
+                 </div>
             </div>
                             
 <html lang="ar">
@@ -1080,7 +1043,8 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
-            border-radius: 20px
+            border-radius: 20px;
+
         }
         .accordion {
             background-color: #007bff;
@@ -1093,6 +1057,7 @@
             outline: none;
             font-size: 18px;
             transition: background-color 0.3s;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
         .accordion:hover {
             background-color: #0056b3;
@@ -1104,6 +1069,7 @@
             overflow: hidden;
             border: 1px solid #ddd;
             margin-bottom: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
         .panel p, .panel ol {
             font-size: 16px;
