@@ -708,540 +708,578 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
- ====<
- <!DOCTYPE html>
+ ====
+ 
+    <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رفع الصور - موقعي</title>
+    <title>نظام إدارة الصور</title>
     <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
             min-height: 100vh;
             padding: 20px;
+            line-height: 1.6;
         }
-
+        
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
         }
-
-        .header {
-            background: linear-gradient(45deg, #4a90e2, #357abd);
-            color: white;
-            padding: 30px;
+        
+        header {
             text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
         }
-
-        .header h1 {
+        
+        h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-
-        .header p {
-            font-size: 1.1rem;
+        
+        .subtitle {
+            font-size: 1.2rem;
             opacity: 0.9;
         }
-
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        @media (min-width: 992px) {
+            .app-container {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+        
         .upload-section {
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-
-        .upload-form {
+        
+        .gallery-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--success);
             display: flex;
-            flex-direction: column;
-            gap: 25px;
+            align-items: center;
         }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        
+        .section-title i {
+            margin-left: 10px;
         }
-
-        .form-group label {
-            font-weight: 600;
-            color: #333;
-            font-size: 1.1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4a90e2;
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-        }
-
-        .file-upload-area {
-            border: 3px dashed #4a90e2;
+        
+        .upload-area {
+            border: 3px dashed rgba(255, 255, 255, 0.4);
             border-radius: 15px;
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
-            background: #f8f9ff;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
             position: relative;
-            overflow: hidden;
         }
-
-        .file-upload-area:hover {
-            border-color: #357abd;
-            background: #f0f4ff;
-            transform: translateY(-2px);
+        
+        .upload-area:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
-
-        .file-upload-area.dragover {
-            border-color: #357abd;
-            background: #e8f2ff;
-            transform: scale(1.02);
-        }
-
+        
         .upload-icon {
-            font-size: 3rem;
-            color: #4a90e2;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: var(--success);
+        }
+        
+        .upload-text {
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
-
-        .upload-text {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .upload-subtext {
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        #file-input {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .image-preview {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .preview-image {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .upload-btn {
-            background: linear-gradient(45deg, #4a90e2, #357abd);
-            color: white;
+        
+        .browse-btn {
+            background: var(--success);
             border: none;
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
+            color: var(--dark);
+            padding: 12px 30px;
+            font-size: 1.1rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
         }
-
-        .upload-btn:hover {
+        
+        .browse-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.6);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-
-        .upload-btn:active {
-            transform: translateY(-1px);
+        
+        input[type="file"] {
+            display: none;
         }
-
-        .upload-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
+        
+        .form-group {
+            margin-bottom: 20px;
         }
-
-        .gallery {
-            padding: 40px;
-            background: #f8f9fa;
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
-
-        .gallery h2 {
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            border: none;
+            color: white;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .preview-container {
+            display: none;
+            margin: 25px 0;
             text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-            font-size: 2rem;
         }
-
-        .gallery-grid {
+        
+        #imagePreview {
+            max-width: 100%;
+            max-height: 250px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
-
-        .gallery-item {
-            background: white;
+        
+        .image-card {
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
+        
+        .image-card:hover {
+            transform: translateY(-10px);
         }
-
-        .gallery-item img {
+        
+        .card-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            display: block;
         }
-
-        .gallery-item-content {
-            padding: 20px;
+        
+        .card-body {
+            padding: 15px;
         }
-
-        .gallery-item h3 {
-            margin-bottom: 10px;
-            color: #333;
+        
+        .card-title {
             font-size: 1.2rem;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
-        .gallery-item p {
-            color: #666;
-            line-height: 1.5;
+        
+        .card-date {
+            font-size: 0.9rem;
+            color: var(--success);
+            margin-bottom: 15px;
         }
-
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #c3e6cb;
-            display: none;
+        
+        .card-actions {
+            display: flex;
+            justify-content: space-between;
         }
-
-        .error-message {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #f5c6cb;
-            display: none;
+        
+        .action-btn {
+            padding: 8px 15px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
-
-        .loading {
-            display: none;
+        
+        .download-btn {
+            background: var(--success);
+            color: var(--dark);
+        }
+        
+        .delete-btn {
+            background: #e63946;
+            color: white;
+        }
+        
+        .action-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        
+        .empty-gallery {
             text-align: center;
+            padding: 40px 20px;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .empty-gallery i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 20px;
+            color: var(--success);
+        }
+        
+        .status-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message {
+            background: rgba(76, 201, 240, 0.3);
+            border: 1px solid var(--success);
+        }
+        
+        .error-message {
+            background: rgba(230, 57, 70, 0.3);
+            border: 1px solid #e63946;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
             padding: 20px;
-        }
-
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #4a90e2;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-
-            .header {
-                padding: 20px;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .upload-section {
-                padding: 20px;
-            }
-
-            .gallery {
-                padding: 20px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 15px;
-            }
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🖼️ معرض الصور</h1>
-            <p>ارفع صورك المفضلة مع إضافة العنوان والوصف</p>
-        </div>
-
-        <div class="upload-section">
-            <div class="success-message" id="success-message">
-                تم رفع الصورة بنجاح! ✅
-            </div>
+        <header>
+            <h1>نظام إدارة الصور</h1>
+            <p class="subtitle">حمّل صورك من هاتفك، احفظها في الموقع، وادرها بسهولة</p>
+        </header>
+        
+        <div class="app-container">
+            <section class="upload-section">
+                <h2 class="section-title">
+                    <i>📤</i> رفع صورة جديدة
+                </h2>
+                
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">اضغط لاختيار صورة من هاتفك</div>
+                    <button class="browse-btn">تصفح معرض الصور</button>
+                    <input type="file" id="imageInput" accept="image/*">
+                </div>
+                
+                <div id="uploadStatus" class="status-message"></div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <img id="imagePreview" alt="معاينة الصورة">
+                </div>
+                
+                <div class="form-group">
+                    <label for="imageTitle">عنوان الصورة:</label>
+                    <input type="text" class="form-control" id="imageTitle" placeholder="أدخل عنوانًا وصفى للصورة">
+                </div>
+                
+                <div class="form-group">
+                    <label for="imageDescription">وصف الصورة (اختياري):</label>
+                    <textarea class="form-control" id="imageDescription" rows="3" placeholder="أضف وصفًا للصورة"></textarea>
+                </div>
+                
+                <button class="btn" id="saveBtn">حفظ الصورة في الموقع</button>
+            </section>
             
-            <div class="error-message" id="error-message">
-                حدث خطأ أثناء رفع الصورة. يرجى المحاولة مرة أخرى.
-            </div>
-
-            <form class="upload-form" id="upload-form">
-                <div class="form-group">
-                    <label for="image-title">عنوان الصورة</label>
-                    <input type="text" id="image-title" name="title" placeholder="أدخل عنوان الصورة" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="image-description">وصف الصورة</label>
-                    <textarea id="image-description" name="description" rows="4" placeholder="أدخل وصف الصورة" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>اختر الصورة</label>
-                    <div class="file-upload-area" id="file-upload-area">
-                        <div class="upload-icon">📷</div>
-                        <div class="upload-text">اضغط هنا لاختيار الصورة</div>
-                        <div class="upload-subtext">أو اسحب الصورة وأفلتها هنا</div>
-                        <input type="file" id="file-input" name="image" accept="image/*" required>
-                    </div>
-                    
-                    <div class="image-preview" id="image-preview">
-                        <img id="preview-image" class="preview-image" alt="معاينة الصورة">
+            <section class="gallery-section">
+                <h2 class="section-title">
+                    <i>🖼️</i> معرض الصور المحفوظة
+                </h2>
+                
+                <div id="galleryStatus" class="status-message"></div>
+                
+                <div class="gallery-container" id="imageGallery">
+                    <!-- سيتم ملؤها بالصور المخزنة -->
+                    <div class="empty-gallery">
+                        <i>📷</i>
+                        <p>لا توجد صور مخزنة بعد</p>
+                        <p>قم برفع صورة لتبدأ</p>
                     </div>
                 </div>
-
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>جاري رفع الصورة...</p>
-                </div>
-
-                <button type="submit" class="upload-btn" id="upload-btn">
-                    رفع الصورة 🚀
-                </button>
-            </form>
+            </section>
         </div>
-
-        <div class="gallery">
-            <h2>معرض الصور المرفوعة</h2>
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- سيتم إضافة الصور هنا ديناميكياً -->
-            </div>
-        </div>
+        
+        <footer>
+            <p>تم التطوير خصيصًا للعمل على أجهزة الهاتف المحمول | نظام إدارة الصور © 2023</p>
+        </footer>
     </div>
 
     <script>
         // عناصر DOM
-        const fileInput = document.getElementById('file-input');
-        const fileUploadArea = document.getElementById('file-upload-area');
-        const imagePreview = document.getElementById('image-preview');
-        const previewImage = document.getElementById('preview-image');
-        const uploadForm = document.getElementById('upload-form');
-        const uploadBtn = document.getElementById('upload-btn');
-        const loading = document.getElementById('loading');
-        const successMessage = document.getElementById('success-message');
-        const errorMessage = document.getElementById('error-message');
-        const galleryGrid = document.getElementById('gallery-grid');
-
-        // إخفاء الرسائل
-        function hideMessages() {
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
+        const uploadArea = document.getElementById('uploadArea');
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewContainer = document.getElementById('previewContainer');
+        const imageTitle = document.getElementById('imageTitle');
+        const imageDescription = document.getElementById('imageDescription');
+        const saveBtn = document.getElementById('saveBtn');
+        const imageGallery = document.getElementById('imageGallery');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const galleryStatus = document.getElementById('galleryStatus');
+        
+        // متغيرات التطبيق
+        let uploadedImage = null;
+        let storedImages = JSON.parse(localStorage.getItem('savedImages')) || [];
+        
+        // تهيئة التطبيق
+        function initApp() {
+            renderGallery();
+            setupEventListeners();
         }
-
-        // عرض رسالة النجاح
-        function showSuccess(message) {
-            hideMessages();
-            successMessage.textContent = message;
-            successMessage.style.display = 'block';
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
+        
+        // إعداد مستمعي الأحداث
+        function setupEventListeners() {
+            // اختيار الصورة
+            uploadArea.addEventListener('click', () => imageInput.click());
+            imageInput.addEventListener('change', handleImageSelect);
+            
+            // حفظ الصورة
+            saveBtn.addEventListener('click', saveImage);
         }
-
-        // عرض رسالة الخطأ
-        function showError(message) {
-            hideMessages();
-            errorMessage.textContent = message;
-            errorMessage.style.display = 'block';
-            setTimeout(() => {
-                errorMessage.style.display = 'none';
-            }, 5000);
-        }
-
-        // معالجة اختيار الملف
-        fileInput.addEventListener('change', function(e) {
+        
+        // معالجة اختيار الصورة
+        function handleImageSelect(e) {
             const file = e.target.files[0];
-            if (file) {
-                // التحقق من نوع الملف
-                if (!file.type.startsWith('image/')) {
-                    showError('يرجى اختيار ملف صورة صحيح');
-                    return;
-                }
-
-                // التحقق من حجم الملف (5MB كحد أقصى)
-                if (file.size > 5 * 1024 * 1024) {
-                    showError('حجم الصورة كبير جداً. يرجى اختيار صورة أصغر من 5 ميجابايت');
-                    return;
-                }
-
-                // عرض معاينة الصورة
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    previewImage.src = e.target.result;
-                    imagePreview.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // معالجة السحب والإفلات
-        fileUploadArea.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            fileUploadArea.classList.add('dragover');
-        });
-
-        fileUploadArea.addEventListener('dragleave', function(e) {
-            e.preventDefault();
-            fileUploadArea.classList.remove('dragover');
-        });
-
-        fileUploadArea.addEventListener('drop', function(e) {
-            e.preventDefault();
-            fileUploadArea.classList.remove('dragover');
             
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                fileInput.files = files;
-                fileInput.dispatchEvent(new Event('change'));
-            }
-        });
-
-        // معالجة إرسال النموذج
-        uploadForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+            if (!file) return;
             
-            const formData = new FormData();
-            const title = document.getElementById('image-title').value;
-            const description = document.getElementById('image-description').value;
-            const file = fileInput.files[0];
-
-            if (!file) {
-                showError('يرجى اختيار صورة');
+            if (!file.type.match('image.*')) {
+                showMessage(uploadStatus, 'الرجاء اختيار ملف صورة فقط', 'error');
                 return;
             }
-
-            formData.append('title', title);
-            formData.append('description', description);
-            formData.append('image', file);
-
-            // عرض حالة التحميل
-            loading.style.display = 'block';
-            uploadBtn.disabled = true;
-            hideMessages();
-
-            try {
-                const response = await fetch('/upload', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    showSuccess('تم رفع الصورة بنجاح! ✅');
-                    uploadForm.reset();
-                    imagePreview.style.display = 'none';
-                    loadGallery(); // تحديث المعرض
-                } else {
-                    showError(result.error || 'حدث خطأ أثناء رفع الصورة');
+            
+            uploadedImage = file;
+            
+            // عرض معاينة الصورة
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                imagePreview.src = e.target.result;
+                previewContainer.style.display = 'block';
+                
+                // استخدام اسم الملف كعنوان افتراضي
+                if (!imageTitle.value) {
+                    const fileName = file.name.replace(/\.[^/.]+$/, "");
+                    imageTitle.value = fileName;
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                showError('حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى');
-            } finally {
-                loading.style.display = 'none';
-                uploadBtn.disabled = false;
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        // حفظ الصورة في التخزين المحلي
+        function saveImage() {
+            if (!uploadedImage) {
+                showMessage(uploadStatus, 'الرجاء اختيار صورة أولاً', 'error');
+                return;
             }
-        });
-
-        // تحميل المعرض
-        async function loadGallery() {
-            try {
-                const response = await fetch('/gallery');
-                const images = await response.json();
-
-                galleryGrid.innerHTML = '';
-
-                if (images.length === 0) {
-                    galleryGrid.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">لا توجد صور مرفوعة بعد</p>';
-                    return;
-                }
-
-                images.forEach(image => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    galleryItem.innerHTML = `
-                        <img src="/uploads/${image.filename}" alt="${image.title}">
-                        <div class="gallery-item-content">
-                            <h3>${image.title}</h3>
-                            <p>${image.description}</p>
+            
+            if (!imageTitle.value.trim()) {
+                showMessage(uploadStatus, 'الرجاء إدخال عنوان للصورة', 'error');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const imageData = {
+                    id: Date.now(),
+                    title: imageTitle.value,
+                    description: imageDescription.value,
+                    image: e.target.result,
+                    date: new Date().toLocaleString(),
+                    filename: uploadedImage.name
+                };
+                
+                // إضافة الصورة إلى القائمة
+                storedImages.push(imageData);
+                
+                // حفظ في التخزين المحلي
+                localStorage.setItem('savedImages', JSON.stringify(storedImages));
+                
+                // إظهار رسالة النجاح
+                showMessage(uploadStatus, 'تم حفظ الصورة في الموقع بنجاح!', 'success');
+                
+                // إعادة تعيين النموذج
+                resetForm();
+                
+                // تحديث المعرض
+                renderGallery();
+            };
+            
+            reader.readAsDataURL(uploadedImage);
+        }
+        
+        // عرض المعرض
+        function renderGallery() {
+            if (storedImages.length === 0) {
+                imageGallery.innerHTML = `
+                    <div class="empty-gallery">
+                        <i>📷</i>
+                        <p>لا توجد صور مخزنة بعد</p>
+                        <p>قم برفع صورة لتبدأ</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            imageGallery.innerHTML = storedImages.map(image => `
+                <div class="image-card">
+                    <img src="${image.image}" alt="${image.title}" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">${image.title}</h3>
+                        <div class="card-date">${image.date}</div>
+                        <div class="card-actions">
+                            <button class="action-btn download-btn" onclick="downloadImage('${image.id}')">
+                                تنزيل
+                            </button>
+                            <button class="action-btn delete-btn" onclick="deleteImage('${image.id}')">
+                                حذف
+                            </button>
                         </div>
-                    `;
-                    galleryGrid.appendChild(galleryItem);
-                });
-            } catch (error) {
-                console.error('Error loading gallery:', error);
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // تنزيل الصورة
+        function downloadImage(imageId) {
+            const image = storedImages.find(img => img.id == imageId);
+            if (!image) return;
+            
+            const link = document.createElement('a');
+            link.href = image.image;
+            
+            // الحصول على امتداد الملف
+            const fileExtension = image.filename.split('.').pop().toLowerCase();
+            
+            // استخدام عنوان الصورة كاسم الملف
+            link.download = `${image.title}.${fileExtension}`;
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showMessage(galleryStatus, 'جاري تنزيل الصورة...', 'success');
+            setTimeout(() => {
+                galleryStatus.style.display = 'none';
+            }, 2000);
+        }
+        
+        // حذف الصورة
+        function deleteImage(imageId) {
+            if (confirm('هل أنت متأكد من رغبتك في حذف هذه الصورة؟')) {
+                storedImages = storedImages.filter(img => img.id != imageId);
+                localStorage.setItem('savedImages', JSON.stringify(storedImages));
+                renderGallery();
+                showMessage(galleryStatus, 'تم حذف الصورة بنجاح', 'success');
             }
         }
-
-        // تحميل المعرض عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', loadGallery);
+        
+        // إعادة تعيين النموذج
+        function resetForm() {
+            imageInput.value = '';
+            imageTitle.value = '';
+            imageDescription.value = '';
+            previewContainer.style.display = 'none';
+            uploadedImage = null;
+        }
+        
+        // عرض الرسائل
+        function showMessage(element, message, type) {
+            element.textContent = message;
+            element.className = `status-message ${type}-message`;
+            element.style.display = 'block';
+            
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 3000);
+        }
+        
+        // بدء التطبيق
+        initApp();
     </script>
 </body>
-</html>
-
-
-
+</html>     
  ====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
@@ -1980,575 +2018,4 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </style>
 
-======
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام إدارة الصور</title>
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --success: #4cc9f0;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            min-height: 100vh;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        header {
-            text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .app-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        @media (min-width: 992px) {
-            .app-container {
-                grid-template-columns: 1fr 2fr;
-            }
-        }
-        
-        .upload-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .gallery-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--success);
-            display: flex;
-            align-items: center;
-        }
-        
-        .section-title i {
-            margin-left: 10px;
-        }
-        
-        .upload-area {
-            border: 3px dashed rgba(255, 255, 255, 0.4);
-            border-radius: 15px;
-            padding: 40px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        
-        .upload-area:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .upload-icon {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            color: var(--success);
-        }
-        
-        .upload-text {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        .browse-btn {
-            background: var(--success);
-            border: none;
-            color: var(--dark);
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        
-        .browse-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        input[type="file"] {
-            display: none;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            font-size: 1.1rem;
-            outline: none;
-        }
-        
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .btn {
-            background: linear-gradient(to right, #00b09b, #96c93d);
-            border: none;
-            color: white;
-            padding: 15px 0;
-            font-size: 1.2rem;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .preview-container {
-            display: none;
-            margin: 25px 0;
-            text-align: center;
-        }
-        
-        #imagePreview {
-            max-width: 100%;
-            max-height: 250px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .image-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .image-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .card-body {
-            padding: 15px;
-        }
-        
-        .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .card-date {
-            font-size: 0.9rem;
-            color: var(--success);
-            margin-bottom: 15px;
-        }
-        
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .action-btn {
-            padding: 8px 15px;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn {
-            background: var(--success);
-            color: var(--dark);
-        }
-        
-        .delete-btn {
-            background: #e63946;
-            color: white;
-        }
-        
-        .action-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-        
-        .empty-gallery {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .empty-gallery i {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 20px;
-            color: var(--success);
-        }
-        
-        .status-message {
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            display: none;
-        }
-        
-        .success-message {
-            background: rgba(76, 201, 240, 0.3);
-            border: 1px solid var(--success);
-        }
-        
-        .error-message {
-            background: rgba(230, 57, 70, 0.3);
-            border: 1px solid #e63946;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>نظام إدارة الصور</h1>
-            <p class="subtitle">حمّل صورك من هاتفك، احفظها في الموقع، وادرها بسهولة</p>
-        </header>
-        
-        <div class="app-container">
-            <section class="upload-section">
-                <h2 class="section-title">
-                    <i>📤</i> رفع صورة جديدة
-                </h2>
-                
-                <div class="upload-area" id="uploadArea">
-                    <div class="upload-icon">📁</div>
-                    <div class="upload-text">اضغط لاختيار صورة من هاتفك</div>
-                    <button class="browse-btn">تصفح معرض الصور</button>
-                    <input type="file" id="imageInput" accept="image/*">
-                </div>
-                
-                <div id="uploadStatus" class="status-message"></div>
-                
-                <div class="preview-container" id="previewContainer">
-                    <img id="imagePreview" alt="معاينة الصورة">
-                </div>
-                
-                <div class="form-group">
-                    <label for="imageTitle">عنوان الصورة:</label>
-                    <input type="text" class="form-control" id="imageTitle" placeholder="أدخل عنوانًا وصفى للصورة">
-                </div>
-                
-                <div class="form-group">
-                    <label for="imageDescription">وصف الصورة (اختياري):</label>
-                    <textarea class="form-control" id="imageDescription" rows="3" placeholder="أضف وصفًا للصورة"></textarea>
-                </div>
-                
-                <button class="btn" id="saveBtn">حفظ الصورة في الموقع</button>
-            </section>
-            
-            <section class="gallery-section">
-                <h2 class="section-title">
-                    <i>🖼️</i> معرض الصور المحفوظة
-                </h2>
-                
-                <div id="galleryStatus" class="status-message"></div>
-                
-                <div class="gallery-container" id="imageGallery">
-                    <!-- سيتم ملؤها بالصور المخزنة -->
-                    <div class="empty-gallery">
-                        <i>📷</i>
-                        <p>لا توجد صور مخزنة بعد</p>
-                        <p>قم برفع صورة لتبدأ</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <footer>
-            <p>تم التطوير خصيصًا للعمل على أجهزة الهاتف المحمول | نظام إدارة الصور © 2023</p>
-        </footer>
-    </div>
-
-    <script>
-        // عناصر DOM
-        const uploadArea = document.getElementById('uploadArea');
-        const imageInput = document.getElementById('imageInput');
-        const imagePreview = document.getElementById('imagePreview');
-        const previewContainer = document.getElementById('previewContainer');
-        const imageTitle = document.getElementById('imageTitle');
-        const imageDescription = document.getElementById('imageDescription');
-        const saveBtn = document.getElementById('saveBtn');
-        const imageGallery = document.getElementById('imageGallery');
-        const uploadStatus = document.getElementById('uploadStatus');
-        const galleryStatus = document.getElementById('galleryStatus');
-        
-        // متغيرات التطبيق
-        let uploadedImage = null;
-        let storedImages = JSON.parse(localStorage.getItem('savedImages')) || [];
-        
-        // تهيئة التطبيق
-        function initApp() {
-            renderGallery();
-            setupEventListeners();
-        }
-        
-        // إعداد مستمعي الأحداث
-        function setupEventListeners() {
-            // اختيار الصورة
-            uploadArea.addEventListener('click', () => imageInput.click());
-            imageInput.addEventListener('change', handleImageSelect);
-            
-            // حفظ الصورة
-            saveBtn.addEventListener('click', saveImage);
-        }
-        
-        // معالجة اختيار الصورة
-        function handleImageSelect(e) {
-            const file = e.target.files[0];
-            
-            if (!file) return;
-            
-            if (!file.type.match('image.*')) {
-                showMessage(uploadStatus, 'الرجاء اختيار ملف صورة فقط', 'error');
-                return;
-            }
-            
-            uploadedImage = file;
-            
-            // عرض معاينة الصورة
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                imagePreview.src = e.target.result;
-                previewContainer.style.display = 'block';
-                
-                // استخدام اسم الملف كعنوان افتراضي
-                if (!imageTitle.value) {
-                    const fileName = file.name.replace(/\.[^/.]+$/, "");
-                    imageTitle.value = fileName;
-                }
-            };
-            reader.readAsDataURL(file);
-        }
-        
-        // حفظ الصورة في التخزين المحلي
-        function saveImage() {
-            if (!uploadedImage) {
-                showMessage(uploadStatus, 'الرجاء اختيار صورة أولاً', 'error');
-                return;
-            }
-            
-            if (!imageTitle.value.trim()) {
-                showMessage(uploadStatus, 'الرجاء إدخال عنوان للصورة', 'error');
-                return;
-            }
-            
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const imageData = {
-                    id: Date.now(),
-                    title: imageTitle.value,
-                    description: imageDescription.value,
-                    image: e.target.result,
-                    date: new Date().toLocaleString(),
-                    filename: uploadedImage.name
-                };
-                
-                // إضافة الصورة إلى القائمة
-                storedImages.push(imageData);
-                
-                // حفظ في التخزين المحلي
-                localStorage.setItem('savedImages', JSON.stringify(storedImages));
-                
-                // إظهار رسالة النجاح
-                showMessage(uploadStatus, 'تم حفظ الصورة في الموقع بنجاح!', 'success');
-                
-                // إعادة تعيين النموذج
-                resetForm();
-                
-                // تحديث المعرض
-                renderGallery();
-            };
-            
-            reader.readAsDataURL(uploadedImage);
-        }
-        
-        // عرض المعرض
-        function renderGallery() {
-            if (storedImages.length === 0) {
-                imageGallery.innerHTML = `
-                    <div class="empty-gallery">
-                        <i>📷</i>
-                        <p>لا توجد صور مخزنة بعد</p>
-                        <p>قم برفع صورة لتبدأ</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            imageGallery.innerHTML = storedImages.map(image => `
-                <div class="image-card">
-                    <img src="${image.image}" alt="${image.title}" class="card-image">
-                    <div class="card-body">
-                        <h3 class="card-title">${image.title}</h3>
-                        <div class="card-date">${image.date}</div>
-                        <div class="card-actions">
-                            <button class="action-btn download-btn" onclick="downloadImage('${image.id}')">
-                                تنزيل
-                            </button>
-                            <button class="action-btn delete-btn" onclick="deleteImage('${image.id}')">
-                                حذف
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        // تنزيل الصورة
-        function downloadImage(imageId) {
-            const image = storedImages.find(img => img.id == imageId);
-            if (!image) return;
-            
-            const link = document.createElement('a');
-            link.href = image.image;
-            
-            // الحصول على امتداد الملف
-            const fileExtension = image.filename.split('.').pop().toLowerCase();
-            
-            // استخدام عنوان الصورة كاسم الملف
-            link.download = `${image.title}.${fileExtension}`;
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showMessage(galleryStatus, 'جاري تنزيل الصورة...', 'success');
-            setTimeout(() => {
-                galleryStatus.style.display = 'none';
-            }, 2000);
-        }
-        
-        // حذف الصورة
-        function deleteImage(imageId) {
-            if (confirm('هل أنت متأكد من رغبتك في حذف هذه الصورة؟')) {
-                storedImages = storedImages.filter(img => img.id != imageId);
-                localStorage.setItem('savedImages', JSON.stringify(storedImages));
-                renderGallery();
-                showMessage(galleryStatus, 'تم حذف الصورة بنجاح', 'success');
-            }
-        }
-        
-        // إعادة تعيين النموذج
-        function resetForm() {
-            imageInput.value = '';
-            imageTitle.value = '';
-            imageDescription.value = '';
-            previewContainer.style.display = 'none';
-            uploadedImage = null;
-        }
-        
-        // عرض الرسائل
-        function showMessage(element, message, type) {
-            element.textContent = message;
-            element.className = `status-message ${type}-message`;
-            element.style.display = 'block';
-            
-            setTimeout(() => {
-                element.style.display = 'none';
-            }, 3000);
-        }
-        
-        // بدء التطبيق
-        initApp();
-    </script>
-</body>
-</html>
-
+=====
