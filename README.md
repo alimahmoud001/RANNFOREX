@@ -710,105 +710,303 @@ social-icon:hover {
  </div>
 ====
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة معزولة لتحميل وحذف صورة</title>
+    <title>بطاقة تحميل الصور</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* تنسيق البطاقة مع كلاس فريد للعزل */
-        .custom-card {
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        /* تنسيق الصورة */
-        .custom-card img {
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
+            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
         }
-
-        /* تنسيق المحتوى */
-        .custom-card .card-content {
-            padding: 15px;
+        
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 100%;
+            max-width: 380px;
+            transition: transform 0.3s ease;
         }
-
-        /* تنسيق الأزرار */
-        .custom-card .upload-btn,
-        .custom-card .delete-btn {
-            display: inline-block;
-            padding: 8px 16px;
-            margin: 5px;
-            border-radius: 5px;
-            font-size: 1em;
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .image-container {
+            width: 100%;
+            min-height: 250px;
+            background-color: #f8f9fa;
+            border: 2px dashed #e0e0e0;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .image-container:hover {
+            border-color: #3498db;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 280px;
+            display: none;
+            border-radius: 8px;
+        }
+        
+        .image-container .placeholder {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+        
+        .image-container .placeholder i {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #bdc3c7;
+        }
+        
+        .image-container .placeholder p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-upload {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
             color: white;
         }
-
-        .custom-card .upload-btn {
-            background-color: #4CAF50;
+        
+        .btn-upload:hover {
+            background: linear-gradient(to right, #27ae60, #219653);
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
         }
-
-        .custom-card .upload-btn:hover {
-            background-color: #45a049;
-        }
-
-        .custom-card .delete-btn {
-            background-color: #f44336;
-        }
-
-        .custom-card .delete-btn:hover {
-            background-color: #d32f2f;
-        }
-
-        /* إخفاء حقل الإدخال */
-        .custom-card input[type="file"] {
+        
+        .btn-delete {
+            background: linear-gradient(to right, #e74c3c, #c0392b);
+            color: white;
             display: none;
+        }
+        
+        .btn-delete:hover {
+            background: linear-gradient(to right, #c0392b, #a93226);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 380px;
+            height: fit-content;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            font-size: 1.5rem;
+        }
+        
+        .features {
+            list-style-type: none;
+        }
+        
+        .features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features i {
+            color: #2ecc71;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .card, .info-card {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- بطاقة معزولة -->
-    <div class="custom-card">
-        <img id="cardImage" src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
-        <div class="card-content">
-            <!-- زر تحميل الصورة -->
-            <label for="imageUpload" class="upload-btn">تحميل صورة</label>
-            <input type="file" id="imageUpload" accept="image/*">
-            <!-- زر حذف الصورة -->
-            <button class="delete-btn" onclick="resetImage()">حذف الصورة</button>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>تحميل الصور</h2>
+            </div>
+            <div class="card-body">
+                <div class="image-container" id="imageContainer">
+                    <div class="placeholder">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>لم يتم تحميل أي صورة</p>
+                        <p>انقر على زر التحميل لاختيار صورة</p>
+                    </div>
+                    <img id="previewImage" src="" alt="صورة معاينة">
+                </div>
+                <div class="buttons">
+                    <input type="file" id="fileInput" class="file-input" accept="image/*">
+                    <button class="btn btn-upload" id="uploadBtn">
+                        <i class="fas fa-upload"></i> تحميل صورة
+                    </button>
+                    <button class="btn btn-delete" id="deleteBtn">
+                        <i class="fas fa-trash-alt"></i> حذف الصورة
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h3>ميزات البطاقة</h3>
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> واجهة مستخدم بسيطة وبديهية</li>
+                <li><i class="fas fa-check-circle"></i> حفظ الصور بعد تحديث الصفحة</li>
+                <li><i class="fas fa-check-circle"></i> دعم جميع أنواع الصور (JPG, PNG, GIF)</li>
+                <li><i class="fas fa-check-circle"></i> معاينة الصور قبل الحفظ</li>
+                <li><i class="fas fa-check-circle"></i> تصميم متجاوب يعمل على جميع الأجهزة</li>
+                <li><i class="fas fa-check-circle"></i> رسومات وتأثيرات حديثة</li>
+            </ul>
         </div>
     </div>
 
     <script>
-        // تحميل الصورة
-        const imageUpload = document.getElementById('imageUpload');
-        const cardImage = document.getElementById('cardImage');
-
-        imageUpload.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    cardImage.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadBtn = document.getElementById('uploadBtn');
+            const deleteBtn = document.getElementById('deleteBtn');
+            const previewImage = document.getElementById('previewImage');
+            const imageContainer = document.getElementById('imageContainer');
+            const placeholder = imageContainer.querySelector('.placeholder');
+            
+            // تحميل الصورة المحفوظة عند فتح الصفحة
+            const savedImage = localStorage.getItem('uploadedImage');
+            if (savedImage) {
+                previewImage.src = savedImage;
+                previewImage.style.display = 'block';
+                placeholder.style.display = 'none';
+                deleteBtn.style.display = 'flex';
             }
+            
+            // زر تحميل الصورة
+            uploadBtn.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            // اختيار صورة
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(event) {
+                        previewImage.src = event.target.result;
+                        previewImage.style.display = 'block';
+                        placeholder.style.display = 'none';
+                        deleteBtn.style.display = 'flex';
+                        
+                        // حفظ الصورة في localStorage
+                        localStorage.setItem('uploadedImage', event.target.result);
+                    }
+                    
+                    reader.readAsDataURL(e.target.files[0]);
+                }
+            });
+            
+            // زر حذف الصورة
+            deleteBtn.addEventListener('click', function() {
+                previewImage.src = '';
+                previewImage.style.display = 'none';
+                placeholder.style.display = 'flex';
+                deleteBtn.style.display = 'none';
+                
+                // حذف الصورة من localStorage
+                localStorage.removeItem('uploadedImage');
+            });
         });
-
-        // إعادة الصورة إلى الافتراضية
-        function resetImage() {
-            cardImage.src = 'https://via.placeholder.com/300x200';
-        }
     </script>
 </body>
 </html>
