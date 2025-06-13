@@ -232,7 +232,7 @@
 
         /* زر القائمة للموبايل */
         .mobile-menu-btn {
-            display: gird;
+            display: flexbox;
             font-size: 1rem;
             cursor: pointer;
         }
