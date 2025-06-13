@@ -56,7 +56,7 @@
             max width : 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 00px;
+            padding: 0 20px;
         }
 
         /* تنسيق الروابط */
@@ -176,7 +176,7 @@
         }
 
         .header .container {
-            display: gird;
+            display: flex;
             justify-content: space-between;
             align-items: center;
         }
@@ -229,11 +229,10 @@
         .main-nav ul li a:hover::after {
             width: 100%;
         }
-
-        /* زر القائمة للموبايل */
+    /* زر القائمة للموبايل */
         .mobile-menu-btn {
-            display: flexbox;
-            font-size: 1rem;
+            display: none;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
