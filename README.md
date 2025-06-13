@@ -708,102 +708,328 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
- ====<!DOCTYPE html>
-<html lang="ar">
+ ====<
+ 
+ !<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة مع تحميل صورة</title>
+    <title>تنزيل الصور من الهاتف</title>
     <style>
-        /* تنسيق البطاقة */
-        .card {
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        /* تنسيق الصورة */
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* تنسيق المحتوى */
-        .card-content {
-            padding: 15px;
-        }
-
-        .card-content h3 {
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             margin: 0;
-            font-size: 1.5em;
-            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
         }
-
-        .card-content p {
-            color: #666;
-            font-size: 1em;
-            margin: 10px 0;
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            margin-top: 30px;
         }
-
-        /* تنسيق زر التحميل */
-        .upload-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            margin-top: 10px;
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 40px 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            position: relative;
         }
-
-        .upload-btn:hover {
-            background-color: #45a049;
+        
+        .upload-area:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-
-        /* إخفاء حقل الإدخال الافتراضي */
+        
+        .upload-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+            opacity: 0.7;
+        }
+        
+        .upload-text {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .browse-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .browse-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
         input[type="file"] {
             display: none;
+        }
+        
+        .image-title {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 16px;
+            margin-bottom: 25px;
+            outline: none;
+        }
+        
+        .image-title::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .preview-container {
+            display: none;
+            margin-bottom: 25px;
+        }
+        
+        #imagePreview {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+            margin: 0 auto;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .instructions {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- بطاقة تحتوي على صورة -->
-    <div class="card">
-        <!-- الصورة الافتراضية أو المحملة -->
-        <img id="cardImage" src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
-        <!-- محتوى البطاقة -->
-        <div class="card-content">
-            <h3>عنوان البطاقة</h3>
-            <p>وصف مختصر لمحتوى البطاقة. يمكنك إضافة تفاصيل إضافية هنا.</p>
-            <!-- زر لتحميل الصورة -->
-            <label for="imageUpload" class="upload-btn">تحميل صورة</label>
-            <input type="file" id="imageUpload" accept="image/*">
+    <div class="container">
+        <h1>تنزيل الصور من هاتفك المحمول</h1>
+        <p class="subtitle">اختر صورة من معرض هاتفك وقم بتنزيلها مع عنوانها</p>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">اسحب وأفلت الصورة هنا</div>
+            <p>أو</p>
+            <button class="browse-btn">تصفح معرض الصور</button>
+            <input type="file" id="imageInput" accept="image/*">
         </div>
+        
+        <div class="preview-container" id="previewContainer">
+            <img id="imagePreview" alt="معاينة الصورة">
+        </div>
+        
+        <input type="text" class="image-title" id="imageTitle" placeholder="أدخل عنوان الصورة هنا">
+        
+        <button class="download-btn" id="downloadBtn">تنزيل الصورة</button>
+        
+        <div class="instructions">
+            <h3>كيفية الاستخدام:</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>اضغط على زر "تصفح معرض الصور" واختر صورة من هاتفك</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>أدخل عنواناً للصورة في الحقل المخصص</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>اضغط على زر "تنزيل الصورة" لتنزيل الصورة مع عنوانها</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        تم التطوير خصيصاً للعمل على أجهزة الهاتف المحمول
     </div>
 
     <script>
-        // JavaScript لتحميل الصورة وعرضها في البطاقة
-        const imageUpload = document.getElementById('imageUpload');
-        const cardImage = document.getElementById('cardImage');
+        // عناصر DOM
+        const uploadArea = document.getElementById('uploadArea');
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewContainer = document.getElementById('previewContainer');
+        const imageTitle = document.getElementById('imageTitle');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const browseBtn = uploadArea.querySelector('.browse-btn');
 
-        imageUpload.addEventListener('change', function(event) {
-            const file = event.target.files[0]; // الحصول على الملف المختار
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    cardImage.src = e.target.result; // تغيير مصدر الصورة إلى الصورة المحملة
-                };
-                reader.readAsDataURL(file); // قراءة الملف كـ Data URL
+        // عند النقر على منطقة الرفع أو زر التصفح
+        uploadArea.addEventListener('click', () => imageInput.click());
+        browseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            imageInput.click();
+        });
+
+        // سحب وإفلات الصورة
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.backgroundColor = '';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.backgroundColor = '';
+            
+            if (e.dataTransfer.files.length) {
+                handleImageFile(e.dataTransfer.files[0]);
             }
+        });
+
+        // عند اختيار صورة
+        imageInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                handleImageFile(e.target.files[0]);
+            }
+        });
+
+        // معالجة ملف الصورة
+        function handleImageFile(file) {
+            if (!file.type.match('image.*')) {
+                alert('الرجاء اختيار ملف صورة فقط');
+                return;
+            }
+
+            const reader = new FileReader();
+            
+            reader.onload = (e) => {
+                imagePreview.src = e.target.result;
+                previewContainer.style.display = 'block';
+                
+                // استخدام اسم الملف كعنوان افتراضي
+                const fileName = file.name.replace(/\.[^/.]+$/, "");
+                imageTitle.value = fileName;
+                
+                // إظهار زر التنزيل
+                downloadBtn.style.display = 'block';
+                
+                // التمرير لأسفل لرؤية المعاينة
+                previewContainer.scrollIntoView({ behavior: 'smooth' });
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        // تنزيل الصورة
+        downloadBtn.addEventListener('click', () => {
+            if (!imagePreview.src || imagePreview.src.startsWith('data:')) {
+                alert('الرجاء اختيار صورة أولاً');
+                return;
+            }
+            
+            const title = imageTitle.value.trim() || 'صورة_بدون_عنوان';
+            
+            // إنشاء رابط تنزيل
+            const link = document.createElement('a');
+            link.href = imagePreview.src;
+            
+            // الحصول على امتداد الملف
+            const fileExtension = imagePreview.src.split(';')[0].split('/')[1];
+            
+            // استخدام عنوان الصورة كاسم الملف
+            link.download = `${title}.${fileExtension}`;
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     </script>
 </body>
