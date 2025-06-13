@@ -23,8 +23,8 @@
             --danger-color: #f44336;     /* لون الخطر (أحمر) */
             
             /* قيم التصميم */
-            --border-radius: 8px;        /* نصف قطر الحواف */
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل العناصر */
+            --border-radius: 25px;        /* نصف قطر الحواف */
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.50); /* ظل العناصر */
             --transition: all 0.3s ease; /* تأثير الانتقال */
         }
 
@@ -33,7 +33,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            border-radius: 20px
         }
 
         /* تنسيق التمرير السلس */
