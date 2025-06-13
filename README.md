@@ -171,6 +171,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-radius: 25px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -777,6 +778,7 @@ social-icon:hover {
         .card {
             background: rgba(255, 255, 255, 0.95);
             width: 100%;
+            max-width: 100%;
             max-width: 900px;
             border-radius: 20px;
             overflow: hidden;
@@ -1055,6 +1057,7 @@ social-icon:hover {
             text-align: center;
             outline: none;
             font-size: 18px;
+            border-radius: 25px; 
             transition: background-color 0.3s;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
@@ -1067,6 +1070,7 @@ social-icon:hover {
             background-color: white;
             overflow: hidden;
             border: 1px solid #ddd;
+            border-radius: 25px;
             margin-bottom: 10px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
