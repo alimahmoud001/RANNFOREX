@@ -709,12 +709,12 @@ social-icon:hover {
                     </a>
  </div>
  ====
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة مع صورة</title>
+    <title>بطاقة مع زر تنزيل صورة</title>
     <style>
         /* تنسيق البطاقة */
         .card {
@@ -751,17 +751,35 @@ social-icon:hover {
             font-size: 1em;
             margin: 10px 0;
         }
+
+        /* تنسيق زر التنزيل */
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
     <!-- بطاقة تحتوي على صورة -->
     <div class="card">
-        <!-- إرفاق الصورة -->
-        <img src="[https://www.facebook.com/61558501536241/posts/122183414816283384/?mibextid=rS40aB7S9Ucbxw6v](https://www.google.com/search?client=ms-android-xiaomi-rvo3&sca_esv=376515ea2f3c850f&sxsrf=AE3TifM60lw-SwDX2yFMyYLcrQJLsecwQw:1749831743456&udm=2&fbs=AIIjpHziYF8aebTvMMor3cEtFT3dZLw0u5gJzzbdeVPX9ffnfbjc5tQeLDmDQlH8Rlw_2JjJnph5ZG2jey83XA4CAdslz3MeMDK28D5UmErcIRK7ObxRm_qav3a2N43QIiUtF6mRVpbVbXulRjk0QWwrMTZUiSgYzwLOfZOccYqSLCyDqg5DrhbqwBRTT0F2kSGeThEqsy7nUcao-TNxTEP8tSeJarUsvA&q=%D8%B9%D9%84%D9%8A+%D9%85%D8%AD%D9%85%D9%88%D8%AF+%D9%87%D8%AF%D9%81+%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1%D9%8A+alimahmoud001&sa=X&ved=2ahUKEwjW6_Cb5-6NAxXXTEEAHSZBCq0QtKgLegQIDxAB&biw=392&bih=783&dpr=2.75#sv=[CAMSoQUagQUKswIKuQEStgEKd0FMa3RfdkhMZkpoZlpPdXpGdUszTWxuamNxUGFwQTIyamd0YUpoRVMybUF3bnNBbGJrRm9VaWw3bWJldEFJYmxCU2dxbFFvTDVlcEtkMjJ1bFRfSDdsSDMzWWtpUW83NkJTMGlVZ1diOVY4YzZSUFN6cEMydTFnEhdSVkJNYUxIdEg2Q3RoYklQMi1hR29RaxoiQUZNQUdHcjMwOW5vUjdkQ083Ym5kUl8tODA2UVJFRXNydxIDODQ5GgEzIjwKAXESN9i52YTZiiDZhdit2YXZiNivINmH2K_ZgSDYp9iz2KrYq9mF2KfYsdmKIGFsaW1haG1vdWQwMDEiBwoDdGJzEgAiJgoEZXFsZBIeQ2dJSUFCQUFPZ1FJQUJBQVZRdXFZajV0SHpyUlBRErYCCs8BEswBCowBQUxrdF92SG5hVHV2TG43WWpEQWJ6a2pMQzN3UzgyYlFnUHRNNTdSN3FUMkt6cjBBRXl3amJLcHNiMEt0cmxJak5JMDV0Ym5reHlZek1GSzczc3o5RmtKOE1kc2tMemZFaDdUclc1SWpYam9qT0c4VEUxZ09BLUNzNWNGRmw2U3FWWG1wMlFWd1JDX1USF1JWQk1hTEh0SDZDdGhiSVAyLWFHb1FrGiJBRk1BR0dwUUVzZWE1NUlvcHE3QVIzTGxIYnd4TVpnRDJREgQ0Njk4GgEzIhgKBmltZ2RpaRIOWmtBcm9nV2FmUk0wYU0iFwoFZG9jaWQSDi1XanhoVkY1dkpfa0NNIiYKBGVxbGQSHkNnSUlBQkFBT2dRSUFCQUFWUXVxWWo1dEh6clJQUSoQZS1aa0Fyb2dXYWZSTTBhTSAEKhcKAXMSEGUtWmtBcm9nV2FmUk0wYU0YATABGAcgjqDRUjABQAI](https://ar.pngtree.com/freebackground/illuminated-bull-hologram-dominates-forex-chart-in-prosperous-market-investing-and-trading-concept-in-3d-rendering_5813301.html))" alt="صورة البطاقة">
+        <!-- الصورة -->
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="صورة البطاقة">
         <!-- محتوى البطاقة -->
         <div class="card-content">
-            <h3>المخطط الاستثماري</h3>
-            <p>يمكنك ان تتداول معي عن طريق الحساب المدار pamm وهذه صورة توضيحية لنمو حسابي.</p>
+            <h3>عنوان البطاقة</h3>
+            <p>وصف مختصر لمحتوى البطاقة. يمكنك إضافة تفاصيل إضافية هنا.</p>
+            <!-- زر التنزيل -->
+            <a href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" download class="download-btn">تنزيل الصورة</a>
         </div>
     </div>
 </body>
