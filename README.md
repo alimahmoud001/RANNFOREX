@@ -1028,7 +1028,7 @@ social-icon:hover {
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
                  </div>
-            </div>
+            
                             
 <html lang="ar">
 <head>
