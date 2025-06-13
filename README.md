@@ -176,7 +176,7 @@
         }
 
         .header .container {
-            display: flex;
+            display: flexbox;
             justify-content: space-between;
             align-items: center;
         }
