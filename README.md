@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rannforex - لقد قمت بإضافة كل شيء تحتاجه في مجال التداول  إلى هذا الموقع لن تحتاج إلى شيء آخر</title>
+    <title>Rannforex - شركة الوساطة المالية</title>
     <!-- مكتبة Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- خطوط Google Fonts -->
@@ -33,7 +34,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            border-radius: 20px
         }
 
         /* تنسيق التمرير السلس */
@@ -53,10 +53,11 @@
         /* تنسيق الحاوية */
         .container {
             width: 100%;
-            max width : 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* تنسيق الروابط */
@@ -88,7 +89,7 @@
             transition: var(--transition);
             border: none;
             outline: none;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* زر أساسي */
@@ -150,13 +151,13 @@
             transform: translateY(-3px);
         }
 
-
         /* زر الكورس */
         .btn-course {
             background-color: #ff5722;
             color: white;
             width: 100%;
             margin-top: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .btn-course:hover {
@@ -168,7 +169,7 @@
         .header {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px 0;
+            padding: 00px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -183,7 +184,7 @@
 
         /* تنسيق الشعار */
         .logo h1 {
-            font-size: 1rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--accent-color);
             margin-bottom: 5px;
@@ -209,7 +210,7 @@
 
         .main-nav ul li a {
             color: white;
-            font-weight: 200;
+            font-weight: 600;
             padding: 10px 0;
             position: relative;
         }
@@ -229,7 +230,8 @@
         .main-nav ul li a:hover::after {
             width: 100%;
         }
-    /* زر القائمة للموبايل */
+
+        /* زر القائمة للموبايل */
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
@@ -276,7 +278,7 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
             margin-bottom: 50px;
             border-top: 5px solid var(--accent-color);
         }
@@ -302,9 +304,43 @@
             text-align: center;
             margin-bottom: 30px;
             color: var(--primary-color);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
+        /* شبكة بطاقات المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
 
+        /* بطاقة ميزة */
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
 
         /* معلومات الاسبريد */
         .spread-info {
@@ -313,7 +349,6 @@
             padding: 30px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .spread-info h3 {
@@ -326,7 +361,7 @@
         /* شبكة بطاقات التقييمات */
         .ratings-grid {
             display: grid;
-            grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -337,12 +372,11 @@
             padding: 25px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 300px;
+            min-height: 200px;
         }
 
         .rating-card:hover {
@@ -377,7 +411,6 @@
             padding: 30px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
         }
 
@@ -389,6 +422,7 @@
             font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .app-card h3 {
@@ -433,6 +467,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* ===== تنسيقات القسم الخامس ===== */
@@ -444,8 +479,9 @@
         /* القناة الرئيسية */
         .main-channel {
             background-color: #0088cc;
-            color: light blue;
+            color: white;
             margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .main-channel i {
@@ -454,7 +490,7 @@
         }
 
         .main-channel h3 {
-            color: blue;
+            color: white;
         }
 
         /* عنوان قنوات الإشارات */
@@ -462,6 +498,7 @@
             font-size: 1.8rem;
             margin-bottom: 25px;
             color: var(--primary-color);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* شبكة قنوات الإشارات */
@@ -469,6 +506,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* بطاقة قناة */
@@ -478,7 +516,6 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
         }
 
@@ -515,8 +552,7 @@
             border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
 
@@ -562,20 +598,58 @@
             color: var(--primary-color);
         }
 
-       
-        /* ===== تنسيقات الفوتر ===== */ 
+        /* أيقونات وسائل التواصل الاجتماعي */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-social-icon:hover {
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
             transform: translateY(-5px) scale(1.1);
         }
 
+        /* ألوان مخصصة لكل منصة اجتماعية */
+        .social-icon:nth-child(1) {
+            background-color: #1877f2; /* فيسبوك */
+        }
+
+        .social-icon:nth-child(2) {
+            background-color: #e1306c; /* انستغرام */
+        }
+
+        .social-icon:nth-child(3) {
+            background-color: #000000; /* تويتر (اكس) */
+        }
+
+        .social-icon:nth-child(4) {
+            background-color: #25d366; /* واتساب */
+        }
+
+        .social-icon:nth-child(5) {
+            background-color: #0088cc; /* تلجرام */
+        }
+
+        /* ===== تنسيقات الفوتر ===== */
         .footer {
             background-color: var(--primary-color);
             color: white;
             padding: 20px 0;
             text-align: center;
-
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* ===== تنسيقات التجاوب مع الشاشات المختلفة ===== */
@@ -671,15 +745,17 @@ social-icon:hover {
         <div class="container">
             <div class="logo">
                 <h1>Rannforex</h1>
+                <p>شركة الوساطة المالية الموثوقة</p>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#section1">الرئيسية</a></li>
                     <li><a href="#section2">التقييمات</a></li>
                     <li><a href="#section3">التطبيقات</a></li>
-                    <li><a href="#section4">المصادقة</a></li>
+                    <li><a href="#section4">التعليم</a></li>
                     <li><a href="#section5">قنوات تلجرام</a></li>
                     <li><a href="#section6">الكورسات</a></li>
+                    <li><a href="#section7">تواصل معنا</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn">
@@ -1027,8 +1103,7 @@ social-icon:hover {
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
                  </div>
-                 
-   <section>         
+            </div>
                             
 <html lang="ar">
 <head>
