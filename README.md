@@ -24,7 +24,7 @@
             
             /* قيم التصميم */
             --border-radius: 25px;        /* نصف قطر الحواف */
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.50); /* ظل العناصر */
+            --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
             --transition: all 0.3s ease; /* تأثير الانتقال */
         }
 
