@@ -773,7 +773,7 @@ social-icon:hover {
     <!-- بطاقة تحتوي على صورة -->
     <div class="card">
         <!-- الصورة -->
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="صورة البطاقة">
+        <img src="[https://images.unsplash.com/photo-1600585154340-be6161a56a0c](https://images.app.goo.gl/ZVNS1)" alt="صورة البطاقة">
         <!-- محتوى البطاقة -->
         <div class="card-content">
             <h3>عنوان البطاقة</h3>
