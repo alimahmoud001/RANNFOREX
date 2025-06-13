@@ -708,7 +708,112 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
+====
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة معزولة لتحميل وحذف صورة</title>
+    <style>
+        /* تنسيق البطاقة مع كلاس فريد للعزل */
+        .custom-card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
 
+        /* تنسيق الصورة */
+        .custom-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* تنسيق المحتوى */
+        .custom-card .card-content {
+            padding: 15px;
+        }
+
+        /* تنسيق الأزرار */
+        .custom-card .upload-btn,
+        .custom-card .delete-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+
+        .custom-card .upload-btn {
+            background-color: #4CAF50;
+        }
+
+        .custom-card .upload-btn:hover {
+            background-color: #45a049;
+        }
+
+        .custom-card .delete-btn {
+            background-color: #f44336;
+        }
+
+        .custom-card .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* إخفاء حقل الإدخال */
+        .custom-card input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- بطاقة معزولة -->
+    <div class="custom-card">
+        <img id="cardImage" src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
+        <div class="card-content">
+            <!-- زر تحميل الصورة -->
+            <label for="imageUpload" class="upload-btn">تحميل صورة</label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <!-- زر حذف الصورة -->
+            <button class="delete-btn" onclick="resetImage()">حذف الصورة</button>
+        </div>
+    </div>
+
+    <script>
+        // تحميل الصورة
+        const imageUpload = document.getElementById('imageUpload');
+        const cardImage = document.getElementById('cardImage');
+
+        imageUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    cardImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // إعادة الصورة إلى الافتراضية
+        function resetImage() {
+            cardImage.src = 'https://via.placeholder.com/300x200';
+        }
+    </script>
+</body>
+</html>
+
+====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
@@ -1448,189 +1553,4 @@ s0.parentNode.insertBefore(s1,s0);
 </style>
 
 =====
-
-<?php
-// === التعامل مع رفع الصورة عند إرسال النموذج ===
-$responseMessage = "";
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
-    $targetDir = "uploads/";
-    if (!file_exists($targetDir)) {
-        mkdir($targetDir, 0755, true);
-    }
-
-    $file = $_FILES["image"];
-    $filename = uniqid() . "_" . basename($file["name"]);
-    $targetFile = $targetDir . $filename;
-
-    if (move_uploaded_file($file["tmp_name"], $targetFile)) {
-        $responseMessage = "✅ تم حفظ الصورة بنجاح في: " . $targetFile;
-    } else {
-        $responseMessage = "❌ فشل في حفظ الصورة.";
-    }
-}
-?>
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>بطاقة تحميل صورة</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      max-width: 300px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .card h3 {
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    input[type="file"] {
-      margin-top: 10px;
-    }
-
-    img {
-      max-width: 100%;
-      margin-top: 15px;
-      border-radius: 8px;
-      display: none;
-    }
-
-    .buttons {
-      margin-top: 10px;
-    }
-
-    button {
-      margin: 5px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .save-btn {
-      background-color: #28a745;
-      color: white;
-    }
-
-    .remove-btn {
-      background-color: #dc3545;
-      color: white;
-    }
-
-    .message {
-      margin-top: 15px;
-      color: #007bff;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-<div class="card">
-  <h3>تحميل صورة من جهازك</h3>
-  <form method="POST" enctype="multipart/form-data" id="uploadForm">
-    <input type="file" name="image" id="imageUpload" accept="image/*" onchange="previewImage(event)">
-    <img id="previewImage" alt="معاينة الصورة">
-    <div class="buttons">
-      <button type="submit" class="save-btn">حفظ الصورة</button>
-      <button type="button" class="remove-btn" onclick="removeImage()">إزالة الصورة</button>
-    </div>
-  </form>
-  <?php if ($responseMessage): ?>
-    <div class="message"><?= $responseMessage ?></div>
-  <?php endif; ?>
-</div>
-
-<script>
-  function previewImage(event) {
-    const preview = document.getElementById('previewImage');
-    const file = event.target.files[0];
-    if (file) {
-      preview.src = URL.createObjectURL(file);
-      preview.style.display = 'block';
-    }
-  }
-
-  function removeImage() {
-    const input = document.getElementById('imageUpload');
-    const preview = document.getElementById('previewImage');
-    input.value = '';
-    preview.src = '';
-    preview.style.display = 'none';
-  }
-</script>
-
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة مع صورة</title>
-    <style>
-        /* تنسيق البطاقة */
-        .card {
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        /* تنسيق الصورة */
-        .card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* تنسيق المحتوى */
-        .card-content {
-            padding: 15px;
-        }
-
-        .card-content h3 {
-            margin: 0;
-            font-size: 1.5em;
-            color: #333;
-        }
-
-        .card-content p {
-            color: #666;
-            font-size: 1em;
-            margin: 10px 0;
-        }
-    </style>
-</head>
-<body>
-    <!-- بطاقة تحتوي على صورة -->
-    <div class="card">
-        <!-- إرفاق الصورة -->
-        <img src="https://via.placeholder.com/300x200" alt="صورة البطاقة">
-        <!-- محتوى البطاقة -->
-        <div class="card-content">
-            <h3>عنوان البطاقة</h3>
-            <p>وصف مختصر لمحتوى البطاقة. يمكنك إضافة تفاصيل إضافية هنا.</p>
-        </div>
-    </div>
-</body>
-</html>
+      
