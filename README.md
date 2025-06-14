@@ -713,7 +713,7 @@ social-icon:hover {
 ====
 ![Image](https://github.com/user-attachments/assets/950d2c8c-f7d3-439c-b867-94bd2c69df3a
 ====
-https://github.com/alimahmoud001/RANNFOREX/blob/31338c5107d06873e914047dba1cebd8cd899120/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png
+![image alt]https://github.com/alimahmoud001/RANNFOREX/blob/31338c5107d06873e914047dba1cebd8cd899120/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png
 ===
 ت<!DOCTYPE html>
 <html>
