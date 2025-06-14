@@ -1,4 +1,6 @@
+
 ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+
 
 <html lang="ar" dir="rtl">
 <head>
@@ -567,9 +569,6 @@
        
         /* ===== تنسيقات الفوتر ===== */ 
 
-social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
 
         .footer {
             background-color: var(--primary-color);
@@ -710,9 +709,7 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
- ====
  
- ====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
@@ -721,7 +718,6 @@ social-icon:hover {
                     </a>
                 </div>
                  
-                    </div>
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
             <div class="container">
@@ -1451,4 +1447,3 @@ s0.parentNode.insertBefore(s1,s0);
 </style>
 
 =====
-
