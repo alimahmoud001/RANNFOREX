@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>موقعي</title>
-    <style>
-        body {
-            margin: 0; /* إزالة الهوامش الافتراضية للجسم */
-            padding: 0;
-        }
-        .container {
-            width: 50%; /* هنا نحدد العرض 50% */
-            margin: 0 auto; /* توسيط أفقي */
-            padding: 20px; /* هامش داخلي اختياري */
-            background-color: #f0f0f0; /* لون خلفية اختياري */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- كل محتوى الصفحة هنا -->
+
 ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
 
 <html lang="ar" dir="rtl">
