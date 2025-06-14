@@ -714,7 +714,7 @@ social-icon:hover {
 ===
 ## 🃏 بطاقتي المفضلة
 
-![وصف الصورة](![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+![وصف الصورة](!(https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
 )
 ===
 
