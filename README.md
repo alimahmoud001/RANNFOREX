@@ -707,10 +707,11 @@ social-icon:hover {
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> استثمر الآن
                         
-                        ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
-
                     </a>
  </div>
+ 
+                        
+![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
 
 
 
