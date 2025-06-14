@@ -730,6 +730,10 @@ social-icon:hover {
                 </div>
                  
                     </div>
+
+                    
+![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+<title>هذا هو مخطط نمو حسابي في شركة راني فوريكس لمن يرد الاستثمار به</title>
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
             <div class="container">
