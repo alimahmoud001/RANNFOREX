@@ -199,7 +199,7 @@
 
         /* تنسيق القائمة الرئيسية */
         .main-nav ul {
-            display: constant;
+            display: flex;
         }
 
         .main-nav ul li {
@@ -234,7 +234,7 @@
         }
     /* زر القائمة للموبايل */
         .mobile-menu-btn {
-            display: none;
+            display: flex;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -601,7 +601,7 @@
         /* الشاشات الصغيرة (أقل من 768 بكسل) */
         @media (max-width: 768px) {
             .features-grid, .ratings-grid, .apps-grid, .signals-grid, .courses-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
             }
 
             .section {
