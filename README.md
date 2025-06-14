@@ -199,7 +199,7 @@
 
         /* تنسيق القائمة الرئيسية */
         .main-nav ul {
-            display: flex;
+            display: constant;
         }
 
         .main-nav ul li {
