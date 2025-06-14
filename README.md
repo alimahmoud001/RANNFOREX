@@ -1,4 +1,4 @@
-![image alt]([https://github.com/alimahmoud001/RANNFOREX/blob/31338c5107d06873e914047dba1cebd8cd899120/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png](https://github.com/alimahmoud001/RANNFOREX/blob/187228f4b22bf38eb4d78a2a1c4eaf281a2680d1/file_00000000461862469104cc43cd1f2687_conversation_id%3D6804987b-cdd4-8009-8aa7-0372fe68f41a%26message_id%3D229311a6-0b4f-4432-957a-2d0bcaeb47bd%20(1).png))
+![image alt]([https://github.com/alimahmoud001/RANNFOREX/blob/31338c5107d06873e914047dba1cebd8cd899120/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png]
 
 
 <html lang="ar" dir="rtl">
@@ -713,50 +713,11 @@ social-icon:hover {
 
 
 
-====
-![Image](https://github.com/user-attachments/assets/950d2c8c-f7d3-439c-b867-94bd2c69df3a
-====
-![image alt]https://github.com/alimahmoud001/RANNFOREX/blob/31338c5107d06873e914047dba1cebd8cd899120/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png
-===
-ت<!DOCTYPE html>
-<html>
-<head>
-    <title>صورة مع شرح</title>
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd; /* إطار خفيف */
-            border-radius: 4px; /* زوايا مدورة */
-        }
-        
-        .caption {
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #333;
-            margin-top: 15px;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- الصورة هنا -->
-        <img src="https://example.com/path/to/your-image.jpg" alt="وصف الصورة">
-        
-        <!-- الشرح هنا -->
-        <p class="caption">هذا شرح بسيط للصورة</p>
-    </div>
-</body>
-</html>
-===
+
+![Image alt](https://github.com/user-attachments/assets/950d2c8c-f7d3-439c-b867-94bd2c69df3a
+
+
+
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
