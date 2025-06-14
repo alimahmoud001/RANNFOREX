@@ -717,7 +717,11 @@
                         <i class="fas fa-user-plus"></i> انضم الآن
                     </a>
                      </div>
-                   ت<h2>🃏 بطاقتي المفضلة</h2>
+                     <html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                   <h2>🃏 بطاقتي المفضلة</h2>
 <img src="[https://github.com/username/repository-name/blob/main/image.png?raw=true](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)" alt="وصف الصورة" width="400">  
                 </div>
                  
