@@ -712,18 +712,6 @@ social-icon:hover {
                     </a>
  </div>
  
-<body>
-    ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
-
-</body>
-
-![Image-alt](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
-
-===
-
-
-
-
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
