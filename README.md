@@ -623,6 +623,7 @@ social-icon:hover {
 
             .feature-card, .rating-card, .app-card, .channel-card, .course-card {
                 padding: 20px;
+                width: 50%;
             }
         }
 
