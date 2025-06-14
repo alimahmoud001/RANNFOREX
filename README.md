@@ -709,12 +709,6 @@ social-icon:hover {
  </div>
 
 
- <div class="register-card">
-   <p/>لعرض تفاصيل حساب المدير </p>
-                    <a href=" https://t.me/tradewithalimahmoud/193  " class="btn btn-primary" target="_blank">
-                        <i class="fas fa-user-plus"></i> استثمر الآن
-                    </a>
- </div>
 ===
 <!DOCTYPE html>
 <html>
