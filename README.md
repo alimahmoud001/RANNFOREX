@@ -2,8 +2,6 @@
 ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
 
 
-
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -40,10 +38,8 @@
             padding: 0;
             box-sizing: border-box;
         }
-https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1cebd8cd899120
-      Screenshot_٢٠٢٥-٠٦-١٣-١٩-٤١-٣٣-٥٠٨_com.android.chrome.png
- https://github.com/alimahmoud001/RANNFOREX/blob/f5e0c11f65e2a0bffe0b2e56ababa7b15720b61f/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png
- /* تنسيق التمرير السلس */
+
+        /* تنسيق التمرير السلس */
         html {
             scroll-behavior: smooth;
         }
@@ -59,6 +55,8 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
 
         /* تنسيق الحاوية */
         .container {
+            width: 100%;
+            max width : 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 00px;
@@ -178,7 +176,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
             top: 0;
             z-index: 1000;
             border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header .container {
@@ -189,7 +187,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
 
         /* تنسيق الشعار */
         .logo h1 {
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--accent-color);
             margin-bottom: 5px;
@@ -244,7 +242,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
 
         /* ===== تنسيقات الأقسام ===== */
         .section {
-            padding: 80px 90;
+            padding: 80px 0;
         }
 
         /* تلوين الأقسام بالتناوب */
@@ -269,7 +267,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 300px;
+            width: 100px;
             height: 4px;
             background-color: var(--accent-color);
             border-radius: 2px;
@@ -571,6 +569,9 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
        
         /* ===== تنسيقات الفوتر ===== */ 
 
+social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
 
         .footer {
             background-color: var(--primary-color);
@@ -711,7 +712,9 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
+ ====
  
+ ====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
@@ -720,6 +723,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
                     </a>
                 </div>
                  
+                    </div>
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
             <div class="container">
@@ -1447,3 +1451,5 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
+
+=====
