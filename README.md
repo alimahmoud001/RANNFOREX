@@ -741,7 +741,7 @@ social-icon:hover {
 <body>
     <div class="container">
         <!-- الصورة هنا -->
-        <img src="[https://example.com/path/to/your-image.jpg](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.k12digest.com%2Fimg-academy-forging-futures-at-the-pinnacle-of-sports-education%2F&psig=AOvVaw1Gk1iVQIizaf68hyYik6wo&ust=1749969728002000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiombSn8I0DFQAAAAAdAAAAABAE)" alt="وصف الصورة">
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.k12digest.com%2Fimg-academy-forging-futures-at-the-pinnacle-of-sports-education%2F&psig=AOvVaw1Gk1iVQIizaf68hyYik6wo&ust=1749969728002000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiombSn8I0DFQAAAAAdAAAAABAE"وصف الصورة">
         
         <!-- الشرح هنا -->
         <p class="caption">هذا شرح بسيط للصورة</p>
