@@ -365,7 +365,7 @@
             color: var(--primary-color);
             margin-bottom: 20px;
         }
-
+![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
         /* ===== تنسيقات القسم الثالث ===== */
         /* شبكة بطاقات التطبيقات */
         .apps-grid {
@@ -720,7 +720,7 @@
                     
                 </div>
                  
-![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+
 
 
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
