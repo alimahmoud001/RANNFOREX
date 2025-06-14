@@ -40,7 +40,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1cebd8cd899120
+      Screenshot_٢٠٢٥-٠٦-١٣-١٩-٤١-٣٣-٥٠٨_com.android.chrome.png
+ https://github.com/alimahmoud001/RANNFOREX/blob/f5e0c11f65e2a0bffe0b2e56ababa7b15720b61f/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png
  /* تنسيق التمرير السلس */
         html {
             scroll-behavior: smooth;
@@ -242,7 +244,7 @@
 
         /* ===== تنسيقات الأقسام ===== */
         .section {
-            padding: 80px 0;
+            padding: 80px 90;
         }
 
         /* تلوين الأقسام بالتناوب */
@@ -267,7 +269,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 300px;
             height: 4px;
             background-color: var(--accent-color);
             border-radius: 2px;
