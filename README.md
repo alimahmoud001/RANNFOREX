@@ -1,8 +1,4 @@
 
-
-![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
-
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -710,6 +706,9 @@ social-icon:hover {
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> استثمر الآن
+                        
+                        ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+
                     </a>
  </div>
 
