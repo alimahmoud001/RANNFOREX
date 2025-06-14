@@ -712,9 +712,6 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
  </div>
- ====
- 
- ====
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
                     <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
@@ -1452,4 +1449,3 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </style>
 
-=====
