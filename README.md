@@ -716,6 +716,44 @@ social-icon:hover {
                     </a>
  </div>
 ===
+<!DOCTYPE html>
+<html>
+<head>
+    <title>صورة مع شرح</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd; /* إطار خفيف */
+            border-radius: 4px; /* زوايا مدورة */
+        }
+        
+        .caption {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- الصورة هنا -->
+        <img src="https://example.com/path/to/your-image.jpg" alt="وصف الصورة">
+        
+        <!-- الشرح هنا -->
+        <p class="caption">هذا شرح بسيط للصورة</p>
+    </div>
+</body>
+</html>
 ===
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
