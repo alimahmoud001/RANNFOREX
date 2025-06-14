@@ -710,11 +710,14 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> استثمر الآن
                         
                     </a>
+                    
+    </div>
  </div>
 ===
 ## 🃏 بطاقتي المفضلة
 
-![وصف الصورة](!(https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+![وصف الصورة]
+![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)  )
 )
 ===
 
