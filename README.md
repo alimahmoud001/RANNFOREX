@@ -40,9 +40,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1cebd8cd899120
-      Screenshot_٢٠٢٥-٠٦-١٣-١٩-٤١-٣٣-٥٠٨_com.android.chrome.png
- https://github.com/alimahmoud001/RANNFOREX/blob/f5e0c11f65e2a0bffe0b2e56ababa7b15720b61f/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A0%D9%A6-%D9%A1%D9%A3-%D9%A1%D9%A9-%D9%A4%D9%A1-%D9%A3%D9%A3-%D9%A5%D9%A0%D9%A8_com.android.chrome.png
+
  /* تنسيق التمرير السلس */
         html {
             scroll-behavior: smooth;
@@ -59,8 +57,6 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
 
         /* تنسيق الحاوية */
         .container {
-            width: 100%;
-            max width : 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 00px;
@@ -180,7 +176,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
             top: 0;
             z-index: 1000;
             border-radius: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
         .header .container {
@@ -191,7 +187,7 @@ https://github.com/alimahmoud001/RANNFOREX/commit/31338c5107d06873e914047dba1ceb
 
         /* تنسيق الشعار */
         .logo h1 {
-            font-size: 1rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--accent-color);
             margin-bottom: 5px;
