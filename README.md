@@ -1049,7 +1049,7 @@ social-icon:hover {
             text-align: right;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 00px;
             border-radius: 20px;
 
         }
