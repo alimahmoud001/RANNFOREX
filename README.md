@@ -604,7 +604,7 @@ social-icon:hover {
 
         /* الشاشات الصغيرة (أقل من 768 بكسل) */
         @media (max-width: 768px) {
-            .features-grid, .ratings-grid, .apps-grid, .signals-grid, .courses-grid {
+            .features-grid,  .apps-grid, .signals-grid, .courses-grid {
                 grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
             }
 
@@ -624,6 +624,7 @@ social-icon:hover {
             .feature-card, .rating-card, .app-card, .channel-card, .course-card {
                 padding: 4px;
                 width: 100%;
+                font-size: 1rem;
             }
         }
 
