@@ -1054,10 +1054,10 @@ social-icon:hover {
 
         }
         .accordion {
-            background-color: #007bff;
+            background-color: #f18f01;
             color: white;
             cursor: pointer;
-            padding: 15px;
+            padding: 20px;
             width: 100%;
             border: none;
             text-align: center;
