@@ -605,7 +605,7 @@ social-icon:hover {
         /* الشاشات الصغيرة (أقل من 768 بكسل) */
         @media (max-width: 768px) {
             .features-grid, .ratings-grid, .apps-grid, .signals-grid, .courses-grid {
-                grid-template-columns: repeat(auto-fill, minmax(45%, 4fr));
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
             }
 
             .section {
