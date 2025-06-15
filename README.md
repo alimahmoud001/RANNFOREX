@@ -602,6 +602,50 @@ social-icon:hover {
             }
         }
 
+        /* الشاشات الصغيرة (أقل من 768 بكسل) */
+        @media (max-width: 768px) {
+            .features-grid, .ratings-grid, .apps-grid, .signals-grid, .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(45%, 4fr));
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .register-card h3, .features h3, .spread-info h3, .signals-title {
+                font-size: 1.5rem;
+            }
+
+            .feature-card, .rating-card, .app-card, .channel-card, .course-card {
+                padding: 20px;
+                width: 100%;
+            }
+        }
+
+        /* الشاشات الصغيرة جداً (أقل من 576 بكسل) */
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .social-icons {
+                flex-wrap: wrap;
+            }
+        }
 
         /* ===== تأثيرات إضافية ===== */
         /* تأثير الظهور التدريجي */
