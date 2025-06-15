@@ -749,7 +749,7 @@ social-icon:hover {
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn btn-app" target="_blank">
-                            <i class="fab fa-google-play"></i> النصادقة الثنائية
+                            <i class="fab fa-google-play"></i> المصادقة الثنائية
                 </a>
                     </div>
                  <div class="app-card">
