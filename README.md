@@ -785,7 +785,7 @@ social-icon:hover {
             background: rgba(255, 255, 255, 0.95);
             width: 100%;
             max-width: 100%;
-            max-width: 900px;
+            max-width: 1200px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
@@ -794,8 +794,8 @@ social-icon:hover {
         }
         
         .card-header {
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            color: white;
+            background: white;
+            color: #2e4057;
             padding: 25px 40px;
             text-align: center;
         }
@@ -841,11 +841,11 @@ social-icon:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             background: #fff;
-            border-left: 4px solid #e74c3c;
+            border-left: 10px solid #f18f01;
         }
         
         .feature-icon {
-            background: #3498db;
+            background: #f18f01;
             color: white;
             width: 50px;
             height: 50px;
@@ -881,7 +881,7 @@ social-icon:hover {
         }
         
         .badge {
-            background: #e74c3c;
+            background: #f18f01;
             color: white;
             padding: 10px 25px;
             border-radius: 50px;
@@ -893,7 +893,7 @@ social-icon:hover {
         }
         
         .security-badge {
-            background: #27ae60;
+            background: #f18f01;
         }
         
         @media (max-width: 768px) {
