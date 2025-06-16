@@ -1,831 +1,21 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rannforex - شركة الوساطة المالية</title>
-    <!-- مكتبة Font Awesome للأيقونات -->
+    <title>راني فوريكس - بوابة التداول الشاملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- خطوط Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== تنسيقات عامة ===== */
         :root {
-            /* الألوان الرئيسية */
-            --primary-color: #2e4057;    /* اللون الأساسي (أزرق داكن) */
-            --secondary-color: #048ba8;  /* اللون الثانوي (أزرق فاتح) */
-            --accent-color: #f18f01;     /* لون التمييز (برتقالي) */
-            --light-color: #f5f5f5;      /* لون فاتح */
-            --dark-color: #1a1a1a;       /* لون داكن */
-            --success-color: #4caf50;    /* لون النجاح (أخضر) */
-            --warning-color: #ff9800;    /* لون التحذير (برتقالي) */
-            --danger-color: #f44336;     /* لون الخطر (أحمر) */
-            
-            /* قيم التصميم */
-            --border-radius: 8px;        /* نصف قطر الحواف */
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل العناصر */
-            --transition: all 0.3s ease; /* تأثير الانتقال */
-        }
-
-        /* إعادة تعيين التنسيقات الافتراضية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* تنسيق التمرير السلس */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* تنسيقات الجسم */
-        body {
-            font-family: 'Cairo', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: #f9f9f9;
-            overflow-x: hidden;
-        }
-
-        /* تنسيق الحاوية */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 00px;
-
-        }
-
-        /* تنسيق الروابط */
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        /* تنسيق القوائم */
-        ul {
-            list-style: none;
-        }
-
-        /* تنسيق الصور */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* ===== تنسيقات الأزرار ===== */
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            outline: none;
-        }
-
-        /* زر أساسي */
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #1a2a3a;
-            transform: translateY(-3px);
-        }
-
-        /* زر ثانوي */
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #036d85;
-            transform: translateY(-3px);
-        }
-
-        /* زر مخطط */
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* زر التطبيق */
-        .btn-app {
-            background-color: var(--accent-color);
-            color: white;
-            width: 100%;
-            margin-top: 15px;
-        }
-
-        .btn-app:hover {
-            background-color: #d97e00;
-            transform: translateY(-3px);
-        }
-
-        /* زر تلجرام */
-        .btn-telegram {
-            background-color: #0088cc;
-            color: white;
-        }
-
-        .btn-telegram:hover {
-            background-color: #006699;
-            transform: translateY(-3px);
-        }
-
-        /* زر الكورس */
-        .btn-course {
-            background-color: #ff5722;
-            color: white;
-            width: 100%;
-            margin-top: 15px;
-        }
-
-        .btn-course:hover {
-            background-color: #e64a19;
-            transform: translateY(-3px);
-        }
-
-        /* ===== تنسيقات الهيدر ===== */
-        .header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 00px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* تنسيق الشعار */
-        .logo h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent-color);
-            margin-bottom: 5px;
-        }
-
-        .logo p {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        /* تنسيق القائمة الرئيسية */
-        .main-nav ul {
-            display: flex;
-        }
-
-        .main-nav ul li {
-            margin-right: 20px;
-        }
-
-        .main-nav ul li:last-child {
-            margin-right: 0;
-        }
-
-        .main-nav ul li a {
-            color: white;
-            font-weight: 600;
-            padding: 10px 0;
-            position: relative;
-        }
-
-        /* تأثير تحت الروابط عند التحويم */
-        .main-nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-color);
-            transition: var(--transition);
-        }
-
-        .main-nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        /* زر القائمة للموبايل */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* ===== تنسيقات الأقسام ===== */
-        .section {
-            padding: 80px 0;
-        }
-
-        /* تلوين الأقسام بالتناوب */
-        .section:nth-child(even) {
-            background-color: #f0f4f8;
-        }
-
-        /* عناوين الأقسام */
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        /* خط تحت عناوين الأقسام */
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background-color: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        /* ===== تنسيقات القسم الأول ===== */
-        /* بطاقة التسجيل */
-        .register-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 50px;
-            border-top: 5px solid var(--accent-color);
-        }
-
-        .register-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .register-card p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-
-        /* قسم المميزات */
-        .features {
-            margin-bottom: 50px;
-        }
-
-        .features h3 {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-        }
-
-        /* شبكة بطاقات المميزات */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        /* بطاقة ميزة */
-        .feature-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .feature-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        /* معلومات الاسبريد */
-        .spread-info {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .spread-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        /* ===== تنسيقات القسم الثاني ===== */
-        /* شبكة بطاقات التقييمات */
-        .ratings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 50px;
-        }
-
-        /* بطاقة تقييم */
-        .rating-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 200px;
-        }
-
-        .rating-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .rating-card img {
-            max-height: 60px;
-            margin-bottom: 20px;
-            object-fit: contain;
-        }
-
-        .rating-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        /* ===== تنسيقات القسم الثالث ===== */
-        /* شبكة بطاقات التطبيقات */
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* بطاقة تطبيق */
-        .app-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .app-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .app-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .app-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .app-card p {
-            margin-bottom: 20px;
-            min-height: 50px;
-        }
-
-        /* ===== تنسيقات القسم الرابع ===== */
-        /* بطاقة الدروس التعليمية */
-        .tutorial-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .tutorial-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-align: center;
-        }
-
-        /* حاوية الفيديو بنسبة 16:9 */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* نسبة 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* ===== تنسيقات القسم الخامس ===== */
-        /* قنوات تلجرام */
-        .telegram-channels {
-            text-align: center;
-        }
-
-        /* القناة الرئيسية */
-        .main-channel {
-            background-color: #0088cc;
-            color: white;
-            margin-bottom: 40px;
-        }
-
-        .main-channel i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .main-channel h3 {
-            color: white;
-        }
-
-        /* عنوان قنوات الإشارات */
-        .signals-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--primary-color);
-        }
-
-        /* شبكة قنوات الإشارات */
-        .signals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        /* بطاقة قناة */
-        .channel-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .channel-card:hover {
-            transform: translateY(-5px);
-            background-color: #f5f5f5;
-        }
-
-        .channel-card a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .channel-card a i {
-            color: #0088cc;
-            margin-left: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* ===== تنسيقات القسم السادس ===== */
-        /* شبكة الكورسات */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* بطاقة كورس */
-        .course-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .course-icon {
-            font-size: 3rem;
-            color: #ff0000;
-            margin-bottom: 20px;
-        }
-
-        .course-icon .fa-instagram {
-            color: #e1306c;
-        }
-
-        .course-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .course-card p {
-            margin-bottom: 20px;
-            min-height: 50px;
-        }
-
-        /* ===== تنسيقات القسم السابع ===== */
-        /* معلومات الاتصال */
-        .contact-info {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-phone, .contact-email {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        /* أيقونات وسائل التواصل الاجتماعي */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        /* ألوان مخصصة لكل منصة اجتماعية */
-        .social-icon:nth-child(1) {
-            background-color: #1877f2; /* فيسبوك */
-        }
-
-        .social-icon:nth-child(2) {
-            background-color: #e1306c; /* انستغرام */
-        }
-
-        .social-icon:nth-child(3) {
-            background-color: #000000; /* تويتر (اكس) */
-        }
-
-        .social-icon:nth-child(4) {
-            background-color: #25d366; /* واتساب */
-        }
-
-        .social-icon:nth-child(5) {
-            background-color: #0088cc; /* تلجرام */
-        }
-
-        /* ===== تنسيقات الفوتر ===== */
-        .footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        /* ===== تنسيقات التجاوب مع الشاشات المختلفة ===== */
-        /* الشاشات المتوسطة (أقل من 992 بكسل) */
-        @media (max-width: 992px) {
-            .main-nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        /* الشاشات الصغيرة (أقل من 768 بكسل) */
-        @media (max-width: 768px) {
-            .features-grid, .ratings-grid, .apps-grid, .signals-grid, .courses-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-            }
-
-            .section {
-                padding: 40px 0;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 30px;
-            }
-
-            .register-card h3, .features h3, .spread-info h3, .signals-title {
-                font-size: 1.5rem;
-            }
-
-            .feature-card, .rating-card, .app-card, .channel-card, .course-card {
-                padding: 20px;
-            }
-        }
-
-        /* الشاشات الصغيرة جداً (أقل من 576 بكسل) */
-        @media (max-width: 576px) {
-            .logo h1 {
-                font-size: 1.8rem;
-            }
-
-            .logo p {
-                font-size: 0.9rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-
-            .social-icons {
-                flex-wrap: wrap;
-            }
-        }
-
-        /* ===== تأثيرات إضافية ===== */
-        /* تأثير الظهور التدريجي */
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* تأثير النبض */
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-    </style>
-</head>
-<body>
-    <!-- القسم العلوي (الهيدر) -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Rannforex</h1>
-                <p>شركة الوساطة المالية الموثوقة</p>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#section1">الرئيسية</a></li>
-                    <li><a href="#section2">التقييمات</a></li>
-                    <li><a href="#section3">التطبيقات</a></li>
-                    <li><a href="#section4">التعليم</a></li>
-                    <li><a href="#section5">قنوات تلجرام</a></li>
-                    <li><a href="#section6">الكورسات</a></li>
-                    <li><a href="#section7">تواصل معنا</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-    <!-- القسم الرئيسي -->
-    <main>
-        <!-- القسم الأول: معلومات شركة الوساطة المالية -->
-        <section id="section1" class="section">
-            <div class="container">
-                <h2 class="section-title" >هذه فرصة عمل جيدة للجميع تحقيق أرباح جيدة ابدأ التداول هنا نقبل السوريين أو اي بلد آخر لقد قمت بإضافة كل شيء تحتاجه إلى هذا الموقع من قنوات يوتيوب تعليمية وقنوات إشارات مجانية بالإضافة إلى قناتي على تلجرام</h2>
-                <div class="register-card">
-                    <h3>سجل الآن في Rannforex</h3>
-                    <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
-                    <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-user-plus"></i> سجل الآن
-                    </a>
-                </div>
-                <div class="register-card">
-                    <h3>استثمر معنا في حساب مدار pamm</h3>
-                    <p> لعرض تفاصيل حساب المدير </p>
-                    <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
-                        <i class="fas fa-user-plus"></i> استثمر الآن
-                    </a>
- </div>
-      <div class="register-card">
-                    <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
-                    <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
-                    <a href=" https://t.me/tradewithalimahmoud  " class="btn btn-primary" target="_blank">
-                        <i class="fas fa-user-plus"></i> انضم الآن
-                    </a>
-                </div>
-                 
-                    </div>
- <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
-        <section id="section3" class="section">
-            <div class="container">
-                <h2 class="section-title">تطبيقات يجب تحميلها للبدء بالتداول</h2>
-                <div class="apps-grid">
-                    <div class="app-card">
-                        <div class="app-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-app" target="_blank">
-                            <i class="fab fa-google-play"></i>  ميتا تريدر 5
-                        </a>
-                    </div>
-                    <div class="app-card">
-                        <div class="app-icon">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <a href="https://cwallet.com/referral/DvY6dZtS" class="btn btn-app" target="_blank">
-                            <i class="fas fa-download"></i> المحفظة الالكترونية 
-                        </a>
-                    </div>
-                    <div class="app-card">
-                        <div class="app-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn btn-app" target="_blank">
-                            <i class="fab fa-google-play"></i> النصادقة الثنائية
-                </a>
-                    </div>
-                 <div class="app-card">
-                <div class="app-icon">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn btn-app" target="_blank">
-                    <i class="fab fa-google-play"></i> تريدنغ فيو 
-                </a>
-            </div>
-                </div>
-           
-
-<section id="section2" class="section">
-
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقة ميزات المتداول</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+            --primary-color: #1a3a6c;
+            --secondary-color: #2a5a9c;
+            --accent-color: #ff9800;
+            --light-color: #f5f8ff;
+            --dark-color: #0d1b2a;
+            --success-color: #4caf50;
+            --transition: all 0.3s ease;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -833,668 +23,879 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-      
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1a3a6c);
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(13, 27, 42, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--accent-color), #ffcc80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .menu-toggle {
+            background: var(--secondary-color);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .menu-toggle:hover {
+            background: var(--accent-color);
+            transform: rotate(90deg);
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            height: 100%;
+            background: var(--dark-color);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 200;
+            transition: var(--transition);
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+        
+        .sidebar.active {
+            right: 0;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-btn:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        .menu-items {
+            list-style: none;
+            padding: 20px 0;
+        }
+        
+        .menu-item {
+            padding: 12px 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .menu-item:hover, .menu-item.active {
+            background: rgba(42, 90, 156, 0.3);
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .menu-item i {
+            width: 25px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+        
+        /* Main Content Styles */
+        .content {
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(13, 27, 42, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .section-title i {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
         
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            width: 100%;
-            max-width: 900px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
+            background: rgba(26, 58, 108, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         
         .card-header {
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            color: white;
-            padding: 25px 40px;
-            text-align: center;
-        }
-        
-        .card-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        
-        .card-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .card-body {
             display: flex;
-            flex-wrap: wrap;
-            padding: 30px;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
         }
         
-        .features-grid {
+        .card-header i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .card-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .features {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 25px;
-            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
         }
         
         .feature {
             display: flex;
-            align-items: flex-start;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #3498db;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            background: #fff;
-            border-left: 4px solid #e74c3c;
-        }
-        
-        .feature-icon {
-            background: #3498db;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
-            margin-left: 15px;
-            flex-shrink: 0;
+            gap: 10px;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
         }
         
-        .feature-content h3 {
-            color: #2c3e50;
-            margin-bottom: 8px;
+        .feature i {
+            color: var(--accent-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--accent-color), #ffab40);
+            color: var(--dark-color);
+            border: none;
+            border-radius: 30px;
             font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            margin: 10px 5px;
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
         }
         
-        .feature-content p {
-            color: #7f8c8d;
-            line-height: 1.6;
-            font-size: 1.05rem;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
         }
         
-        .badges {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary-color), #3a7bd5);
+            box-shadow: 0 4px 15px rgba(42, 90, 156, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 8px 20px rgba(42, 90, 156, 0.4);
+        }
+        
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
-            padding: 30px;
-            background: #f8f9fa;
-            border-top: 1px solid #eee;
+            margin: 20px 0;
         }
         
-        .badge {
-            background: #e74c3c;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
+        .link-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .link-item:hover {
+            background: rgba(42, 90, 156, 0.3);
+            transform: translateX(5px);
+        }
+        
+        .link-item h4 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .link-item a {
+            color: #64b5f6;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+        
+        .step {
+            position: relative;
+            padding: 15px 15px 15px 60px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .step:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background: var(--accent-color);
+            color: var(--dark-color);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1rem;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
         
-        .security-badge {
-            background: #27ae60;
+        .note {
+            background: rgba(255, 152, 0, 0.15);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
         }
         
+        .note i {
+            color: var(--accent-color);
+            margin-left: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .features-grid {
+            .sidebar {
+                width: 280px;
+                right: -280px;
+            }
+            
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .features {
                 grid-template-columns: 1fr;
             }
             
-            .card-header h1 {
-                font-size: 2rem;
+            .link-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .feature {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .feature-icon {
-                margin-left: 0;
-                margin-bottom: 15px;
-            }
-        }
-        
-        .star {
-            color: #f1c40f;
-            margin-left: 3px;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="card-header">
-            <h1>مزايا التداول معنا</h1>
-            <p>نقدم لك أفضل شروط التداول في السوق مع تنفيذ فوري وأعلى درجات الأمان</p>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-chart-line"></i>
+            <h1>rannforex</h1>
         </div>
-        
-        <div class="card-body">
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>عمليات الإيداع والسحب</h3>
-                        <p>
-                            <span class="star">★</span> أقل إيداع 10$ خلال 30 ثانية فقط<br>
-                            <span class="star">★</span> أقل سحب 10$ خلال 30 ثانية
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>تكاليف تنافسية</h3>
-                        <p>
-                            <span class="star">★</span> عمولة قليلة جداً<br>
-                            <span class="star">★</span> اسبريد منخفض 0.3~1.2
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>شروط تداول ممتازة</h3>
-                        <p>
-                            <span class="star">★</span> رافعة مالية عالية 1:500<br>
-                            <span class="star">★</span> انزلاق منخفض وتنفيذ فوري للصفقات
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>أدوات تداول متنوعة</h3>
-                        <p>
-                            <span class="star">★</span> تداول أمن على جميع أزواج الفوركس والمعادن والنفط<br>
-                            <span class="star">★</span> المؤشرات والعملات المشفرة
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>أنواع الحسابات</h3>
-                        <p>
-                            <span class="star">★</span> أربع أنواع من الحسابات: ميتاتريدر 5 حقيقي<br>
-                            <span class="star">★</span> بدون عمولة، كريبتو، وحساب IB<br>
-                            <span class="star">★</span> يدعم الحسابات المدارة PAMM
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>الأمان والمصداقية</h3>
-                        <p>
-                            <span class="star">★</span> تقييم ممتاز على TrustPilot و MyFxBook<br>
-                            <span class="star">★</span> Wikifx و Forex Peace Army<br>
-                            <span class="star">★</span> الأمان عالي جداً بسبب 2FA<br>
-                            <span class="star">★</span> توثيق من سورية وأي دولة أخرى
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>الأقسام الرئيسية</h2>
+            <button class="close-btn" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        
-        <div class="badges">
-            <div class="badge">
-                <i class="fas fa-lock"></i> نموذج A-Book
-            </div>
-            <div class="badge security-badge">
-                <i class="fas fa-shield-alt"></i> أفضل مزودي السيولة
-            </div>
-        </div>
-    </div>
-  </body>                  
-                    
-                  
-  
-               <section id="section2" class="section">
-                <div class="spread-info">
-                    <h3>اطلع على الاسبريد المتوسط اليومي</h3>
-                    <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-chart-bar"></i> عرض الاسبريد
+        <ul class="menu-items">
+            <li class="menu-item active" data-target="section1">
+                <i class="fas fa-link"></i>
+                <span>رابط الشركة</span>
+            </li>
+            <li class="menu-item" data-target="section2">
+                <i class="fas fa-star"></i>
+                <span>تقييمات الشركة</span>
+            </li>
+            <li class="menu-item" data-target="section3">
+                <i class="fas fa-mobile-alt"></i>
+                <span>تطبيقات التداول</span>
+            </li>
+            <li class="menu-item" data-target="section4">
+                <i class="fas fa-lock"></i>
+                <span>المصادقة الثنائية</span>
+            </li>
+            <li class="menu-item" data-target="section5">
+                <i class="fab fa-telegram"></i>
+                <span>قنوات التلجرام</span>
+            </li>
+            <li class="menu-item" data-target="section6">
+                <i class="fas fa-graduation-cap"></i>
+                <span>القسم التعليمي</span>
+            </li>
+            <li class="menu-item" data-target="section7">
+                <i class="fas fa-chart-pie"></i>
+                <span>قسم الاستثمار</span>
+            </li>
+            <li class="menu-item" data-target="section8">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>طريقة الإيداع</span>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <!-- Section 1: Broker Link -->
+            <section id="section1" class="section active">
+                <div class="section-title">
+                    <i class="fas fa-link"></i>
+                    <h2>رابط شركة الوساطة المالية</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-external-link-alt"></i>
+                        <h3>رابط التسجيل في راني فوريكس</h3>
+                    </div>
+                    <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn" target="_blank">
+                        <i class="fas fa-user-plus"></i> سجل الآن
                     </a>
-                 </div>
-           
-                            
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خطوات الإيداع</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            direction: rtl;
-            text-align: right;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            border-radius: 20px;
-
-        }
-        .accordion {
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            width: 100%;
-            border: none;
-            text-align: center;
-            outline: none;
-            font-size: 18px;
-            transition: background-color 0.3s;
-        }
-        .accordion:hover {
-            background-color: #0056b3;
-        }
-        .panel {
-            padding: 0 18px;
-            display: none;
-            background-color: white;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            margin-bottom: 10px;
-        }
-        .panel p, .panel ol {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .panel ol {
-            padding-right: 20px;
-        }
-        .panel li {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-  <section id="section2" class="section">
-            <div class="container">
-                <h2 class="section-title">خطوات الإيداع</h2>
-    <button class="accordion">خطوات الإيداع</button>
-    <div class="panel">
-        <ol>
-            <li><strong>الإيداع:</strong>
-                <ul>
-                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة.</li>
-                    <li>اختر <strong>Deposit</strong>.</li>
-                    <li>اختر طريقة الإيداع: <strong>Crypto</strong>.</li>
-                    <li>اختر حساب التداول.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>تفاصيل التحويل:</strong>
-                <ul>
-                    <li>أدخل المبلغ في الفراغ الأول.</li>
-                    <li>اختر <strong>USD</strong>.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>رمز التحقق (2FA):</strong>
-                <ul>
-                    <li>افتح تطبيق <strong>Google Authenticator</strong>.</li>
-                    <li>انسخ الكود المولد لحساب RannForex.</li>
-                    <li>أدخل الكود في الفراغ المخصص.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong> اختر TetherUS - USDT:</strong>
-                <ul>
-                    <li>اختر <strong>BUSD-T-USD (USDT)</strong>.</li>
-                    <li>انسخ العنوان المقدم وهو عنوان bep20.</li>
-                </ul>
-            </li>
-            <li><strong>إرسال من Cwallet:</strong>
-                <ul>
-                    <li>اختر <strong>USDT</strong>.</li>
-                    <li>اختر شبكة <strong>BEP20</strong>.</li>
-                    <li>أدخل المبلغ بالدولار.</li>
-                    <li>الصق العنوان المنسوخ من RannForex.</li>
-                    <li>اضغط على <strong>Send</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>تم الإيداع بنجاح!</strong></li>
-        </ol>
+                    
+                    <div class="note">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>ملاحظة:</strong> ★ اقل ايداع 10$ خلال 30 ثانية ★ أقل سحب 10$ خلال 30 ثانية ★ عمولة قليلة جدا
+                    </div>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>اسبريد 0.3~1.2</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>رافعة مالية 1:500</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>تداول آمن</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wallet"></i>
+                            <span>أربع أنواع من الحسابات</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>انزلاق منخفض</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>تنفيذ فوري للصفقات</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <span>تقييم ممتاز على مواقع التقييم</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>الأمان عالي جداً بسبب 2FA</span>
+                        </div>
+                    </div>
+                    
+                    <div class="note">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>معلومات إضافية:</strong> ★ توثيق من سورية أو أي دولة أخرى ★ نموذج A-Book من أفضل مزودي السيولة
+                    </div>
+                    
+                    <div class="card-header" style="margin-top: 20px;">
+                        <i class="fas fa-table"></i>
+                        <h3>الإسبريد المتوسط اليومي</h3>
+                    </div>
+                    <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> عرض الإسبريد
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Section 2: Company Reviews -->
+            <section id="section2" class="section">
+                <div class="section-title">
+                    <i class="fas fa-star"></i>
+                    <h2>تقييمات الشركة</h2>
+                </div>
+                
+                <div class="link-grid">
+                    <div class="link-item">
+                        <h4><i class="fas fa-star-half-alt"></i> Trust Pilot</h4>
+                        <a href="https://fr.trustpilot.com/review/rannforex.com" target="_blank">https://fr.trustpilot.com/review/rannforex.com</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <h4><i class="fas fa-globe"></i> WikiFX</h4>
+                        <a href="https://www.wikifx.com/en/dealer/1141850612.html" target="_blank">https://www.wikifx.com/en/dealer/1141850612.html</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <h4><i class="fas fa-book"></i> MyFXBook</h4>
+                        <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" target="_blank">https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1</a>
+                    </div>
+                    
+                    <div class="link-item">
+                        <h4><i class="fas fa-shield-alt"></i> Forex Peace Army</h4>
+                        <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" target="_blank">https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 3: Trading Apps -->
+            <section id="section3" class="section">
+                <div class="section-title">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h2>تطبيقات التداول</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>منصة ميتا تريدر 5</h3>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn" target="_blank">
+                        <i class="fab fa-android"></i> تحميل للتداول
+                    </a>
+                    <div class="note">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>ملاحظة:</strong> هي المنصة الموثوقة الأفضل في مجال التداول في جميع الأسواق
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-wallet"></i>
+                        <h3>المحفظة الإلكترونية</h3>
+                    </div>
+                    <a href="https://cwallet.com/referral/DvY6dZtS" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-download"></i> تحميل المحفظة
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-lock"></i>
+                        <h3>تطبيق المصادقة الثنائية</h3>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn" target="_blank">
+                        <i class="fab fa-google-play"></i> تحميل التطبيق
+                    </a>
+                    <div class="note">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>ملاحظة:</strong> يلزم من أجل توثيق الحساب وتوثيق عمليات السحب والإيداع
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 4: Authentication -->
+            <section id="section4" class="section">
+                <div class="section-title">
+                    <i class="fas fa-lock"></i>
+                    <h2>المصادقة الثنائية</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-video"></i>
+                        <h3>فيديو تعليمي</h3>
+                    </div>
+                    <p>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</p>
+                    <a href="https://youtube.com/shorts/SlQc3Q6L3HQ?si=Q5sdG7_lxANoykBs" class="btn" target="_blank">
+                        <i class="fab fa-youtube"></i> مشاهدة الفيديو
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-key"></i>
+                        <h3>نصائح هامة للمصادقة الثنائية</h3>
+                    </div>
+                    <ul style="padding: 15px 30px; line-height: 2;">
+                        <li>احفظ رمز الاسترداد في مكان آمن</li>
+                        <li>لا تشارك رمز المصادقة مع أي شخص</li>
+                        <li>تأكد من ضبط الوقت الصحيح على جهازك</li>
+                        <li>استخدم تطبيق المصادقة على جهازك الشخصي فقط</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Section 5: Telegram Channels -->
+            <section id="section5" class="section">
+                <div class="section-title">
+                    <i class="fab fa-telegram"></i>
+                    <h2>قنوات التلجرام</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>قناتنا الرئيسية</h3>
+                    </div>
+                    <a href="https://t.me/tradewithalimahmoud" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> انضم إلى قناتنا
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-signal"></i>
+                        <h3>قنوات الإشارات (للتعلم فقط)</h3>
+                    </div>
+                    <div class="link-grid">
+                        <div class="link-item">
+                            <h4>FX IRI</h4>
+                            <a href="https://t.me/FX_IRI" target="_blank">https://t.me/FX_IRI</a>
+                        </div>
+                        <div class="link-item">
+                            <h4>Pro Signals FX</h4>
+                            <a href="https://t.me/prosignalsfxx" target="_blank">https://t.me/prosignalsfxx</a>
+                        </div>
+                        <div class="link-item">
+                            <h4>Top Trading Signals</h4>
+                            <a href="https://t.me/top_tradingsignals" target="_blank">https://t.me/top_tradingsignals</a>
+                        </div>
+                        <div class="link-item">
+                            <h4>Signals FC</h4>
+                            <a href="https://t.me/signalsfc" target="_blank">https://t.me/signalsfc</a>
+                        </div>
+                        <div class="link-item">
+                            <h4>Elite Trading Signals</h4>
+                            <a href="https://t.me/elitetrading_signals" target="_blank">https://t.me/elitetrading_signals</a>
+                        </div>
+                        <div class="link-item">
+                            <h4>Free Signals</h4>
+                            <a href="https://t.me/free_signals" target="_blank">https://t.me/free_signals</a>
+                        </div>
+                        <div class="link-item">
+                            <h4>Grey Suit Community</h4>
+                            <a href="https://t.me/greysuitcommunity" target="_blank">https://t.me/greysuitcommunity</a>
+                        </div>
+                    </div>
+                    <div class="note">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>تنويه:</strong> هذه القنوات للتعلم وليس لنسخ الإشارات
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 6: Educational Content -->
+            <section id="section6" class="section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>القسم التعليمي</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>كورس كامل مع باتك</h3>
+                    </div>
+                    <p>تعلم التداول مع أشهر ملياردير عبقري التداول باتك</p>
+                    <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn" target="_blank">
+                        <i class="fab fa-youtube"></i> مشاهدة الكورس
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>قناة Smart Risk على يوتيوب</h3>
+                    </div>
+                    <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-youtube"></i> زيارة القناة
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fab fa-instagram"></i>
+                        <h3>كورس على انستغرام</h3>
+                    </div>
+                    <a href="https://www.instagram.com/kameel_m5?igsh=YzljYTk1ODg3Zg==" class="btn" target="_blank">
+                        <i class="fab fa-instagram"></i> زيارة الكورس
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-book"></i>
+                        <h3>كورس Smart Risk على يوتيوب</h3>
+                    </div>
+                    <a href="https://youtube.com/@smart_risk?si=8VLFIUyBN-9rm7L6" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-youtube"></i> مشاهدة الكورس
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Section 7: Investment -->
+            <section id="section7" class="section">
+                <div class="section-title">
+                    <i class="fas fa-chart-pie"></i>
+                    <h2>قسم الاستثمار</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>حسابي الاستثماري</h3>
+                    </div>
+                    <p>للاطلاع على تفاصيل حسابي الاستثماري في شركة راني فوريكس</p>
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+                        <p>سأقوم بإدراج رابط وصورة لاحقاً</p>
+                        <p style="margin-top: 10px; color: var(--accent-color);">
+                            <i class="fas fa-exclamation-circle"></i> سيتم تحديث هذا القسم قريباً
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 8: Deposit Method -->
+            <section id="section8" class="section">
+                <div class="section-title">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h2>طريقة الإيداع</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-wallet"></i>
+                        <h3>خطوات الإيداع</h3>
+                    </div>
+                    
+                    <div class="step-list">
+                        <div class="step">
+                            <p>نضغط على الثلاث خطوط في موقع RannForex أعلى يمين الشاشة</p>
+                            <p>1️⃣ Deposit</p>
+                            <p>Select deposit method: crypto</p>
+                            <p>Select trading account: اختر حساب التداول</p>
+                            <p>Continue</p>
+                        </div>
+                        
+                        <div class="step">
+                            <p>2️⃣ Transfer details</p>
+                            <p>أدخل المبلغ في الفراغ الأول</p>
+                            <p>اختر USD</p>
+                            <p>Continue</p>
+                        </div>
+                        
+                        <div class="step">
+                            <p>3️⃣ 2FA Code</p>
+                            <p>نذهب إلى تطبيق Google Authenticator</p>
+                            <p>نقوم بأخذ الكود الذي ولده من أجل حساب RannForex وإدخاله في الفراغ الموجود</p>
+                            <p>Continue</p>
+                        </div>
+                        
+                        <div class="step">
+                            <p>4️⃣ TetherUS - USDT</p>
+                            <p>BUSD-T-USDT</p>
+                            <p>نسخ العنوان</p>
+                        </div>
+                        
+                        <div class="step">
+                            <p>5️⃣ CWallet Send</p>
+                            <p>USDT</p>
+                            <p>BEP20</p>
+                            <p>Amount: ... $</p>
+                            <p>لصق العنوان (من RannForex)</p>
+                            <p>Send</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>انتهى الإيداع بنجاح!</strong>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-
+    
+    <footer>
+        <p>© 2025 راني فوريكس - جميع الحقوق محفوظة | تم التصميم بعناية لخدمة المتداولين</p>
+    </footer>
+    
     <script>
-        const accordion = document.querySelector('.accordion');
-        const panel = document.querySelector('.panel');
-
-        accordion.addEventListener('click', function() {
-            this.classList.toggle('active');
-            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        // Menu Toggle Functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const sections = document.querySelectorAll('.section');
+        
+        // Toggle sidebar
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+        
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+        
+        // Menu items click functionality
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                menuItems.forEach(i => i.classList.remove('active'));
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                // Get target section id
+                const target = item.getAttribute('data-target');
+                
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show target section
+                document.getElementById(target).classList.add('active');
+                
+                // Close sidebar on mobile
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+        
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+        
+        // Prevent closing when clicking inside sidebar
+        sidebar.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
     </script>
-
-        
-
-        <!-- القسم الثاني: تقييمات الشركة -->
-        <section id="section2" class="section">
-            <div class="container">
-                <h2 class="section-title">تقييمات الشركة</h2>
-                <div class="ratings-grid">
-                    <div class="rating-card">
-                        <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Trustpilot
-                        </a>
-  <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> myfxbook
-                        </a>
- <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> forexpeacearmy
-                        </a>
-  <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> wikifx
-                        </a>  
-                    </div>
-                </div>
-            </div>
-        </section>
-
-           <!-- القسم الرابع: 2FA -->
-        <section id="section4" class="section">
-            <div class="container">
-                <h2 class="section-title">2FA المصادقة</h2>
-                <div class="tutorial-card">
-                    <h3>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</h3>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>        
-        </section>
-
-
-        <!-- القسم الخامس: قنوات مهمة على تلجرام -->
-        <section id="section5" class="section">
-            <div class="container">
-                <h2 class="section-title">قنوات مهمة على تلجرام</h2>
-                <div class="telegram-channels">
-                   
-                    
-                    <h3 class="signals-title">قنوات الإشارات (للتعلم وليس لنسخ الإشارات)</h3>
-                    <div class="signals-grid">
-                        <div class="channel-card">
-                            <a href="https://t.me/FX_IRI" target="_blank">
-                                <i class="fab fa-telegram"></i> FX_IRI
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/prosignalsfxx" target="_blank">
-                                <i class="fab fa-telegram"></i> Pro Signals FX
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/top_tradingsignals" target="_blank">
-                                <i class="fab fa-telegram"></i> Top Trading Signals
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/signalsfc" target="_blank">
-                                <i class="fab fa-telegram"></i> Signals FC
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/elitetrading_signals" target="_blank">
-                                <i class="fab fa-telegram"></i> Elite Trading Signals
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/free_signals" target="_blank">
-                                <i class="fab fa-telegram"></i> Free Signals
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/greysuitcommunity" target="_blank">
-                                <i class="fab fa-telegram"></i> Grey Suit Community
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- القسم السادس: القسم التعليمي -->
-        <section id="section6" class="section">
-            <div class="container">
-                <h2 class="section-title">القسم التعليمي </h2>
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <h3>TRADE WITH PATT</h3>
-                        <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn btn-course" target="_blank">
-                            مشاهدة الكورس
-                        </a>
-                    </div>
-
-                    <div class="course-card">
-    <div class="course-icon">
-        <i class="fab fa-youtube"></i>
-    </div>
-    <h3>Easy Trade</h3>
-    <a href="https://youtube.com/@easytradingeasy?si=9sITj4F_D__TAfb5" class="btn btn-course" target="_blank">
-        مشاهدة الكورس
-    </a>
-</div>
-                    <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <h3>SMART RISK</h3>
-                        <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-course" target="_blank">
-                            مشاهدة الكورس
-                        </a>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h3>KAMEL M5</h3>
-                        <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="btn btn-course" target="_blank">
-                            مشاهدة الكورس
-                        </a>
-                    </div>
-                              <div class="course-icon">
-                    </div>
-                </div>
-         </div>
-        </section>
-
-
-    <!-- القسم السفلي (الفوتر) -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة</p>
-        </div>
-    </footer>
-
-    <!-- سكريبت جافاسكريبت -->
-    <script>
-        // تنفيذ الكود عند اكتمال تحميل المستند
-        document.addEventListener('DOMContentLoaded', function() {
-            // إضافة تأثير الظهور التدريجي للأقسام
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.add('fade-in');
-            });
-
-            // إضافة تأثير النبض لزر التسجيل
-            const registerBtn = document.querySelector('.register-card .btn-primary');
-            if (registerBtn) {
-                registerBtn.classList.add('pulse');
-            }
-
-            // التعامل مع قائمة التنقل المتحركة
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNav = document.querySelector('.main-nav');
-            
-            if (mobileMenuBtn && mainNav) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
-                });
-            }
-
-            // إضافة تأثير التمرير السلس للروابط
-            const navLinks = document.querySelectorAll('.main-nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // التمرير إلى العنصر المستهدف مع تعويض ارتفاع الهيدر
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
-                        if (window.innerWidth < 992) {
-                            mainNav.style.display = 'none';
-                        }
-                    }
-                });
-            });
-
-            // تحسين تجربة المستخدم على الأجهزة المحمولة
-            function handleResponsiveLayout() {
-                if (window.innerWidth < 992) {
-                    mainNav.style.display = 'none';
-                } else {
-                    mainNav.style.display = 'block';
-                }
-            }
-
-            // تنفيذ عند تحميل الصفحة وتغيير حجم النافذة
-            handleResponsiveLayout();
-            window.addEventListener('resize', handleResponsiveLayout);
-
-            // إضافة تأثيرات حركية للبطاقات عند التمرير
-            const cards = document.querySelectorAll('.feature-card, .rating-card, .app-card, .channel-card, .course-card');
-            
-            // التحقق مما إذا كان العنصر مرئياً في نافذة العرض
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-            
-            // معالجة تأثيرات التمرير
-            function handleScroll() {
-                cards.forEach(card => {
-                    if (isElementInViewport(card)) {
-                        card.classList.add('fade-in');
-                    }
-                });
-            }
-            
-            // تنفيذ عند التمرير
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
-            
-            // إضافة تأثير تفاعلي لأيقونات وسائل التواصل الاجتماعي
-            const socialIcons = document.querySelectorAll('.social-icon');
-            socialIcons.forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.1)';
-                });
-                
-                icon.addEventListener('mouseleave', function() {
-                    this.style.transform = '';
-                });
-            });
-        });
-    </script><!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
-
-
-<!-- HTML: ?? ?????? -->
-<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
-    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
-  </svg>
-</a>
-
-<!-- CSS: ????? ???? ?????? -->
-<style>
-#telegram-float {
-  position: fixed;
-  right: 20px;
-  bottom: 120px;
-  background: linear-gradient(45deg, #0088cc, #00bfff);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#telegram-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-#telegram-float svg {
-  width: 28px;
-  height: 28px;
-}
-</style>
-
+</body>
+</html>
