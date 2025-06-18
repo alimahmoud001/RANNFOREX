@@ -1329,7 +1329,43 @@ social-icon:hover {
     }
   });
 </script>
-=====
+==
+<div style="display: flex; justify-content: center; margin: 20px;">
+  <form id="subscribeForm" style="display: flex; gap: 8px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 8px 12px;">
+    <input type="email" id="emailInput" placeholder="ادخل بريدك الإلكتروني" required
+      style="border: none; background: transparent; padding: 8px; font-size: 14px; min-width: 200px;" />
+    <button type="submit"
+      style="background-color: #007bff; color: white; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer;">
+      اشترك
+    </button>
+  </form>
+</div>
+
+<div id="successMsg" style="text-align: center; color: green; display: none;">✅ شكراً لك، تم الاشتراك بنجاح.</div>
+
+<script>
+  const form = document.getElementById("subscribeForm");
+  const input = document.getElementById("emailInput");
+  const msg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = input.value.trim();
+
+    if (email) {
+      fetch("https://script.google.com/macros/s/[PASTE_YOUR_URL_HERE/exec](https://script.google.com/macros/s/AKfycbyTmncRGuqanyrZ4wtnYn9oPHaetO4bguOt-4-21uq643Z3GQpvKBgd39Rv2clQQqiu/exec)", {
+        method: "POST",
+        body: new URLSearchParams({ email: email })
+      })
+      .then(res => res.text())
+      .then(() => {
+        form.style.display = "none";
+        msg.style.display = "block";
+      });
+    }
+  });
+</script>
+===
 
 
 
