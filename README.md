@@ -1353,7 +1353,7 @@ social-icon:hover {
     const email = input.value.trim();
 
     if (email) {
-      fetch("https://script.google.com/macros/s/[PASTE_YOUR_URL_HERE/exec](https://script.google.com/macros/s/AKfycbyTmncRGuqanyrZ4wtnYn9oPHaetO4bguOt-4-21uq643Z3GQpvKBgd39Rv2clQQqiu/exec)", {
+      fetch("https://script.google.com/macros/s/AKfycbyTmncRGuqanyrZ4wtnYn9oPHaetO4bguOt-4-21uq643Z3GQpvKBgd39Rv2clQQqiu/exec", {
         method: "POST",
         body: new URLSearchParams({ email: email })
       })
