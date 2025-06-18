@@ -1289,6 +1289,46 @@ social-icon:hover {
          </div>
         </section>
 ====
+<!-- نموذج الاشتراك في النشرة الإخبارية -->
+<div id="newsletter-container" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+  <form id="newsletter-form" style="display: flex; gap: 8px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 8px 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+    <input type="email" id="email-input" placeholder="ادخل بريدك الإلكتروني" required
+      style="border: none; outline: none; background: transparent; padding: 8px; font-size: 14px; min-width: 200px;" />
+    <button type="submit"
+      style="background-color: #007bff; color: white; border: none; border-radius: 6px; padding: 8px 14px; font-size: 14px; cursor: pointer;">
+      اشترك
+    </button>
+  </form>
+</div>
+
+<!-- رسالة التأكيد -->
+<div id="success-message" style="text-align: center; color: green; font-size: 15px; display: none; margin-top: 10px;">
+  ✅ شكرًا لك! تم الاشتراك بنجاح.
+</div>
+
+<!-- جافاسكريبت -->
+<script>
+  const form = document.getElementById("newsletter-form");
+  const emailInput = document.getElementById("email-input");
+  const successMessage = document.getElementById("success-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // منع الإرسال الفعلي
+
+    const email = emailInput.value.trim();
+
+    if (email) {
+      // حفظ البريد الإلكتروني في localStorage (اختياري)
+      localStorage.setItem("subscribedEmail", email);
+
+      // إظهار رسالة النجاح
+      successMessage.style.display = "block";
+
+      // إخفاء النموذج
+      form.style.display = "none";
+    }
+  });
+</script>
 =====
 
 
