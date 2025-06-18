@@ -578,7 +578,7 @@ social-icon:hover {
             color: white;
             padding: 20px 0;
             text-align: center;
-
+            border-radius: 25px; 
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
         }
 
