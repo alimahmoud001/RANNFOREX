@@ -1294,184 +1294,106 @@ social-icon:hover {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اشترك في نشرتنا الإخبارية</title>
+    <title>نموذج الاشتراك</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
             text-align: center;
         }
-        
-        .container {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 500px;
+        input[type="email"] {
             width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-        
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-        
-        p {
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .input-group {
-            margin-bottom: 25px;
-            text-align: right;
-        }
-        
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus {
-            border-color: #3498db;
-            outline: none;
-        }
-        
         button {
-            background: linear-gradient(to right, #3498db, #2c3e50);
+            background-color: #4CAF50;
             color: white;
+            padding: 10px 20px;
             border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 8px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s ease;
             width: 100%;
-            font-weight: bold;
         }
-        
         button:hover {
-            background: linear-gradient(to right, #2980b9, #1a2530);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #45a049;
         }
-        
         .message {
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
             display: none;
         }
-        
         .success {
             background-color: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
         }
-        
         .error {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
-        
-        .info-box {
-            background-color: #e8f4fc;
-            border-left: 4px solid #3498db;
-            padding: 15px;
-            margin-top: 30px;
-            text-align: right;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .info-box h3 {
-            color: #2c3e50;
-            margin-top: 0;
-        }
-        
-        .info-box ul {
-            padding-right: 20px;
-        }
-        
-        .info-box li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>اشترك في نشرتنا الإخبارية</h1>
-        <p>ادخل بريدك الإلكتروني لتصلك آخر التحديثات والعروض الخاصة</p>
-        
-        <div class="input-group">
-            <input type="email" id="email" placeholder="بريدك الإلكتروني" required>
-        </div>
-        
-        <button id="subscribeBtn">اشترك الآن</button>
-        
+        <h2>اشترك في نشرتنا</h2>
+        <form id="subscriptionForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+            <button type="submit">اشترك</button>
+        </form>
         <div id="message" class="message"></div>
-        
     </div>
-    
+
     <script>
-        document.getElementById('subscribeBtn').addEventListener('click', function() {
-            const email = document.getElementById('email').value.trim();
-            const messageDiv = document.getElementById('message');
-            
-            // التحقق من صحة البريد الإلكتروني
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!email) {
-                showMessage('الرجاء إدخال بريد إلكتروني', 'error');
-                return;
+        const form = document.getElementById('subscriptionForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showMessage('تم الاشتراك بنجاح!', 'success');
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    showMessage('حدث خطأ: ' + (errorData.error || 'الرجاء المحاولة لاحقًا'), 'error');
+                }
+            } catch (error) {
+                showMessage('حدث خطأ في الشبكة: ' + error.message, 'error');
             }
-            
-            if (!emailRegex.test(email)) {
-                showMessage('الرجاء إدخال بريد إلكتروني صحيح', 'error');
-                return;
-            }
-            
-            // الحصول على المشتركين الحاليين من التخزين المحلي
-            let subscribers = JSON.parse(localStorage.getItem('subscribers')) || [];
-            
-            // التحقق من عدم وجود البريد مسبقاً
-            if (subscribers.includes(email)) {
-                showMessage('هذا البريد مشترك بالفعل', 'error');
-                return;
-            }
-            
-            // إضافة البريد الجديد
-            subscribers.push(email);
-            localStorage.setItem('subscribers', JSON.stringify(subscribers));
-            
-            // إظهار رسالة النجاح
-            showMessage(`تم الاشتراك بنجاح! سيصلك جديدنا على ${email}`, 'success');
-            
-            // مسح حقل الإدخال
-            document.getElementById('email').value = '';
         });
-        
+
         function showMessage(msg, type) {
-            const messageDiv = document.getElementById('message');
             messageDiv.textContent = msg;
             messageDiv.className = 'message ' + type;
             messageDiv.style.display = 'block';
-            
-            // إخفاء الرسالة بعد 5 ثوان
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 5000);
         }
     </script>
 </body>
