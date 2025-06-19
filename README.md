@@ -787,7 +787,7 @@ social-icon:hover {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        body {
+         {
             background: linear-gradient(135deg, #1a2a6c, #2a4d8e);
             min-height: 100vh;
             display: flex;
