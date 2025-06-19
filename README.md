@@ -768,430 +768,11 @@ social-icon:hover {
                     </a>
                  </div> 
    <section>         
-                            
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خطوات الإيداع</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            direction: rtl;
-            text-align: right;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 00px;
-            border-radius: 20px;
-
-        }
-        .accordion {
-            background-color: #f18f01;
-            color: white;
-            cursor: pointer;
-            padding: 20px;
-            width: 100%;
-            border: none;
-            text-align: center;
-            outline: none;
-            font-size: 18px;
-            border-radius: 25px; 
-            transition: background-color 0.3s;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-        }
-        .accordion:hover {
-            background-color: #0056b3;
-        }
-        .panel {
-            padding: 0 18px;
-            display: none;
-            background-color: white;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            margin-bottom: 10px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-        }
-        .panel p, .panel ol {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .panel ol {
-            padding-right: 20px;
-        }
-        .panel li {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-  <section id="section2" class="section">
-            <div class="container">
-                <h2 class="section-title">خطوات الإيداع</h2>
-    <button class="accordion">خطوات الإيداع</button>
-    <div class="panel">
-        <ol>
-            <li><strong>الإيداع:</strong>
-                <ul>
-                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة.</li>
-                    <li>اختر <strong>Deposit</strong>.</li>
-                    <li>اختر طريقة الإيداع: <strong>Crypto</strong>.</li>
-                    <li>اختر حساب التداول.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>تفاصيل التحويل:</strong>
-                <ul>
-                    <li>أدخل المبلغ في الفراغ الأول.</li>
-                    <li>اختر <strong>USD</strong>.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>رمز التحقق (2FA):</strong>
-                <ul>
-                    <li>افتح تطبيق <strong>Google Authenticator</strong>.</li>
-                    <li>انسخ الكود المولد لحساب RannForex.</li>
-                    <li>أدخل الكود في الفراغ المخصص.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong> اختر TetherUS - USDT:</strong>
-                <ul>
-                    <li>اختر <strong>BUSD-T-USD (USDT)</strong>.</li>
-                    <li>انسخ العنوان المقدم وهو عنوان bep20.</li>
-                </ul>
-            </li>
-            <li><strong>إرسال من Cwallet:</strong>
-                <ul>
-                    <li>اختر <strong>USDT</strong>.</li>
-                    <li>اختر شبكة <strong>BEP20</strong>.</li>
-                    <li>أدخل المبلغ بالدولار.</li>
-                    <li>الصق العنوان المنسوخ من RannForex.</li>
-                    <li>اضغط على <strong>Send</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>تم الإيداع بنجاح!</strong></li>
-        </ol>
-    </div>
-
-    <script>
-        const accordion = document.querySelector('.accordion');
-        const panel = document.querySelector('.panel');
-
-        accordion.addEventListener('click', function() {
-            this.classList.toggle('active');
-            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-        });
-    </script>
-
-        
-
-        <!-- القسم الثاني: تقييمات الشركة -->
-        <section id="section2" class="section">
-            <div class="container">
-                <h2 class="section-title">تقييمات الشركة</h2>
-                <div class="ratings-grid">
-                    <div class="rating-card">
-                        <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Trustpilot
-                        </a>
-  <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> myfxbook
-                        </a>
- <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> forexpeacearmy
-                        </a>
-  <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> wikifx
-                        </a>  
-                    </div>
-                </div>
-            </div>
-        </section>
-
-           <!-- القسم الرابع: 2FA -->
-        <section id="section4" class="section">
-            <div class="container">
-                <h2 class="section-title">2FA المصادقة</h2>
-                <div class="tutorial-card">
-                    <h3>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</h3>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>        
-        </section>
+             ====
 
 
-        <!-- القسم الخامس: قنوات مهمة على تلجرام -->
-        <section id="section5" class="section">
-            <div class="container">
-                <h2 class="section-title">قنوات مهمة على تلجرام</h2>
-                <div class="telegram-channels">
-                   
-                    
-                    <h3 class="signals-title">قنوات الإشارات (للتعلم وليس لنسخ الإشارات)</h3>
-                    <div class="signals-grid">
-                        <div class="channel-card">
-                            <a href="https://t.me/FX_IRI" target="_blank">
-                                <i class="fab fa-telegram"></i> FX_IRI
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/prosignalsfxx" target="_blank">
-                                <i class="fab fa-telegram"></i> Pro Signals FX
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/top_tradingsignals" target="_blank">
-                                <i class="fab fa-telegram"></i> Top Trading Signals
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/signalsfc" target="_blank">
-                                <i class="fab fa-telegram"></i> Signals FC
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/elitetrading_signals" target="_blank">
-                                <i class="fab fa-telegram"></i> Elite Trading Signals
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/free_signals" target="_blank">
-                                <i class="fab fa-telegram"></i> Free Signals
-                            </a>
-                        </div>
-                        <div class="channel-card">
-                            <a href="https://t.me/greysuitcommunity" target="_blank">
-                                <i class="fab fa-telegram"></i> Grey Suit Community
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- القسم السادس: القسم التعليمي -->
-        <section id="section6" class="section">
-            <div class="container">
-                <h2 class="section-title">القسم التعليمي </h2>
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <h3>TRADE WITH PATT</h3>
-                        <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn btn-course" target="_blank">
-                            مشاهدة الكورس
-                        </a>
-                    </div>
-
-                    <div class="course-card">
-    <div class="course-icon">
-        <i class="fab fa-youtube"></i>
-    </div>
-    <h3>Easy Trade</h3>
-    <a href="https://youtube.com/@easytradingeasy?si=9sITj4F_D__TAfb5" class="btn btn-course" target="_blank">
-        مشاهدة الكورس
-    </a>
-</div>
-                    <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <h3>SMART RISK</h3>
-                        <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-course" target="_blank">
-                            مشاهدة الكورس
-                        </a>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <h3>KAMEL M5</h3>
-                        <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="btn btn-course" target="_blank">
-                            مشاهدة الكورس
-                        </a>
-                    </div>
-                              <div class="course-icon">
-                    </div>
-                </div>
-         </div>
-        </section>
-
-    <!-- القسم السفلي (الفوتر) -->
-    <footer class="footer">
-        <div class="container">
-            <p> «Directed by Ali Mahmoud» </p>
-        </div>
-    </footer>
-
-    <!-- سكريبت جافاسكريبت -->
-    <script>
-        // تنفيذ الكود عند اكتمال تحميل المستند
-        document.addEventListener('DOMContentLoaded', function() {
-            // إضافة تأثير الظهور التدريجي للأقسام
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.add('fade-in');
-            });
-
-            // إضافة تأثير النبض لزر التسجيل
-            const registerBtn = document.querySelector('.register-card .btn-primary');
-            if (registerBtn) {
-                registerBtn.classList.add('pulse');
-            }
-
-            // التعامل مع قائمة التنقل المتحركة
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNav = document.querySelector('.main-nav');
-            
-            if (mobileMenuBtn && mainNav) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
-                });
-            }
-
-            // إضافة تأثير التمرير السلس للروابط
-            const navLinks = document.querySelectorAll('.main-nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // التمرير إلى العنصر المستهدف مع تعويض ارتفاع الهيدر
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
-                        if (window.innerWidth < 992) {
-                            mainNav.style.display = 'none';
-                        }
-                    }
-                });
-            });
-
-            // تحسين تجربة المستخدم على الأجهزة المحمولة
-            function handleResponsiveLayout() {
-                if (window.innerWidth < 992) {
-                    mainNav.style.display = 'none';
-                } else {
-                    mainNav.style.display = 'block';
-                }
-            }
-
-            // تنفيذ عند تحميل الصفحة وتغيير حجم النافذة
-            handleResponsiveLayout();
-            window.addEventListener('resize', handleResponsiveLayout);
-
-            // إضافة تأثيرات حركية للبطاقات عند التمرير
-            const cards = document.querySelectorAll('.feature-card, .rating-card, .app-card, .channel-card, .course-card');
-            
-            // التحقق مما إذا كان العنصر مرئياً في نافذة العرض
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-            
-            // معالجة تأثيرات التمرير
-            function handleScroll() {
-                cards.forEach(card => {
-                    if (isElementInViewport(card)) {
-                        card.classList.add('fade-in');
-                    }
-                });
-            }
-            
-            // تنفيذ عند التمرير
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
-            
-            // إضافة تأثير تفاعلي لأيقونات وسائل التواصل الاجتماعي
-            const socialIcons = document.querySelectorAll('.social-icon');
-            socialIcons.forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.1)';
-                });
-                
-                icon.addEventListener('mouseleave', function() {
-                    this.style.transform = '';
-                });
-            });
-        });
-
-
-        
-    </script><!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
-
-
-<!-- HTML: ?? ?????? -->
-<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
-    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
-  </svg>
-</a>
-
-<!-- CSS: ????? ???? ?????? -->
-<style>
-#telegram-float {
-  position: fixed;
-  right: 20px;
-  bottom: 120px;
-  background: linear-gradient(45deg, #0088cc, #00bfff);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#telegram-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-#telegram-float svg {
-  width: 28px;
-  height: 28px;
-}
-</style>
-
-
-====
-
-
-
-
-<section>
+<section id="section 2"
+    class="section">
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -1616,3 +1197,427 @@ s0.parentNode.insertBefore(s1,s0);
         });
     </script>
     </section>
+
+       
+       =====
+       
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطوات الإيداع</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 00px;
+            border-radius: 20px;
+
+        }
+        .accordion {
+            background-color: #f18f01;
+            color: white;
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 18px;
+            border-radius: 25px; 
+            transition: background-color 0.3s;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+        .accordion:hover {
+            background-color: #0056b3;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+        .panel p, .panel ol {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .panel ol {
+            padding-right: 20px;
+        }
+        .panel li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+  <section id="section2" class="section">
+            <div class="container">
+                <h2 class="section-title">خطوات الإيداع</h2>
+    <button class="accordion">خطوات الإيداع</button>
+    <div class="panel">
+        <ol>
+            <li><strong>الإيداع:</strong>
+                <ul>
+                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة.</li>
+                    <li>اختر <strong>Deposit</strong>.</li>
+                    <li>اختر طريقة الإيداع: <strong>Crypto</strong>.</li>
+                    <li>اختر حساب التداول.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>تفاصيل التحويل:</strong>
+                <ul>
+                    <li>أدخل المبلغ في الفراغ الأول.</li>
+                    <li>اختر <strong>USD</strong>.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>رمز التحقق (2FA):</strong>
+                <ul>
+                    <li>افتح تطبيق <strong>Google Authenticator</strong>.</li>
+                    <li>انسخ الكود المولد لحساب RannForex.</li>
+                    <li>أدخل الكود في الفراغ المخصص.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong> اختر TetherUS - USDT:</strong>
+                <ul>
+                    <li>اختر <strong>BUSD-T-USD (USDT)</strong>.</li>
+                    <li>انسخ العنوان المقدم وهو عنوان bep20.</li>
+                </ul>
+            </li>
+            <li><strong>إرسال من Cwallet:</strong>
+                <ul>
+                    <li>اختر <strong>USDT</strong>.</li>
+                    <li>اختر شبكة <strong>BEP20</strong>.</li>
+                    <li>أدخل المبلغ بالدولار.</li>
+                    <li>الصق العنوان المنسوخ من RannForex.</li>
+                    <li>اضغط على <strong>Send</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>تم الإيداع بنجاح!</strong></li>
+        </ol>
+    </div>
+
+    <script>
+        const accordion = document.querySelector('.accordion');
+        const panel = document.querySelector('.panel');
+
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
+        
+
+        <!-- القسم الثاني: تقييمات الشركة -->
+        <section id="section2" class="section">
+            <div class="container">
+                <h2 class="section-title">تقييمات الشركة</h2>
+                <div class="ratings-grid">
+                    <div class="rating-card">
+                        <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Trustpilot
+                        </a>
+  <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> myfxbook
+                        </a>
+ <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> forexpeacearmy
+                        </a>
+  <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> wikifx
+                        </a>  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+           <!-- القسم الرابع: 2FA -->
+        <section id="section4" class="section">
+            <div class="container">
+                <h2 class="section-title">2FA المصادقة</h2>
+                <div class="tutorial-card">
+                    <h3>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>        
+        </section>
+
+
+        <!-- القسم الخامس: قنوات مهمة على تلجرام -->
+        <section id="section5" class="section">
+            <div class="container">
+                <h2 class="section-title">قنوات مهمة على تلجرام</h2>
+                <div class="telegram-channels">
+                   
+                    
+                    <h3 class="signals-title">قنوات الإشارات (للتعلم وليس لنسخ الإشارات)</h3>
+                    <div class="signals-grid">
+                        <div class="channel-card">
+                            <a href="https://t.me/FX_IRI" target="_blank">
+                                <i class="fab fa-telegram"></i> FX_IRI
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/prosignalsfxx" target="_blank">
+                                <i class="fab fa-telegram"></i> Pro Signals FX
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/top_tradingsignals" target="_blank">
+                                <i class="fab fa-telegram"></i> Top Trading Signals
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/signalsfc" target="_blank">
+                                <i class="fab fa-telegram"></i> Signals FC
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/elitetrading_signals" target="_blank">
+                                <i class="fab fa-telegram"></i> Elite Trading Signals
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/free_signals" target="_blank">
+                                <i class="fab fa-telegram"></i> Free Signals
+                            </a>
+                        </div>
+                        <div class="channel-card">
+                            <a href="https://t.me/greysuitcommunity" target="_blank">
+                                <i class="fab fa-telegram"></i> Grey Suit Community
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم السادس: القسم التعليمي -->
+        <section id="section6" class="section">
+            <div class="container">
+                <h2 class="section-title">القسم التعليمي </h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>TRADE WITH PATT</h3>
+                        <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn btn-course" target="_blank">
+                            مشاهدة الكورس
+                        </a>
+                    </div>
+
+                    <div class="course-card">
+    <div class="course-icon">
+        <i class="fab fa-youtube"></i>
+    </div>
+    <h3>Easy Trade</h3>
+    <a href="https://youtube.com/@easytradingeasy?si=9sITj4F_D__TAfb5" class="btn btn-course" target="_blank">
+        مشاهدة الكورس
+    </a>
+</div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>SMART RISK</h3>
+                        <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-course" target="_blank">
+                            مشاهدة الكورس
+                        </a>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>KAMEL M5</h3>
+                        <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="btn btn-course" target="_blank">
+                            مشاهدة الكورس
+                        </a>
+                    </div>
+                              <div class="course-icon">
+                    </div>
+                </div>
+         </div>
+        </section>
+
+    <!-- القسم السفلي (الفوتر) -->
+    <footer class="footer">
+        <div class="container">
+            <p> «Directed by Ali Mahmoud» </p>
+        </div>
+    </footer>
+
+    <!-- سكريبت جافاسكريبت -->
+    <script>
+        // تنفيذ الكود عند اكتمال تحميل المستند
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثير الظهور التدريجي للأقسام
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+
+            // إضافة تأثير النبض لزر التسجيل
+            const registerBtn = document.querySelector('.register-card .btn-primary');
+            if (registerBtn) {
+                registerBtn.classList.add('pulse');
+            }
+
+            // التعامل مع قائمة التنقل المتحركة
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+                });
+            }
+
+            // إضافة تأثير التمرير السلس للروابط
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // التمرير إلى العنصر المستهدف مع تعويض ارتفاع الهيدر
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
+                        if (window.innerWidth < 992) {
+                            mainNav.style.display = 'none';
+                        }
+                    }
+                });
+            });
+
+            // تحسين تجربة المستخدم على الأجهزة المحمولة
+            function handleResponsiveLayout() {
+                if (window.innerWidth < 992) {
+                    mainNav.style.display = 'none';
+                } else {
+                    mainNav.style.display = 'block';
+                }
+            }
+
+            // تنفيذ عند تحميل الصفحة وتغيير حجم النافذة
+            handleResponsiveLayout();
+            window.addEventListener('resize', handleResponsiveLayout);
+
+            // إضافة تأثيرات حركية للبطاقات عند التمرير
+            const cards = document.querySelectorAll('.feature-card, .rating-card, .app-card, .channel-card, .course-card');
+            
+            // التحقق مما إذا كان العنصر مرئياً في نافذة العرض
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // معالجة تأثيرات التمرير
+            function handleScroll() {
+                cards.forEach(card => {
+                    if (isElementInViewport(card)) {
+                        card.classList.add('fade-in');
+                    }
+                });
+            }
+            
+            // تنفيذ عند التمرير
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // تنفيذ مرة واحدة عند تحميل الصفحة
+            
+            // إضافة تأثير تفاعلي لأيقونات وسائل التواصل الاجتماعي
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.1)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+        });
+
+
+        
+    </script><!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--End of Tawk.to Script-->
+
+
+<!-- HTML: ?? ?????? -->
+<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
+    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
+  </svg>
+</a>
+
+<!-- CSS: ????? ???? ?????? -->
+<style>
+#telegram-float {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  background: linear-gradient(45deg, #0088cc, #00bfff);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#telegram-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+#telegram-float svg {
+  width: 28px;
+  height: 28px;
+}
+</style>
+
+
+====
+
+
