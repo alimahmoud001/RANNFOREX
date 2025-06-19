@@ -1,0 +1,24 @@
+importScripts('https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging-compat.js');
+
+firebase.initializeApp({
+  apiKey: "BNYBM_RdaY5Qh3w1d7SWo32ca6ZeDIT-ZQbJm67xqnacn47_wuD-QOeh142PFUlHbgEC9eOvnTccCuKe1tS9Sz",
+  authDomain: "rannforex-12bc6.firebaseapp.com",
+  projectId: "rannforex-12bc6",
+  messagingSenderId: "1542221898",
+  appId: "BNYBM_RdaY5Qh3w1d7SWo32ca6ZeDIT-ZQbJm67xqnacn47_wuD-QOeh142PFUlHbgEC9eOvnTccCuKe1tS9SzE"
+});
+
+const messaging = firebase.messaging();
+
+messaging.onBackgroundMessage(function(payload) {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+
+  const notificationTitle = payload.notification.title;
+  const notificationOptions = {
+    body: payload.notification.body,
+    icon: '/icon.png' // يمكنك تغيير الأيقونة
+  };
+
+  self.registration.showNotification(notificationTitle, notificationOptions);
+});
