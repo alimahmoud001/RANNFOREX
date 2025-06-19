@@ -1233,7 +1233,7 @@ s0.parentNode.insertBefore(s1,s0);
         }
     </style>
 </head>
-<body>
+
     <div class="demo-content">
         <h1>صفحتي الرئيسية</h1>
         <p>هذه محاكاة لصفحة ويب رئيسية تحتوي على محتوى متنوع. سيتم إضافة زر الإيداع في أسفل يمين الصفحة دون التأثير على تنسيقها الحالي.</p>
@@ -1632,4 +1632,4 @@ s0.parentNode.insertBefore(s1,s0);
 </body>
 </html>
 
-
+<body>
