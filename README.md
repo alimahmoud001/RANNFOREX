@@ -1080,15 +1080,11 @@ social-icon:hover {
             عرض خطوات الإيداع <i class="fas fa-wallet"></i>
         </button>
         
-        <p class="info-text">
-            انقر فوق الزر أعلاه لعرض دليل الإيداع خطوة بخطوة
-        </p>
-    </div>
     
     <div class="modal-overlay" id="depositModal">
         <div class="modal">
             <div class="modal-header">
-                <h2><i class="fas fa-wallet"></i> خطوات إيداع الأموال في RannForex</h2>
+                <h2><i class="fas fa-wallet"></i> خطوات إيداع الأموال</h2>
                 <button class="close-btn" id="closeModal">&times;</button>
             </div>
             
@@ -1168,10 +1164,6 @@ social-icon:hover {
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="success">
-                <i class="fas fa-check-circle"></i> تم الإيداع بنجاح!
             </div>
         </div>
     </div>
