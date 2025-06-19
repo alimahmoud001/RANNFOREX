@@ -3,6 +3,35 @@
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging-compat.js"></script>
 
 
+
+
+<script>
+  // إعداد Firebase
+  const firebaseConfig = {
+    apiKey: "BNYBM_RdaY5Qh3w1d7SWo32ca6ZeDIT-ZQbJm67xqnacn47_wuD-QOeh142PFUlHbgEC9eOvnTccCuKe1tS9SzE",
+    authDomain: "rannforex-12bc6.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    messagingSenderId: "1542221898",
+    appId: "rannforex-12bc6",
+    measurementId: "G-XXXXXXXX"
+  };
+
+  // تهيئة Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // خدمة الرسائل
+  const messaging = firebase.messaging();
+</script>
+
+
+
+
+
+
+
+
+
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
