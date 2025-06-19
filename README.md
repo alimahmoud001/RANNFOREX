@@ -1190,7 +1190,9 @@ s0.parentNode.insertBefore(s1,s0);
 
 ===
 
-<!DOCTYPE html>
+-->
+        <section id="section6" class="section">
+            <div class="container">
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
