@@ -767,7 +767,7 @@ social-icon:hover {
                     </a>
                  </div>
 
- ====
+ 
   <button class="btn" id="showDepositSteps">
                 عرض خطوات الإيداع <i class="fas fa-arrow-down"></i>
             </button>
