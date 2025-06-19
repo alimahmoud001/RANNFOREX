@@ -1024,7 +1024,7 @@ social-icon:hover {
     <!-- القسم السفلي (الفوتر) -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة
+            <p>&copy; 2025 Rannforex - = جميع الحقوق محفوظة
             
      إشعار بالمخاطر :
 
@@ -1133,6 +1133,9 @@ social-icon:hover {
                 });
             });
         });
+
+
+        
     </script><!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
