@@ -711,8 +711,8 @@ social-icon:hover {
                     </a>
  </div>
       <div class="register-card">
-                    <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
-                    <p> Trade With Ali </p>
+                    <h3>انضم إلى قناة الإشارات الخاصة </h3>
+                    <p> أعطي إشارات مجانية لمن قام بالتسجيل في الشركة حصرا</p>
                     <a href=" https://t.me/tradewithalimahmoud  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> انضم الآن
                     </a>
