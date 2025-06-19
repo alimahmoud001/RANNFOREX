@@ -1,8 +1,6 @@
 ![image](1750317196365.jpg)
 
 
-![vedio](VID_20240222_083544_711.mp4)
-
 
 
 <html lang="ar" dir="rtl">
@@ -675,6 +673,8 @@ social-icon:hover {
     </style>
 </head>
 <body>
+![image](1750317196365.jpg)
+    
     <!-- القسم العلوي (الهيدر) -->
     <header class="header">
         <div class="container">
