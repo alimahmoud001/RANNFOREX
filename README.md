@@ -800,7 +800,7 @@ social-icon:hover {
             text-align: center;
             max-width: 500px;
             width: 100%;
-            padding: 30px;
+            padding: 3px;
         }
         
         .logo {
