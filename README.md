@@ -1,30 +1,3 @@
-<!-- Firebase SDKs -->
-<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging-compat.js"></script>
-
-
-
-
-<script>
-  // إعداد Firebase
-  const firebaseConfig = {
-    apiKey: "BNYBM_RdaY5Qh3w1d7SWo32ca6ZeDIT-ZQbJm67xqnacn47_wuD-QOeh142PFUlHbgEC9eOvnTccCuKe1tS9SzE",
-    authDomain: "rannforex-12bc6.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    messagingSenderId: "1542221898",
-    appId: "rannforex-12bc6",
-    measurementId: "G-XXXXXXXX"
-  };
-
-  // تهيئة Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  // خدمة الرسائل
-  const messaging = firebase.messaging();
-</script>
-
-
-
 
 
 
@@ -1318,50 +1291,19 @@ social-icon:hover {
                 </div>
          </div>
         </section>
-====
-<!-- نموذج الاشتراك في النشرة الإخبارية -->
-<div id="newsletter-container" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-  <form id="newsletter-form" style="display: flex; gap: 8px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 8px 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
-    <input type="email" id="email-input" placeholder="ادخل بريدك الإلكتروني" required
-      style="border: none; outline: none; background: transparent; padding: 8px; font-size: 14px; min-width: 200px;" />
-    <button type="submit"
-      style="background-color: #007bff; color: white; border: none; border-radius: 6px; padding: 8px 14px; font-size: 14px; cursor: pointer;">
-      اشترك
-    </button>
-  </form>
-</div>
-
-<!-- رسالة التأكيد -->
-<div id="success-message" style="text-align: center; color: green; font-size: 15px; display: none; margin-top: 10px;">
-  ✅ شكرًا لك! تم الاشتراك بنجاح.
-</div>
-
-<!-- جافاسكريبت -->
-<script>
-  const form = document.getElementById("newsletter-form");
-  const emailInput = document.getElementById("email-input");
-  const successMessage = document.getElementById("success-message");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // منع الإرسال الفعلي
-
-    const email = emailInput.value.trim();
-
-    if (email) {
-      // حفظ البريد الإلكتروني في localStorage (اختياري)
-      localStorage.setItem("subscribedEmail", email);
-
-      // إظهار رسالة النجاح
-      successMessage.style.display = "block";
-
-      // إخفاء النموذج
-      form.style.display = "none";
-    }
-  });
-</script>
 
 
-![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
+
+
+
+
+
+<!-- نموذج الاشتراك 
+![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)في النشرة الإخبارية -->
+
+
+
+
 
 
 
