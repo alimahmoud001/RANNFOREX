@@ -1233,403 +1233,134 @@ s0.parentNode.insertBefore(s1,s0);
         }
     </style>
 </head>
+<body>
 
-    <div class="demo-content">
-        <h1>صفحتي الرئيسية</h1>
-        <p>هذه محاكاة لصفحة ويب رئيسية تحتوي على محتوى متنوع. سيتم إضافة زر الإيداع في أسفل يمين الصفحة دون التأثير على تنسيقها الحالي.</p>
-        
-        <p>لوريم إيبسوم دولور سيت أميت، كونسيكتيتور أديبيسسينغ إيليت. سيد دو أيوسمود تيمبور أنكايديديونتيوت لابوري أت دولور ماجنا أليكوا. يوت انيم أد مينيم فينيم، كيويس نوسترود أكسيرسيتاشيون أللامكو لابوريس نيسيوت.</p>
-        
-        <p>يوت أليبكيو أكس اي كومودو كونسيكويت. ديويس أيوتي أرير دولور إن ريبرهينديريت إن فوليوبتات فيليت إيسي كيواي نون بروايدينت، صن إن كولبا كيو ريبريهنيديرايت.</p>
-        
-        <p>فوليوبتاتي بوسكايسيوم كابرياس كيو دولوريمكيو. إست أيريور دولوريس إيوس كيوسدام إت أوفيسييس ديبايتيس. إكسسبتيور سينت أوكايكيات كيوبايدايتات نون بروفايدنت، صن إن كولبا كيو ريبريهنيديرايت فوليوبتاتي بوسكايسيوم كابرياس كيو دولوريمكيو.</p>
-    </div>
 
-    <!-- مكون الإيداع المنعزل -->
-    <div id="deposit-component"></div>
 
-    <script>
-        // إنشاء مكون منعزل باستخدام Shadow DOM
-        const depositComponent = document.getElementById('deposit-component');
-        const shadowRoot = depositComponent.attachShadow({ mode: 'open' });
-        
-        // إضافة الأنماط والعناصر داخل Shadow DOM
-        shadowRoot.innerHTML = `
-            <style>
-                :host {
-                    --primary-color: #1a2a6c;
-                    --secondary-color: #2a4d8e;
-                    --accent-color: #ff6b6b;
-                    --success-color: #00b09b;
-                    --text-color: #333;
-                    --light-bg: #f8f9fa;
-                    --shadow: 0 5px 20px rgba(0,0,0,0.2);
-                    --transition: all 0.3s ease;
-                }
-                
-                .deposit-btn {
-                    position: fixed;
-                    bottom: 30px;
-                    left: 30px;
-                    z-index: 1000;
-                    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                    color: white;
-                    padding: 16px 36px;
-                    border-radius: 50px;
-                    font-size: 1.1rem;
-                    font-weight: 600;
-                    border: none;
-                    cursor: pointer;
-                    box-shadow: var(--shadow);
-                    transition: var(--transition);
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                }
-                
-                .deposit-btn:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 8px 25px rgba(26, 42, 108, 0.4);
-                }
-                
-                .deposit-btn:active {
-                    transform: translateY(0);
-                }
-                
-                .modal-overlay {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba(0,0,0,0.8);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 2000;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: var(--transition);
-                }
-                
-                .modal-overlay.active {
-                    opacity: 1;
-                    visibility: visible;
-                }
-                
-                .modal {
-                    background: white;
-                    border-radius: 20px;
-                    width: 95%;
-                    max-width: 600px;
-                    max-height: 90vh;
-                    overflow-y: auto;
-                    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-                    transform: translateY(30px);
-                    transition: var(--transition);
-                    position: relative;
-                }
-                
-                .modal-overlay.active .modal {
-                    transform: translateY(0);
-                }
-                
-                .modal-header {
-                    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-                    color: white;
-                    padding: 25px;
-                    border-radius: 20px 20px 0 0;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    position: sticky;
-                    top: 0;
-                    z-index: 10;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                }
-                
-                .modal-header h2 {
-                    font-size: 1.8rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    margin: 0;
-                }
-                
-                .close-btn {
-                    background: rgba(255,255,255,0.2);
-                    color: white;
-                    border: none;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: var(--transition);
-                }
-                
-                .close-btn:hover {
-                    background: rgba(255,255,255,0.3);
-                    transform: rotate(90deg);
-                }
-                
-                .modal-content {
-                    padding: 30px;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                }
-                
-                .steps {
-                    counter-reset: step-counter;
-                }
-                
-                .step {
-                    display: flex;
-                    margin-bottom: 30px;
-                    padding-bottom: 30px;
-                    border-bottom: 1px dashed #e0e0e0;
-                    position: relative;
-                }
-                
-                .step:last-child {
-                    margin-bottom: 0;
-                    padding-bottom: 0;
-                    border-bottom: none;
-                }
-                
-                .step-number {
-                    min-width: 40px;
-                    height: 40px;
-                    background: linear-gradient(to right, var(--accent-color), #ff8e53);
-                    color: white;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                    font-size: 1.2rem;
-                    margin-left: 15px;
-                    flex-shrink: 0;
-                }
-                
-                .step-content {
-                    flex: 1;
-                    text-align: right;
-                }
-                
-                .step-title {
-                    color: var(--primary-color);
-                    font-size: 1.4rem;
-                    margin-bottom: 15px;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                }
-                
-                .step-title i {
-                    color: var(--accent-color);
-                }
-                
-                .step-details {
-                    background: var(--light-bg);
-                    border-radius: 12px;
-                    padding: 20px;
-                    margin-top: 15px;
-                    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-                }
-                
-                .step-details ul {
-                    list-style-type: none;
-                    padding: 0;
-                }
-                
-                .step-details li {
-                    margin-bottom: 12px;
-                    padding-right: 25px;
-                    position: relative;
-                    font-size: 1.1rem;
-                    color: var(--text-color);
-                    line-height: 1.7;
-                }
-                
-                .step-details li:before {
-                    content: "•";
-                    color: var(--accent-color);
-                    font-size: 1.8rem;
-                    position: absolute;
-                    right: 0;
-                    top: -7px;
-                }
-                
-                .success {
-                    text-align: center;
-                    padding: 25px;
-                    background: linear-gradient(to right, var(--success-color), #96c93d);
-                    color: white;
-                    border-radius: 0 0 20px 20px;
-                    font-size: 1.4rem;
-                    font-weight: bold;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 15px;
-                    margin-top: 20px;
-                }
-                
-                @media (max-width: 768px) {
-                    .deposit-btn {
-                        font-size: 1rem;
-                        padding: 14px 30px;
-                        left: 15px;
-                        bottom: 15px;
-                    }
-                    
-                    .modal-header h2 {
-                        font-size: 1.4rem;
-                    }
-                    
-                    .modal-content {
-                        padding: 20px;
-                    }
-                    
-                    .step-title {
-                        font-size: 1.2rem;
-                    }
-                    
-                    .step-details li {
-                        font-size: 1rem;
-                    }
-                }
-            </style>
+
+    <button class="floating-btn" id="showDepositSteps">
+        <i class="fas fa-wallet"></i> خطوات الإيداع
+    </button>
+    
+    <!-- نافذة خطوات الإيداع المنبثقة -->
+    <div class="modal-overlay" id="depositModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-wallet"></i> خطوات إيداع الأموال</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
             
-            <button class="deposit-btn" id="showDepositSteps">
-                <i class="fas fa-wallet"></i> عرض خطوات الإيداع
-            </button>
-            
-            <div class="modal-overlay" id="depositModal">
-                <div class="modal">
-                    <div class="modal-header">
-                        <h2><i class="fas fa-wallet"></i> خطوات إيداع الأموال في RannForex</h2>
-                        <button class="close-btn" id="closeModal">&times;</button>
-                    </div>
-                    
-                    <div class="modal-content">
-                        <div class="steps">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h3 class="step-title"><i class="fas fa-mouse-pointer"></i> الإيداع</h3>
-                                    <div class="step-details">
-                                        <ul>
-                                            <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة</li>
-                                            <li>اختر Deposit</li>
-                                            <li>اختر طريقة الإيداع: Crypto</li>
-                                            <li>اختر حساب التداول</li>
-                                            <li>اضغط على Continue</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h3 class="step-title"><i class="fas fa-exchange-alt"></i> تفاصيل التحويل</h3>
-                                    <div class="step-details">
-                                        <ul>
-                                            <li>أدخل المبلغ في الفراغ الأول</li>
-                                            <li>اختر USD</li>
-                                            <li>اضغط على Continue</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h3 class="step-title"><i class="fas fa-shield-alt"></i> رمز التحقق (2FA)</h3>
-                                    <div class="step-details">
-                                        <ul>
-                                            <li>افتح تطبيق Google Authenticator</li>
-                                            <li>انسخ الكود المولد لحساب RannForex</li>
-                                            <li>أدخل الكود في الفراغ المخصص</li>
-                                            <li>اضغط على Continue</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h3 class="step-title"><i class="fab fa-bitcoin"></i> اختر TetherUS - USDT</h3>
-                                    <div class="step-details">
-                                        <ul>
-                                            <li>اختر BUSD-T-USD (USDT)</li>
-                                            <li>انسخ العنوان المقدم وهو عنوان bep20</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="step">
-                                <div class="step-number">5</div>
-                                <div class="step-content">
-                                    <h3 class="step-title"><i class="fas fa-paper-plane"></i> إرسال من Cwallet</h3>
-                                    <div class="step-details">
-                                        <ul>
-                                            <li>اختر USDT</li>
-                                            <li>اختر شبكة BEP20</li>
-                                            <li>أدخل المبلغ بالدولار</li>
-                                            <li>الصق العنوان المنسوخ من RannForex</li>
-                                            <li>اضغط على Send</li>
-                                        </ul>
-                                    </div>
-                                </div>
+            <div class="modal-content">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title"><i class="fas fa-mouse-pointer"></i> الإيداع</h3>
+                            <div class="step-details">
+                                <ul>
+                                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة</li>
+                                    <li>اختر Deposit</li>
+                                    <li>اختر طريقة الإيداع: Crypto</li>
+                                    <li>اختر حساب التداول</li>
+                                    <li>اضغط على Continue</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="success">
-                        <i class="fas fa-check-circle"></i> تم الإيداع بنجاح!
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title"><i class="fas fa-exchange-alt"></i> تفاصيل التحويل</h3>
+                            <div class="step-details">
+                                <ul>
+                                    <li>أدخل المبلغ في الفراغ الأول</li>
+                                    <li>اختر USD</li>
+                                    <li>اضغط على Continue</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title"><i class="fas fa-shield-alt"></i> رمز التحقق (2FA)</h3>
+                            <div class="step-details">
+                                <ul>
+                                    <li>افتح تطبيق Google Authenticator</li>
+                                    <li>انسخ الكود المولد لحساب RannForex</li>
+                                    <li>أدخل الكود في الفراغ المخصص</li>
+                                    <li>اضغط على Continue</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title"><i class="fab fa-bitcoin"></i> اختر TetherUS - USDT</h3>
+                            <div class="step-details">
+                                <ul>
+                                    <li>اختر BUSD-T-USD (USDT)</li>
+                                    <li>انسخ العنوان المقدم وهو عنوان bep20</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3 class="step-title"><i class="fas fa-paper-plane"></i> إرسال من Cwallet</h3>
+                            <div class="step-details">
+                                <ul>
+                                    <li>اختر USDT</li>
+                                    <li>اختر شبكة BEP20</li>
+                                    <li>أدخل المبلغ بالدولار</li>
+                                    <li>الصق العنوان المنسوخ من RannForex</li>
+                                    <li>اضغط على Send</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        `;
-        
-        // إضافة سكريبت التحكم داخل Shadow DOM
-        const script = document.createElement('script');
-        script.textContent = `
-            document.addEventListener('DOMContentLoaded', function() {
-                const showBtn = this.shadowRoot.getElementById('showDepositSteps');
-                const closeBtn = this.shadowRoot.getElementById('closeModal');
-                const modal = this.shadowRoot.getElementById('depositModal');
-                
-                showBtn.addEventListener('click', function() {
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-                
-                closeBtn.addEventListener('click', function() {
+            
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i> تم الإيداع بنجاح!
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // التحكم بالنافذة المنبثقة
+        document.addEventListener('DOMContentLoaded', function() {
+            const showBtn = document.getElementById('showDepositSteps');
+            const closeBtn = document.getElementById('closeModal');
+            const modal = document.getElementById('depositModal');
+            
+            // فتح النافذة عند النقر على الزر
+            showBtn.addEventListener('click', function() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // إغلاق النافذة عند النقر على زر الإغلاق
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // إغلاق النافذة عند النقر خارجها
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
                     modal.classList.remove('active');
                     document.body.style.overflow = 'auto';
-                });
-                
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
+                }
             });
-        `;
-        shadowRoot.appendChild(script);
+        });
     </script>
 </body>
 </html>
-
-<body>
