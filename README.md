@@ -1,6 +1,20 @@
 
 ![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)
 
+===
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "0709da56-708f-4a45-ada5-b9ca583d441b",
+    });
+  });
+</script>
+====
+
+
 
 <html lang="ar" dir="rtl">
 <head>
