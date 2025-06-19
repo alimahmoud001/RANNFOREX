@@ -700,7 +700,7 @@ social-icon:hover {
         <!-- القسم الأول: معلومات شركة الوساطة المالية -->
         <section id="section1" class="section">
             <div class="container">
-                <h2 class="section-title" > يمكنك التداول بحد أدنى للايداع والسحب 10$ برافعة مالية 1:500 وبأقل اسبريد بدءا من 0.2-1.2 نقطة وتقييم الشركة جيد جدا</h2>
+                <h2 class="section-title" > يمكنك التداول بحد أدنى للايداع والسحب 10$ مع رافعة مالية 1:500 وبأقل اسبريد بدءا من 0.2-1.2 نقطة وتقييم الشركة ممتاز </h2>
                 <div class="register-card">
                     <h3>سجل الآن في Rannforex</h3>
                     <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
@@ -717,7 +717,7 @@ social-icon:hover {
  </div>
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات المجانية الخاصة بي</h3>
-                    <p> هنا الإشارات مجانية وستبقى مجانية إلى الابد </p>
+                    <p> Trade With Ali </p>
                     <a href=" https://t.me/tradewithalimahmoud  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> انضم الآن
                     </a>
