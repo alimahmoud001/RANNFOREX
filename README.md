@@ -1026,7 +1026,7 @@ social-icon:hover {
         <div class="container">
             <p>&copy; 2025 Rannforex - جميع الحقوق محفوظة
             
-     إشعار بالمخاطر
+     إشعار بالمخاطر :
 
 تنطوي المنتجات المالية التي تتضمن استخدام الرافعة المالية على مخاطر كبيرة على استثماراتك. قد تؤدي التقلبات الشديدة في السوق إلى خسائر تفوق إيداعك الأولي.       </p>
         </div>
@@ -1069,7 +1069,7 @@ social-icon:hover {
                     if (targetElement) {
                         // التمرير إلى العنصر المستهدف مع تعويض ارتفاع الهيدر
                         window.scrollTo({
-                            top: targetElement.offsetTop - 10,
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                         
