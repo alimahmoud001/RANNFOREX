@@ -802,7 +802,7 @@ social-icon:hover {
         
         .container {
             text-align: center;
-            max-width: 500px;
+            max-width: 1200px;
             width: 100%;
             padding: 3px;
         }
