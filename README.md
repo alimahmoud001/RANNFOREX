@@ -1,4 +1,4 @@
-![image](https://github.com/alimahmoud001/RANNFOREX/blob/a4c464d4a121702c4f38dafe9c335b1c5346c7ec/1750317196365.jpg)
+![image](1750317196365.jpg)
 
 
 
