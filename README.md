@@ -14,6 +14,24 @@
 
 
 
+===
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "0709da56-708f-4a45-ada5-b9ca583d441b",
+      notifyButton: {
+        enable: true
+      },
+      allowLocalhostAsSecureOrigin: true // فقط للتجربة على localhost
+    });
+  });
+</script>
+
+===
+
+
 
 <html lang="ar" dir="rtl">
 <head>
