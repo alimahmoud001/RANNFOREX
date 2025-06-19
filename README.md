@@ -15,7 +15,7 @@
 
 
 ===
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script src="[https://cdn.onesignal.com/sdks/OneSignalSDK.js](https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js)" async=""></script>
 <script>
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
