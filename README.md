@@ -1186,13 +1186,12 @@ s0.parentNode.insertBefore(s1,s0);
 </style>
 
 
+====
 
 
 
-===
 
-
-<!DOCTYPE html>
+<section>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -1204,111 +1203,76 @@ s0.parentNode.insertBefore(s1,s0);
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1a2a6c, #2a4d8e);
             min-height: 100vh;
-            color: #333;
-            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
             text-align: center;
-            padding: 40px 0;
-            color: white;
-        }
-        
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        
-        .service-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
+        .logo {
+            margin-bottom: 30px;
         }
         
-        .service-card h2 {
-            color: #1a2a6c;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .logo img {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         
-        .service-card h2 i {
-            color: #ff6b6b;
-        }
-        
-        .service-card p {
-            margin-bottom: 15px;
-            color: #444;
-        }
-        
-        /* زر خطوات الإيداع العائم */
-        .floating-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 1000;
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #ff6b6b, #ff8e53);
             color: white;
             padding: 18px 45px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 600;
+            text-decoration: none;
             border: none;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .floating-btn:hover {
+        .btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(255, 107, 107, 0.7);
         }
         
-        .floating-btn:active {
+        .btn:active {
             transform: translateY(0);
         }
         
-        /* النافذة المنبثقة */
+        .btn i {
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -1319,7 +1283,7 @@ s0.parentNode.insertBefore(s1,s0);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 2000;
+            z-index: 1000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -1334,12 +1298,13 @@ s0.parentNode.insertBefore(s1,s0);
             background: white;
             border-radius: 20px;
             width: 95%;
-            max-width: 800px;
+            max-width: 600px;
             max-height: 90vh;
             overflow-y: auto;
             box-shadow: 0 25px 50px rgba(0,0,0,0.4);
             transform: translateY(30px);
             transition: transform 0.4s ease;
+            position: relative;
         }
         
         .modal-overlay.active .modal {
@@ -1425,6 +1390,7 @@ s0.parentNode.insertBefore(s1,s0);
         
         .step-content {
             flex: 1;
+            text-align: right;
         }
         
         .step-title {
@@ -1471,7 +1437,7 @@ s0.parentNode.insertBefore(s1,s0);
             top: -7px;
         }
         
-        .success-message {
+        .success {
             text-align: center;
             padding: 25px;
             background: linear-gradient(to right, #00b09b, #96c93d);
@@ -1483,26 +1449,20 @@ s0.parentNode.insertBefore(s1,s0);
             align-items: center;
             justify-content: center;
             gap: 15px;
+            margin-top: 20px;
         }
         
-        footer {
-            text-align: center;
+        .info-text {
             color: rgba(255, 255, 255, 0.7);
-            padding: 30px;
-            margin-top: 50px;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            line-height: 1.6;
         }
         
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .floating-btn {
-                font-size: 1rem;
-                padding: 14px 30px;
-                left: 15px;
-                bottom: 15px;
+            .btn {
+                padding: 16px 35px;
+                font-size: 1.2rem;
             }
             
             .modal-header h2 {
@@ -1525,69 +1485,25 @@ s0.parentNode.insertBefore(s1,s0);
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>منصة RannForex للتداول</h1>
-            <p>منصة متكاملة لتداول العملات والأسهم والعملات الرقمية بأفضل الشروط</p>
-        </header>
-        
-        <div class="services">
-            <div class="service-card">
-                <h2><i class="fas fa-chart-line"></i> تداول العملات</h2>
-                <p>استفد من تقلبات أسعار العملات العالمية واربح من فروق الأسعار في أكبر الأسواق المالية في العالم.</p>
-                <p>تداول أزواج العملات الرئيسية والثانوية مع رافعة مالية تنافسية وتنفيذ فوري للأوامر.</p>
-            </div>
-            
-            <div class="service-card">
-                <h2><i class="fas fa-coins"></i> العملات الرقمية</h2>
-                <p>تداول البيتكوين، الإيثيريوم، والعملات الرقمية الأخرى مع فروق أسعار تنافسية.</p>
-                <p>استفد من تقلبات أسعار العملات المشفرة واربح في السوق الأسرع نموًا في العالم.</p>
-            </div>
-            
-            <div class="service-card">
-                <h2><i class="fas fa-gem"></i> السلع والمؤشرات</h2>
-                <p>تداول الذهب، النفط، الغاز الطبيعي وغيرها من السلع الأساسية.</p>
-                <p>استثمر في المؤشرات العالمية مثل Dow Jones وNASDAQ وFTSE وغيرها.</p>
+        <div class="logo">
+            <div style="background: white; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+                <i class="fas fa-coins" style="font-size: 2.5rem; color: #1a2a6c;"></i>
             </div>
         </div>
         
-        <div class="features" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div style="background: rgba(255, 255, 255, 0.15); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 15px;"><i class="fas fa-shield-alt"></i></div>
-                <h3>أمان متقدم</h3>
-                <p>تشفير من الدرجة الأولى لحماية بياناتك وأموالك</p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.15); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 15px;"><i class="fas fa-bolt"></i></div>
-                <h3>تنفيذ فوري</h3>
-                <p>أوامر تنفذ في أقل من 0.05 ثانية</p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.15); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 15px;"><i class="fas fa-headset"></i></div>
-                <h3>دعم فني</h3>
-                <p>متاح على مدار الساعة طوال أيام الأسبوع</p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.15); padding: 20px; border-radius: 12px; color: white; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 15px;"><i class="fas fa-hand-holding-usd"></i></div>
-                <h3>عمولات منخفضة</h3>
-                <p>أقل عمولات تداول في السوق</p>
-            </div>
-        </div>
+        <button class="btn" id="showDepositSteps">
+            عرض خطوات الإيداع <i class="fas fa-wallet"></i>
+        </button>
         
-        <footer>
-            <p>© 2023 RannForex. جميع الحقوق محفوظة. التداول ينطوي على مخاطر.</p>
-        </footer>
+        <p class="info-text">
+            انقر فوق الزر أعلاه لعرض دليل الإيداع خطوة بخطوة
+        </p>
     </div>
     
-    <!-- زر خطوات الإيداع العائم -->
-    <button class="floating-btn" id="showDepositSteps">
-        <i class="fas fa-wallet"></i> خطوات الإيداع
-    </button>
-    
-    <!-- نافذة خطوات الإيداع المنبثقة -->
     <div class="modal-overlay" id="depositModal">
         <div class="modal">
             <div class="modal-header">
-                <h2><i class="fas fa-wallet"></i> خطوات إيداع الأموال</h2>
+                <h2><i class="fas fa-wallet"></i> خطوات إيداع الأموال في RannForex</h2>
                 <button class="close-btn" id="closeModal">&times;</button>
             </div>
             
@@ -1669,32 +1585,28 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
             </div>
             
-            <div class="success-message">
+            <div class="success">
                 <i class="fas fa-check-circle"></i> تم الإيداع بنجاح!
             </div>
         </div>
     </div>
     
     <script>
-        // التحكم بالنافذة المنبثقة
         document.addEventListener('DOMContentLoaded', function() {
             const showBtn = document.getElementById('showDepositSteps');
             const closeBtn = document.getElementById('closeModal');
             const modal = document.getElementById('depositModal');
             
-            // فتح النافذة عند النقر على الزر
             showBtn.addEventListener('click', function() {
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
             
-            // إغلاق النافذة عند النقر على زر الإغلاق
             closeBtn.addEventListener('click', function() {
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
             
-            // إغلاق النافذة عند النقر خارجها
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     modal.classList.remove('active');
@@ -1703,10 +1615,4 @@ s0.parentNode.insertBefore(s1,s0);
             });
         });
     </script>
-</body>
-</html>
-
-
-
-
-
+    </section>
