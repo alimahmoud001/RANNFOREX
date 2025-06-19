@@ -1065,13 +1065,13 @@ social-icon:hover {
                     if (targetElement) {
                         // التمرير إلى العنصر المستهدف مع تعويض ارتفاع الهيدر
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: targetElement.offsetTop - 10,
                             behavior: 'smooth'
                         });
                         
                         // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
                         if (window.innerWidth < 992) {
-                            mainNav.style.display = 'flex';
+                            mainNav.style.display = 'none';
                         }
                     }
                 });
@@ -1080,7 +1080,7 @@ social-icon:hover {
             // تحسين تجربة المستخدم على الأجهزة المحمولة
             function handleResponsiveLayout() {
                 if (window.innerWidth < 992) {
-                    mainNav.style.display = 'flexl';
+                    mainNav.style.display = 'none';
                 } else {
                     mainNav.style.display = 'block';
                 }
