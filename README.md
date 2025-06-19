@@ -1021,21 +1021,6 @@ social-icon:hover {
          </div>
         </section>
 
-
-
-
-
-
-
-<!-- نموذج الاشتراك 
-![Image](https://github.com/user-attachments/assets/e40ed028-8ac0-44e0-b132-03c70f1c6edf)في النشرة الإخبارية -->
-
-
-
-
-
-
-
     <!-- القسم السفلي (الفوتر) -->
     <footer class="footer">
         <div class="container">
@@ -1086,7 +1071,7 @@ social-icon:hover {
                         
                         // إغلاق القائمة المتحركة بعد النقر على رابط (للموبايل)
                         if (window.innerWidth < 992) {
-                            mainNav.style.display = 'none';
+                            mainNav.style.display = 'flex';
                         }
                     }
                 });
