@@ -1080,7 +1080,7 @@ social-icon:hover {
             // تحسين تجربة المستخدم على الأجهزة المحمولة
             function handleResponsiveLayout() {
                 if (window.innerWidth < 992) {
-                    mainNav.style.display = 'none';
+                    mainNav.style.display = 'flexl';
                 } else {
                     mainNav.style.display = 'block';
                 }
