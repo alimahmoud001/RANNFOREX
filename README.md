@@ -673,8 +673,6 @@ social-icon:hover {
     </style>
 </head>
 <body>
-![image](1750317196365.jpg)
-    
     <!-- القسم العلوي (الهيدر) -->
     <header class="header">
         <div class="container">
