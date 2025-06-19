@@ -1,38 +1,6 @@
 
 
 
-
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "0709da56-708f-4a45-ada5-b9ca583d441b",
-    });
-  });
-</script>
-
-
-
-===
-<script src="[https://cdn.onesignal.com/sdks/OneSignalSDK.js](https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js)" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "0709da56-708f-4a45-ada5-b9ca583d441b",
-      notifyButton: {
-        enable: true
-      },
-      allowLocalhostAsSecureOrigin: true // فقط للتجربة على localhost
-    });
-  });
-</script>
-
-===
-
-
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
