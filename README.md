@@ -1192,7 +1192,6 @@ social-icon:hover {
             });
         });
     </script>
-         </div>
    </div>
 <section>         
 
