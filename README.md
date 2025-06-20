@@ -1194,7 +1194,7 @@ social-icon:hover {
     </script>
     </a>
   </div> 
-   <section>         
+   </section>         
 
 
 
