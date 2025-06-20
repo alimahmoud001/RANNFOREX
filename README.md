@@ -721,7 +721,7 @@ social-icon:hover {
                     <h3>انضم إلى قناة الإشارات الخاصة </h3>
                     <p> أعطي إشارات مدفوعة لمن قام بالتسجيل في الشركة حصرا</p>
                     <a href="https://t.me/tradewithali002" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-user-plus"></i> انضم الآن
+                        <i class="fab fa-telegram"></i> انضم الآن
                     </a>
                 </div>
                     </div>
