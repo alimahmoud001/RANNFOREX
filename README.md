@@ -708,7 +708,7 @@ social-icon:hover {
                     <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
                     <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> سجل الآن
-                    </a>
+     </a>
 <div>
              <!--    <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
