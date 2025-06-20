@@ -696,7 +696,14 @@ social-icon:hover {
         <!-- القسم الأول: معلومات شركة الوساطة المالية -->
         <section id="section1" class="section">
             <div class="container">
-                <h2 class="section-title" > يمكنك التداول بحد أدنى للايداع والسحب 10$ مع رافعة مالية 1:500 وبأقل اسبريد بدءا من 0.2-1.2 نقطة وتقييم الشركة ممتاز </h2>
+                <h2 class="section-title" >
+                
+<li> يمكنك التداول بحد أدنى للايداع والسحب 10 دولار</li>
+
+<li> رافعة مالية 1:500 </li>
+<li>أقل اسبريد بدءا من 0.2-1.2 نقطة </li>
+<li>تقييم الشركة ممتاز</li>
+</div>
                 <div class="register-card">
                     <h3>سجل الآن في Rannforex</h3>
                     <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
@@ -704,13 +711,13 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> سجل الآن
                     </a>
                 </div>
-                <div class="register-card">
+             <!--    <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <p> لعرض تفاصيل حساب المدير </p>
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
- </div>
+ </div>                 -->
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات الخاصة </h3>
                     <p> أعطي إشارات مدفوعة لمن قام بالتسجيل في الشركة حصرا</p>
