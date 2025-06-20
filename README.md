@@ -725,7 +725,7 @@ social-icon:hover {
                     </a>
                 </div>
                  
-                    </div>
+                   
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
             <div class="container">
