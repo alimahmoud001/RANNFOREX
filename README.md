@@ -710,6 +710,7 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> سجل الآن
                     </a>
                 </div>
+                </div>
              <!--    <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <p> لعرض تفاصيل حساب المدير </p>
