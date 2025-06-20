@@ -1,4 +1,4 @@
-<html lang="ar" dir="rtl">
+i<html lang="ar" dir="rtl">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
@@ -703,13 +703,12 @@ social-icon:hover {
 <li> رافعة مالية 1:500 </li>
 <li>أقل اسبريد بدءا من 0.2-1.2 نقطة </li>
 <li>تقييم الشركة ممتاز</li>
-                <div class="register-card">
+     <div class="register-card">
                     <h3>سجل الآن في Rannforex</h3>
                     <p>ابدأ رحلتك في عالم التداول مع شركة وساطة مالية موثوقة</p>
                     <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> سجل الآن
-     </a>
-<div>
+      <div>
              <!--    <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <p> لعرض تفاصيل حساب المدير </p>
