@@ -766,14 +766,13 @@ social-icon:hover {
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
                  </div> 
-   <section>         
+        
 
 
 
 
-             
 
-              
+
 
                <section id="section9" class="section">
                 <div class="spread-info">
@@ -883,8 +882,8 @@ social-icon:hover {
             background: white;
             border-radius: 20px;
             width: 95%;
-            max-width: 400px;
-            max-height: 90vh;
+            max-width: 500px;
+            max-height: 80vh;
             overflow-y: auto;
             box-shadow: 0 25px 50px rgba(0,0,0,0.4);
             transform: translateY(30px);
