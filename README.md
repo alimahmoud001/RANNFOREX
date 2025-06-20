@@ -1193,7 +1193,8 @@ social-icon:hover {
             });
         });
     </script>
-                 </div> 
+    </a>
+  </div> 
    <section>         
 
 
