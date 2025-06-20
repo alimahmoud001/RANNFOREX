@@ -883,7 +883,7 @@ social-icon:hover {
             background: white;
             border-radius: 20px;
             width: 95%;
-            max-width: 600px;
+            max-width: 400px;
             max-height: 90vh;
             overflow-y: auto;
             box-shadow: 0 25px 50px rgba(0,0,0,0.4);
