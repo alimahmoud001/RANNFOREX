@@ -704,13 +704,14 @@ social-icon:hover {
                         <i class="fas fa-user-plus"></i> سجل الآن
                     </a>
                 </div>
-                <div class="register-card">
+                <!--   <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <p> لعرض تفاصيل حساب المدير </p>
                     <a href=" https://my.rannforex.com/en/pamm/details/2496/  " class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> استثمر الآن
                     </a>
- </div>
+ </div>  -->
+                
       <div class="register-card">
                     <h3>انضم إلى قناة الإشارات الخاصة </h3>
                     <p> أعطي إشارات مدفوعة لمن قام بالتسجيل في الشركة حصرا</p>
