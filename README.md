@@ -723,7 +723,7 @@ social-icon:hover {
                     <a href="https://t.me/tradewithali002" class="btn btn-primary" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
                     </a>
-                </div>
+      </div>
 
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
