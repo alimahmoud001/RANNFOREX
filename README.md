@@ -775,7 +775,7 @@ social-icon:hover {
                  </div> 
    <section>         
        
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -1210,8 +1210,6 @@ social-icon:hover {
     </style>
 </head>
 <body>
-    <h1>الصفحة الرئيسية</h1>
-    <p class="my-class">هذا نص في الصفحة الرئيسية.</p>
 
     <!-- مكان لعرض الكود المعزول -->
     <div id="isolated-container"></div>
