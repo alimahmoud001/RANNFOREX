@@ -779,7 +779,6 @@ social-icon:hover {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>
 <section id="section 2"
     class="section">
 <html lang="ar" dir="rtl">
