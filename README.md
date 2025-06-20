@@ -1192,9 +1192,9 @@ social-icon:hover {
             });
         });
     </script>
-                </div>
-        </div>
-   <section>         
+         </div>
+   </div>
+<section>         
 
 
 
