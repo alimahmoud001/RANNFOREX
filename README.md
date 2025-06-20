@@ -894,7 +894,7 @@ social-icon:hover {
                             <i class="fab fa-instagram"></i>
                         </div>
                         <h3>KAMEL M5</h3>
-                        <a href="https://www.instagram.com/kameel_m5/reel/DIvnWEQM_4g/" class="btn btn-course" target="_blank">
+                        <a href="https://www.instagram.com/kameel_m5?igsh=YzljYTk1ODg3Zg==" class="btn btn-course" target="_blank">
                             مشاهدة الكورس
                         </a>
                     </div>
