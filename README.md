@@ -709,8 +709,7 @@ social-icon:hover {
                     <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn btn-primary" target="_blank">
                         <i class="fas fa-user-plus"></i> سجل الآن
                     </a>
-                </div>
-                <div>
+<div>
              <!--    <div class="register-card">
                     <h3>استثمر معنا في حساب مدار pamm</h3>
                     <p> لعرض تفاصيل حساب المدير </p>
