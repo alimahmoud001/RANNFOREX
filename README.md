@@ -718,8 +718,7 @@ social-icon:hover {
  </div>  -->
                 
       <div class="register-card">
-                        <i class="fab fa-telegram"></i>
-                    <h3>انضم إلى قناة الإشارات الخاصة </h3><i class="fab fa-telegram"></i>
+                    <h3>انضم إلى قناة الإشارات الخاصة </h3>
                     <p>كورس مجاني بالكامل لمن قام بالتسجيل والايداع في الشركة </p>
                     <a href="https://t.me/tradewithali002" class="btn btn-primary" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
