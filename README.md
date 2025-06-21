@@ -969,7 +969,7 @@ social-icon:hover {
 
             // تحسين تجربة المستخدم على الأجهزة المحمولة
             function handleResponsiveLayout() {
-                if (window.innerWidth < 992) {
+                if (window.innerWidth < 500) {
                     mainNav.style.display = 'none';
                 } else {
                     mainNav.style.display = 'block';
