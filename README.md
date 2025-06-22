@@ -1,3 +1,26 @@
+
+====
+
+
+# مشروعي الرائع
+
+اضغط الزر أدناه لمشاهدة ملف التوثيق:
+
+<a href="./docs/details.md" target="_blank" style="
+  display: inline-block;
+  padding: 8px 16px;
+  background: #0366d6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+">
+  📄 عرض التفاصيل
+</a>
+====
+
+
+
 <html lang="ar" dir="rtl">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
