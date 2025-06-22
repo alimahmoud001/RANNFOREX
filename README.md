@@ -775,7 +775,7 @@ social-icon:hover {
                     </a>
                  </div> 
 
-===
+
 
                <section id="section7" class="section">
                 <div class="spread-info">
@@ -784,7 +784,7 @@ social-icon:hover {
                         <i class="fas fa-chart-bar"></i> عرض الحاسبة
                     </a>
                  </div> 
-===
+
                  
    <section>         
        
