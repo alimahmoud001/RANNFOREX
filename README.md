@@ -1088,19 +1088,3 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </style>
 
-
- 
-                    <h3>حاسبة تطور رأس المال في التداول</h3>
-<a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" target="_blank" style="
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #2ea44f;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  margin: 10px 0;
-">
-  حساب تطور رأس المال
-</a>
-
