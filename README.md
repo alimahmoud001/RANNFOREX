@@ -777,7 +777,7 @@ social-icon:hover {
 
 ===
 
-               <section id="section2" class="section">
+               <section id="section7" class="section">
                 <div class="spread-info">
                     <h3>حاسبة تطور رأس المال في التداول</h3>
                     <a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" class="btn btn-secondary" target="_blank">
