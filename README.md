@@ -6,7 +6,7 @@
 
 اضغط الزر أدناه لمشاهدة ملف التوثيق:
 
-<a href="./docs/details.md" target="_blank" style="
+<a href="تطوير راس المال" target="_blank" style="
   display: inline-block;
   padding: 8px 16px;
   background: #0366d6;
