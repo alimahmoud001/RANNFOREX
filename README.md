@@ -1,20 +1,4 @@
 
-====
-
-## خطة الوصول إلى مليون دولار
-
-أداة تفاعلية تمكنك من محاكاة خطة التداول للوصول إلى مليون دولار مع إمكانية تعديل معايير الربح والخسارة.
-
-[عرض الأداة](million-dollar-path/index.html)
-
-أو باستخدام زر:
-
-[![تجربة الأداة](https://img.shields.io/badge/تجربة_الأداة-الوصول_إلى_مليون_دولار-2c3e50?style=for-the-badge&logo=github)](million-dollar-path/index.html)
-
-====
-
-
-
 <html lang="ar" dir="rtl">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1092,4 +1076,23 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </style>
 
+===
+ 
+                    <h3>Capital-Growth-Rate</h3>
+<a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" target="_blank" style="
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2ea44f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px 0;
+">
+  � عرض الملف
+</a>
 
+
+
+
+====
