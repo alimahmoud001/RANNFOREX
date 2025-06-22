@@ -6,7 +6,7 @@
 
 اضغط الزر أدناه لمشاهدة ملف التوثيق:
 
-<a href="تطوير راس المال" target="_blank" style="
+<a href="[تطوير راس المال](https://github.com/alimahmoud001/RANNFOREX/blob/e59244ff47ad7393db9ea360da6c30b7034ab742/%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%B1%D8%A7%D8%B3%20%D8%A7%D9%84%D9%85%D8%A7%D9%84)" target="_blank" style="
   display: inline-block;
   padding: 8px 16px;
   background: #0366d6;
