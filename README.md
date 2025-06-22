@@ -725,7 +725,15 @@ social-icon:hover {
                         <i class="fab fa-telegram"></i> انضم الآن
                     </a>
                 </div>
-                 
+
+
+                 <div class="register-card">
+                    <h3> اطتعرف على مظايا الشركة بالتفصيل  </h3>
+                    <p>   </p>
+                    <a href="https://alimahmoud001.github.io/Condition-/" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-telegram"></i> المزايا 
+                    </a>
+                </div>
                    
  <!-- القسم الثالث: تطبيقات يجب تحميلها للبدء بالتداول -->
         <section id="section3" class="section">
