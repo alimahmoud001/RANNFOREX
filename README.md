@@ -673,7 +673,7 @@ social-icon:hover {
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>Rannforex</h1>
+                <h1></h1>
             </div>
             <nav class="main-nav">
                 <ul>
