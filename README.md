@@ -775,7 +775,7 @@ social-icon:hover {
                     </a>
                  </div> 
 
-
+   <section>   
 
                <section id="section7" class="section">
                 <div class="spread-info">
