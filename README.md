@@ -728,7 +728,7 @@ social-icon:hover {
 
 
                  <div class="register-card">
-                    <h3> اطتعرف على مظايا الشركة بالتفصيل  </h3>
+                    <h3> تعرف على مزايا الشركة بالتفصيل  </h3>
                     <p>   </p>
                     <a href="https://alimahmoud001.github.io/Condition-/" class="btn btn-primary" target="_blank">
                         <i class="fab fa-telegram"></i> المزايا 
