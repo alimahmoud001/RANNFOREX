@@ -1076,7 +1076,7 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </style>
 
-===
+
  
                     <h3>Capital-Growth-Rate</h3>
 <a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" target="_blank" style="
@@ -1092,7 +1092,3 @@ s0.parentNode.insertBefore(s1,s0);
   � عرض الملف
 </a>
 
-
-
-
-====
