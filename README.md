@@ -775,23 +775,17 @@ social-icon:hover {
                     </a>
                  </div> 
 
+===
 
-                 
+               <section id="section2" class="section">
+                <div class="spread-info">
                     <h3>حاسبة تطور رأس المال في التداول</h3>
-<a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" target="_blank" style="
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #2ea44f;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  margin: 10px 0;
-">
-  حساب تطور رأس المال
-</a>
-
-
+                    <a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-chart-bar"></i> عرض الحاسبة
+                    </a>
+                 </div> 
+===
+                 
    <section>         
        
 
