@@ -774,6 +774,24 @@ social-icon:hover {
                         <i class="fas fa-chart-bar"></i> عرض الاسبريد
                     </a>
                  </div> 
+
+
+                 
+                    <h3>حاسبة تطور رأس المال في التداول</h3>
+<a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" target="_blank" style="
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2ea44f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px 0;
+">
+  حساب تطور رأس المال
+</a>
+
+
    <section>         
        
 
@@ -1078,7 +1096,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
  
-                    <h3>Capital-Growth-Rate</h3>
+                    <h3>حاسبة تطور رأس المال في التداول</h3>
 <a href="https://alimahmoud001.github.io/Capital-Growth-Rate/" target="_blank" style="
   display: inline-block;
   padding: 10px 20px;
@@ -1089,6 +1107,6 @@ s0.parentNode.insertBefore(s1,s0);
   font-weight: bold;
   margin: 10px 0;
 ">
-  � عرض الملف
+  حساب تطور رأس المال
 </a>
 
