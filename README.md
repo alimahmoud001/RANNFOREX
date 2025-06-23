@@ -1107,8 +1107,8 @@ s0.parentNode.insertBefore(s1,s0);
     <title>موقعي</title>
 </head>
 <body>
-    <h1>الصفحة الرئيسية</h1>
-    <button onclick="openNewPage(https://alimahmoud001.github.io/Condition-/)">افتح الصفحة الجديدة</button>
+    <h1>الصفحة الرئيyyسية</h1>
+    <button onclick="https://alimahmoud001.github.io/Condition-/)">افتح الصفحة الجديدة</button>
 
     <script>
         function openNewPage() {
