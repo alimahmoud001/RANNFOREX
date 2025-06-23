@@ -1096,3 +1096,29 @@ s0.parentNode.insertBefore(s1,s0);
 }
 </style>
 
+
+
+
+===
+
+
+<html>
+<head>
+    <title>موقعي</title>
+</head>
+<body>
+    <h1>الصفحة الرئيسية</h1>
+    <button onclick="openNewPage()">افتح الصفحة الجديدة</button>
+
+    <script>
+        function openNewPage() {
+            // يمكننا تغيير محتوى body كاملاً
+            document.body.innerHTML = 
+                <h1>الصفحة الجديدة</h1>
+                <p>مرحبًا! هذه صفحة جديدة في نفس النافذة.</p>
+                <button onclick="history.back()">العودة</button>
+            ;
+        }
+    </script>
+</body>
+</html>
