@@ -800,9 +800,9 @@ social-icon:hover {
        
                <section id="section7" class="section">
                 <div class="spread-info">
-                    <h3>حاسبة تطور رأس المال في التداول</h3>
-                    <a href="https://alimahmoud001.github.io/Condition-/" target="_blank">
-                        <i class="fas fa-chart-bar"></i> عرض الحاسبة
+                    <h3> طريقة الايداع بالتفصيل  </h3>
+                    <a href="https://alimahmoud001.github.io/deposit/" target="_blank">
+                        <i class="fas fa-chart-bar"></i> عرض الخطوات
                     </a>
                  </div> 
 
