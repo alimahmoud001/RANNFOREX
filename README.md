@@ -783,7 +783,7 @@ social-icon:hover {
                     </a>
                  </div> 
 
-   <section>   
+<section>   
 
                <section id="section7" class="section">
                 <div class="spread-info">
@@ -794,7 +794,7 @@ social-icon:hover {
                  </div> 
 
                  
-   <section>         
+<section>         
 
 
        
@@ -807,7 +807,7 @@ social-icon:hover {
                  </div> 
 
                  
-   <section>   
+<section>   
 
 
         <!-- القسم الثاني: تقييمات الشركة -->
