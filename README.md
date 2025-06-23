@@ -1095,30 +1095,3 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
-
-
-
-
-===
-
-
-<html>
-<head>
-    <title>موقعي</title>
-</head>
-<body>
-    <h1>الصفحة الرئيyyسية</h1>
-    <button onclick="https://alimahmoud001.github.io/Condition-/)">افتح الصفحة الجديدة</button>
-
-    <script>
-        function openNewPage(https://alimahmoud001.github.io/Condition-/) {
-            // يمكننا تغيير محتوى body كاملاً
-            document.body.innerHTML = 
-                <h1>الصفحة الجديدة</h1>
-                <p>مرحبًا! هذه صفحة جديدة في نفس النافذة.</p>
-                <button onclick="history.back()">العودة</button>
-            ;
-        }
-    </script>
-</body>
-</html>
