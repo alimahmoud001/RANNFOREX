@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -518,9 +518,9 @@
             
             <div class="card">
                 <h3 class="card-title">
-                    <i class="fas fa-link"></i> رابط التسجيل في شركة راني فوريكس
+                    <i class="fas fa-link"></i> Rannforex    
                 </h3>
-                <p>انضم الآن إلى واحدة من أفضل شركات الوساطة المالية في العالم واستمتع بمزايا تداول فريدة:</p>
+                <p>انضم الآن إلى واحدة من أفضل شركات الوساطة المالية في العالم واستمتع بمزايا تداول فريدة أنأ أتداول معهم ولديهم بيئة تداول آمنة ومستقرة:</p>
                 <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn" target="_blank">
                     <i class="fas fa-user-plus"></i> سجل حساب جديد الآن
                 </a>
@@ -531,16 +531,14 @@
                     <i class="fas fa-medal"></i> ميزات شركة راني فوريكس
                 </h3>
                 <ul class="feature-list">
-                    <li>أقل إيداع 10$ خلال 30 ثانية فقط</li>
-                    <li>أقل سحب 10$ خلال 30 ثانية</li>
-                    <li>عمولة تداول قليلة جداً</li>
-                    <li>اسبريد منخفض يبدأ من 0.3~1.2</li>
+                    <li>أقل إيداع وسحب 10$ بدون انتظار</li>
+                    <li>عمولة تداول قليلة جدا  2$ على كل 1 لوت في الاتجاهين</li>
+                    <li>اسبريد منخفض يبدأ من 0.2~1</li>
                     <li>رافعة مالية عالية تصل إلى 1:500</li>
                     <li>تداول آمن على جميع أزواج الفوركس والمعادن والنفط والمؤشرات والعملات المشفرة</li>
-                    <li>أربع أنواع من الحسابات: ميتاتريدر 5 حقيقي، بدون عمولة، كريبتو، وحساب IB</li>
-                    <li>يدعم الحسابات المدارة PAMM</li>
-                    <li>انزلاق منخفض جداً</li>
-                    <li>تنفيذ فوري للصفقات</li>
+                    <li>يدعم حساب خالي من العمولة وحساب تداولكريبتو وحسابات استثمارية</li>
+                    <li>يدعم حسابات الشراكة IB والحسابات المدارة  PAMM</li>
+                    <li>انزلاق منخفض جداً وتنفيذ فوري للصفقات</li>
                     <li>تقييم ممتاز على مواقع TrustPilot, MyFxbook, WikiFX, Forex Peace Army</li>
                     <li>أمان عالي بسبب خاصية المصادقة الثنائية (2FA)</li>
                     <li>توثيق الحساب من سوريا وأي دولة أخرى</li>
@@ -565,7 +563,7 @@
                 <i class="fas fa-star"></i> تقييمات الشركة
             </h2>
             
-            <p>شركة راني فوريكس تحصل على تقييمات ممتازة من أفضل المواقع المتخصصة في تقييم شركات الفوركس:</p>
+            <p>شركة RANNFOREX تحصل على تقييمات ممتازة من أفضل المواقع المتخصصة في تقييم شركات الفوركس:</p>
             
             <div class="rating-grid">
                 <div class="rating-card">
@@ -627,4 +625,630 @@
                         <i class="fas fa-star-half-alt"></i>
                     </div>
                     <p>تقييم 4.4/5 من الجيش السلمي للفوركس</p>
-                    <a href="https://www.forexpeacearmy.com/forex-reviews/15
+                    <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-gold" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> زيارة الموقع
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- قسم تطبيقات التداول -->
+        <div class="section" id="apps">
+            <h2 class="section-title">
+                <i class="fas fa-mobile-alt"></i> تطبيقات التداول
+            </h2>
+            
+            <p>هذه التطبيقات الأساسية التي تحتاجها للبدء في رحلتك للتداول:</p>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>منصة ميتاتريدر 5</h3>
+                    <p>المنصة الأفضل والأكثر موثوقية للتداول في جميع الأسواق المالية</p>
+                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn" target="_blank">
+                        <i class="fab fa-android"></i> تحميل التطبيق
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>المحفظة الإلكترونية</h3>
+                    <p>محفظة CWallet الآمنة لإدارة أموالك وعمليات الإيداع والسحب</p>
+                    <a href="https://cwallet.com/referral/DvY6dZtS" class="btn" target="_blank">
+                        <i class="fas fa-download"></i> تحميل التطبيق
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>المصادقة الثنائية</h3>
+                    <p>تطبيق Google Authenticator لحماية حسابك بطبقة أمان إضافية</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn" target="_blank">
+                        <i class="fab fa-android"></i> تحميل التطبيق
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>تطبيق TradingView</h3>
+                    <p>منصة التحليل الفني الأفضل لمتابعة الأسواق واتخاذ قرارات التداول</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn" target="_blank">
+                        <i class="fab fa-android"></i> تحميل التطبيق
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+  
+﻿
+           
+        <!-- القسم التعليمي -->
+        <div class="section" id="education">
+            <h2 class="section-title">
+                <i class="fas fa-mobile-alt"></i> كورسات مجانية
+            </h2>
+            
+            <p>هذه الكورسات الأساسية التي تحتاجها للبدء في رحلتك للتداول:</p>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>TRADE WITH PATT</h3>
+                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn" target="_blank">
+                        <i class="fab fa-youtube"></i> مشاهدة الكورس
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Easy Trade</h3>
+                    <a href="https://youtube.com/@easytradingeasy?si=9sITj4F_D__TAfb5" class="btn" target="_blank">
+                        <i class="fas fa-youtube"></i> مشاهدة الكورس
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>SMART RISK</h3>
+                    <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn" target="_blank">
+                        <i class="fab fa-android"></i> مشاهدة الكورس
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>KAMEL M5(instagram)</h3>
+                    <a href="https://www.instagram.com/kameel_m5" class="btn" target="_blank">
+                     <i class="fab fa-android"></i> مشاهدة الكورس
+                    </a>
+                </div>
+            </div>
+        </div>
+   
+
+
+
+
+
+<div class="section" id="investment">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i> حساب الاستثمار
+            </h2>
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-link"></i> Rannforex    
+                </h3>
+                <p>يمكنك التداول معي بحساب استثمار بحد أدنى للايداع 10$ سأحصل على نسبة 50% من الارباح يمكنك الاطلاع على تفاصيل حسابي الاستثماري هنا</p>
+                <a href="https://my.rannforex.com/en/pamm/details/2496/" class="btn" target="_blank">
+                    <i class="fas fa-user-plus"></i> استثمر الآن   
+                </a>
+            </div>
+        </div>
+
+
+
+              
+
+
+
+        <div class="section" id="deposit">
+            <h2 class="section-title">
+                <i class="fas fa-money-bill-wave"></i> طريقة الإيداع
+            </h2> <ol>
+            <li><strong>الإيداع:</strong>
+                <ul>
+                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة.</li>
+                    <li>اختر <strong>Deposit</strong>.</li>
+                    <li>اختر طريقة الإيداع: <strong>Crypto</strong>.</li>
+                    <li>اختر حساب التداول.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>تفاصيل التحويل:</strong>
+                <ul>
+                    <li>أدخل المبلغ في الفراغ الأول.</li>
+                    <li>اختر <strong>USD</strong>.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>رمز التحقق (2FA):</strong>
+                <ul>
+                    <li>افتح تطبيق <strong>Google Authenticator</strong>.</li>
+                    <li>انسخ الكود المولد لحساب RannForex.</li>
+                    <li>أدخل الكود في الفراغ المخصص.</li>
+                    <li>اضغط على <strong>Continue</strong>.</li>
+                </ul>
+            </li>
+            <li><strong> اختر TetherUS - USDT:</strong>
+                <ul>
+                    <li>اختر <strong>BUSD-T-USD (USDT)</strong>.</li>
+                    <li>انسخ العنوان المقدم وهو عنوان bep20.</li>
+                </ul>
+            </li>
+            <li><strong>إرسال من Cwallet:</strong>
+                <ul>
+                    <li>اختر <strong>USDT</strong>.</li>
+                    <li>اختر شبكة <strong>BEP20</strong>.</li>
+                    <li>أدخل المبلغ بالدولار.</li>
+                    <li>الصق العنوان المنسوخ من RannForex.</li>
+                    <li>اضغط على <strong>Send</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>تم الإيداع بنجاح!</strong></li>
+        </ol>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tlegram section --> 
+        <div class="section" id="telegram">
+            <h2 class="section-title">
+                <i class="fas fa-mobile-alt"></i> قنوات خاصة بي على تلجرام
+            </h2>
+            
+            <p>هذه القنوات الأساسية التي تحتاجها للبدء في رحلتك للتداول:</p>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3> قناة الكورس الاساسي</h3>
+                    <p>هذه القناة تحوي على كورس متضمن كل شيء لن تحتاج الى كورس غيره </p>
+                    <a href="https://t.me/tradewithali003" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> انضم الآن
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3>القناة </h3>
+                    <p> Trade with Ali</p>
+                    <a href="https://t.me/+D_3xl17gg6M5OWRk" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> انضم الآن
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3> حقق الأرباح </h3>
+                    <p> سوف أقوم بإرسال إشارات لجميع الاعضاء </p>
+                    <a href="https://t.me/tradewithali002" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> انضم الآن
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3> قناة التداول p2p</h3>
+                    <p> لقد قمت بانشاء هذه المجموعة بين الاعضاء لمن يود بيع وشراء العملات المشفرة</p>
+                    <a href="https://t.me/tradewithali004" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> انضم الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- قسم المصادقة الثنائية -->
+        <div class="section" id="authentication">
+            <h2 class="section-title">
+                <i class="fas fa-shield-alt"></i> المصادقة الثنائية
+            </h2>
+            
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-lock"></i> حماية حسابك بطبقة أمان إضافية
+                </h3>
+                <p>المصادقة الثنائية (2FA) هي طريقة أمان تطلب من المستخدمين تقديم شكلين مختلفين من الهوية للتحقق من أنفسهم. وهي ضرورية لحماية حساب التداول الخاص بك من الاختراق.</p>
+                
+                <h4 style="margin: 20px 0 15px; color: var(--accent);">كيفية إعداد المصادقة الثنائية:</h4>
+                <ol style="padding-right: 20px; margin-bottom: 20px;">
+                    <li style="margin-bottom: 10px;">قم بتنزيل تطبيق Google Authenticator</li>
+                    <li style="margin-bottom: 10px;">اضغط السهم الموجود في الشريط العلوي في صفحة الموقع</li>
+                    <li style="margin-bottom: 10px;">امسح رمز QR باستخدام التطبيق أو انسخ المفتاح السري</li>
+                     <li style="margin-bottom: 10px;">اختر إدخال مفتاح الإعداد  اسم الرمز Rannforex والصق المفتاح السري واختر بالإستناد إلى الوقت</li>
+                    <li style="margin-bottom: 10px;">عودة ثم انسخ الرمز من مولد الرموز بالضغط مطولا عليه ثم الصقه في خانة 2fa code </li>
+                    <li>يمكنك الآن السحب والإيداع بسهولة وأمان</li>
+                </ol>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-video"></i> شرح استخدام تطبيق Google Authenticator
+                </h3>
+                <p>شاهد هذا الفيديو القصير لتعرف كيفية استخدام تطبيق المصادقة الثنائية:</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+        <!-- قسم حاسبة رأس المال -->
+        <div class="section" id="calculator">
+            <h2 class="section-title">
+                <i class="fas fa-calculator"></i> حاسبة تطور رأس المال
+            </h2>
+            
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h3 style="margin-bottom: 20px; color: var(--secondary);">أدخل بيانات التداول</h3>
+                    
+                    <div class="input-group">
+                        <label for="initialCapital">رأس المال الأولي ($)</label>
+                        <input type="number" id="initialCapital" value="10000" min="1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="winRate">نسبة الصفقات الرابحة (%)</label>
+                        <input type="number" id="winRate" value="60" min="0" max="100" step="1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="profitRate">معدل الربح لكل صفقة (% من رأس المال)</label>
+                        <input type="number" id="profitRate" value="2" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="lossRate">معدل الخسارة لكل صفقة (% من رأس المال)</label>
+                        <input type="number" id="lossRate" value="1" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="updateInterval">عدد الصفقات في كل تحديث</label>
+                        <input type="number" id="updateInterval" value="10" min="1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="targetCapital">الهدف النهائي ($)</label>
+                        <input type="number" id="targetCapital" value="15000" min="1">
+                    </div>
+                    
+                    <button class="btn" id="calculateBtn">
+                        <i class="fas fa-calculator"></i> حساب تطور رأس المال
+                    </button>
+                </div>
+                
+                <div class="calculator-results">
+                    <h3 style="margin-bottom: 20px; color: var(--accent);">نتائج الحساب</h3>
+                    
+                    <div class="results-grid">
+                        <div class="result-box">
+                            <div class="result-label">متوسط العائد لكل صفقة</div>
+                            <div id="avgReturn" class="result-value">0.80%</div>
+                        </div>
+                        
+                        <div class="result-box">
+                            <div class="result-label">عدد الصفقات المطلوبة</div>
+                            <div id="tradesRequired" class="result-value">52</div>
+                        </div>
+                        
+                        <div class="result-box">
+                            <div class="result-label">معدل النمو الإجمالي</div>
+                            <div id="overallGrowth" class="result-value">50.00%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // التحكم في القائمة الجانبية
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        const sections = document.querySelectorAll('.section');
+        const mainContent = document.getElementById('mainContent');
+        
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+        
+        // تغيير القسم عند النقر على عنصر القائمة
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const sectionId = item.getAttribute('data-section');
+                
+                // تحديث العنصر النشط في القائمة
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                
+                // إظهار القسم المحدد وإخفاء الآخرين
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === sectionId) {
+                        setTimeout(() => {
+                            section.classList.add('active');
+                        }, 100);
+                    }
+                });
+                
+                // إغلاق القائمة على الأجهزة المحمولة
+                if (window.innerWidth < 992) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+        
+        // حاسبة تطور رأس المال
+        const calculateBtn = document.getElementById('calculateBtn');
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        
+        let growthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['0', '10', '20', '30', '40', '50'],
+                datasets: [{
+                    label: 'رأس المال',
+                    data: [10000, 10830, 11730, 12708, 13764, 14913],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#fff',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ecf0f1',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(44, 62, 80, 0.9)',
+                        titleColor: '#ecf0f1',
+                        bodyColor: '#ecf0f1',
+                        titleFont: {
+                            size: 16
+                        },
+                        bodyFont: {
+                            size: 14
+                        },
+                        padding: 12,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return '$' + context.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'عدد الصفقات',
+                            color: '#bdc3c7',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#ecf0f1'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'رأس المال ($)',
+                            color: '#bdc3c7',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#ecf0f1',
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        calculateBtn.addEventListener('click', calculate);
+        
+        function calculate() {
+            const initialCapital = parseFloat(document.getElementById('initialCapital').value) || 10000;
+            const winRate = parseFloat(document.getElementById('winRate').value) || 60;
+            const profitRate = parseFloat(document.getElementById('profitRate').value) || 2;
+            const lossRate = parseFloat(document.getElementById('lossRate').value) || 1;
+            const updateInterval = parseInt(document.getElementById('updateInterval').value) || 10;
+            const targetCapital = parseFloat(document.getElementById('targetCapital').value) || 15000;
+            
+            const winRateDecimal = winRate / 100;
+            const profitRateDecimal = profitRate / 100;
+            const lossRateDecimal = lossRate / 100;
+            
+            const expectedReturn = (winRateDecimal * profitRateDecimal) - ((1 - winRateDecimal) * lossRateDecimal);
+            document.getElementById('avgReturn').textContent = (expectedReturn * 100).toFixed(2) + '%';
+            
+            let nTrades;
+            if (expectedReturn <= 0) {
+                nTrades = '∞';
+            } else {
+                nTrades = Math.ceil(Math.log(targetCapital / initialCapital) / Math.log(1 + expectedReturn));
+            }
+            document.getElementById('tradesRequired').textContent = nTrades;
+            
+            const overallGrowth = ((targetCapital - initialCapital) / initialCapital) * 100;
+            document.getElementById('overallGrowth').textContent = overallGrowth.toFixed(2) + '%';
+            
+            const results = [];
+            let tradeCount = 0;
+            let currentCapital = initialCapital;
+            
+            while (tradeCount <= (typeof nTrades === 'number' ? nTrades : 1000)) {
+                results.push({
+                    trades: tradeCount,
+                    capital: currentCapital
+                });
+                
+                if (currentCapital >= targetCapital || tradeCount > 1000) break;
+                
+                tradeCount += updateInterval;
+                currentCapital = initialCapital * Math.pow(1 + expectedReturn, tradeCount);
+            }
+            
+            updateChart(results);
+        }
+        
+        function updateChart(results) {
+            const labels = results.map(r => r.trades);
+            const data = results.map(r => r.capital);
+            
+            growthChart.data.labels = labels;
+            growthChart.data.datasets[0].data = data;
+            growthChart.update();
+        }
+        
+        // حساب أولي عند تحميل الصفحة
+        calculate();
+        
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuBtn.contains(e.target) && window.innerWidth < 992) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--End of Tawk.to Script-->
+
+
+
+
+<!-- HTML: ?? ?????? -->
+<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
+    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
+  </svg>
+
+<!-- CSS: ????? ???? ?????? -->
+<style>
+#telegram-float {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  background: linear-gradient(45deg, #0088cc, #00bfff);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#telegram-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+#telegram-float svg {
+  width: 28px;
+  height: 28px;
+}
+</style>
