@@ -772,6 +772,14 @@ social-icon:hover {
                     <i class="fab fa-google-play"></i> تريدنغ فيو
                 </a>
             </div>
+            <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.myfxbook.forex" class="btn btn-app" target="_blank">
+                            <i class="fab fa-google-play"></i>my fx book 
+                        </a>
+                    </div>
                 </div>
            
   
