@@ -863,7 +863,7 @@
                     </div>
                     <h3>القناة </h3>
                     <p> Trade with Ali</p>
-                    <a href="https://t.me/+D_3xl17gg6M5OWRk" class="btn" target="_blank">
+                    <a href="https://t.me/Tradewithali001" class="btn" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
                     </a>
                 </div>
