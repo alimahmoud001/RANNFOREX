@@ -684,6 +684,16 @@
                         <i class="fab fa-android"></i> تحميل التطبيق
                     </a>
                 </div>
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3> my fx book</h3>
+                    <p>لمعرفة الأخبار</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.myfxbook.forex" class="btn" target="_blank">
+                        <i class="fab fa-android"></i> تحميل التطبيق
+                    </a>
+                </div>
             </div>
         </div>
 
