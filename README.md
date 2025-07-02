@@ -883,7 +883,7 @@
                     </div>
                     <h3>للحصول على usdt</h3>
                     <p> هذا البوت يمكن من حلاله الحصول على usdt عن طريق ظوسائل دفع مختلفة في سوريا  </p>
-                    <a href="https://t.me/Syriabep20_bot" class="btn" target="_blank">
+                    <a href="https://t.me/Syria_usdtbot" class="btn" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
                     </a>
                 </div>
