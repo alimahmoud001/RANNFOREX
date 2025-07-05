@@ -1211,8 +1211,9 @@
 
 
 ====
+<div class="section" id="telegram">
 
-
+    
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -2214,8 +2215,7 @@
             window.location.href = mailtoLink;
         });
     </script>
-</body>
-</html>
+</section>
 
 
 ====
