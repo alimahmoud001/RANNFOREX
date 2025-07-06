@@ -499,7 +499,7 @@
             <span>حساب الاستثمار</span>
         </div>
       <div class="sidebar-item" data-section="usdt">
-            <i class="fas fa-money-bill-wave"></i>
+            <i class="fas fa-coin"></i>
             <span>شراء وبيع usdt</span>
         </div>
         <div class="sidebar-item" data-section="deposit">
