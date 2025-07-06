@@ -875,18 +875,7 @@
                     <p> سوف أقوم بإرسال إشارات لجميع الاعضاء </p>
                     <a href="https://t.me/tradewithali002" class="btn" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3>للحصول على usdt</h3>
-                    <p> هذا البوت يمكن من حلاله الحصول على usdt عن طريق ظوسائل دفع مختلفة في سوريا  </p>
-                    <a href="https://t.me/Syria_usdtbot" class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> انضم الآن
-                    </a>
-                </div>
+                    </a>            
             </div>
         </div>
 
