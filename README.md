@@ -498,11 +498,15 @@
             <i class="fas fa-chart-line"></i>
             <span>حساب الاستثمار</span>
         </div>
+      <div class="sidebar-item" data-section="usdt">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>شراء وبيع usdt</span>
+        </div>
         <div class="sidebar-item" data-section="deposit">
             <i class="fas fa-money-bill-wave"></i>
             <span>طريقة الإيداع</span>
         </div>
-        <div class="sidebar-item" data-section="calculator">
+          <div class="sidebar-item" data-section="calculator">
             <i class="fas fa-calculator"></i>
             <span>حاسبة رأس المال</span>
         </div>
@@ -703,8 +707,29 @@
                     </div>
                     <h3> حساب الشراكة pamm</h3>
                     <p>يمكنك أن تستثمر معي وأن نتقاسم 50% من الأرباح</p>
-                    <a https://my.rannforex.com/en/pamm/details/2496/class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> استثمر الآن
+                  <a href="https://my.rannforex.com/en/pamm/details/2534/" class="btn" target="_blank">
+                     <i class="fab fa-telegram"></i> استثمر الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+     
+<!------------------- usdt --> 
+        <div class="section" id="usdt">
+            <h2 class="section-title">
+                <i class="fas fa-mobile-alt"></i>شراء وبيع usdt
+            </h2>
+            
+            <p>من أجل شحن المحفظة الخاصة بك أو الإيداع في حساب التداول</p>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3> أرسل الطلب الآن</h3>
+                    <p>يمكنك شراء usdt عن طريق سيريتل كاش او شام كاش أو بنك بيمو أو حوالة الهرم</p>
+                <a href="https://alimahmoud001.github.io/usdt/" class="btn" target="_blank">
+                            <i class="fab fa-telegram"></i> شراء/بيع
                     </a>
                 </div>
             </div>
@@ -1185,13 +1210,13 @@
 
 
 
-<!-- HTML: ?? ?????? -->
+<!--------------------- HTML: ?? ?????? -->
 <a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
     <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
   </svg>
 
-<!-- CSS: ????? ???? ?????? -->
+<!------------------------ CSS: ????? ???? ?????? -->
 <style>
 #telegram-float {
   position: fixed;
