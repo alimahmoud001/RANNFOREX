@@ -684,21 +684,32 @@
                         <i class="fab fa-android"></i> تحميل التطبيق
                     </a>
                 </div>
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3> my fx book</h3>
-                    <p>لمعرفة الأخبار</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.myfxbook.forex" class="btn" target="_blank">
-                        <i class="fab fa-android"></i> تحميل التطبيق
-                    </a>
-                </div>
             </div>
         </div>
 
 
   
+<!-- investment section --> 
+        <div class="section" id="investment">
+            <h2 class="section-title">
+                <i class="fas fa-mobile-alt"></i> اطلع على تفاصيل حساب الإستثمار الحاص بي
+            </h2>
+            
+            <p>اطلع على تفاصيل حساب الإستثمار الحاص بي</p>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3> حساب الشراكة pamm</h3>
+                    <p>يمكنك أن تستثمر معي وأن نتقاسم 50% من الأرباح</p>
+                    <a https://my.rannforex.com/en/pamm/details/2496/class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> استثمر الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+              
 ﻿
            
         <!-- القسم التعليمي -->
@@ -754,30 +765,6 @@
    
 
 
-
-
-
-<div class="section" id="investment">
-            <h2 class="section-title">
-                <i class="fas fa-chart-line"></i> حساب الاستثمار
-            </h2>
-            <div class="card">
-                <h3 class="card-title">
-                    <i class="fas fa-link"></i> Rannforex    
-                </h3>
-                <p>يمكنك التداول معي بحساب استثمار بحد أدنى للايداع 10$ سأحصل على نسبة 50% من الارباح يمكنك الاطلاع على تفاصيل حسابي الاستثماري هنا</p>
-                <a href="https://my.rannforex.com/en/pamm/details/2534/" class="btn" target="_blank">
-                    <i class="fas fa-user-plus"></i> استثمر الآن   
-                </a>
-            </div>
-        </div>
-
-
-
-              
-
-
-
         <div class="section" id="deposit">
             <h2 class="section-title">
                 <i class="fas fa-money-bill-wave"></i> طريقة الإيداع
@@ -826,19 +813,6 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- tlegram section --> 
         <div class="section" id="telegram">
             <h2 class="section-title">
@@ -863,7 +837,7 @@
                     </div>
                     <h3>القناة </h3>
                     <p> Trade with Ali</p>
-                    <a href="https://t.me/Tradewithali001" class="btn" target="_blank">
+                    <a href="https://t.me/+D_3xl17gg6M5OWRk" class="btn" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
                     </a>
                 </div>
@@ -875,7 +849,18 @@
                     <p> سوف أقوم بإرسال إشارات لجميع الاعضاء </p>
                     <a href="https://t.me/tradewithali002" class="btn" target="_blank">
                         <i class="fab fa-telegram"></i> انضم الآن
-                    </a>            
+                    </a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">
+                    </div>
+                    <h3> قناة التداول p2p</h3>
+                    <p> لقد قمت بانشاء هذه المجموعة بين الاعضاء لمن يود بيع وشراء العملات المشفرة</p>
+                    <a href="https://t.me/tradewithali004" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> انضم الآن
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -895,11 +880,10 @@
                 <h4 style="margin: 20px 0 15px; color: var(--accent);">كيفية إعداد المصادقة الثنائية:</h4>
                 <ol style="padding-right: 20px; margin-bottom: 20px;">
                     <li style="margin-bottom: 10px;">قم بتنزيل تطبيق Google Authenticator</li>
-                    <li style="margin-bottom: 10px;">اضغط السهم الموجود في الشريط العلوي في صفحة الموقع</li>
-                    <li style="margin-bottom: 10px;">امسح رمز QR باستخدام التطبيق أو انسخ المفتاح السري</li>
-                     <li style="margin-bottom: 10px;">اختر إدخال مفتاح الإعداد  اسم الرمز Rannforex والصق المفتاح السري واختر بالإستناد إلى الوقت</li>
-                    <li style="margin-bottom: 10px;">عودة ثم انسخ الرمز من مولد الرموز بالضغط مطولا عليه ثم الصقه في خانة 2fa code </li>
-                    <li>يمكنك الآن السحب والإيداع بسهولة وأمان</li>
+                    <li style="margin-bottom: 10px;">في إعدادات حساب التداول الخاص بك، قم بتمكين المصادقة الثنائية</li>
+                    <li style="margin-bottom: 10px;">امسح رمز QR باستخدام التطبيق</li>
+                    <li style="margin-bottom: 10px;">احفظ رمز الاسترداد في مكان آمن</li>
+                    <li>استخدم الرمز الذي يظهر في التطبيق عند تسجيل الدخول</li>
                 </ol>
             </div>
             
@@ -914,6 +898,7 @@
                 </div>
             </div>
         </div>
+
 
 
 
@@ -1195,28 +1180,12 @@
             }
         });
     </script>
-
-
-
-<!--Start of Tawk.to Script-------------------------------------->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
+</body>
 
 
 
 
-<!-- HTML: ?? ?????? ------------------------------------------>
+<!-- HTML: ?? ?????? -->
 <a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
     <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
@@ -1251,4 +1220,3 @@ s0.parentNode.insertBefore(s1,s0);
   height: 28px;
 }
 </style>
-
