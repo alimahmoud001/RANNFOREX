@@ -499,7 +499,7 @@
             <span>حساب الاستثمار</span>
         </div>
       <div class="sidebar-item" data-section="usdt">
-            <i class="fas fa-usdt"></i>
+            <i class="fas fa-usd"></i>
             <span>شراء وبيع usdt</span>
         </div>
         <div class="sidebar-item" data-section="deposit">
