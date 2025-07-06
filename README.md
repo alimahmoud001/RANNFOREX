@@ -717,10 +717,7 @@
 <!------------------- usdt --> 
         <div class="section" id="usdt">
             <h2 class="section-title">
-        <iframe src="https://alimahmoud001.github.io/usdt/" width="100%" height="600px"></iframe>        </a>
-                </div>
-            </div>
-        </div>
+        <iframe src="https://alimahmoud001.github.io/usdt/" width="100%" height="600px"></iframe>
               
 ﻿
            
