@@ -561,7 +561,7 @@
                 </h3>
                 <p>منصة تحويل العملات الرقمية
 تحويل آمن وسريع لعملة USDT</p>
-                <a href="[/](https://alimahmoud001.github.io/usdt/)" class="btn btn-secondary" target="_blank">
+                <a href="https://alimahmoud001.github.io/usdt/" class="btn btn-secondary" target="_blank">
                     <i class="fas fa-external-link-alt"></i> شراء وبيع usdt
                 </a>
             </div>
