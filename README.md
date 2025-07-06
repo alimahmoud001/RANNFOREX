@@ -377,7 +377,14 @@
             height: 100%;
             border: none;
         }
-        
+        .usdt-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         /* روابط التطبيقات */
         .apps-grid {
             display: grid;
