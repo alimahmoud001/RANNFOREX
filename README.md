@@ -713,27 +713,13 @@
                 </div>
             </div>
         </div>
-     
+        
 <!------------------- usdt --> 
         <div class="section" id="usdt">
-            <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i>شراء وبيع usdt
-            </h2>
-            
-            <p>من أجل شحن المحفظة الخاصة بك أو الإيداع في حساب التداول</p>
-            
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3> أرسل الطلب الآن</h3>
-                    <p>يمكنك شراء usdt عن طريق سيريتل كاش او شام كاش أو بنك بيمو أو حوالة الهرم</p>
-                <a href="https://alimahmoud001.github.io/usdt/" class="btn" target="_blank">
-                            <i class="fab fa-telegram"></i> شراء/بيع
-                    </a>
-                </div>
+           <iframe src="https://alimahmoud001.github.io/usdt/" width="100%" height="600px"></iframe>
             </div>
         </div>
+              
               
 ﻿
            
