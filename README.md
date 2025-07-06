@@ -554,6 +554,16 @@
                 <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
                     <i class="fas fa-external-link-alt"></i> عرض الأسبريد المتوسط اليومي
                 </a>
+            </div> 
+            <div class="card">
+                <h3 class="card-title">
+                    <i class="fas fa-chart-bar"></i> اسبريد راني فوريكس
+                </h3>
+                <p>منصة تحويل العملات الرقمية
+تحويل آمن وسريع لعملة USDT</p>
+                <a href="[/](https://alimahmoud001.github.io/usdt/)" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> شراء وبيع usdt
+                </a>
             </div>
         </div>
         
