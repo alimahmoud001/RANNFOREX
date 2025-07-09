@@ -3,899 +3,1422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راني فوريكس - بوابة التداول الشاملة</title>
+    <title>دليل المتداول - دليلك الشامل للتداول</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --primary-color: #1a3a6c;
-            --secondary-color: #2a5a9c;
-            --accent-color: #ff9800;
-            --light-color: #f5f8ff;
-            --dark-color: #0d1b2a;
-            --success-color: #4caf50;
-            --transition: all 0.3s ease;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', Arial, sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #0d1b2a, #1a3a6c);
-            color: #fff;
-            min-height: 100vh;
-            position: relative;
-            padding-bottom: 50px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        
+
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header Styles */
-        header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(13, 27, 42, 0.9);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
+            min-height: 100vh;
         }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo i {
-            font-size: 2rem;
-            color: var(--accent-color);
-        }
-        
-        .logo h1 {
-            font-size: 1.5rem;
-            background: linear-gradient(to right, var(--accent-color), #ffcc80);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .menu-toggle {
-            background: var(--secondary-color);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .menu-toggle:hover {
-            background: var(--accent-color);
-            transform: rotate(90deg);
-        }
-        
+
         /* Sidebar Styles */
         .sidebar {
+            width: 280px;
+            background-color: var(--primary-color);
+            color: white;
             position: fixed;
-            top: 0;
-            right: -320px;
-            width: 320px;
-            height: 100%;
-            background: var(--dark-color);
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-            z-index: 200;
-            transition: var(--transition);
-            padding: 20px 0;
+            height: 100vh;
             overflow-y: auto;
+            transition: all 0.3s;
+            z-index: 1000;
+            transform: translateX(-100%);
         }
-        
+
         .sidebar.active {
-            right: 0;
+            transform: translateX(0);
         }
-        
+
         .sidebar-header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            padding: 0;
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            position: relative;
+        }
+
+        .sidebar-menu li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-right: 25px;
+        }
+
+        .sidebar-menu li a i {
+            margin-left: 10px;
+        }
+
+        .submenu {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0;
+            list-style: none;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .submenu li a {
+            padding: 12px 20px 12px 40px;
+            font-size: 1rem;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            margin-right: 0;
+            transition: all 0.3s;
+        }
+
+        .main-content.active {
+            margin-right: 280px;
+        }
+
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
         }
-        
-        .close-btn {
-            background: none;
-            border: none;
-            color: white;
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .menu-toggle {
             font-size: 1.5rem;
             cursor: pointer;
-            transition: var(--transition);
+            color: var(--primary-color);
         }
-        
-        .close-btn:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
-        }
-        
-        .menu-items {
-            list-style: none;
-            padding: 20px 0;
-        }
-        
-        .menu-item {
-            padding: 12px 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            border-left: 3px solid transparent;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .menu-item:hover, .menu-item.active {
-            background: rgba(42, 90, 156, 0.3);
-            border-left: 3px solid var(--accent-color);
-        }
-        
-        .menu-item i {
-            width: 25px;
-            text-align: center;
-            color: var(--accent-color);
-        }
-        
-        /* Main Content Styles */
-        .content {
-            padding: 20px;
-            margin-top: 20px;
-            background: rgba(13, 27, 42, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
+
         .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
             display: none;
-            animation: fadeIn 0.5s ease;
         }
-        
+
         .section.active {
             display: block;
+            animation: fadeIn 0.5s ease-in-out;
         }
-        
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--accent-color);
-        }
-        
-        .section-title i {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-        }
-        
-        .section-title h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        
-        .card {
-            background: rgba(26, 58, 108, 0.5);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .card-header i {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-        }
-        
-        .card-header h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 15px 0;
-        }
-        
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-        }
-        
-        .feature i {
-            color: var(--accent-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, var(--accent-color), #ffab40);
-            color: var(--dark-color);
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            margin: 10px 5px;
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--secondary-color), #3a7bd5);
-            box-shadow: 0 4px 15px rgba(42, 90, 156, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            box-shadow: 0 8px 20px rgba(42, 90, 156, 0.4);
-        }
-        
-        .link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .link-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 15px;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .link-item:hover {
-            background: rgba(42, 90, 156, 0.3);
-            transform: translateX(5px);
-        }
-        
-        .link-item h4 {
-            margin-bottom: 10px;
-            color: var(--accent-color);
-        }
-        
-        .link-item a {
-            color: #64b5f6;
-            text-decoration: none;
-            word-break: break-all;
-        }
-        
-        .link-item a:hover {
-            text-decoration: underline;
-        }
-        
-        .step-list {
-            counter-reset: step-counter;
-            margin: 20px 0;
-        }
-        
-        .step {
-            position: relative;
-            padding: 15px 15px 15px 60px;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-color);
-        }
-        
-        .step:before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 35px;
-            height: 35px;
-            background: var(--accent-color);
-            color: var(--dark-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .note {
-            background: rgba(255, 152, 0, 0.15);
-            border-left: 4px solid var(--accent-color);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .note i {
-            color: var(--accent-color);
-            margin-left: 5px;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Animations */
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 280px;
-                right: -280px;
-            }
-            
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
+
+        .section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            font-size: 1.8rem;
         }
-        
-        @media (max-width: 480px) {
-            .sidebar {
-                width: 100%;
-                right: -100%;
-            }
-            
-            .features {
+
+        .section h3 {
+            color: var(--primary-color);
+            margin: 20px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .link-box {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .link-box a {
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .link-box a:hover {
+            text-decoration: underline;
+        }
+
+        .link-box p {
+            margin-bottom: 5px;
+        }
+
+        .feature-list {
+            list-style-type: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .feature-list li:before {
+            content: "★";
+            color: var(--warning-color);
+            position: absolute;
+            right: 0;
+        }
+
+        /* Calculator Styles */
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        .calculator-results {
+            margin-top: 30px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-box {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .result-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .result-box p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .capital-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .capital-table th, .capital-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .capital-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .capital-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-top: 40px;
+        }
+
+        /* USDT Exchange Styles */
+        .usdt-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .form-col {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-next {
+            background-color: var(--success-color);
+        }
+
+        .btn-back {
+            background-color: var(--warning-color);
+        }
+
+        .btn-submit {
+            background-color: var(--accent-color);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .payment-method {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .payment-method:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-method.active {
+            border-color: var(--success-color);
+            background-color: rgba(39, 174, 96, 0.1);
+        }
+
+        .payment-method i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .copy-btn {
+            background-color: var(--light-color);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: #ddd;
+        }
+
+        .order-summary {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .order-summary h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .order-details {
+            margin-bottom: 20px;
+        }
+
+        .order-details p {
+            margin-bottom: 8px;
+        }
+
+        .order-details strong {
+            color: var(--dark-color);
+        }
+
+        /* Footer & Social */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 50px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link.email {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .social-link.telegram {
+            background-color: #0088cc;
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .calculator-form {
                 grid-template-columns: 1fr;
             }
             
-            .link-grid {
+            .main-content.active {
+                margin-right: 0;
+            }
+            
+            .sidebar {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .form-col {
+                padding: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-methods {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <i class="fas fa-chart-line"></i>
-            <h1>rannforex</h1>
-        </div>
-        <button class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
-    
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>الأقسام الرئيسية</h2>
-            <button class="close-btn" id="closeSidebar">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <ul class="menu-items">
-            <li class="menu-item active" data-target="section1">
-                <i class="fas fa-link"></i>
-                <span>رابط الشركة</span>
-            </li>
-            <li class="menu-item" data-target="section2">
-                <i class="fas fa-star"></i>
-                <span>تقييمات الشركة</span>
-            </li>
-            <li class="menu-item" data-target="section3">
-                <i class="fas fa-mobile-alt"></i>
-                <span>تطبيقات التداول</span>
-            </li>
-            <li class="menu-item" data-target="section4">
-                <i class="fas fa-lock"></i>
-                <span>المصادقة الثنائية</span>
-            </li>
-            <li class="menu-item" data-target="section5">
-                <i class="fab fa-telegram"></i>
-                <span>قنوات التلجرام</span>
-            </li>
-            <li class="menu-item" data-target="section6">
-                <i class="fas fa-graduation-cap"></i>
-                <span>القسم التعليمي</span>
-            </li>
-            <li class="menu-item" data-target="section7">
-                <i class="fas fa-chart-pie"></i>
-                <span>قسم الاستثمار</span>
-            </li>
-            <li class="menu-item" data-target="section8">
-                <i class="fas fa-money-bill-wave"></i>
-                <span>طريقة الإيداع</span>
-            </li>
-        </ul>
-    </nav>
-    
-    <!-- Main Content -->
     <div class="container">
-        <div class="content">
-            <!-- Section 1: Broker Link -->
-            <section id="section1" class="section active">
-                <div class="section-title">
-                    <i class="fas fa-link"></i>
-                    <h2>رابط شركة الوساطة المالية</h2>
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>دليل المتداول</h2>
+                <p>القائمة الرئيسية</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" data-section="broker-section"><i class="fas fa-building"></i>شركة الوساطة</a></li>
+                <li>
+                    <a href="#" class="has-submenu"><i class="fas fa-mobile-alt"></i>تطبيقات التداول <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#" data-section="apps-section">جميع التطبيقات</a></li>
+                        <li><a href="#" data-section="mt5-section">ميتا تريدر 5</a></li>
+                        <li><a href="#" data-section="binance-section">محفظة باينانس</a></li>
+                        <li><a href="#" data-section="auth-section">المصادقة الثنائية</a></li>
+                        <li><a href="#" data-section="tradingview-section">تطبيق التحليل</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="has-submenu"><i class="fab fa-telegram"></i>قنوات التلجرام <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#" data-section="telegram-section">جميع القنوات</a></li>
+                        <li><a href="#" data-section="signals-section">قناة الإشارات</a></li>
+                        <li><a href="#" data-section="course-section">قناة الكورس</a></li>
+                        <li><a href="#" data-section="community-section">المجتمع</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="has-submenu"><i class="fas fa-graduation-cap"></i>التعليم <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#" data-section="education-section">جميع المصادر</a></li>
+                        <li><a href="#" data-section="patar-course">كورس باتك</a></li>
+                        <li><a href="#" data-section="smart-risk">سمارت ريسك</a></li>
+                        <li><a href="#" data-section="instagram-course">كورس انستغرام</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-section="calculator-section"><i class="fas fa-calculator"></i>حاسبة رأس المال</a></li>
+                <li><a href="#" data-section="usdt-section"><i class="fas fa-exchange-alt"></i>شراء وبيع USDT</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="main-content">
+            <div class="header">
+                <h1>دليل المتداول - دليلك الشامل للتداول</h1>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
                 </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-external-link-alt"></i>
-                        <h3>رابط التسجيل في راني فوريكس</h3>
-                    </div>
-                    <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn" target="_blank">
-                        <i class="fas fa-user-plus"></i> سجل الآن
-                    </a>
-                    
-                    <div class="note">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>ملاحظة:</strong> ★ اقل ايداع 10$ خلال 30 ثانية ★ أقل سحب 10$ خلال 30 ثانية ★ عمولة قليلة جدا
-                    </div>
-                    
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-chart-line"></i>
-                            <span>اسبريد 0.3~1.2</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-balance-scale"></i>
-                            <span>رافعة مالية 1:500</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>تداول آمن</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-wallet"></i>
-                            <span>أربع أنواع من الحسابات</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>انزلاق منخفض</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>تنفيذ فوري للصفقات</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-star"></i>
-                            <span>تقييم ممتاز على مواقع التقييم</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-lock"></i>
-                            <span>الأمان عالي جداً بسبب 2FA</span>
-                        </div>
-                    </div>
-                    
-                    <div class="note">
-                        <i class="fas fa-lightbulb"></i>
-                        <strong>معلومات إضافية:</strong> ★ توثيق من سورية أو أي دولة أخرى ★ نموذج A-Book من أفضل مزودي السيولة
-                    </div>
-                    
-                    <div class="card-header" style="margin-top: 20px;">
-                        <i class="fas fa-table"></i>
-                        <h3>الإسبريد المتوسط اليومي</h3>
-                    </div>
-                    <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> عرض الإسبريد
-                    </a>
-                </div>
-            </section>
-            
-            <!-- Section 2: Company Reviews -->
-            <section id="section2" class="section">
-                <div class="section-title">
-                    <i class="fas fa-star"></i>
-                    <h2>تقييمات الشركة</h2>
-                </div>
-                
-                <div class="link-grid">
-                    <div class="link-item">
-                        <h4><i class="fas fa-star-half-alt"></i> Trust Pilot</h4>
-                        <a href="https://fr.trustpilot.com/review/rannforex.com" target="_blank">https://fr.trustpilot.com/review/rannforex.com</a>
-                    </div>
-                    
-                    <div class="link-item">
-                        <h4><i class="fas fa-globe"></i> WikiFX</h4>
-                        <a href="https://www.wikifx.com/en/dealer/1141850612.html" target="_blank">https://www.wikifx.com/en/dealer/1141850612.html</a>
-                    </div>
-                    
-                    <div class="link-item">
-                        <h4><i class="fas fa-book"></i> MyFXBook</h4>
-                        <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" target="_blank">https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1</a>
-                    </div>
-                    
-                    <div class="link-item">
-                        <h4><i class="fas fa-shield-alt"></i> Forex Peace Army</h4>
-                        <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" target="_blank">https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review</a>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Section 3: Trading Apps -->
-            <section id="section3" class="section">
-                <div class="section-title">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h2>تطبيقات التداول</h2>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>منصة ميتا تريدر 5</h3>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn" target="_blank">
-                        <i class="fab fa-android"></i> تحميل للتداول
-                    </a>
-                    <div class="note">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>ملاحظة:</strong> هي المنصة الموثوقة الأفضل في مجال التداول في جميع الأسواق
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-wallet"></i>
-                        <h3>المحفظة الإلكترونية</h3>
-                    </div>
-                    <a href="https://cwallet.com/referral/DvY6dZtS" class="btn btn-secondary" target="_blank">
-                        <i class="fas fa-download"></i> تحميل المحفظة
-                    </a>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-lock"></i>
-                        <h3>تطبيق المصادقة الثنائية</h3>
-                    </div>
-                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn" target="_blank">
-                        <i class="fab fa-google-play"></i> تحميل التطبيق
-                    </a>
-                    <div class="note">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>ملاحظة:</strong> يلزم من أجل توثيق الحساب وتوثيق عمليات السحب والإيداع
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Section 4: Authentication -->
-            <section id="section4" class="section">
-                <div class="section-title">
-                    <i class="fas fa-lock"></i>
-                    <h2>المصادقة الثنائية</h2>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-video"></i>
-                        <h3>فيديو تعليمي</h3>
-                    </div>
-                    <p>فيديو بسيط حول كيفية استخدام تطبيق Google Authenticator</p>
-                    <a href="https://youtube.com/shorts/SlQc3Q6L3HQ?si=Q5sdG7_lxANoykBs" class="btn" target="_blank">
-                        <i class="fab fa-youtube"></i> مشاهدة الفيديو
-                    </a>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-key"></i>
-                        <h3>نصائح هامة للمصادقة الثنائية</h3>
-                    </div>
-                    <ul style="padding: 15px 30px; line-height: 2;">
-                        <li>احفظ رمز الاسترداد في مكان آمن</li>
-                        <li>لا تشارك رمز المصادقة مع أي شخص</li>
-                        <li>تأكد من ضبط الوقت الصحيح على جهازك</li>
-                        <li>استخدم تطبيق المصادقة على جهازك الشخصي فقط</li>
+            </div>
+
+            <!-- Broker Section -->
+            <div class="section active" id="broker-section">
+                <h2>شركة الوساطة المالية</h2>
+                <div class="link-box">
+                    <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" target="_blank">رابط التسجيل في شركة الوساطة</a>
+                    <h3>ميزات الشركة:</h3>
+                    <ul class="feature-list">
+                        <li>اقل ايداع او سحب 10$ خلال 30 ثانية</li>
+                        <li>اسبريد 0.2~1.2 ورافعة مالية 500:1</li>
+                        <li>تداول أمن على جميع ازواج الفوريكس والمعادن والنفط والمؤشرات والعملات المشفرة</li>
+                        <li>حسابات إسلامية خالية من العمولة</li>
+                        <li>حسابات احترافي اسبريد قليل جدا</li>
+                        <li>انزلاق منخفض وتنفيذ فوري للصفقات</li>
+                        <li>تقييم ممتاز على موقع trust pilot & myfxbook & wikifx & Forex peace army يمكنك الاطلاع بنفسك</li>
+                        <li>الأمان عالي جدا بسبب 2FA</li>
+                        <li>توثيق سريع وسهل</li>
+                        <li>نموذج A Book من افضل مزودي السيولة</li>
                     </ul>
                 </div>
-            </section>
-            
-            <!-- Section 5: Telegram Channels -->
-            <section id="section5" class="section">
-                <div class="section-title">
-                    <i class="fab fa-telegram"></i>
-                    <h2>قنوات التلجرام</h2>
+                <div class="link-box">
+                    <a href="https://rannforex.com/en/trading/quotesonline/" target="_blank">رابط الاطلاع على الاسبريد المتوسط اليومي</a>
+                    <p>هذا الرابط يوضح متوسط الأسبريد اليومي لجميع الأزواج والعملات</p>
+                </div>
+            </div>
+
+            <!-- Apps Section -->
+            <div class="section" id="apps-section">
+                <h2>تطبيقات يجب تحميلها للبدء بالتداول</h2>
+                
+                <div class="link-box" id="mt5-section">
+                    <h3>منصة ميتا تريدر 5</h3>
+                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" target="_blank">رابط تحميل ميتا تريدر 5</a>
+                    <p>ملاحظة: هي المنصة الموثوقة الافضل في مجال التداول في جميع الاسواق</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>قناتنا الرئيسية</h3>
-                    </div>
-                    <a href="https://t.me/tradewithalimahmoud" class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> انضم إلى قناتنا
-                    </a>
+                <div class="link-box" id="binance-section">
+                    <h3>المحفظة الاكترونية باينانس</h3>
+                    <a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_004C6HBMJS" target="_blank">رابط تحميل باينانس</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-signal"></i>
-                        <h3>قنوات الإشارات (للتعلم فقط)</h3>
-                    </div>
-                    <div class="link-grid">
-                        <div class="link-item">
-                            <h4>FX IRI</h4>
-                            <a href="https://t.me/FX_IRI" target="_blank">https://t.me/FX_IRI</a>
-                        </div>
-                        <div class="link-item">
-                            <h4>Pro Signals FX</h4>
-                            <a href="https://t.me/prosignalsfxx" target="_blank">https://t.me/prosignalsfxx</a>
-                        </div>
-                        <div class="link-item">
-                            <h4>Top Trading Signals</h4>
-                            <a href="https://t.me/top_tradingsignals" target="_blank">https://t.me/top_tradingsignals</a>
-                        </div>
-                        <div class="link-item">
-                            <h4>Signals FC</h4>
-                            <a href="https://t.me/signalsfc" target="_blank">https://t.me/signalsfc</a>
-                        </div>
-                        <div class="link-item">
-                            <h4>Elite Trading Signals</h4>
-                            <a href="https://t.me/elitetrading_signals" target="_blank">https://t.me/elitetrading_signals</a>
-                        </div>
-                        <div class="link-item">
-                            <h4>Free Signals</h4>
-                            <a href="https://t.me/free_signals" target="_blank">https://t.me/free_signals</a>
-                        </div>
-                        <div class="link-item">
-                            <h4>Grey Suit Community</h4>
-                            <a href="https://t.me/greysuitcommunity" target="_blank">https://t.me/greysuitcommunity</a>
-                        </div>
-                    </div>
-                    <div class="note">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <strong>تنويه:</strong> هذه القنوات للتعلم وليس لنسخ الإشارات
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Section 6: Educational Content -->
-            <section id="section6" class="section">
-                <div class="section-title">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h2>القسم التعليمي</h2>
+                <div class="link-box" id="auth-section">
+                    <h3>تطبيق المصادقة الثنائية</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank">رابط تحميل Google Authenticator</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-play-circle"></i>
-                        <h3>كورس كامل مع باتك</h3>
-                    </div>
-                    <p>تعلم التداول مع أشهر ملياردير عبقري التداول باتك</p>
-                    <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" class="btn" target="_blank">
-                        <i class="fab fa-youtube"></i> مشاهدة الكورس
-                    </a>
+                <div class="link-box" id="tradingview-section">
+                    <h3>تطبيق التحليل TradingView</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" target="_blank">رابط تحميل TradingView</a>
+                </div>
+            </div>
+
+            <!-- Telegram Section -->
+            <div class="section" id="telegram-section">
+                <h2>قنوات التلجرام</h2>
+                <p>باشتراك شهري 30 دولار يمكنك الدخول الى القنوات الخاصة بي التالية</p>
+                
+                <div class="link-box" id="signals-section">
+                    <h3>قناة الإشارات</h3>
+                    <a href="https://t.me/tradewithali002" target="_blank">https://t.me/tradewithali002</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h3>قناة Smart Risk على يوتيوب</h3>
-                    </div>
-                    <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-youtube"></i> زيارة القناة
-                    </a>
+                <div class="link-box" id="course-section">
+                    <h3>قناة الكورس</h3>
+                    <a href="https://t.me/tradewithali003" target="_blank">https://t.me/tradewithali003</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fab fa-instagram"></i>
-                        <h3>كورس على انستغرام</h3>
-                    </div>
-                    <a href="https://www.instagram.com/kameel_m5?igsh=YzljYTk1ODg3Zg==" class="btn" target="_blank">
-                        <i class="fab fa-instagram"></i> زيارة الكورس
-                    </a>
+                <div class="link-box">
+                    <h3>قناتي العامة (إشارات مجانية بدون اشتراك)</h3>
+                    <a href="https://t.me/Tradewithali001" target="_blank">https://t.me/Tradewithali001</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book"></i>
-                        <h3>كورس Smart Risk على يوتيوب</h3>
-                    </div>
-                    <a href="https://youtube.com/@smart_risk?si=8VLFIUyBN-9rm7L6" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-youtube"></i> مشاهدة الكورس
-                    </a>
+                <div class="link-box" id="community-section">
+                    <h3>مجتمعنا</h3>
+                    <a href="https://t.me/SyriaTradingFXg" target="_blank">https://t.me/SyriaTradingFXg</a>
                 </div>
-            </section>
-            
-            <!-- Section 7: Investment -->
-            <section id="section7" class="section">
-                <div class="section-title">
-                    <i class="fas fa-chart-pie"></i>
-                    <h2>قسم الاستثمار</h2>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section" id="education-section">
+                <h2>القسم التعليمي</h2>
+                
+                <div class="link-box" id="patar-course">
+                    <h3>كورس كامل لتعلم التداول مع باتك</h3>
+                    <a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy" target="_blank">https://youtube.com/@tradewithpatarabic</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-user-tie"></i>
-                        <h3>حسابي الاستثماري</h3>
-                    </div>
-                    <p>للاطلاع على تفاصيل حسابي الاستثماري في شركة راني فوريكس</p>
-                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
-                        <p>سأقوم بإدراج رابط وصورة لاحقاً</p>
-                        <p style="margin-top: 10px; color: var(--accent-color);">
-                            <i class="fas fa-exclamation-circle"></i> سيتم تحديث هذا القسم قريباً
-                        </p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Section 8: Deposit Method -->
-            <section id="section8" class="section">
-                <div class="section-title">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h2>طريقة الإيداع</h2>
+                <div class="link-box" id="smart-risk">
+                    <h3>قناة أخرى على يوتيوب</h3>
+                    <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" target="_blank">https://youtube.com/@smart_risk</a>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-wallet"></i>
-                        <h3>خطوات الإيداع</h3>
+                <div class="link-box" id="instagram-course">
+                    <h3>كورس على انستغرام</h3>
+                    <a href="https://www.instagram.com/kameel_m5?igsh=YzljYTk1ODg3Zg==" target="_blank">https://www.instagram.com/kameel_m5</a>
+                </div>
+                
+                <div class="link-box">
+                    <h3>كورس على يوتيوب - Smart risk</h3>
+                    <a href="https://youtube.com/@smart_risk?si=8VLFIUyBN-9rm7L6" target="_blank">https://youtube.com/@smart_risk</a>
+                </div>
+            </div>
+
+            <!-- Calculator Section -->
+            <div class="section" id="calculator-section">
+                <h2>حاسبة تطور رأس المال</h2>
+                
+                <form id="capital-calculator" class="calculator-form">
+                    <div class="form-group">
+                        <label for="initial-capital">رأس المال الأولي ($)</label>
+                        <input type="number" id="initial-capital" required>
                     </div>
                     
-                    <div class="step-list">
-                        <div class="step">
-                            <p>نضغط على الثلاث خطوط في موقع RannForex أعلى يمين الشاشة</p>
-                            <p>1️⃣ Deposit</p>
-                            <p>Select deposit method: crypto</p>
-                            <p>Select trading account: اختر حساب التداول</p>
-                            <p>Continue</p>
+                    <div class="form-group">
+                        <label for="win-rate">نسبة الصفقات الرابحة (%)</label>
+                        <input type="number" id="win-rate" min="0" max="100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profit-per-trade">معدل الربح لكل صفقة (%)</label>
+                        <input type="number" id="profit-per-trade" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loss-per-trade">معدل الخسارة لكل صفقة (%)</label>
+                        <input type="number" id="loss-per-trade" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="trades-interval">عدد الصفقات في كل تحديث</label>
+                        <input type="number" id="trades-interval" value="10" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="target-capital">الهدف النهائي ($)</label>
+                        <input type="number" id="target-capital" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block">حساب النتائج</button>
+                </form>
+                
+                <div class="calculator-results" id="calculator-results" style="display: none;">
+                    <h3>النتائج</h3>
+                    
+                    <div class="results-grid">
+                        <div class="result-box">
+                            <h4>متوسط العائد لكل صفقة</h4>
+                            <p id="avg-return">0%</p>
                         </div>
                         
-                        <div class="step">
-                            <p>2️⃣ Transfer details</p>
-                            <p>أدخل المبلغ في الفراغ الأول</p>
-                            <p>اختر USD</p>
-                            <p>Continue</p>
+                        <div class="result-box">
+                            <h4>عدد الصفقات المطلوبة</h4>
+                            <p id="required-trades">0</p>
                         </div>
                         
-                        <div class="step">
-                            <p>3️⃣ 2FA Code</p>
-                            <p>نذهب إلى تطبيق Google Authenticator</p>
-                            <p>نقوم بأخذ الكود الذي ولده من أجل حساب RannForex وإدخاله في الفراغ الموجود</p>
-                            <p>Continue</p>
-                        </div>
-                        
-                        <div class="step">
-                            <p>4️⃣ TetherUS - USDT</p>
-                            <p>BUSD-T-USDT</p>
-                            <p>نسخ العنوان</p>
-                        </div>
-                        
-                        <div class="step">
-                            <p>5️⃣ CWallet Send</p>
-                            <p>USDT</p>
-                            <p>BEP20</p>
-                            <p>Amount: ... $</p>
-                            <p>لصق العنوان (من RannForex)</p>
-                            <p>Send</p>
+                        <div class="result-box">
+                            <h4>معدل النمو الإجمالي</h4>
+                            <p id="total-growth">0%</p>
                         </div>
                     </div>
                     
-                    <div class="note">
-                        <i class="fas fa-check-circle"></i>
-                        <strong>انتهى الإيداع بنجاح!</strong>
+                    <h3>تطور رأس المال</h3>
+                    <div class="chart-container">
+                        <canvas id="capital-chart"></canvas>
+                    </div>
+                    
+                    <h3>جدول تطور رأس المال</h3>
+                    <div class="table-responsive">
+                        <table class="capital-table">
+                            <thead>
+                                <tr>
+                                    <th>عدد الصفقات</th>
+                                    <th>رأس المال ($)</th>
+                                    <th>معدل النمو</th>
+                                </tr>
+                            </thead>
+                            <tbody id="capital-table-body">
+                                <!-- Will be filled by JavaScript -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <!-- USDT Exchange Section -->
+            <div class="section" id="usdt-section">
+                <h2>شراء وبيع USDT</h2>
+                
+                <form id="usdt-form" class="usdt-form">
+                    <!-- Step 1: Personal Info -->
+                    <div class="form-step active" id="step1">
+                        <h3>المعلومات الشخصية</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="full-name">الاسم الثلاثي</label>
+                                    <input type="text" id="full-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-col">
+                                <div class="form-group">
+                                    <label for="phone">رقم الهاتف</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">المدينة</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        
+                        <button type="button" class="btn btn-next" onclick="nextStep(1)">التالي</button>
+                    </div>
+                    
+                    <!-- Step 2: Transaction Type -->
+                    <div class="form-step" id="step2">
+                        <h3>نوع العملية</h3>
+                        
+                        <div class="form-group">
+                            <label>ماذا تريد أن تفعل؟</label>
+                            <div class="payment-methods">
+                                <div class="payment-method" onclick="selectTransactionType('buy')">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <h4>شراء USDT</h4>
+                                    <p>شراء عملة USDT</p>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectTransactionType('sell')">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <h4>بيع USDT</h4>
+                                    <p>بيع عملة USDT</p>
+                                </div>
+                            </div>
+                            <input type="hidden" id="transaction-type">
+                        </div>
+                        
+                        <div class="form-row">
+                            <button type="button" class="btn btn-back" onclick="prevStep(2)">السابق</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(2)" disabled id="step2-next">التالي</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Buy Details -->
+                    <div class="form-step" id="step3-buy">
+                        <h3>تفاصيل الشراء</h3>
+                        
+                        <div class="form-group">
+                            <label for="buy-amount">الكمية المطلوبة (USDT)</label>
+                            <input type="number" id="buy-amount" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buy-network">اختر الشبكة</label>
+                            <select id="buy-network" required>
+                                <option value="">-- اختر الشبكة --</option>
+                                <option value="bep20">BEP20</option>
+                                <option value="trc20">TRC20</option>
+                                <option value="erc20">ERC20</option>
+                                <option value="binance-pay">Binance Pay</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buy-address">عنوان المحفظة (سيتم إرسال USDT إليه)</label>
+                            <input type="text" id="buy-address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buy-notes">ملاحظات (اختياري)</label>
+                            <textarea id="buy-notes" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <button type="button" class="btn btn-back" onclick="prevStep(3)">السابق</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(3)">التالي</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Sell Details -->
+                    <div class="form-step" id="step3-sell">
+                        <h3>تفاصيل البيع</h3>
+                        
+                        <div class="form-group">
+                            <label for="sell-amount">الكمية المراد بيعها (USDT)</label>
+                            <input type="number" id="sell-amount" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>طريقة الاستلام</label>
+                            <div class="payment-methods">
+                                <div class="payment-method" onclick="selectPaymentMethod('syriatel')">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h4>سيريتل كاش</h4>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectPaymentMethod('haram')">
+                                    <i class="fas fa-university"></i>
+                                    <h4>حوالة هرم</h4>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectPaymentMethod('bemo')">
+                                    <i class="fas fa-credit-card"></i>
+                                    <h4>بنك بيمو</h4>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectPaymentMethod('sham')">
+                                    <i class="fas fa-wallet"></i>
+                                    <h4>شام كاش</h4>
+                                </div>
+                            </div>
+                            <input type="hidden" id="payment-method">
+                        </div>
+                        
+                        <div class="form-group" id="payment-details-container" style="display: none;">
+                            <label id="payment-details-label">تفاصيل الحساب</label>
+                            <input type="text" id="payment-details" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sell-network">شبكة USDT المراد بيعها</label>
+                            <select id="sell-network" required>
+                                <option value="">-- اختر الشبكة --</option>
+                                <option value="bep20">BEP20</option>
+                                <option value="trc20">TRC20</option>
+                                <option value="erc20">ERC20</option>
+                                <option value="binance-pay">Binance Pay</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sell-notes">ملاحظات (اختياري)</label>
+                            <textarea id="sell-notes" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <button type="button" class="btn btn-back" onclick="prevStep(3)">السابق</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(3)">التالي</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Payment Info -->
+                    <div class="form-step" id="step4-buy">
+                        <h3>تفاصيل الدفع</h3>
+                        
+                        <div class="form-group">
+                            <label>طريقة الدفع</label>
+                            <div class="payment-methods">
+                                <div class="payment-method" onclick="selectBuyPaymentMethod('syriatel')">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h4>سيريتل كاش</h4>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectBuyPaymentMethod('haram')">
+                                    <i class="fas fa-university"></i>
+                                    <h4>حوالة هرم</h4>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectBuyPaymentMethod('bemo')">
+                                    <i class="fas fa-credit-card"></i>
+                                    <h4>بنك بيمو</h4>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectBuyPaymentMethod('sham')">
+                                    <i class="fas fa-wallet"></i>
+                                    <h4>شام كاش</h4>
+                                </div>
+                            </div>
+                            <input type="hidden" id="buy-payment-method">
+                        </div>
+                        
+                        <div id="buy-payment-details" style="display: none;">
+                            <h4>تفاصيل الدفع:</h4>
+                            <div id="syriatel-details" class="payment-details" style="display: none;">
+                                <p>عنواني: <span>0934598967</span> <button class="copy-btn" onclick="copyToClipboard('0934598967')">نسخ</button></p>
+                            </div>
+                            
+                            <div id="haram-details" class="payment-details" style="display: none;">
+                                <p>الاسم: <span>علي ابراهيم محمود</span> <button class="copy-btn" onclick="copyToClipboard('علي ابراهيم محمود')">نسخ</button></p>
+                                <p>رقم الهاتف: <span>0934598967</span> <button class="copy-btn" onclick="copyToClipboard('0934598967')">نسخ</button></p>
+                                <p>المدينة: <span>اللاذقية</span> <button class="copy-btn" onclick="copyToClipboard('اللاذقية')">نسخ</button></p>
+                            </div>
+                            
+                            <div id="bemo-details" class="payment-details" style="display: none;">
+                                <p>الاسم: <span>علي ابراهيم محمود</span> <button class="copy-btn" onclick="copyToClipboard('علي ابراهيم محمود')">نسخ</button></p>
+                                <p>رقم الحساب: <span>060104947910013000000</span> <button class="copy-btn" onclick="copyToClipboard('060104947910013000000')">نسخ</button></p>
+                            </div>
+                            
+                            <div id="sham-details" class="payment-details" style="display: none;">
+                                <p>العنوان: <span>be456e0ea9392db4d68a7093ee317bc8</span> <button class="copy-btn" onclick="copyToClipboard('be456e0ea9392db4d68a7093ee317bc8')">نسخ</button></p>
+                                <p>رقم الحساب: <span>5991161126028260</span> <button class="copy-btn" onclick="copyToClipboard('5991161126028260')">نسخ</button></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <button type="button" class="btn btn-back" onclick="prevStep(4)">السابق</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(4)">التالي</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Sell Address -->
+                    <div class="form-step" id="step4-sell">
+                        <h3>عنوان المحفظة</h3>
+                        
+                        <div class="form-group">
+                            <label>اختر شبكة USDT المراد بيعها</label>
+                            <div class="payment-methods">
+                                <div class="payment-method" onclick="selectSellNetwork('bep20')">
+                                    <i class="fab fa-ethereum"></i>
+                                    <h4>BEP20</h4>
+                                    <p>0x21802218d8d661d66F2C7959347a6382E1cc614F</p>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectSellNetwork('trc20')">
+                                    <i class="fas fa-coins"></i>
+                                    <h4>TRC20</h4>
+                                    <p>TD2LoErPRkVPBxDk72ZErtiyi6agirZQjX</p>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectSellNetwork('erc20')">
+                                    <i class="fab fa-ethereum"></i>
+                                    <h4>ERC20</h4>
+                                    <p>0x21802218d8d661d66F2C7959347a6382E1cc614F</p>
+                                </div>
+                                
+                                <div class="payment-method" onclick="selectSellNetwork('binance-pay')">
+                                    <i class="fab fa-bitcoin"></i>
+                                    <h4>Binance Pay</h4>
+                                    <p>969755964</p>
+                                </div>
+                            </div>
+                            <input type="hidden" id="sell-network-final">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sell-address-final">أو أدخل العنوان يدوياً</label>
+                            <input type="text" id="sell-address-final">
+                        </div>
+                        
+                        <div class="form-row">
+                            <button type="button" class="btn btn-back" onclick="prevStep(4)">السابق</button>
+                            <button type="button" class="btn btn-next" onclick="nextStep(4)">التالي</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5: Summary -->
+                    <div class="form-step" id="step5">
+                        <h3>ملخص الطلب</h3>
+                        
+                        <div class="order-summary" id="order-summary">
+                            <!-- Will be filled by JavaScript -->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmation">أقر بأن جميع المعلومات المقدمة صحيحة</label>
+                            <input type="checkbox" id="confirmation" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <button type="button" class="btn btn-back" onclick="prevStep(5)">السابق</button>
+                            <button type="submit" class="btn btn-submit">إرسال الطلب</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    
-    <footer>
-        <p>© 2025 راني فوريكس - جميع الحقوق محفوظة | تم التصميم بعناية لخدمة المتداولين</p>
-    </footer>
-    
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>جميع الحقوق محفوظة &copy; دليل المتداول 2023</p>
+        <div class="social-links">
+            <a href="https://t.me/ali0619000" class="social-link telegram" target="_blank">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="mailto:alimahmoud001a@gmail.com" class="social-link email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+
     <script>
-        // Menu Toggle Functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        const closeSidebar = document.getElementById('closeSidebar');
-        const menuItems = document.querySelectorAll('.menu-item');
-        const sections = document.querySelectorAll('.section');
-        
-        // Toggle sidebar
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.add('active');
+        // Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('main-content').classList.toggle('active');
         });
-        
-        closeSidebar.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-        });
-        
-        // Menu items click functionality
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Remove active class from all items
-                menuItems.forEach(i => i.classList.remove('active'));
-                // Add active class to clicked item
-                item.classList.add('active');
-                
-                // Get target section id
-                const target = item.getAttribute('data-target');
+
+        // Section Navigation
+        document.querySelectorAll('[data-section]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section');
                 
                 // Hide all sections
-                sections.forEach(section => {
+                document.querySelectorAll('.section').forEach(section => {
                     section.classList.remove('active');
                 });
                 
-                // Show target section
-                document.getElementById(target).classList.add('active');
+                // Show selected section
+                document.getElementById(sectionId).classList.add('active');
                 
                 // Close sidebar on mobile
-                if (window.innerWidth <= 768) {
-                    sidebar.classList.remove('active');
+                if (window.innerWidth < 992) {
+                    document.getElementById('sidebar').classList.remove('active');
+                    document.getElementById('main-content').classList.remove('active');
                 }
             });
         });
-        
-        // Close sidebar when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
-                sidebar.classList.remove('active');
+
+        // Submenu Toggle
+        document.querySelectorAll('.has-submenu').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    submenu.classList.toggle('active');
+                    
+                    const icon = this.querySelector('.fa-chevron-down');
+                    icon.classList.toggle('fa-rotate-180');
+                }
+            });
+        });
+
+        // Capital Calculator
+        document.getElementById('capital-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get input values
+            const initialCapital = parseFloat(document.getElementById('initial-capital').value);
+            const winRate = parseFloat(document.getElementById('win-rate').value) / 100;
+            const profitPerTrade = parseFloat(document.getElementById('profit-per-trade').value) / 100;
+            const lossPerTrade = parseFloat(document.getElementById('loss-per-trade').value) / 100;
+            const tradesInterval = parseInt(document.getElementById('trades-interval').value);
+            const targetCapital = parseFloat(document.getElementById('target-capital').value);
+            
+            // Calculate results
+            const avgReturn = (winRate * profitPerTrade) - ((1 - winRate) * lossPerTrade);
+            const requiredTrades = Math.ceil(Math.log(targetCapital / initialCapital) / Math.log(1 + avgReturn));
+            const totalGrowth = ((targetCapital - initialCapital) / initialCapital) * 100;
+            
+            // Display results
+            document.getElementById('avg-return').textContent = (avgReturn * 100).toFixed(2) + '%';
+            document.getElementById('required-trades').textContent = requiredTrades;
+            document.getElementById('total-growth').textContent = totalGrowth.toFixed(2) + '%';
+            
+            // Generate capital growth data
+            const capitalData = [];
+            const labels = [];
+            const tableBody = document.getElementById('capital-table-body');
+            tableBody.innerHTML = '';
+            
+            let currentCapital = initialCapital;
+            for (let i = 0; i <= requiredTrades; i += tradesInterval) {
+                if (i > 0) {
+                    for (let j = 0; j < tradesInterval; j++) {
+                        if (Math.random() < winRate) {
+                            currentCapital *= (1 + profitPerTrade);
+                        } else {
+                            currentCapital *= (1 - lossPerTrade);
+                        }
+                    }
+                }
+                
+                capitalData.push(currentCapital);
+                labels.push(i);
+                
+                // Add to table
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${i}</td>
+                    <td>${currentCapital.toFixed(2)}</td>
+                    <td>${((currentCapital / initialCapital - 1) * 100).toFixed(2)}%</td>
+                `;
+                tableBody.appendChild(row);
             }
+            
+            // Create chart
+            const ctx = document.getElementById('capital-chart').getContext('2d');
+            if (window.capitalChart) {
+                window.capitalChart.destroy();
+            }
+            
+            window.capitalChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'رأس المال ($)',
+                        data: capitalData,
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'تطور رأس المال مع عدد الصفقات',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        legend: {
+                            position: 'top',
+                            rtl: true
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'رأس المال: $' + context.parsed.y.toFixed(2);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'عدد الصفقات'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'رأس المال ($)'
+                            },
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+            
+            // Show results
+            document.getElementById('calculator-results').style.display = 'block';
         });
+
+        // USDT Exchange Form
+        let currentStep = 1;
+        let transactionType = '';
+        let paymentMethod = '';
+        let buyPaymentMethod = '';
+        let sellNetwork = '';
         
-        // Prevent closing when clicking inside sidebar
-        sidebar.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    </script>
-</body>
-</html>
+        function nextStep(step) {
+            // Validate current step before proceeding
+            if (step === 1) {
+                if (!document.getElementById('full-name').value || 
+                    !document.getElementById('phone').value || 
+                    !document.getElementById('city').value) {
+                    alert('الرجاء ملء جميع الحقول المطلوبة');
+                    return;
+                }
+            } else if (step === 2) {
+                if (!transactionType) {
+                    alert('الرجاء اختيار نوع العملية');
+                    return;
+                }
+            } else if (step === 3) {
+                if (transactionType === 'buy') {
+                    if (!document.getElementById('buy-amount').value || 
+                        !document.getElementById('buy-network').value || 
+                        !document.getElementById('buy-address').value) {
+                        alert('الرجاء ملء جميع الحقول المطلوبة');
+                        return;
+                    }
+                } else {
+                    if (!document.getElementById('sell-amount').value || 
+                        !paymentMethod || 
+                        !document.getElementById('sell-network').value) {
+                        alert('الرجاء ملء جميع الحقول المطلوبة');
+                        return;
+                    }
+                    
+                    if (paymentMethod && !document.getElementById('payment-details').value) {
+                        alert('الرجاء إدخال تفاصيل الحساب');
+                        return;
+                    }
+                }
+            } else if (step === 4) {
+                if (transactionType === 'buy' && !buyPaymentMethod) {
+                    alert('الرجاء اختيار طريقة الدفع');
+                    return;
+                } else if (transactionType === 'sell' && !sellNetwork) {
+                    alert('الرجاء اختيار شبكة USDT');
+                    return;
+                }
+            } else if (step === 5) {
+                if (!document.getElementById('confirmation').checked) {
+                    alert('الرجاء تأكيد أن المعلومات صحيحة');
+                    return;
+                }
+                
+                // Prepare order summary
+                prepareOrderSummary();
+            }
+            
+            // Hide current step
+            if (transactionType === 'buy') {
+                document.getElementById(`step${step}-buy`).classList.remove('active');
+            } else {
+                document.getElementById(`step${step}-sell`).classList.remove('active');
+            }
+            
+            // Show next step
+            currentStep = step + 1;
+            
+            if (currentStep === 3) {
+                if (transactionType === 'buy') {
+                    document.getElementById('step3-buy').classList.add('active');
+                } else {
+                    document.getElementById('step3-sell').classList.add('active');
+                }
+            } else if (currentStep === 4) {
+                if (transactionType === 'buy') {
+                    document.getElementById('step4-buy').classList.add('active');
+                } else {
+                    document.getElementById('step4-sell').classList.add('active');
+                }
+            } else if (currentStep === 5) {
+                document.getElementById('step5').classList.add('active');
+            } else {
+                document.getElementById(`step${currentStep}`).classList.add('active');
+            }
+        }
+        
+        function prevStep(step) {
+            // Hide current step
+            if (step === 3 && transactionType === 'buy') {
+                document.getElementById('step3-buy').classList.remove('active');
+            } else if (step === 3 && transactionType === 'sell') {
+                document.getElementById('step3-sell').classList.remove('active');
+            } else if (step === 4 && transactionType === 'buy') {
+                document.getElementById('step4-buy').classList.remove('active');
+            } else if (step === 4 && transactionType === 'sell') {
+                document.getElementById('step4-sell').classList.remove('active');
+            } else if (step === 5) {
+                document.getElementById('step5').classList.remove('active');
+            } else {
+                document.getElementById(`step${step}`).classList.remove('active');
+            }
+            
+            // Show previous step
+            currentStep = step - 1;
+            
+            if (currentStep === 3) {
+                if (transactionType === 'buy') {
+                    document.getElementById('step3-buy').classList.add('active');
+                } else {
+                    document.getElementById('step3-sell').classList.add('active');
+                }
+            } else if (currentStep === 4) {
+                if (transactionType === 'buy') {
+                    document.getElementById('step4-buy').classList.add('active');
+                } else {
+                    document.getElementById('step4-sell').classList.add('active');
+                }
+            } else {
+                document.getElementById(`step${currentStep}`).classList.add('active');
+            }
+        }
+        
+        function selectTransactionType(type) {
+            transactionType = type;
+            document.getElementById('transaction-type').value = type;
+            
+            // Update UI
+            document.querySelectorAll('#step2 .payment-method').forEach(method => {
+                method.classList.remove('active');
+            });
+            
+            if (type === 'buy') {
+                document.querySelector('#step2 .payment-method:nth-child(1)').classList.add('active');
+            } else {
+                document.querySelector('#step2 .payment-method:nth-child(2)').classList.add('active');
+            }
+            
+            document.getElementById('step2-next').disabled = false;
+        }
+        
+        function selectPaymentMethod(method) {
+            paymentMethod = method;
+            document.getElementById('payment-method').value = method;
+            
+            // Update UI
+            document.querySelectorAll('#step3-sell .payment-method').forEach(m => {
+                m.classList.remove('active');
+            });
+            
+            document.querySelector(`#step3-sell .payment-method[onclick="selectPaymentMethod('${method}')"]`).classList.add('active');
+            
+            // Show payment details field
+            document.getElementById('payment-details-container').style.display = 'block';
+            
+            // Update label
+            let labelText = '';
+            if (method === 'syriatel') {
+                labelText = 'رقم هاتف سيريتل كاش';
+            } else if (method === 'haram') {
+                labelText = 'رقم هاتف حوالة الهرم';
+            } else if (method === 'bemo') {
+                labelText = 'رقم الحساب البنكي';
+            } else if (method === 'sham') {
+                labelText = 'رقم حساب شام كاش';
+            }
+            
+            document.getElementById('payment-details-label').textContent = labelText;
+        }
+        
+        function selectBuyPaymentMethod(method) {
+            buyPaymentMethod = method;
+            document.getElementById('buy-payment-method').value = method;
+            
+            // Update UI
+            document.querySelectorAll('#step4-buy .payment-method').forEach(m => {
+                m.classList.remove('active');
+            });
+            
+            document.querySelector(`#step4-buy .payment-method[onclick="selectBuyPaymentMethod('${method}')"]`).classList.add('active');
+            
+            // Show payment details
+            document.getElementById('buy-payment-details').style.display = 'block';
+            document.querySelectorAll('.payment-details').forEach(d => {
+                d.style.display = 'none';
+            });
+            
+            document.getElementById(`${method}-details`).style.display = 'block';
+        }
+        
+        function selectSellNetwork(network) {
+            sellNetwork = network;
+            document.getElementById('sell-network-final').value = network;
+            
+            // Update UI
+            document.querySelectorAll('#step4-sell .payment-method').forEach(m => {
+                m.classList.remove('active');
+            });
+            
+            document.querySelector(`#step4-sell .payment-method[onclick="selectSellNetwork('${network}')"]`).classList.add('
