@@ -1,1273 +1,593 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل التداول الشامل | راني فوريكس</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+    <title>دليل المتداول</title>
     <style>
-        :root {
-            --primary: #1a2a3a;
-            --secondary: #3498db;
-            --accent: #27ae60;
-            --dark: #0d1721;
-            --light: #ecf0f1;
-            --gold: #f1c40f;
-            --sidebar-width: 280px;
-            --header-height: 70px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #0d1721, #1a2a3a);
-            color: var(--light);
-            min-height: 100vh;
-            overflow-x: hidden;
+            background-color: #f4f7fa;
+            color: #333;
             line-height: 1.6;
         }
-        
-        /* الشريط العلوي */
-        .header {
-            background: rgba(13, 23, 33, 0.9);
-            height: var(--header-height);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-            border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #1a3c6e, #2a5b9e);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo img {
-            height: 40px;
-        }
-        
-        .logo h1 {
-            font-size: 1.5rem;
-            background: linear-gradient(to right, var(--gold), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+
+        header h1 {
+            font-size: 2.5rem;
             font-weight: 700;
         }
-        
-        .menu-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-        
-        .menu-btn:hover {
-            background: #2980b9;
-            transform: rotate(90deg);
-        }
-        
-        /* القائمة الجانبية */
+
+        /* Sidebar */
         .sidebar {
             position: fixed;
-            top: var(--header-height);
-            left: 0;
-            width: var(--sidebar-width);
-            height: calc(100vh - var(--header-height));
-            background: rgba(13, 23, 33, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            overflow-y: auto;
-            transform: translateX(-100%);
-            transition: transform 0.4s ease;
-            z-index: 900;
-            border-right: 1px solid rgba(52, 152, 219, 0.2);
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #1a3c6e;
+            color: #fff;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
         }
-        
+
         .sidebar.active {
-            transform: translateX(0);
+            right: 0;
         }
-        
-        .sidebar-item {
-            padding: 15px 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+
+        .sidebar ul {
+            list-style: none;
+            margin-top: 20px;
         }
-        
-        .sidebar-item:hover, .sidebar-item.active {
-            background: rgba(52, 152, 219, 0.15);
-            border-left: 3px solid var(--accent);
-        }
-        
-        .sidebar-item i {
-            font-size: 1.2rem;
-            color: var(--gold);
-            width: 25px;
-            text-align: center;
-        }
-        
-        .sidebar-item span {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        /* المحتوى الرئيسي */
-        .main-content {
-            margin-top: var(--header-height);
-            padding: 30px;
-            transition: all 0.4s ease;
-        }
-        
-        .section {
-            background: rgba(13, 23, 33, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(52, 152, 219, 0.2);
-            display: none;
-        }
-        
-        .section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--accent);
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .section-title i {
-            color: var(--accent);
-        }
-        
-        /* بطاقات المحتوى */
-        .card {
-            background: rgba(26, 42, 58, 0.7);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(52, 152, 219, 0.15);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-title {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .card-title i {
-            color: var(--gold);
-        }
-        
-        .feature-list {
-            list-style-type: none;
+
+        .sidebar ul li {
             margin: 15px 0;
         }
-        
-        .feature-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-        
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .feature-list li::before {
-            content: "★";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
+
+        .sidebar ul li a {
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
         }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+
+        .sidebar ul li a:hover {
+            background-color: #2a5b9e;
         }
-        
-        .btn-secondary {
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-        }
-        
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), #e67e22);
-        }
-        
-        /* التقييمات */
-        .rating-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .rating-card {
-            background: rgba(26, 42, 58, 0.8);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .rating-card:hover {
-            transform: scale(1.03);
-        }
-        
-        .rating-stars {
-            color: var(--gold);
+
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
             font-size: 1.5rem;
-            margin: 10px 0;
+            background-color: #1a3c6e;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
         }
-        
-        /* حاسبة رأس المال */
-        .calculator-container {
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #1a3c6e;
+            margin-bottom: 15px;
+        }
+
+        .section p, .section ul {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        .section a {
+            color: #2a5b9e;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Calculator Section */
+        .calculator form {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .calculator-inputs, .calculator-results {
-            background: rgba(26, 42, 58, 0.8);
-            border-radius: 12px;
-            padding: 25px;
-        }
-        
-        .input-group {
+            gap: 10px;
             margin-bottom: 20px;
         }
-        
-        .input-group label {
+
+        .calculator input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .calculator button {
+            background-color: #1a3c6e;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background-color: #2a5b9e;
+        }
+
+        #capitalChart {
+            width: 100%;
+            height: 400px;
+        }
+
+        /* USDT Section */
+        .usdt-form select, .usdt-form input, .usdt-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .usdt-form .copyable {
+            cursor: pointer;
+            background-color: #f4f7fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .usdt-form .copyable:hover {
+            background-color: #e0e6ed;
+        }
+
+        /* Floating Contact Icons */
+        .contact-icons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-icons a {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #bdc3c7;
-        }
-        
-        .input-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .input-group input:focus {
-            outline: none;
-            border-color: var(--secondary);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .result-box {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            padding: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #1a3c6e;
+            color: #fff;
+            border-radius: 50%;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 50px;
+            font-size: 1.5rem;
+            text-decoration: none;
         }
-        
-        .result-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 10px 0;
-            color: var(--accent);
+
+        .contact-icons a:hover {
+            background-color: #2a5b9e;
         }
-        
-        .result-label {
-            font-size: 1.1rem;
-            color: #bdc3c7;
-        }
-        
-        .chart-container {
-            height: 300px;
-            margin-top: 30px;
-        }
-        
-        /* قسم الفيديو */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            margin: 25px 0;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .usdt-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        /* روابط التطبيقات */
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .app-card {
-            background: rgba(26, 42, 58, 0.8);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .app-icon {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-        
-        /* التكيف مع الشاشات الصغيرة */
-        @media (max-width: 992px) {
-            .calculator-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                width: 250px;
-            }
-        }
-        
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .main-content {
-                padding: 20px 15px;
+            header h1 {
+                font-size: 1.8rem;
             }
-            
-            .section {
-                padding: 20px;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .rating-grid, .apps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header {
-                padding: 0 15px;
-            }
-            
-            .logo h1 {
-                font-size: 1.3rem;
-            }
-            
+
             .sidebar {
-                width: 100%;
+                width: 200px;
             }
-            
-            .calculator-inputs, .calculator-results {
-                padding: 20px 15px;
+
+            .container {
+                padding: 0 10px;
             }
-            
-            .result-value {
+
+            .section h2 {
                 font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي -->
-    <div class="header">
-        <div class="logo">
-            <h1>دليل التداول الشامل</h1>
+    <!-- Header -->
+    <header>
+        <h1>دليل المتداول</h1>
+    </header>
+
+    <!-- Sidebar Toggle Button -->
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" onclick="showSection('home')">الصفحة الرئيسية</a></li>
+            <li><a href="#" onclick="showSection('apps')">تطبيقات التداول</a></li>
+            <li><a href="#" onclick="showSection('telegram')">قنوات التلجرام</a></li>
+            <li><a href="#" onclick="showSection('education')">التعليم</a></li>
+            <li><a href="#" onclick="showSection('calculator')">حاسبة تطور رأس المال</a></li>
+            <li><a href="#" onclick="showSection('usdt')">شراء وبيع USDT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Section -->
+        <div class="section active" id="home">
+            <h2>شركة الوساطة المالية</h2>
+            <p><a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1">رابط التسجيل في شركة RannForex</a></p>
+            <h3>ميزات الشركة:</h3>
+            <ul>
+                <li>أقل إيداع أو سحب: 10$ خلال 30 ثانية</li>
+                <li>سبريد: 0.2~1.2، رافعة مالية: 500:1</li>
+                <li>تداول آمن على جميع أزواج الفوركس، المعادن، النفط، المؤشرات، والعملات المشفرة</li>
+                <li>حسابات إسلامية خالية من العمولة وحسابات احترافية بأسبريد منخفض جدًا</li>
+                <li>انزلاق منخفض وتنفيذ فوري للصفقات</li>
+                <li>تقييم ممتاز على مواقع Trust Pilot, Myfxbook, WikiFX, Forex Peace Army</li>
+                <li>أمان عالي بفضل التوثيق الثنائي (2FA)</li>
+                <li>توثيق سريع وسهل</li>
+                <li>نموذج A-Book من أفضل مزودي السيولة</li>
+            </ul>
+            <p><a href="https://rannforex.com/en/trading/quotesonline/">الاطلاع على السبريد المتوسط اليومي</a></p>
         </div>
-        <button class="menu-btn" id="menuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-    
-    <!-- القائمة الجانبية -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-item active" data-section="broker">
-            <i class="fas fa-building"></i>
-            <span>شركة الوساطة</span>
-        </div>
-        <div class="sidebar-item" data-section="ratings">
-            <i class="fas fa-star"></i>
-            <span>تقييمات الشركة</span>
-        </div>
-        <div class="sidebar-item" data-section="apps">
-            <i class="fas fa-mobile-alt"></i>
-            <span>تطبيقات التداول</span>
-        </div>
-        <div class="sidebar-item" data-section="authentication">
-            <i class="fas fa-shield-alt"></i>
-            <span>المصادقة الثنائية</span>
-        </div>
-        <div class="sidebar-item" data-section="telegram">
-            <i class="fab fa-telegram"></i>
-            <span>قنوات تلجرام</span>
-        </div>
-        <div class="sidebar-item" data-section="education">
-            <i class="fas fa-graduation-cap"></i>
-            <span>الدورات التعليمية</span>
-        </div>
-        <div class="sidebar-item" data-section="investment">
-            <i class="fas fa-chart-line"></i>
-            <span>حساب الاستثمار</span>
-        </div>
-      <div class="sidebar-item" data-section="usdt">
-            <i class="fas fa-money-bill-wave"></i>
-            <span>شراء وبيع usdt</span>
-        </div>
-        <div class="sidebar-item" data-section="deposit">
-            <i class="fas fa-money-bill-wave"></i>
-            <span>طريقة الإيداع</span>
-        </div>
-          <div class="sidebar-item" data-section="calculator">
-            <i class="fas fa-calculator"></i>
-            <span>حاسبة رأس المال</span>
-        </div>
-    </div>
-    
-    <!-- المحتوى الرئيسي -->
-    <div class="main-content" id="mainContent">
-        <!-- قسم شركة الوساطة -->
-        <div class="section active" id="broker">
-            <h2 class="section-title">
-                <i class="fas fa-building"></i> شركة الوساطة المالية
-            </h2>
-            
-            <div class="card">
-                <h3 class="card-title">
-                    <i class="fas fa-link"></i> Rannforex    
-                </h3>
-                <p>انضم الآن إلى واحدة من أفضل شركات الوساطة المالية في العالم واستمتع بمزايا تداول فريدة أنأ أتداول معهم ولديهم بيئة تداول آمنة ومستقرة:</p>
-                <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn" target="_blank">
-                    <i class="fas fa-user-plus"></i> سجل حساب جديد الآن
-                </a>
-            </div>
-            
-            <div class="card">
-                <h3 class="card-title">
-                    <i class="fas fa-medal"></i> ميزات شركة راني فوريكس
-                </h3>
-                <ul class="feature-list">
-                    <li>أقل إيداع وسحب 10$ بدون انتظار</li>
-                    <li>عمولة تداول قليلة جدا  2$ على كل 1 لوت في الاتجاهين</li>
-                    <li>اسبريد منخفض يبدأ من 0.2~1</li>
-                    <li>رافعة مالية عالية تصل إلى 1:500</li>
-                    <li>تداول آمن على جميع أزواج الفوركس والمعادن والنفط والمؤشرات والعملات المشفرة</li>
-                    <li>يدعم حساب خالي من العمولة وحساب تداولكريبتو وحسابات استثمارية</li>
-                    <li>يدعم حسابات الشراكة IB والحسابات المدارة  PAMM</li>
-                    <li>انزلاق منخفض جداً وتنفيذ فوري للصفقات</li>
-                    <li>تقييم ممتاز على مواقع TrustPilot, MyFxbook, WikiFX, Forex Peace Army</li>
-                    <li>أمان عالي بسبب خاصية المصادقة الثنائية (2FA)</li>
-                    <li>توثيق الحساب من سوريا وأي دولة أخرى</li>
-                    <li>نموذج A-Book من أفضل مزودي السيولة</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3 class="card-title">
-                    <i class="fas fa-chart-bar"></i> اسبريد راني فوريكس
-                </h3>
-                <p>يمكنك الاطلاع على متوسط الأسبريد اليومي لجميع أزواج التداول:</p>
-                <a href="https://rannforex.com/en/trading/quotesonline/" class="btn btn-secondary" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> عرض الأسبريد المتوسط اليومي
-                </a>
-            </div>
-        </div>
-        
-        <!-- قسم التقييمات -->
-        <div class="section" id="ratings">
-            <h2 class="section-title">
-                <i class="fas fa-star"></i> تقييمات الشركة
-            </h2>
-            
-            <p>شركة RANNFOREX تحصل على تقييمات ممتازة من أفضل المواقع المتخصصة في تقييم شركات الفوركس:</p>
-            
-            <div class="rating-grid">
-                <div class="rating-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Trust Pilot</h3>
-                    <div class="rating-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>تقييم 4.5/5 من آلاف المستخدمين</p>
-                    <a href="https://fr.trustpilot.com/review/rannforex.com" class="btn btn-gold" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> زيارة الموقع
-                    </a>
-                </div>
-                
-                <div class="rating-card">
-                    <i class="fas fa-star"></i>
-                    <h3>WikiFX</h3>
-                    <div class="rating-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>تقييم 5/5 مع شهادة موثوقية</p>
-                    <a href="https://www.wikifx.com/en/dealer/1141850612.html" class="btn btn-gold" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> زيارة الموقع
-                    </a>
-                </div>
-                
-                <div class="rating-card">
-                    <i class="fas fa-star"></i>
-                    <h3>MyFxBook</h3>
-                    <div class="rating-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <p>تقييم 4/5 من المتداولين المحترفين</p>
-                    <a href="https://www.myfxbook.com/reviews/brokers/rannforex/1933426,1" class="btn btn-gold" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> زيارة الموقع
-                    </a>
-                </div>
-                
-                <div class="rating-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Forex Peace Army</h3>
-                    <div class="rating-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>تقييم 4.4/5 من الجيش السلمي للفوركس</p>
-                    <a href="https://www.forexpeacearmy.com/forex-reviews/15906/rannforex-review" class="btn btn-gold" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> زيارة الموقع
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- قسم تطبيقات التداول -->
+
+        <!-- Apps Section -->
         <div class="section" id="apps">
-            <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i> تطبيقات التداول
-            </h2>
-            
-            <p>هذه التطبيقات الأساسية التي تحتاجها للبدء في رحلتك للتداول:</p>
-            
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>منصة ميتاتريدر 5</h3>
-                    <p>المنصة الأفضل والأكثر موثوقية للتداول في جميع الأسواق المالية</p>
-                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn" target="_blank">
-                        <i class="fab fa-android"></i> تحميل التطبيق
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <h3>المحفظة الإلكترونية</h3>
-                    <p>محفظة CWallet الآمنة لإدارة أموالك وعمليات الإيداع والسحب</p>
-                    <a href="https://cwallet.com/referral/DvY6dZtS" class="btn" target="_blank">
-                        <i class="fas fa-download"></i> تحميل التطبيق
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>المصادقة الثنائية</h3>
-                    <p>تطبيق Google Authenticator لحماية حسابك بطبقة أمان إضافية</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" class="btn" target="_blank">
-                        <i class="fab fa-android"></i> تحميل التطبيق
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>تطبيق TradingView</h3>
-                    <p>منصة التحليل الفني الأفضل لمتابعة الأسواق واتخاذ قرارات التداول</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp" class="btn" target="_blank">
-                        <i class="fab fa-android"></i> تحميل التطبيق
-                    </a>
-                </div>
-            </div>
+            <h2>تطبيقات يجب تحميلها للبدء بالتداول</h2>
+            <ul>
+                <li><a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5">منصة ميتا تريدر 5</a> - المنصة الموثوقة الأفضل في مجال التداول</li>
+                <li><a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_004C6HBMJS">باينانس</a> - المحفظة الإلكترونية</li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a> - تطبيق المصادقة الثنائية</li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.tradingview.tradingviewapp">TradingView</a> - تطبيق التحليل</li>
+            </ul>
         </div>
 
-
-  
-<!-- investment section --> 
-        <div class="section" id="investment">
-            <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i> اطلع على تفاصيل حساب الإستثمار الحاص بي
-            </h2>
-            
-            <p>اطلع على تفاصيل حساب الإستثمار الحاص بي</p>
-            
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3> حساب الشراكة pamm</h3>
-                    <p>يمكنك أن تستثمر معي وأن نتقاسم 50% من الأرباح</p>
-                  <a href="https://my.rannforex.com/en/pamm/details/2534/" class="btn" target="_blank">
-                     <i class="fab fa-telegram"></i> استثمر الآن
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-
-<!------------------- usdt --> 
-        <div class="section" id="usdt">
-            <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i>شراء وبيع usdt
-            </h2>
-            
-            <p>من أجل شحن المحفظة الخاصة بك أو الإيداع في حساب التداول</p>
-            
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3> أرسل الطلب الآن</h3>
-                    <p>يمكنك شراء usdt عن طريق سيريتل كاش او شام كاش أو بنك بيمو أو حوالة الهرم</p>
-               <a href="https://alimahmoud001.github.io/usdt/" class="open-link-button">                <i class="fab fa-telegram"></i> شراء/بيع
-                    </a>
-                </div>
-            </div>
-        </div>
-                            
-              
-﻿
-           
-        <!-- القسم التعليمي -->
-        <div class="section" id="education">
-            <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i> كورسات مجانية
-            </h2>
-            
-            <p>هذه الكورسات الأساسية التي تحتاجها للبدء في رحلتك للتداول:</p>
-            
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>TRADE WITH PATT</h3>
-                    <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn" target="_blank">
-                        <i class="fab fa-youtube"></i> مشاهدة الكورس
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <h3>Easy Trade</h3>
-                    <a href="https://youtube.com/@easytradingeasy?si=9sITj4F_D__TAfb5" class="btn" target="_blank">
-                        <i class="fas fa-youtube"></i> مشاهدة الكورس
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>SMART RISK</h3>
-                    <a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r" class="btn" target="_blank">
-                        <i class="fab fa-android"></i> مشاهدة الكورس
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>KAMEL M5(instagram)</h3>
-                    <a href="https://www.instagram.com/kameel_m5" class="btn" target="_blank">
-                     <i class="fab fa-android"></i> مشاهدة الكورس
-                    </a>
-                </div>
-            </div>
-        </div>
-   
-
-
-        <div class="section" id="deposit">
-            <h2 class="section-title">
-                <i class="fas fa-money-bill-wave"></i> طريقة الإيداع
-            </h2> <ol>
-            <li><strong>الإيداع:</strong>
-                <ul>
-                    <li>اضغط على الثلاث شخط في موقع RannForex أعلى يمين الشاشة.</li>
-                    <li>اختر <strong>Deposit</strong>.</li>
-                    <li>اختر طريقة الإيداع: <strong>Crypto</strong>.</li>
-                    <li>اختر حساب التداول.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>تفاصيل التحويل:</strong>
-                <ul>
-                    <li>أدخل المبلغ في الفراغ الأول.</li>
-                    <li>اختر <strong>USD</strong>.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>رمز التحقق (2FA):</strong>
-                <ul>
-                    <li>افتح تطبيق <strong>Google Authenticator</strong>.</li>
-                    <li>انسخ الكود المولد لحساب RannForex.</li>
-                    <li>أدخل الكود في الفراغ المخصص.</li>
-                    <li>اضغط على <strong>Continue</strong>.</li>
-                </ul>
-            </li>
-            <li><strong> اختر TetherUS - USDT:</strong>
-                <ul>
-                    <li>اختر <strong>BUSD-T-USD (USDT)</strong>.</li>
-                    <li>انسخ العنوان المقدم وهو عنوان bep20.</li>
-                </ul>
-            </li>
-            <li><strong>إرسال من Cwallet:</strong>
-                <ul>
-                    <li>اختر <strong>USDT</strong>.</li>
-                    <li>اختر شبكة <strong>BEP20</strong>.</li>
-                    <li>أدخل المبلغ بالدولار.</li>
-                    <li>الصق العنوان المنسوخ من RannForex.</li>
-                    <li>اضغط على <strong>Send</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>تم الإيداع بنجاح!</strong></li>
-        </ol>
-        </div>
-
-
-<!-- tlegram section --> 
+        <!-- Telegram Section -->
         <div class="section" id="telegram">
-            <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i> قنوات خاصة بي على تلجرام
-            </h2>
-            
-            <p>هذه القنوات الأساسية التي تحتاجها للبدء في رحلتك للتداول:</p>
-            
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3> قناة الكورس الاساسي</h3>
-                    <p>هذه القناة تحوي على كورس متضمن كل شيء لن تحتاج الى كورس غيره </p>
-                    <a href="https://t.me/tradewithali003" class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> انضم الآن
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3>القناة </h3>
-                    <p> Trade with Ali</p>
-                    <a href="https://t.me/+D_3xl17gg6M5OWRk" class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> انضم الآن
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3> حقق الأرباح </h3>
-                    <p> سوف أقوم بإرسال إشارات لجميع الاعضاء </p>
-                    <a href="https://t.me/tradewithali002" class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> انضم الآن
-                    </a>
-                </div>
-                
-                <div class="app-card">
-                    <div class="app-icon">
-                    </div>
-                    <h3> قناة التداول p2p</h3>
-                    <p> لقد قمت بانشاء هذه المجموعة بين الاعضاء لمن يود بيع وشراء العملات المشفرة</p>
-                    <a href="https://t.me/tradewithali004" class="btn" target="_blank">
-                        <i class="fab fa-telegram"></i> انضم الآن
-                    </a>
-                </div>
-            </div>
+            <h2>قنوات التلجرام</h2>
+            <p> باشتراك شهري 30 دولار يمكنك الدخول إلى القنوات الخاصة التالية:</p>
+            <ul>
+                <li><a href="https://t.me/tradewithali002">قناة الإشارات</a></li>
+                <li><a href="https://t.me/tradewithali003">قناة الكورس</a></li>
+            </ul>
+            <p>قناة عامة تقدم إشارات مجانية بدون اشتراك:</p>
+            <ul>
+                <li><a href="https://t.me/Tradewithali001">قناة الإشارات المجانية</a></li>
+            </ul>
+            <p>مجتمعنا:</p>
+            <ul>
+                <li><a href="https://t.me/SyriaTradingFXg">مجتمع SyriaTradingFX</a></li>
+            </ul>
         </div>
 
-        
-        <!-- قسم المصادقة الثنائية -->
-        <div class="section" id="authentication">
-            <h2 class="section-title">
-                <i class="fas fa-shield-alt"></i> المصادقة الثنائية
-            </h2>
-            
-            <div class="card">
-                <h3 class="card-title">
-                    <i class="fas fa-lock"></i> حماية حسابك بطبقة أمان إضافية
-                </h3>
-                <p>المصادقة الثنائية (2FA) هي طريقة أمان تطلب من المستخدمين تقديم شكلين مختلفين من الهوية للتحقق من أنفسهم. وهي ضرورية لحماية حساب التداول الخاص بك من الاختراق.</p>
-                
-                <h4 style="margin: 20px 0 15px; color: var(--accent);">كيفية إعداد المصادقة الثنائية:</h4>
-                <ol style="padding-right: 20px; margin-bottom: 20px;">
-                    <li style="margin-bottom: 10px;">قم بتنزيل تطبيق Google Authenticator</li>
-                    <li style="margin-bottom: 10px;">في إعدادات حساب التداول الخاص بك، قم بتمكين المصادقة الثنائية</li>
-                    <li style="margin-bottom: 10px;">امسح رمز QR باستخدام التطبيق</li>
-                    <li style="margin-bottom: 10px;">احفظ رمز الاسترداد في مكان آمن</li>
-                    <li>استخدم الرمز الذي يظهر في التطبيق عند تسجيل الدخول</li>
-                </ol>
-            </div>
-            
-            <div class="card">
-                <h3 class="card-title">
-                    <i class="fas fa-video"></i> شرح استخدام تطبيق Google Authenticator
-                </h3>
-                <p>شاهد هذا الفيديو القصير لتعرف كيفية استخدام تطبيق المصادقة الثنائية:</p>
-                
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/SlQc3Q6L3HQ" allowfullscreen></iframe>
-                </div>
-            </div>
+        <!-- Education Section -->
+        <div class="section" id="education">
+            <h2>التعليم</h2>
+            <ul>
+                <li><a href="https://youtube.com/@tradewithpatarabic?si=4egOIQw15KHmRJGy">كورس كامل لتعلم التداول مع باتك</a></li>
+                <li><a href="https://youtube.com/@smart_risk?si=s0leP3OYv9GuCp3r">قناة Smart Risk على يوتيوب</a></li>
+                <li><a href="https://www.instagram.com/kameel_m5?igsh=YzljYTk1ODg3Zg==">كورس على إنستغرام</a></li>
+                <li><a href="https://youtube.com/@smart_risk?si=8VLFIUyBN-9rm7L6">كورس Smart Risk على يوتيوب</a></li>
+            </ul>
         </div>
 
-
-
-
-
-
-
-
-
-        
-        <!-- قسم حاسبة رأس المال -->
+        <!-- Calculator Section -->
         <div class="section" id="calculator">
-            <h2 class="section-title">
-                <i class="fas fa-calculator"></i> حاسبة تطور رأس المال
-            </h2>
-            
-            <div class="calculator-container">
-                <div class="calculator-inputs">
-                    <h3 style="margin-bottom: 20px; color: var(--secondary);">أدخل بيانات التداول</h3>
-                    
-                    <div class="input-group">
-                        <label for="initialCapital">رأس المال الأولي ($)</label>
-                        <input type="number" id="initialCapital" value="10000" min="1">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="winRate">نسبة الصفقات الرابحة (%)</label>
-                        <input type="number" id="winRate" value="60" min="0" max="100" step="1">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="profitRate">معدل الربح لكل صفقة (% من رأس المال)</label>
-                        <input type="number" id="profitRate" value="2" min="0" step="0.1">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="lossRate">معدل الخسارة لكل صفقة (% من رأس المال)</label>
-                        <input type="number" id="lossRate" value="1" min="0" step="0.1">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="updateInterval">عدد الصفقات في كل تحديث</label>
-                        <input type="number" id="updateInterval" value="10" min="1">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="targetCapital">الهدف النهائي ($)</label>
-                        <input type="number" id="targetCapital" value="15000" min="1">
-                    </div>
-                    
-                    <button class="btn" id="calculateBtn">
-                        <i class="fas fa-calculator"></i> حساب تطور رأس المال
-                    </button>
-                </div>
-                
-                <div class="calculator-results">
-                    <h3 style="margin-bottom: 20px; color: var(--accent);">نتائج الحساب</h3>
-                    
-                    <div class="results-grid">
-                        <div class="result-box">
-                            <div class="result-label">متوسط العائد لكل صفقة</div>
-                            <div id="avgReturn" class="result-value">0.80%</div>
-                        </div>
-                        
-                        <div class="result-box">
-                            <div class="result-label">عدد الصفقات المطلوبة</div>
-                            <div id="tradesRequired" class="result-value">52</div>
-                        </div>
-                        
-                        <div class="result-box">
-                            <div class="result-label">معدل النمو الإجمالي</div>
-                            <div id="overallGrowth" class="result-value">50.00%</div>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-container">
-                        <canvas id="growthChart"></canvas>
-                    </div>
-                </div>
-            </div>
+            <h2>حاسبة تطور رأس المال</h2>
+            <form id="capitalForm">
+                <label>رأس المال الأولي:</label>
+                <input type="number" id="initialCapital" required>
+                <label>نسبة الصفقات الرابحة (%):</label>
+                <input type="number" id="winRate" required>
+                <label>معدل الربح لكل صفقة (%):</label>
+                <input type="number" id="profitPerTrade" required>
+                <label>معدل الخسارة لكل صفقة (%):</label>
+                <input type="number" id="lossPerTrade" required>
+                <label>عدد الصفقات في كل تحديث:</label>
+                <input type="number" id="tradesPerUpdate" required>
+                <label>الهدف النهائي:</label>
+                <input type="number" id="targetCapital" required>
+                <button type="submit">احسب</button>
+            </form>
+            <h3>النتائج:</h3>
+            <p id="avgReturn">متوسط العائد لكل صفقة: </p>
+            <p id="tradesRequired">عدد الصفقات المطلوبة: </p>
+            <p id="growthRate">معدل النمو الإجمالي: </p>
+            <h3>جدول تطور رأس المال:</h3>
+            <table id="capitalTable" border="1">
+                <thead>
+                    <tr>
+                        <th>عدد الصفقات</th>
+                        <th>رأس المال</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <h3>مخطط تطور رأس المال:</h3>
+            <canvas id="capitalChart"></canvas>
         </div>
-        
-        
+
+        <!-- USDT Buy/Sell Section -->
+        <div class="section" id="usdt">
+            <h2>شراء وبيع USDT</h2>
+            <form id="usdtForm">
+                <label>الاسم الثلاثي:</label>
+                <input type="text" id="fullName" required>
+                <label>رقم الهاتف:</label>
+                <input type="text" id="phone" required>
+                <label>المدينة:</label>
+                <input type="text" id="city" required>
+                <label>الإجراء:</label>
+                <select id="action" onchange="toggleActionFields()">
+                    <option value="buy">شراء USDT</option>
+                    <option value="sell">بيع USDT</option>
+                </select>
+
+                <!-- Buy Fields -->
+                <div id="buyFields">
+                    <label>الكمية المطلوبة (USDT):</label>
+                    <input type="number" id="buyAmount" required>
+                    <label>الشبكة:</label>
+                    <select id="buyNetwork">
+                        <option value="bep20">BEP20</option>
+                        <option value="trc20">TRC20</option>
+                        <option value="erc20">ERC20</option>
+                        <option value="binance_pay">Binance Pay</option>
+                    </select>
+                    <label>عنوان المحفظة:</label>
+                    <input type="text" id="buyAddress" required>
+                    <label>طريقة الدفع:</label>
+                    <select id="paymentMethod" onchange="showPaymentDetails()">
+                        <option value="sham_cash">شام كاش</option>
+                        <option value="syriatel_cash">سيريتل كاش</option>
+                        <option value="haram_transfer">حوالة الهرم</option>
+                        <option value="bemo_bank">بنك بيمو</option>
+                    </select>
+                    <div id="paymentDetails"></div>
+                    <label>ملاحظة (اختياري):</label>
+                    <textarea id="buyNote"></textarea>
+                </div>
+
+                <!-- Sell Fields -->
+                <div id="sellFields" style="display: none;">
+                    <label>الكمية المراد بيعها (USDT):</label>
+                    <input type="number" id="sellAmount" required>
+                    <label>طريقة الاستلام:</label>
+                    <select id="receiveMethod" onchange="showReceiveDetails()">
+                        <option value="syriatel_cash">سيريتل كاش</option>
+                        <option value="haram_transfer">حوالة الهرم</option>
+                        <option value="bemo_bank">بنك بيمو</option>
+                        <option value="sham_cash">شام كاش</option>
+                    </select>
+                    <div id="receiveDetails"></div>
+                    <label>الشبكة:</label>
+                    <select id="sellNetwork" onchange="showCryptoDetails()">
+                        <option value="bep20">BEP20</option>
+                        <option value="trc20">TRC20</option>
+                        <option value="erc20">ERC20</option>
+                        <option value="binance_pay">Binance Pay</option>
+                    </select>
+                    <div id="cryptoDetails"></div>
+                    <label>ملاحظة (اختياري):</label>
+                    <textarea id="sellNote"></textarea>
+                </div>
+
+                <button type="submit">إرسال الطلب</button>
+            </form>
+            <div id="orderSummary"></div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Icons -->
+    <div class="contact-icons">
+        <a href="https://t.me/ali0619000" target="_blank"><i>📱</i></a>
+        <a href="mailto:alimahmoud001a@gmail.com"><i>✉️</i></a>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // التحكم في القائمة الجانبية
-        const menuBtn = document.getElementById('menuBtn');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarItems = document.querySelectorAll('.sidebar-item');
-        const sections = document.querySelectorAll('.section');
-        const mainContent = document.getElementById('mainContent');
-        
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-        
-        // تغيير القسم عند النقر على عنصر القائمة
-        sidebarItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const sectionId = item.getAttribute('data-section');
-                
-                // تحديث العنصر النشط في القائمة
-                sidebarItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                
-                // إظهار القسم المحدد وإخفاء الآخرين
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === sectionId) {
-                        setTimeout(() => {
-                            section.classList.add('active');
-                        }, 100);
-                    }
-                });
-                
-                // إغلاق القائمة على الأجهزة المحمولة
-                if (window.innerWidth < 992) {
-                    sidebar.classList.remove('active');
+        // Sidebar Toggle
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Show Section
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            toggleSidebar();
+        }
+
+        // Capital Calculator
+        document.getElementById('capitalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const initialCapital = parseFloat(document.getElementById('initialCapital').value);
+            const winRate = parseFloat(document.getElementById('winRate').value) / 100;
+            const profitPerTrade = parseFloat(document.getElementById('profitPerTrade').value) / 100;
+            const lossPerTrade = parseFloat(document.getElementById('lossPerTrade').value) / 100;
+            const tradesPerUpdate = parseInt(document.getElementById('tradesPerUpdate').value);
+            const targetCapital = parseFloat(document.getElementById('targetCapital').value);
+
+            const avgReturn = (winRate * profitPerTrade) - ((1 - winRate) * lossPerTrade);
+            let currentCapital = initialCapital;
+            let trades = 0;
+            const tableData = [];
+            const chartData = { labels: [], data: [] };
+
+            while (currentCapital < targetCapital && trades < 10000) {
+                currentCapital *= (1 + avgReturn);
+                trades++;
+                if (trades % tradesPerUpdate === 0) {
+                    tableData.push({ trades, capital: currentCapital.toFixed(2) });
+                    chartData.labels.push(trades);
+                    chartData.data.push(currentCapital);
                 }
+            }
+
+            const growthRate = ((currentCapital - initialCapital) / initialCapital * 100).toFixed(2);
+            document.getElementById('avgReturn').textContent = `متوسط العائد لكل صفقة: ${(avgReturn * 100).toFixed(2)}%`;
+            document.getElementById('tradesRequired').textContent = `عدد الصفقات المطلوبة: ${trades}`;
+            document.getElementById('growthRate').textContent = `معدل النمو الإجمالي: ${growthRate}%`;
+
+            // Update Table
+            const tbody = document.querySelector('#capitalTable tbody');
+            tbody.innerHTML = '';
+            tableData.forEach(row => {
+                tbody.innerHTML += `<tr><td>${row.trades}</td><td>${row.capital}</td></tr>`;
+            });
+
+            // Update Chart
+            const ctx = document.getElementById('capitalChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartData.labels,
+                    datasets: [{
+                        label: 'تطور رأس المال',
+                        data: chartData.data,
+                        borderColor: '#1a3c6e',
+                        fill: false
+                    }]
+                },
+                options: { responsive: true }
             });
         });
-        
-        // حاسبة تطور رأس المال
-        const calculateBtn = document.getElementById('calculateBtn');
-        const ctx = document.getElementById('growthChart').getContext('2d');
-        
-        let growthChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['0', '10', '20', '30', '40', '50'],
-                datasets: [{
-                    label: 'رأس المال',
-                    data: [10000, 10830, 11730, 12708, 13764, 14913],
-                    borderColor: '#3498db',
-                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                    borderWidth: 3,
-                    pointBackgroundColor: '#fff',
-                    pointRadius: 5,
-                    pointHoverRadius: 7,
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: '#ecf0f1',
-                            font: {
-                                size: 14
-                            }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(44, 62, 80, 0.9)',
-                        titleColor: '#ecf0f1',
-                        bodyColor: '#ecf0f1',
-                        titleFont: {
-                            size: 16
-                        },
-                        bodyFont: {
-                            size: 14
-                        },
-                        padding: 12,
-                        displayColors: false,
-                        callbacks: {
-                            label: function(context) {
-                                return '$' + context.parsed.y.toLocaleString();
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'عدد الصفقات',
-                            color: '#bdc3c7',
-                            font: {
-                                size: 14,
-                                weight: 'bold'
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        ticks: {
-                            color: '#ecf0f1'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'رأس المال ($)',
-                            color: '#bdc3c7',
-                            font: {
-                                size: 14,
-                                weight: 'bold'
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        ticks: {
-                            color: '#ecf0f1',
-                            callback: function(value) {
-                                return '$' + value.toLocaleString();
-                            }
-                        }
-                    }
-                }
-            }
-        });
-        
-        calculateBtn.addEventListener('click', calculate);
-        
-        function calculate() {
-            const initialCapital = parseFloat(document.getElementById('initialCapital').value) || 10000;
-            const winRate = parseFloat(document.getElementById('winRate').value) || 60;
-            const profitRate = parseFloat(document.getElementById('profitRate').value) || 2;
-            const lossRate = parseFloat(document.getElementById('lossRate').value) || 1;
-            const updateInterval = parseInt(document.getElementById('updateInterval').value) || 10;
-            const targetCapital = parseFloat(document.getElementById('targetCapital').value) || 15000;
-            
-            const winRateDecimal = winRate / 100;
-            const profitRateDecimal = profitRate / 100;
-            const lossRateDecimal = lossRate / 100;
-            
-            const expectedReturn = (winRateDecimal * profitRateDecimal) - ((1 - winRateDecimal) * lossRateDecimal);
-            document.getElementById('avgReturn').textContent = (expectedReturn * 100).toFixed(2) + '%';
-            
-            let nTrades;
-            if (expectedReturn <= 0) {
-                nTrades = '∞';
+
+        // USDT Form Logic
+        const exchangeRate = 10000; // SYP per USD
+        document.getElementById('usdtForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const action = document.getElementById('action').value;
+
+            let summary = `الاسم: ${fullName}<br>رقم الهاتف: ${phone}<br>المدينة: ${city}<br>الإجراء: ${action === 'buy' ? 'شراء' : 'بيع'}<br>`;
+
+            if (action === 'buy') {
+                const amount = parseFloat(document.getElementById('buyAmount').value);
+                const network = document.getElementById('buyNetwork').value;
+                const address = document.getElementById('buyAddress').value;
+                const paymentMethod = document.getElementById('paymentMethod').value;
+                const note = document.getElementById('buyNote').value;
+
+                let commission = 1 + (amount * 0.005);
+                if (network === 'trc20') commission += 2;
+                const totalSYP = (amount + commission) * exchangeRate;
+
+                summary += `الكمية: ${amount} USDT<br>الشبكة: ${network}<br>عنوان المحفظة: ${address}<br>طريقة الدفع: ${paymentMethod}<br>العمولة: ${commission.toFixed(2)} USDT<br>المبلغ المستحق: ${totalSYP.toFixed(2)} ل.س<br>`;
+                if (note) summary += `ملاحظة: ${note}<br>`;
+                summary += `ملاحظة: عمولة التسديد على طرق التحويل المختلفة بالليرة السورية تقع على المستخدم كما تحددها هذه الجهات.`;
             } else {
-                nTrades = Math.ceil(Math.log(targetCapital / initialCapital) / Math.log(1 + expectedReturn));
+                const amount = parseFloat(document.getElementById('sellAmount').value);
+                const network = document.getElementById('sellNetwork').value;
+                const receiveMethod = document.getElementById('receiveMethod').value;
+                const note = document.getElementById('sellNote').value;
+
+                let commission = 1 + (amount * 0.005);
+                if (network === 'trc20') commission += 2;
+                const totalSYP = (amount - commission) * exchangeRate;
+
+                summary += `الكمية: ${amount} USDT<br>الشبكة: ${network}<br>طريقة الاستلام: ${receiveMethod}<br>العمولة: ${commission.toFixed(2)} USDT<br>المبلغ المستحق: ${totalSYP.toFixed(2)} ل.س<br>`;
+                if (note) summary += `ملاحظة: ${note}<br>`;
+                summary += `ملاحظة: عمولة التسديد على طرق التحويل المختلفة بالليرة السورية تقع على المستخدم كما تحددها هذه الجهات.`;
             }
-            document.getElementById('tradesRequired').textContent = nTrades;
-            
-            const overallGrowth = ((targetCapital - initialCapital) / initialCapital) * 100;
-            document.getElementById('overallGrowth').textContent = overallGrowth.toFixed(2) + '%';
-            
-            const results = [];
-            let tradeCount = 0;
-            let currentCapital = initialCapital;
-            
-            while (tradeCount <= (typeof nTrades === 'number' ? nTrades : 1000)) {
-                results.push({
-                    trades: tradeCount,
-                    capital: currentCapital
-                });
-                
-                if (currentCapital >= targetCapital || tradeCount > 1000) break;
-                
-                tradeCount += updateInterval;
-                currentCapital = initialCapital * Math.pow(1 + expectedReturn, tradeCount);
-            }
-            
-            updateChart(results);
-        }
-        
-        function updateChart(results) {
-            const labels = results.map(r => r.trades);
-            const data = results.map(r => r.capital);
-            
-            growthChart.data.labels = labels;
-            growthChart.data.datasets[0].data = data;
-            growthChart.update();
-        }
-        
-        // حساب أولي عند تحميل الصفحة
-        calculate();
-        
-        // إغلاق القائمة عند النقر خارجها
-        document.addEventListener('click', (e) => {
-            if (!sidebar.contains(e.target) && !menuBtn.contains(e.target) && window.innerWidth < 992) {
-                sidebar.classList.remove('active');
-            }
+
+            document.getElementById('orderSummary').innerHTML = `<h3>تم إرسال الطلب بنجاح</h3><p>${summary}</p>`;
+            const mailtoLink = `mailto:alimahmoud001a@gmail.com?subject=طلب ${action === 'buy' ? 'شراء' : 'بيع'} USDT&body=${encodeURIComponent(summary.replace(/<br>/g, '\n'))}`;
+            window.location.href = mailtoLink;
         });
+
+        function toggleActionFields() {
+            const action = document.getElementById('action').value;
+            document.getElementById('buyFields').style.display = action === 'buy' ? 'block' : 'none';
+            document.getElementById('sellFields').style.display = action === 'sell' ? 'block' : 'none';
+        }
+
+        function showPaymentDetails() {
+            const method = document.getElementById('paymentMethod').value;
+            let details = '';
+            if (method === 'sham_cash') {
+                details = `<p class="copyable" onclick="copyText(this)">عنوان شام كاش: be456e0ea9392db4d68a7093ee317bc8</p><p class="copyable" onclick="copyText(this)">رقم الحساب: 5991161126028260</p>`;
+            } else if (method === 'syriatel_cash') {
+                details = `<p class="copyable" onclick="copyText(this)">عنوان سيريتل كاش: 0934598967</p>`;
+            } else if (method === 'haram_transfer') {
+                details = `<p>تفاصيل حوالة الهرم:<br>الاسم: علي ابراهيم محمود<br>رقم الهاتف: 0934598967<br>المدينة: اللاذقية</p>`;
+            } else if (method === 'bemo_bank') {
+                details = `<p>تفاصيل بنك بيمو:<br>الاسم: علي ابراهيم محمود<br>رقم الحساب: 060104947910013000000</p>`;
+            }
+            document.getElementById('paymentDetails').innerHTML = details;
+        }
+
+        function showReceiveDetails() {
+            const method = document.getElementById('receiveMethod').value;
+            let details = '';
+            if (method === 'bemo_bank' || method === 'sham_cash') {
+                details = `<label>رقم الحساب أو عنوان الحساب:</label><input type="text" id="receiveAccount" required>`;
+            }
+            document.getElementById('receiveDetails').innerHTML = details;
+        }
+
+        function showCryptoDetails() {
+            const network = document.getElementById('sellNetwork').value;
+            let details = '';
+            if (network === 'bep20') {
+                details = `<p class="copyable" onclick="copyText(this)">BEP20: 0x21802218d8d661d66F2C7959347a6382E1cc614F</p>`;
+            } else if (network === 'trc20') {
+                details = `<p class="copyable" onclick="copyText(this)">TRC20: TD2LoErPRkVPBxDk72ZErtiyi6agirZQjX</p>`;
+            } else if (network === 'erc20') {
+                details = `<p class="copyable" onclick="copyText(this)">ERC20: 0x21802218d8d661d66F2C7959347a6382E1cc614F</p>`;
+            } else if (network === 'binance_pay') {
+                details = `<p class="copyable" onclick="copyText(this)">Binance Pay: 969755964</p>`;
+            }
+            document.getElementById('cryptoDetails').innerHTML = details;
+        }
+
+        function copyText(element) {
+            const text = element.textContent.split(': ')[1];
+            navigator.clipboard.writeText(text).then(() => alert('تم نسخ العنوان!'));
+        }
     </script>
-
-
-
-
-<!--------------------- HTML: ?? ?????? -->
-<a href="https://t.me/ali0619000" target="_blank" id="telegram-float" aria-label="????? ??? ??????">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
-    <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
-  </svg>
-
-<!------------------------ CSS: ????? ???? ?????? -->
-<style>
-#telegram-float {
-  position: fixed;
-  right: 20px;
-  bottom: 120px;
-  background: linear-gradient(45deg, #0088cc, #00bfff);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#telegram-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-#telegram-float svg {
-  width: 28px;
-  height: 28px;
-}
-</style>
-
-
-
-
-     
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
+</body>
+</html>
