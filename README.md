@@ -736,7 +736,7 @@
                     </div>
                     <h3> أرسل الطلب الآن</h3>
                     <p>يمكنك شراء usdt عن طريق سيريتل كاش او شام كاش أو بنك بيمو أو حوالة الهرم</p>
-               <a href="https://alimahmoud001.github.io/usdt/" class="open-link-button">                <i class="fab fa-telegram"></i> شراء/بيع
+               <a href="https://alimahmoud001.github.io/syriausdt//" class="open-link-button">                <i class="fab fa-telegram"></i> شراء/بيع
                     </a>
                 </div>
             </div>
