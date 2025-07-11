@@ -140,14 +140,14 @@
         /* المحتوى الرئيسي */
         .main-content {
             margin-top: var(--header-height);
-            padding: 3px;
+            padding: 0px;
             transition: all 0.4s ease;
         }
         
         .section {
             background: rgba(13, 23, 33, 0.7);
             border-radius: 15px;
-            padding: 3px;
+            padding: 0px;
             margin-bottom: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(52, 152, 219, 0.2);
