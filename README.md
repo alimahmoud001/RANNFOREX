@@ -1223,7 +1223,7 @@
     <path d="M9.99999 17.3333L19.8333 6.49996C20.3333 5.99996 19.6667 5.16663 18.8333 5.49996L3.33332 11.5C2.66666 11.8333 2.66666 12.6666 3.33332 12.8333L7.66666 13.8333L15.5 8.33329C15.8333 8.16663 16 8.33329 15.8333 8.66663L10.3333 16.5L9.99999 17.3333Z"></path>
   </svg>
 
-<!------------------------ CSS: ????? ???? ?????? -->
+<!------------------------ CSS: ????? ???? ?????? --
 <style>
 #telegram-float {
   position: fixed;
@@ -1290,7 +1290,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
      
-  <!--Start of Tawk.to Script-
+  <!--Start of Tawk.to Script--
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
