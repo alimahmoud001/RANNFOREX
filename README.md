@@ -413,7 +413,7 @@
         }
         
         /* التكيف مع الشاشات الصغيرة */
-        @media (max-width: 992px) {
+        @media (max-width: 100%) {
             .calculator-container {
                 grid-template-columns: 1fr;
             }
