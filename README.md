@@ -1226,7 +1226,7 @@
 <!------------------------ CSS: ????? ???? ?????? -->
 <style>
 #telegram-float {
-  position: fixed;
+  position: left;
   right: 20px;
   bottom: 120px;
   background: linear-gradient(45deg, #0088cc, #00bfff);
@@ -1257,7 +1257,7 @@
 <!-- كود الأيقونة العائمة للاتصال -->
 <style>
   .floating-email-btn {
-    position: fixed;
+    position: left;
     bottom: 20px;
     left: 20px;
     width: 60px;
@@ -1303,4 +1303,4 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->->
+<!--End of Tawk.to Script-->
