@@ -668,8 +668,8 @@
                         <i class="fas fa-wallet"></i>
                     </div>
                     <h3>المحفظة الإلكترونية</h3>
-                    <p>محفظة CWallet الآمنة لإدارة أموالك وعمليات الإيداع والسحب</p>
-                    <a href="https://cwallet.com/referral/DvY6dZtS" class="btn" target="_blank">
+                    <p>محفظة باينانس الآمنة لإدارة أموالك وعمليات الإيداع والسحب</p>
+                    <a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_004C6HBMJS" class="btn" target="_blank">
                         <i class="fas fa-download"></i> تحميل التطبيق
                     </a>
                 </div>
