@@ -290,12 +290,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
+        /* كانت 25 */    
         }
         
         .calculator-inputs, .calculator-results {
             background: rgba(26, 42, 58, 0.8);
             border-radius: 12px;
-            padding: 25px;
+            padding: 7px;
         }
         
         .input-group {
