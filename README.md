@@ -429,7 +429,7 @@
             }
             
             .section {
-                padding: 5px;
+                padding: 1px;
             }
             
             .section-title {
@@ -443,7 +443,7 @@
         
         @media (max-width: 480px) {
             .header {
-                padding: 0 5px;
+                padding: 0 1px;
             }
             
             .logo h1 {
@@ -455,7 +455,7 @@
             }
             
             .calculator-inputs, .calculator-results {
-                padding: 5px 5px;
+                padding: 1px 1px;
             }
             
             .result-value {
