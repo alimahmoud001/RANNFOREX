@@ -425,7 +425,7 @@
         
         @media (max-width: 768px) {
             .main-content {
-                padding: 20px 15px;
+                padding: 5px 5px;
             }
             
             .section {
@@ -455,7 +455,7 @@
             }
             
             .calculator-inputs, .calculator-results {
-                padding: 20px 15px;
+                padding: 5px 5px;
             }
             
             .result-value {
