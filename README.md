@@ -473,8 +473,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnIcon = document.createElement('span');
     
     // إضافة المحتوى
-    btnText.textContent = 'انضم إلى قناتنا على تلجرام';
-    btnIcon.textContent = '📢';
+    btnText.textContent= 'انضم إلى قناتنا على تلجرام';
+    btnIcon.textContent = '💙';
     
     // تعيين السمات والكلاسات
     telegramFloat.className = 'telegram-float';
