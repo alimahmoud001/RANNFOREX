@@ -290,7 +290,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-        /* كانت 25 */    
+            padding: 25px;
         }
         
         .calculator-inputs, .calculator-results {
