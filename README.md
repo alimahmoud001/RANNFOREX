@@ -463,6 +463,104 @@
             }
         }
     </style>
+    <script>
+// إنشاء عناصر الأيقونة وإضافتها إلى الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    // إنشاء العناصر
+    const telegramFloat = document.createElement('div');
+    const telegramBtn = document.createElement('a');
+    const btnText = document.createElement('span');
+    const btnIcon = document.createElement('span');
+    
+    // إضافة المحتوى
+    btnText.textContent = 'انضم إلى قناتنا على تلجرام';
+    btnIcon.textContent = '📢';
+    
+    // تعيين السمات والكلاسات
+    telegramFloat.className = 'telegram-float';
+    telegramBtn.className = 'telegram-btn';
+    telegramBtn.href = 'https://t.me/tradewithali002';
+    telegramBtn.id = 'telegramBtn';
+    btnIcon.className = 'telegram-icon';
+    
+    // بناء الهيكل
+    telegramBtn.appendChild(btnText);
+    telegramBtn.appendChild(btnIcon);
+    telegramFloat.appendChild(telegramBtn);
+    document.body.appendChild(telegramFloat);
+    
+    // إضافة الأنماط ديناميكياً
+    const style = document.createElement('style');
+    style.textContent = `
+        .telegram-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+        .telegram-btn {
+            display: flex;
+            align-items: center;
+            background: #0088cc;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .telegram-btn:hover {
+            background: #0077b5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        .telegram-btn:active {
+            transform: translateY(-8px);
+            animation: pulse 0.5s;
+        }
+        .telegram-icon {
+            margin-left: 8px;
+            font-size: 20px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulse {
+            0% { transform: translateY(-8px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.1); }
+            100% { transform: translateY(-8px) scale(1); }
+        }
+        .flash {
+            animation: flash 0.5s;
+        }
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // إضافة تأثير الوميض عند النقر
+    telegramBtn.addEventListener('click', function(e) {
+        this.classList.add('flash');
+        setTimeout(() => {
+            this.classList.remove('flash');
+        }, 500);
+        
+        // فتح الرابط في نافذة جديدة بعد التأثير
+        e.preventDefault();
+        setTimeout(() => {
+            window.open(this.href, '_blank');
+        }, 300);
+    });
+});
+</script>
 </head>
 <body>
     <!-- الشريط العلوي -->
