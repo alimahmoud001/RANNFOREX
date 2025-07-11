@@ -413,7 +413,7 @@
         }
         
         /* التكيف مع الشاشات الصغيرة */
-        @media (max-width: 100%) {
+        @media (max-width: 992px) {
             .calculator-container {
                 grid-template-columns: 1fr;
             }
@@ -429,7 +429,7 @@
             }
             
             .section {
-                padding: 20px;
+                padding: 5px;
             }
             
             .section-title {
@@ -443,7 +443,7 @@
         
         @media (max-width: 480px) {
             .header {
-                padding: 0 15px;
+                padding: 0 5px;
             }
             
             .logo h1 {
