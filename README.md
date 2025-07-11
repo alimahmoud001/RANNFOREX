@@ -140,7 +140,7 @@
         /* المحتوى الرئيسي */
         .main-content {
             margin-top: var(--header-height);
-            padding: 30px;
+            padding: 3px;
             transition: all 0.4s ease;
         }
         
