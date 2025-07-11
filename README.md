@@ -1226,7 +1226,7 @@
 <!------------------------ CSS: ????? ???? ?????? -->
 <style>
 #telegram-float {
-  position: left;
+  position: fixed;
   right: 20px;
   bottom: 120px;
   background: linear-gradient(45deg, #0088cc, #00bfff);
@@ -1257,7 +1257,7 @@
 <!-- كود الأيقونة العائمة للاتصال -->
 <style>
   .floating-email-btn {
-    position: left;
+    position: fixed;
     bottom: 20px;
     left: 20px;
     width: 60px;
