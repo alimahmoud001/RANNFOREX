@@ -1316,7 +1316,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<!-- كود الأيقونة العائمة للاتصال -->
+<!-- كود الأيقونة العائمة للاتصال --
 <style>
   .floating-email-btn {
     position: fixed;
