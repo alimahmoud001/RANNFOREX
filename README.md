@@ -971,7 +971,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
 
 
-<!-- tlegram section --> 
+<!-- tlegram section -
         <div class="section" id="telegram">
             <h2 class="section-title">
                 <i class="fas fa-mobile-alt"></i> قنوات خاصة بي على تلجرام
@@ -1020,7 +1020,7 @@ s0.parentNode.insertBefore(s1,s0);
                     </a>
                 </div>
             </div>
-        </div>
+        </div>-> 
 
         
         <!-- قسم المصادقة الثنائية -->
