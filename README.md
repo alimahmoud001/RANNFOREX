@@ -463,6 +463,7 @@
             }
         }
     </style>
+    
     <script>
 // إنشاء عناصر الأيقونة وإضافتها إلى الصفحة
 document.addEventListener('DOMContentLoaded', function() {
@@ -561,6 +562,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--End of Tawk.to Script-->
+
+
 </head>
 <body>
     <!-- الشريط العلوي -->
@@ -1316,37 +1335,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<!-- كود الأيقونة العائمة للاتصال -->
-<style>
-  .floating-email-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #4285F4;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    z-index: 9999;
-    transition: all 0.3s;
-  }
-  .floating-email-btn:hover {
-    background-color: #3367D6;
-    transform: scale(1.1);
-  }
-  .floating-email-btn i {
-    color: white;
-    font-size: 24px;
-  }
-</style>
-
-<div class="floating-email-btn" onclick="window.location.href='mailto:alimahmoud001a@gmail.com?subject=اتصال من الموقع'">
-  <i class="fas fa-envelope"></i>
-</div>
-
-<!-- رابط أيقونات Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
