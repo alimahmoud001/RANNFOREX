@@ -630,6 +630,10 @@ s0.parentNode.insertBefore(s1,s0);
             <i class="fas fa-money-bill-wave"></i>
             <span>طريقة الإيداع</span>
         </div>
+         <!-- <div class="sidebar-item" data-section="telegram">
+            <i class="fab fa-telegram"></i>
+            <span>قنوات تلجرام</span>
+        </div>-->
           <div class="sidebar-item" data-section="calculator">
             <i class="fas fa-calculator"></i>
             <span>حاسبة رأس المال</span>
