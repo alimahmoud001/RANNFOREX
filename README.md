@@ -183,7 +183,7 @@
         .card {
             background: rgba(26, 42, 58, 0.7);
             border-radius: 12px;
-            padding: 25px;
+            padding: 5px;
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(52, 152, 219, 0.15);
