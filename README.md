@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .telegram-float {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            right: 100px;
             z-index: 1000;
             animation: float 3s ease-in-out infinite;
         }
