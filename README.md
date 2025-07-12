@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .telegram-float {
             position: fixed;
             bottom: 30px;
-            left: 30px;
+            right: 30px;
             z-index: 1000;
             animation: float 3s ease-in-out infinite;
         }
@@ -1316,7 +1316,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<!-- كود الأيقونة العائمة للاتصال --
+<!-- كود الأيقونة العائمة للاتصال -->
 <style>
   .floating-email-btn {
     position: fixed;
