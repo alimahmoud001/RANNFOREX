@@ -224,7 +224,7 @@
         }
         
         .feature-list li::before {
-            content: "★";
+            content: "";
             color: var(--accent);
             position: absolute;
             left: 0;
