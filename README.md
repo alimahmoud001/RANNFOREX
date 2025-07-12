@@ -463,6 +463,7 @@
             }
         }
     </style>
+  <!------------------------------------------------->
     <script>
 // إنشاء عناصر الأيقونة وإضافتها إلى الصفحة
 document.addEventListener('DOMContentLoaded', function() {
@@ -473,8 +474,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnIcon = document.createElement('span');
     
     // إضافة المحتوى
-    btnText.textContent = 'انضم إلى قناتنا على تلجرام';
-    btnIcon.textContent = '📢';
+    btnText.textContent = 'انضم إلى قناة التلجرام';
+    btnIcon.textContent = '';
     
     // تعيين السمات والكلاسات
     telegramFloat.className = 'telegram-float';
@@ -588,7 +589,7 @@ s0.parentNode.insertBefore(s1,s0);
     <!-- الشريط العلوي -->
     <div class="header">
         <div class="logo">
-            <h1>دليل التداول الشامل</h1>
+            <h1>Rannforex</h1>
         </div>
         <button class="menu-btn" id="menuBtn">
             <i class="fas fa-bars"></i>
@@ -599,7 +600,7 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="sidebar" id="sidebar">
         <div class="sidebar-item active" data-section="broker">
             <i class="fas fa-building"></i>
-            <span>شركة الوساطة</span>
+            <span>Rannforex</span>
         </div>
         <div class="sidebar-item" data-section="ratings">
             <i class="fas fa-star"></i>
@@ -613,11 +614,7 @@ s0.parentNode.insertBefore(s1,s0);
             <i class="fas fa-shield-alt"></i>
             <span>المصادقة الثنائية</span>
         </div>
-        <div class="sidebar-item" data-section="telegram">
-            <i class="fab fa-telegram"></i>
-            <span>قنوات تلجرام</span>
-        </div>
-        <div class="sidebar-item" data-section="education">
+          <div class="sidebar-item" data-section="education">
             <i class="fas fa-graduation-cap"></i>
             <span>الدورات التعليمية</span>
         </div>
@@ -651,7 +648,7 @@ s0.parentNode.insertBefore(s1,s0);
                 <h3 class="card-title">
                     <i class="fas fa-link"></i> Rannforex    
                 </h3>
-                <p>انضم الآن إلى واحدة من أفضل شركات الوساطة المالية في العالم واستمتع بمزايا تداول فريدة أنأ أتداول معهم ولديهم بيئة تداول آمنة ومستقرة:</p>
+                <p>انضم الآن إلى واحدة من أفضل شركات الوساطة المالية في العالم واستمتع بمزايا تداول فريدة أنأ أتداول معهم ولديهم بيئة تداول آمنة ومستقرة</p>
                 <a href="https://my.rannforex.com/en/auth/register/?fprc=cf22v1" class="btn" target="_blank">
                     <i class="fas fa-user-plus"></i> سجل حساب جديد الآن
                 </a>
@@ -659,7 +656,7 @@ s0.parentNode.insertBefore(s1,s0);
             
             <div class="card">
                 <h3 class="card-title">
-                    <i class="fas fa-medal"></i> ميزات شركة راني فوريكس
+                    <i class="fas fa-medal"></i> ميزات شركة Rannforex
                 </h3>
                 <ul class="feature-list">
                     <li>أقل إيداع وسحب 10$ بدون انتظار</li>
