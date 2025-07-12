@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -186,10 +186,8 @@
                 <button class="sidebar-toggle" id="sidebarToggle">×</button>
             </div>
             <ul class="sidebar-menu" id="sidebarMenu">
-                <!-- ********** هنا ضع روابطك الخاصة ********** -->
-                <!-- مثال: -->
                 <li class="menu-item">
-                    <a class="menu-link" data-link="index.html">الصفحة الرئيسية</a>
+                    <a class="menu-link" data-link="https://github.com/alimahmoud001/RANNFOREX/edit/alimahmoud001-patch-4/README.md">RANNFOREX</a>
                 </li>
                 <li class="menu-item">
                     <a class="menu-link" data-link="about.html">من نحن</a>
