@@ -463,7 +463,7 @@
             }
         }
     </style>
-  <!------------------------------------------------->
+  <!-------------------------------------------------
     <script>
 // إنشاء عناصر الأيقونة وإضافتها إلى الصفحة
 document.addEventListener('DOMContentLoaded', function() {
@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-  <!------------------------------------------------->
+  ------------------------------------------------->
   <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ">
             <span onclick="document.getElementById('signalModal').style.display='none'" 
                   style="float: left; font-size: 28px; cursor: pointer;">&times;</span>
-            <h2 style="color: #4CAF50; text-align: center; margin-top: 0;">طلب الإشارات المجانية</h2>
+            <h2 style="color: #4CAF50; text-align: center; margin-top: 0;">طلب الإشارات </h2>
             <form onsubmit="event.preventDefault(); sendSignalRequest();" style="
                 display: flex;
                 flex-direction: column;
@@ -650,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     border-radius: 5px;
                     font-size: 16px;
                 ">
-                <span style="color: #777; font-size: 14px;">اختياري - للإشارات عبر الواتساب</span>
+                <span style="color: #777; font-size: 14px;">سأقوم بإرسال إشارات دخول للصفقات اليك عبر بريدك الالكنروني </span>
                 <button type="submit" style="
                     background-color: #4CAF50;
                     color: white;
@@ -684,7 +684,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `رقم الهاتف: ${phone || 'لم يتم تقديمه'}\n\n` +
                     `يرجى إضافة هذا البريد إلى قائمة الإشارات المجانية.`;
         
-        window.location.href = `mailto:alimahmoud001a@gmail.com?subject=طلب اشتراك في الإشارات المجانية من ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:alimahmoud001a@gmail.com?subject=طلب اشتراك في الإشارات  من ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
         
         setTimeout(() => {
             document.getElementById('signalModal').style.display = 'none';
