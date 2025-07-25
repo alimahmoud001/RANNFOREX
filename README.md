@@ -583,6 +583,121 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
   <!------------------------------------------------->
+<script>
+// كود الأيقونة العائمة للإشارات المجانية (إضافة نظيفة)
+document.addEventListener('DOMContentLoaded', function() {
+    // إنشاء العناصر
+    const widgetHTML = `
+    <button id="floatingSignalBtn" style="
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 30px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 9999;
+        transition: all 0.3s;
+    ">إشارات مجانية</button>
+
+    <div id="signalModal" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 10000;
+    ">
+        <div style="
+            background: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        ">
+            <span onclick="document.getElementById('signalModal').style.display='none'" 
+                  style="float: left; font-size: 28px; cursor: pointer;">&times;</span>
+            <h2 style="color: #4CAF50; text-align: center; margin-top: 0;">طلب الإشارات المجانية</h2>
+            <form onsubmit="event.preventDefault(); sendSignalRequest();" style="
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            ">
+                <input type="text" id="signalName" placeholder="اسمك الكامل" required style="
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    font-size: 16px;
+                ">
+                <input type="email" id="signalEmail" placeholder="بريدك الإلكتروني" required style="
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    font-size: 16px;
+                ">
+                <input type="tel" id="signalPhone" placeholder="رقم هاتفك (اختياري)" style="
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    font-size: 16px;
+                ">
+                <span style="color: #777; font-size: 14px;">اختياري - للإشارات عبر الواتساب</span>
+                <button type="submit" style="
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 12px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                ">إرسال الطلب</button>
+            </form>
+        </div>
+    </div>
+    `;
+
+    // إضافة العناصر إلى body
+    document.body.insertAdjacentHTML('beforeend', widgetHTML);
+
+    // إضافة معالجات الأحداث
+    document.getElementById('floatingSignalBtn').onclick = function() {
+        document.getElementById('signalModal').style.display = 'block';
+    };
+
+    window.sendSignalRequest = function() {
+        const name = document.getElementById('signalName').value;
+        const email = document.getElementById('signalEmail').value;
+        const phone = document.getElementById('signalPhone').value;
+        
+        const body = `طلب اشتراك في الإشارات المجانية:\n\n` +
+                    `الاسم: ${name}\n` +
+                    `البريد الإلكتروني: ${email}\n` +
+                    `رقم الهاتف: ${phone || 'لم يتم تقديمه'}\n\n` +
+                    `يرجى إضافة هذا البريد إلى قائمة الإشارات المجانية.`;
+        
+        window.location.href = `mailto:alimahmoud001a@gmail.com?subject=طلب اشتراك في الإشارات المجانية من ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+        
+        setTimeout(() => {
+            document.getElementById('signalModal').style.display = 'none';
+            alert('شكراً لطلبك! سيتم التواصل معك قريباً.');
+        }, 500);
+    };
+});
+</script>
+
+    <!-------------------------------------------------> 
+    
+    
+    <!------------------------------------------------->
 
 </head>
 <body>
