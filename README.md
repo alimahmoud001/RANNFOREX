@@ -696,7 +696,137 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-------------------------------------------------> 
     
+<html>
+<head>
+    <style>
+        /* تنسيق الأيقونة العائمة الجديدة */
+        .floating-deal {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FF5722; /* لون برتقالي جذاب */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px; /* حواف مستديرة */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 9999;
+            transition: all 0.3s;
+            border: none;
+            white-space: nowrap;
+        }
+        
+        .floating-deal:hover {
+            background-color: #E64A19;
+            transform: translateX(-50%) scale(1.05);
+        }
+        
+        .deal-icon {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        /* تنسيق النافذة المنبثقة */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 10000;
+        }
+        
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .popup-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- الأيقونة العائمة الجديدة -->
+    <button class="floating-deal" id="floatingDeal">
+        <span class="deal-icon">🎁</span>
+        <span>عرض خاص!</span>
+    </button>
     
+    <!-- النافذة المنبثقة -->
+    <div class="popup-overlay" id="popupOverlay">
+        <button class="popup-close" id="popupClose">×</button>
+        <div class="popup-content">
+            <iframe class="popup-iframe" id="popupIframe" src="about:blank"></iframe>
+        </div>
+    </div>
+    
+    <script>
+        // عناصر DOM
+        const floatingDeal = document.getElementById('floatingDeal');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+        const popupIframe = document.getElementById('popupIframe');
+        
+        // الرابط المطلوب
+        const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfJPgS_xgOyzY9k2HBBvBBu5fl4Zhg-VK7VjETkfRh7hZzWPw/viewform?usp=dialog';
+        
+        // حدث النقر على الأيقونة العائمة
+        floatingDeal.addEventListener('click', function() {
+            popupIframe.src = formUrl;
+            popupOverlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // حدث النقر على زر الإغلاق
+        popupClose.addEventListener('click', function() {
+            popupOverlay.style.display = 'none';
+            popupIframe.src = 'about:blank';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // إغلاق النافذة عند النقر خارجها
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+                popupIframe.src = 'about:blank';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
     <!------------------------------------------------->
 
 </head>
