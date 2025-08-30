@@ -894,8 +894,7 @@
 <!-- investment section --> 
         <div class="section" id="investment">
             <h2 class="section-title">
-                <i class="fas fa-mobile-alt"></i> اطلع على تفاصيل حساب الإستثمار الحاص بي
-            </h2>
+                <i class="fas fa-mobile-alt"></i>تواصل معي على تلجرام             </h2>
             
             <p>اطلع على تفاصيل حساب الإستثمار الحاص بي</p>
             
@@ -905,7 +904,7 @@
                     </div>
                     <h3> حساب الشراكة pamm</h3>
                     <p>يمكنك أن تستثمر معي وأن نتقاسم 50% من الأرباح</p>
-                  <a href="https://my.rannforex.com/en/pamm/details/2534/" class="btn" target="_blank">
+                  <a href="https://t.me/ali0619000" class="btn" target="_blank">
                      <i class="fab fa-telegram"></i> استثمر الآن
                     </a>
                 </div>
