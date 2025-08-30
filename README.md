@@ -463,8 +463,59 @@
             }
         }
     </style>
-  <!-------------------------------------------------
- 
+  <!-------------------------------------------------،>
+ <style>
+  .telegram-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    left: 30px;
+    background-color: #2AABEE;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 16px rgba(42, 171, 238, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+  }
+  
+  .telegram-float:hover {
+    background-color: #128BD7;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(42, 171, 238, 0.7);
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(42, 171, 238, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(42, 171, 238, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(42, 171, 238, 0);
+    }
+  }
+  
+  .telegram-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+</style>
+
+<a href="https://t.me/ali0619000" class="telegram-float" target="_blank">
+  <svg class="telegram-icon" viewBox="0 0 24 24">
+    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+  </svg>
+</a>
   ------------------------------------------------->
   <!--Start of Tawk.to Script-->
 <script type="text/javascript">
