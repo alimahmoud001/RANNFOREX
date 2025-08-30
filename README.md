@@ -464,7 +464,10 @@
         }
     </style>
   <!-------------------------------------------------،>
- <style>
+ 
+  ------------------------------------------------->
+  <!--Start of Tawk.to Script-->
+<style>
   .telegram-float {
     position: fixed;
     width: 60px;
@@ -516,23 +519,6 @@
     <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
   </svg>
 </a>
-  ------------------------------------------------->
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6843680cc265e21908a097c7/1it3kssj8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
-
-
     <!-------------------------------------------------> 
     
 <html>
